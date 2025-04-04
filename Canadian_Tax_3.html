@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canadian Tax 3</title>
+</head>
+<style>
+    * {
+        cursor: pointer;
+    }
+
+    .hide {
+        display: none
+    }
+
+    .viet {
+        background-color: yellow;
+    }
+
+    img {
+        width: 75%;
+    }
+</style>
+
+<body>
+    <div>
+        <div>
+            <button id="stop">Stop!</button>
+            <button id="speak">Speak</button>
+            <button id="dung">Dừng</button>
+            <button id="doc">Đọc</button>
+        </div>
+    </div>
+    <a href="./Canadian_Tax_2.html">Prev</a>
+    <h2><span class="english 1">Chapter 3: Tax Deductions and Credits</span> <span class="viet 1 hide">Chương 3: Khấu
+            trừ và tín dụng thuế</span></h2>
+    <h3><span class="english 2">Overview of Deductions Diﬀerence Between Deductions and Credits</span> <span
+            class="viet 2 hide">Tổng quan về khấu trừ Sự khác biệt giữa khấu trừ và tín dụng</span></h3>
+    <p><span class="english 3"> Tax deductions and credits are essential tools for reducing tax liability,</span> <span
+            class="viet 3 hide"> Khấu trừ và tín dụng thuế là những công cụ thiết yếu để giảm nghĩa vụ thuế,</span>
+        <span class="english 4"> but they work differently.</span> <span class="viet 4 hide"> nhưng chúng hoạt động khác
+            nhau.</span>
+        <span class="english 5"> Deductions reduce taxable income,</span> <span class="viet 5 hide"> Khấu trừ làm giảm
+            thu nhập chịu thuế,</span>
+        <span class="english 6"> which in turn lowers the amount of income subject to tax.</span> <span
+            class="viet 6 hide"> từ đó làm giảm số tiền thu nhập chịu thuế.</span>
+        <span class="english 7"> Credits,</span> <span class="viet 7 hide"> Tín dụng,</span>
+        <span class="english 8"> on the other hand,</span> <span class="viet 8 hide"> mặt khác,</span>
+        <span class="english 9"> reduce the actual amount of tax payable,</span> <span class="viet 9 hide"> làm giảm số
+            tiền thuế thực tế phải nộp,</span>
+        <span class="english 10"> offering a direct reduction in the tax bill.</span> <span class="viet 10 hide"> cung
+            cấp khoản giảm trực tiếp trong hóa đơn thuế.</span>
+        <span class="english 11"> Understanding the distinction between deductions and credits is crucial for effective
+            tax planning.</span> <span class="viet 11 hide"> Hiểu được sự khác biệt giữa khấu trừ và tín dụng là rất
+            quan trọng để lập kế hoạch thuế hiệu quả.</span>
+    </p>
+    <p><span class="english 12"> Deductions are subtracted from total income to arrive at net income,</span> <span
+            class="viet 12 hide"> Các khoản khấu trừ được trừ khỏi tổng thu nhập để có được thu nhập ròng,</span>
+        <span class="english 13"> thereby reducing the overall taxable amount.</span> <span class="viet 13 hide"> do đó
+            làm giảm tổng số tiền chịu thuế.</span>
+        <span class="english 14"> Common deductions include RRSP contributions,</span> <span class="viet 14 hide"> Các
+            khoản khấu trừ phổ biến bao gồm đóng góp RRSP,</span>
+        <span class="english 15"> union dues,</span> <span class="viet 15 hide"> phí công đoàn,</span>
+        <span class="english 16"> and childcare expenses.</span> <span class="viet 16 hide"> và chi phí chăm sóc trẻ
+            em.</span>
+        <span class="english 17"> By lowering taxable income,</span> <span class="viet 17 hide"> Bằng cách giảm thu nhập
+            chịu thuế,</span>
+        <span class="english 18"> deductions can reduce the marginal tax rate applied to the remaining income.</span>
+        <span class="viet 18 hide"> các khoản khấu trừ có thể làm giảm tỷ lệ thuế biên áp dụng cho phần thu nhập còn
+            lại.</span>
+        <span class="english 19"> For example,</span> <span class="viet 19 hide"> Đối với Ví dụ,</span>
+        <span class="english 20"> if a taxpayer has a marginal tax rate of 30% and claims a $1,000 deduction,</span>
+        <span class="viet 20 hide"> nếu người nộp thuế có mức thuế suất biên là 30% và yêu cầu khấu trừ 1.000 đô
+            la,</span>
+        <span class="english 21"> their tax liability is reduced by $300.</span> <span class="viet 21 hide"> nghĩa vụ
+            thuế của họ được giảm 300 đô la.</span>
+    </p>
+    <p><span class="english 22"> Credits come in two forms:</span> <span class="viet 22 hide"> Tín dụng có hai
+            dạng:</span>
+        <span class="english 23"> non-refundable and refundable.</span> <span class="viet 23 hide"> không hoàn lại và có
+            thể hoàn lại.</span>
+        <span class="english 24"> Non-refundable tax credits can only reduce tax payable to zero,</span> <span
+            class="viet 24 hide"> Tín dụng thuế không hoàn lại chỉ có thể giảm thuế phải nộp xuống bằng 0,</span>
+        <span class="english 25"> meaning they do not result in a refund if they exceed the tax liability.</span> <span
+            class="viet 25 hide"> nghĩa là chúng không dẫn đến việc hoàn lại tiền nếu vượt quá nghĩa vụ thuế.</span>
+        <span class="english 26"> Examples include the basic personal amount and the charitable donation tax
+            credit.</span> <span class="viet 26 hide"> Ví dụ bao gồm số tiền cá nhân cơ bản và tín dụng thuế đóng góp từ
+            thiện.</span>
+        <span class="english 27"> Refundable tax credits,</span> <span class="viet 27 hide"> Tín dụng thuế có thể hoàn
+            lại,</span>
+        <span class="english 28"> such as the GST/HST credit,</span> <span class="viet 28 hide"> chẳng hạn như tín dụng
+            GST/HST,</span>
+        <span class="english 29"> can result in a refund if they exceed the tax payable.</span> <span
+            class="viet 29 hide"> có thể được hoàn lại tiền nếu vượt quá số thuế phải nộp.</span>
+        <span class="english 30"> Understanding how to maximize both types of credits is key to reducing the overall tax
+            burden.</span> <span class="viet 30 hide"> Hiểu cách tối đa hóa cả hai loại tín dụng là chìa khóa để giảm
+            gánh nặng thuế nói chung.</span>
+    </p>
+    <h3><span class="english 32">Common Deductions Available to Canadian Taxpayers</span> <span class="viet 32 hide">Các
+            khoản khấu trừ chung dành cho người nộp thuế Canada</span></h3>
+    <p><span class="english 33"> Canadian taxpayers have access to a variety of deductions that can help reduce their
+            taxable income.</span> <span class="viet 33 hide"> Người nộp thuế Canada có thể tiếp cận nhiều khoản khấu
+            trừ khác nhau có thể giúp giảm thu nhập chịu thuế của họ.</span>
+        <span class="english 34"> Some of the most common deductions include RRSP contributions,</span> <span
+            class="viet 34 hide"> Một số khoản khấu trừ phổ biến nhất bao gồm đóng góp RRSP,</span>
+        <span class="english 35"> childcare expenses,</span> <span class="viet 35 hide"> chi phí chăm sóc trẻ em,</span>
+        <span class="english 36"> moving expenses,</span> <span class="viet 36 hide"> chi phí chuyển nhà,</span>
+        <span class="english 37"> and union and professional dues.</span> <span class="viet 37 hide"> và phí công đoàn
+            và chuyên môn.</span>
+        <span class="english 38"> Each of these deductions has speciﬁc eligibility criteria and reporting
+            requirements,</span> <span class="viet 38 hide"> Mỗi khoản khấu trừ này đều có tiêu chí đủ điều kiện và yêu
+            cầu báo cáo cụ thể,</span>
+        <span class="english 39"> which taxpayers must adhere to in order to claim them.</span> <span
+            class="viet 39 hide"> mà người nộp thuế phải tuân thủ để yêu cầu chúng.</span>
+    </p>
+    <p><span class="english 40"> RRSP contributions are one of the most effective ways to reduce taxable income.</span>
+        <span class="viet 40 hide"> Đóng góp RRSP là một trong những cách hiệu quả nhất để giảm thu nhập chịu
+            thuế.</span>
+        <span class="english 41"> Contributions made to an RRSP are tax-deductible,</span> <span class="viet 41 hide">
+            Các khoản đóng góp vào RRSP được khấu trừ thuế,</span>
+        <span class="english 42"> and the investments grow tax-free until withdrawal.</span> <span class="viet 42 hide">
+            và các khoản đầu tư tăng trưởng miễn thuế cho đến khi rút ra.</span>
+        <span class="english 43"> Taxpayers should keep track of their contribution limits,</span> <span
+            class="viet 43 hide"> Người nộp thuế nên theo dõi hạn mức đóng góp của mình,</span>
+        <span class="english 44"> as exceeding the limit can result in penalties.</span> <span class="viet 44 hide"> vì
+            vượt quá hạn mức có thể dẫn đến hình phạt.</span>
+        <span class="english 45"> Properly reporting RRSP contributions ensures that taxpayers maximize their deductions
+            and reduce their tax liability.</span> <span class="viet 45 hide"> Việc báo cáo đúng các khoản đóng góp RRSP
+            đảm bảo rằng người nộp thuế tối đa hóa các khoản khấu trừ của mình và giảm nghĩa vụ thuế của họ.</span>
+    </p>
+    <p><span class="english 46"> Childcare expenses are another significant deduction,</span> <span
+            class="viet 46 hide"> Chi phí chăm sóc trẻ em là một khoản khấu trừ đáng kể khác,</span>
+        <span class="english 47"> particularly for families with young children.</span> <span class="viet 47 hide"> đặc
+            biệt đối với các gia đình có trẻ nhỏ.</span>
+        <span class="english 48"> Eligible expenses include daycare,</span> <span class="viet 48 hide"> Các khoản chi đủ
+            điều kiện bao gồm nhà trẻ,</span>
+        <span class="english 49"> nursery school,</span> <span class="viet 49 hide"> trường mẫu giáo,</span>
+        <span class="english 50"> and afterschool programs.</span> <span class="viet 50 hide"> và các chương trình sau
+            giờ học.</span>
+        <span class="english 51"> To claim the deduction,</span> <span class="viet 51 hide"> Để yêu cầu khấu trừ,</span>
+        <span class="english 52"> taxpayers must have receipts or invoices from the childcare provider.</span> <span
+            class="viet 52 hide"> người nộp thuế phải có biên lai hoặc hóa đơn từ nhà cung cấp dịch vụ chăm sóc trẻ
+            em.</span>
+        <span class="english 53"> The deduction is reported on line 21400 (Childcare Expenses) of the T1 General
+            form,</span> <span class="viet 53 hide"> Khoản khấu trừ được báo cáo trên dòng 21400 (Chi phí chăm sóc trẻ
+            em) của biểu mẫu chung T1,</span>
+        <span class="english 54"> and proper documentation is essential for ensuring the claim is accepted.</span> <span
+            class="viet 54 hide"> và tài liệu phù hợp là điều cần thiết để đảm bảo yêu cầu được chấp nhận.</span>
+    </p>
+    <h3><span class="english 56">Impact of Deductions on Overall Tax Liability</span> <span class="viet 56 hide">Tác
+            động của khấu trừ đối với nghĩa vụ thuế chung</span></h3>
+    <p><span class="english 57"> Tax deductions play a crucial role in reducing overall tax liability by lowering
+            taxable income.</span> <span class="viet 57 hide"> Khấu trừ thuế đóng vai trò quan trọng trong việc giảm
+            nghĩa vụ thuế chung bằng cách giảm thu nhập chịu thuế.</span>
+        <span class="english 58"> By strategically claiming deductions,</span> <span class="viet 58 hide"> Bằng cách yêu
+            cầu khấu trừ một cách chiến lược,</span>
+        <span class="english 59"> taxpayers can significantly reduce the amount of income subject to tax,</span> <span
+            class="viet 59 hide"> người nộp thuế có thể giảm đáng kể số tiền thu nhập phải chịu thuế,</span>
+        <span class="english 60"> thereby lowering their marginal tax rate.</span> <span class="viet 60 hide"> do đó
+            giảm tỷ lệ thuế biên của họ.</span>
+        <span class="english 61"> This reduction in taxable income can lead to substantial tax savings,</span> <span
+            class="viet 61 hide"> Việc giảm thu nhập chịu thuế này có thể dẫn đến tiết kiệm thuế đáng kể,</span>
+        <span class="english 62"> particularly for individuals in higher tax brackets.</span> <span
+            class="viet 62 hide"> đặc biệt đối với những cá nhân ở mức thuế suất cao hơn.</span>
+    </p>
+    <p><span class="english 63"> For example,</span> <span class="viet 63 hide"> Ví dụ,</span>
+        <span class="english 64"> a taxpayer with a marginal tax rate of 40% who claims $10,000 in deductions can reduce
+            their tax liability by $4,000.</span> <span class="viet 64 hide"> người nộp thuế có tỷ lệ thuế biên là 40%
+            yêu cầu Khoản khấu trừ 10.000 đô la có thể giảm nghĩa vụ thuế của họ xuống 4.000 đô la.</span>
+        <span class="english 65"> This highlights the importance of understanding and utilizing all available
+            deductions.</span> <span class="viet 65 hide"> Điều này nhấn mạnh tầm quan trọng của việc hiểu và sử dụng
+            tất cả các khoản khấu trừ có sẵn.</span>
+        <span class="english 66"> Proper documentation and accurate reporting are essential for ensuring that deductions
+            are accepted by the CRA and that taxpayers receive the maximum benefit.</span> <span class="viet 66 hide">
+            Việc lập hồ sơ phù hợp và báo cáo chính xác là điều cần thiết để đảm bảo rằng các khoản khấu trừ được CRA
+            chấp nhận và người nộp thuế nhận được lợi ích tối đa.</span>
+    </p>
+    <p><span class="english 67"> Deductions can also impact eligibility for various tax credits and benefits.</span>
+        <span class="viet 67 hide"> Các khoản khấu trừ cũng có thể ảnh hưởng đến điều kiện đủ để được hưởng các khoản
+            tín dụng và phúc lợi thuế khác nhau.</span>
+        <span class="english 68"> Lowering taxable income through deductions can increase eligibility for income-tested
+            credits and benefits,</span> <span class="viet 68 hide"> Việc giảm thu nhập chịu thuế thông qua các khoản
+            khấu trừ có thể làm tăng điều kiện đủ để được hưởng các khoản tín dụng và phúc lợi được kiểm tra theo thu
+            nhập,</span>
+        <span class="english 69"> such as the Canada Child Benefit (CCB) and the GST/HST credit.</span> <span
+            class="viet 69 hide"> chẳng hạn như Trợ cấp trẻ em Canada (CCB) và tín dụng GST/HST.</span>
+        <span class="english 70"> By reducing overall tax liability,</span> <span class="viet 70 hide"> Bằng cách giảm
+            nghĩa vụ thuế chung,</span>
+        <span class="english 71"> deductions help taxpayers optimize their financial situation and ensure they receive
+            all entitled benefits.</span> <span class="viet 71 hide"> các khoản khấu trừ giúp người nộp thuế tối ưu hóa
+            tình hình tài chính của họ và đảm bảo họ nhận được tất cả các quyền lợi được hưởng.</span>
+    </p>
+    <h3><span class="english 73">Detailed Analysis of Key Deductions Registered Retirement Savings Plan (RRSP)</span>
+        <span class="viet 73 hide">Phân tích chi tiết về các khoản khấu trừ chính của Kế hoạch tiết kiệm hưu trí đã đăng
+            ký (RRSP)</span>
+    </h3>
+    <p><span class="english 74"> Contributions contributing to a Registered Retirement Savings Plan (RRSP) is one of the
+            most effective ways to reduce taxable income and save for retirement.</span> <span class="viet 74 hide"> Các
+            khoản đóng góp vào Kế hoạch tiết kiệm hưu trí đã đăng ký (RRSP) là một trong những cách hiệu quả nhất để
+            giảm thu nhập chịu thuế và tiết kiệm cho việc nghỉ hưu.</span>
+        <span class="english 75"> RRSP contributions are tax-deductible,</span> <span class="viet 75 hide"> Các khoản
+            đóng góp vào RRSP được khấu trừ thuế,</span>
+        <span class="english 76"> meaning they can be deducted from total income to reduce the overall tax
+            liability.</span> <span class="viet 76 hide"> nghĩa là chúng có thể được khấu trừ khỏi tổng thu nhập để giảm
+            nghĩa vụ thuế chung.</span>
+        <span class="english 77"> The contributions grow tax-deferred until they are withdrawn,</span> <span
+            class="viet 77 hide"> Các khoản đóng góp tăng trưởng được hoãn thuế cho đến khi chúng được rút ra,</span>
+        <span class="english 78"> at which point they are taxed as income.</span> <span class="viet 78 hide"> tại thời
+            điểm đó chúng được đánh thuế như thu nhập.</span>
+    </p>
+    <p><span class="english 79"> The contribution limit for RRSPs is determined by the individual's earned income from
+            the previous year and any unused contribution room carried forward.</span> <span class="viet 79 hide"> Giới
+            hạn đóng góp cho RRSP được xác định bởi thu nhập kiếm được của cá nhân từ năm trước và bất kỳ khoản đóng góp
+            chưa sử dụng nào được chuyển tiếp.</span>
+        <span class="english 80"> The CRA provides a detailed breakdown of the contribution limit on the Notice of
+            Assessment.</span> <span class="viet 80 hide"> CRA cung cấp bảng phân tích chi tiết về giới hạn đóng góp
+            trên Thông báo đánh giá.</span>
+        <span class="english 81"> Taxpayers should ensure they do not exceed their contribution limit to avoid
+            penalties.</span> <span class="viet 81 hide"> Người nộp thuế phải đảm bảo rằng họ không vượt quá giới hạn
+            đóng góp của mình để tránh bị phạt.</span>
+    </p>
+    <p><span class="english 82"> When claiming RRSP contributions on the tax return,</span> <span class="viet 82 hide">
+            Khi yêu cầu đóng góp RRSP trên tờ khai thuế,</span>
+        <span class="english 83"> taxpayers should include the total contributions made during the tax year and any
+            contributions made in the first 60 days of the following year.</span> <span class="viet 83 hide"> người nộp
+            thuế phải bao gồm tổng số đóng góp đã thực hiện trong năm thuế và bất kỳ đóng góp nào đã thực hiện trong 60
+            ngày đầu tiên của năm sau.</span>
+        <span class="english 84"> These contributions can be reported on Schedule 7 (RRSP,</span> <span
+            class="viet 84 hide"> Những đóng góp này có thể được báo cáo trên Biểu 7 (RRSP,</span>
+        <span class="english 85"> PRPP,</span> <span class="viet 85 hide"> PRPP,</span>
+        <span class="english 86"> and SPP Unused Contributions,</span> <span class="viet 86 hide"> và Đóng góp chưa sử
+            dụng của SPP,</span>
+        <span class="english 87"> Transfers,</span> <span class="viet 87 hide"> Chuyển nhượng,</span>
+        <span class="english 88"> and HBP or LLP Activities) and deducted on line 20800 of the T1 General form.</span>
+        <span class="viet 88 hide"> và Hoạt động HBP hoặc LLP) và được khấu trừ trên dòng 20800 của biểu mẫu T1
+            General.</span>
+    </p>
+    <h3><span class="english 90">Childcare Expenses</span> <span class="viet 90 hide">Chi phí chăm sóc trẻ em</span>
+    </h3>
+    <p><span class="english 91"> Childcare expenses are a significant deduction for families with young children,</span>
+        <span class="viet 91 hide"> Chi phí chăm sóc trẻ em là khoản khấu trừ đáng kể đối với các gia đình có trẻ
+            nhỏ,</span>
+        <span class="english 92"> helping to reduce the overall tax burden.</span> <span class="viet 92 hide"> giúp giảm
+            gánh nặng thuế chung.</span>
+        <span class="english 93"> Eligible childcare expenses include payments for daycare,</span> <span
+            class="viet 93 hide"> Chi phí chăm sóc trẻ em đủ điều kiện bao gồm các khoản thanh toán cho dịch vụ chăm sóc
+            ban ngày,</span>
+        <span class="english 94"> nursery school,</span> <span class="viet 94 hide"> trường mẫu giáo,</span>
+        <span class="english 95"> after-school programs,</span> <span class="viet 95 hide"> chương trình sau giờ
+            học,</span>
+        <span class="english 96"> and caregivers.</span> <span class="viet 96 hide"> và người chăm sóc.</span>
+        <span class="english 97"> To qualify for the deduction,</span> <span class="viet 97 hide"> Để đủ điều kiện được
+            khấu trừ,</span>
+        <span class="english 98"> the expenses must be incurred to enable the taxpayer or their spouse to work,</span>
+        <span class="viet 98 hide"> các khoản chi phí phải được chi trả để người nộp thuế hoặc vợ/chồng của họ có thể đi
+            làm,</span>
+        <span class="english 99"> attend school,</span> <span class="viet 99 hide"> tham dự trường học,</span>
+        <span class="english 100"> or engage in employment-related activities.</span> <span class="viet 100 hide"> hoặc
+            tham gia vào các hoạt động liên quan đến việc làm.</span>
+    </p>
+    <p><span class="english 101"> The deduction for childcare expenses is claimed on line 21400 (Childcare Expenses) of
+            the T1 General form.</span> <span class="viet 101 hide"> Khoản khấu trừ cho chi phí chăm sóc trẻ em được yêu
+            cầu trên dòng 21400 (Chi phí chăm sóc trẻ em) của biểu mẫu T1 General.</span>
+        <span class="english 102"> The amount that can be claimed is subject to limits based on the child's age and the
+            taxpayer's income.</span> <span class="viet 102 hide"> Số tiền có thể yêu cầu phải tuân theo các giới hạn
+            dựa trên độ tuổi của trẻ và thu nhập của người nộp thuế.</span>
+        <span class="english 103"> For example,</span> <span class="viet 103 hide"> Ví dụ,</span>
+        <span class="english 104"> the maximum claimable amount is higher for children under the age of seven compared
+            to older children.</span> <span class="viet 104 hide"> số tiền yêu cầu tối đa cao hơn đối với trẻ em dưới
+            bảy tuổi so với trẻ lớn hơn.</span>
+        <span class="english 105"> Proper documentation,</span> <span class="viet 105 hide"> Tài liệu phù hợp,</span>
+        <span class="english 106"> such as receipts and invoices from the childcare provider,</span> <span
+            class="viet 106 hide"> chẳng hạn như biên lai và hóa đơn từ nhà cung cấp dịch vụ chăm sóc trẻ em,</span>
+        <span class="english 107"> is essential for substantiating the claim.</span> <span class="viet 107 hide"> là
+            điều cần thiết để chứng minh cho yêu cầu bồi thường.</span>
+    </p>
+    <p><span class="english 108"> Taxpayers should ensure that all childcare expenses are accurately reported and that
+            the documentation is retained for veriﬁcation purposes.</span> <span class="viet 108 hide"> Người nộp thuế
+            phải đảm bảo rằng tất cả các chi phí chăm sóc trẻ em được báo cáo chính xác và tài liệu được lưu giữ để xác
+            minh.</span>
+        <span class="english 109"> In the event of a CRA review or audit,</span> <span class="viet 109 hide"> Trong
+            trường hợp CRA xem xét hoặc kiểm toán,</span>
+        <span class="english 110"> providing detailed records of the expenses will help validate the claim and ensure
+            that the deduction is accepted.</span> <span class="viet 110 hide"> cung cấp hồ sơ chi tiết về các khoản chi
+            phí sẽ giúp xác thực yêu cầu bồi thường và đảm bảo rằng khoản khấu trừ được chấp nhận.</span>
+        <span class="english 111"> Properly claiming childcare expenses can lead to significant tax savings for
+            families.</span> <span class="viet 111 hide"> Việc yêu cầu bồi thường chi phí chăm sóc trẻ em đúng cách có
+            thể giúp các gia đình tiết kiệm đáng kể tiền thuế.</span>
+    </p>
+    <h3><span class="english 113">Moving Expenses</span> <span class="viet 113 hide">Chi phí chuyển nhà</span></h3>
+    <p><span class="english 114"> Moving expenses can be deducted if the move is related to starting a new job,</span>
+        <span class="viet 114 hide"> Chi phí chuyển nhà có thể được khấu trừ nếu việc chuyển nhà liên quan đến việc bắt
+            đầu một công việc mới,</span>
+        <span class="english 115"> running a business at a new location,</span> <span class="viet 115 hide"> điều hành
+            một doanh nghiệp tại một địa điểm mới,</span>
+        <span class="english 116"> or attending a post-secondary institution fulltime.</span> <span
+            class="viet 116 hide"> hoặc theo học toàn thời gian tại một cơ sở giáo dục sau trung học.</span>
+        <span class="english 117"> The new home must be at least 40 kilometers closer to the new work or school location
+            than the old home.</span> <span class="viet 117 hide"> Ngôi nhà mới phải cách nơi làm việc hoặc trường học
+            mới ít nhất 40 km so với ngôi nhà cũ.</span>
+        <span class="english 118"> Eligible moving expenses include transportation and storage costs,</span> <span
+            class="viet 118 hide"> Chi phí chuyển nhà đủ điều kiện bao gồm chi phí vận chuyển và lưu trữ,</span>
+        <span class="english 119"> travel expenses,</span> <span class="viet 119 hide"> chi phí đi lại,</span>
+        <span class="english 120"> temporary living expenses,</span> <span class="viet 120 hide"> chi phí sinh hoạt tạm
+            thời,</span>
+        <span class="english 121"> and costs associated with selling or purchasing a home.</span> <span
+            class="viet 121 hide"> và các chi phí liên quan đến việc bán hoặc mua nhà.</span>
+    </p>
+    <p><span class="english 122"> The deduction for moving expenses is claimed on line 21900 (Moving Expenses) of the T1
+            General form.</span> <span class="viet 122 hide"> Khoản khấu trừ cho chi phí chuyển nhà được yêu cầu trên
+            dòng 21900 (Chi phí chuyển nhà) của biểu mẫu T1 General.</span>
+        <span class="english 123"> Taxpayers must complete Form T1-M (Moving Expenses Deduction) to calculate the
+            eligible expenses and determine the amount that can be claimed.</span> <span class="viet 123 hide"> Người
+            nộp thuế phải điền vào Biểu mẫu T1-M (Trừ chi phí chuyển nhà) để tính toán các chi phí đủ điều kiện và xác
+            định số tiền có thể được yêu cầu.</span>
+        <span class="english 124"> Proper documentation,</span> <span class="viet 124 hide"> Tài liệu phù hợp,</span>
+        <span class="english 125"> such as receipts,</span> <span class="viet 125 hide"> chẳng hạn như biên lai,</span>
+        <span class="english 126"> invoices,</span> <span class="viet 126 hide"> hóa đơn,</span>
+        <span class="english 127"> and travel logs,</span> <span class="viet 127 hide"> và nhật ký đi lại,</span>
+        <span class="english 128"> is essential for substantiating the claim.</span> <span class="viet 128 hide"> là
+            điều cần thiết để chứng minh yêu cầu.</span>
+    </p>
+    <p><span class="english 129"> Taxpayers should ensure that all moving expenses are accurately reported and that the
+            documentation is retained for veriﬁcation purposes.</span> <span class="viet 129 hide"> Người nộp thuế phải
+            đảm bảo rằng tất cả các chi phí di chuyển được báo cáo chính xác và tài liệu được lưu giữ để xác minh mục
+            đích.</span>
+        <span class="english 130"> In the event of a CRA review or audit,</span> <span class="viet 130 hide"> Trong
+            trường hợp CRA xem xét hoặc kiểm toán,</span>
+        <span class="english 131"> providing detailed records of the expenses will help validate the claim and ensure
+            that the deduction is accepted.</span> <span class="viet 131 hide"> cung cấp hồ sơ chi tiết về các khoản chi
+            phí sẽ giúp xác thực yêu cầu và đảm bảo rằng khoản khấu trừ được được chấp nhận.</span>
+        <span class="english 132"> Properly claiming moving expenses can lead to significant tax savings for individuals
+            and families relocating for work or education.</span> <span class="viet 132 hide"> Việc khai báo đúng chi
+            phí chuyển nhà có thể giúp tiết kiệm đáng kể thuế cho các cá nhân và gia đình chuyển đi làm việc hoặc học
+            tập.</span>
+    </p>
+    <h3><span class="english 134">Union and Professional Dues</span> <span class="viet 134 hide">Phí công đoàn và hội
+            viên chuyên nghiệp</span></h3>
+    <p><span class="english 135"> Union and professional dues are eligible for tax deductions,</span> <span
+            class="viet 135 hide"> Phí công đoàn và hội viên chuyên nghiệp đủ điều kiện để được khấu trừ thuế,</span>
+        <span class="english 136"> helping to reduce taxable income for individuals who are members of unions or
+            professional organizations.</span> <span class="viet 136 hide"> giúp giảm thu nhập chịu thuế cho các cá nhân
+            là thành viên của công đoàn hoặc tổ chức chuyên nghiệp.</span>
+        <span class="english 137"> Eligible dues include membership fees paid to unions,</span> <span
+            class="viet 137 hide"> Phí đủ điều kiện bao gồm phí thành viên trả cho công đoàn,</span>
+        <span class="english 138"> professional associations,</span> <span class="viet 138 hide"> hiệp hội chuyên
+            nghiệp,</span>
+        <span class="english 139"> and regulatory bodies.</span> <span class="viet 139 hide"> và các cơ quan quản
+            lý.</span>
+        <span class="english 140"> These fees are often required for maintaining professional certifications and
+            accessing industry resources.</span> <span class="viet 140 hide"> Các khoản phí này thường được yêu cầu để
+            duy trì chứng chỉ chuyên môn và tiếp cận các nguồn lực trong ngành.</span>
+    </p>
+    <p><span class="english 141"> The deduction for union and professional dues is claimed on line 21200 (Annual
+            Union,</span> <span class="viet 141 hide"> Khoản khấu trừ cho phí công đoàn và hội viên chuyên nghiệp được
+            yêu cầu trên dòng 21200 (Công đoàn hàng năm,</span>
+        <span class="english 142"> Professional,</span> <span class="viet 142 hide"> Chuyên nghiệp,</span>
+        <span class="english 143"> or Like Dues) of the T1 General form.</span> <span class="viet 143 hide"> hoặc Phí
+            tương tự) của Biểu mẫu chung T1.</span>
+        <span class="english 144"> Taxpayers should ensure that they have documentation,</span> <span
+            class="viet 144 hide"> Người nộp thuế phải đảm bảo rằng họ có tài liệu,</span>
+        <span class="english 145"> such as receipts or statements from the union or professional organization,</span>
+        <span class="viet 145 hide"> chẳng hạn như biên lai hoặc báo cáo từ công đoàn hoặc tổ chức chuyên nghiệp,</span>
+        <span class="english 146"> to support their claim.</span> <span class="viet 146 hide"> để hỗ trợ cho yêu cầu của
+            họ.</span>
+        <span class="english 147"> Properly reporting these dues ensures that taxpayers receive the maximum benefit from
+            the deduction.</span> <span class="viet 147 hide"> Việc báo cáo đúng các khoản phí này đảm bảo rằng người
+            nộp thuế nhận được lợi ích tối đa từ khoản khấu trừ.</span>
+    </p>
+    <p><span class="english 148"> Taxpayers should keep detailed records of all union and professional dues paid during
+            the tax year.</span> <span class="viet 148 hide"> Người nộp thuế phải lưu giữ hồ sơ chi tiết về tất cả các
+            khoản phí công đoàn và chuyên nghiệp đã thanh toán trong năm thuế.</span>
+        <span class="english 149"> In the event of a CRA review or audit,</span> <span class="viet 149 hide"> Trong
+            trường hợp CRA xem xét hoặc kiểm toán,</span>
+        <span class="english 150"> providing documentation of the dues will help validate the claim and ensure that the
+            deduction is accepted.</span> <span class="viet 150 hide"> cung cấp tài liệu về khoản phí sẽ giúp xác thực
+            yêu cầu bồi thường và đảm bảo rằng khoản khấu trừ được chấp nhận.</span>
+        <span class="english 151"> Properly claiming union and professional dues can lead to significant tax savings for
+            individuals in various professions.</span> <span class="viet 151 hide"> Việc yêu cầu bồi thường đúng mức phí
+            công đoàn và phí chuyên môn có thể giúp tiết kiệm đáng kể thuế cho các cá nhân trong nhiều ngành nghề khác
+            nhau.</span>
+    </p>
+    <h3><span class="english 153">Overview of Tax Credits Non-Refundable vs. Refundable Tax Credits</span> <span
+            class="viet 153 hide">Tổng quan về Tín dụng thuế Tín dụng thuế không hoàn lại so với Tín dụng thuế hoàn
+            lại</span></h3>
+    <p><span class="english 154"> Tax credits are a valuable tool for reducing tax liability,</span> <span
+            class="viet 154 hide"> Tín dụng thuế là một công cụ hữu ích để giảm nghĩa vụ thuế,</span>
+        <span class="english 155"> but it is important to understand the difference between non-refundable and
+            refundable tax credits.</span> <span class="viet 155 hide"> nhưng điều quan trọng là phải hiểu được sự khác
+            biệt giữa tín dụng thuế không hoàn lại và tín dụng thuế hoàn lại.</span>
+        <span class="english 156"> Non-refundable tax credits can only reduce the tax payable to zero,</span> <span
+            class="viet 156 hide"> Tín dụng thuế không hoàn lại chỉ có thể giảm số tiền thuế phải nộp xuống bằng
+            0,</span>
+        <span class="english 157"> meaning they do not result in a refund if they exceed the tax liability.</span> <span
+            class="viet 157 hide"> nghĩa là chúng không dẫn đến việc hoàn lại tiền nếu vượt quá nghĩa vụ thuế.</span>
+        <span class="english 158"> Examples of nonrefundable tax credits include the basic personal amount,</span> <span
+            class="viet 158 hide"> Ví dụ về tín dụng thuế không hoàn lại tín dụng thuế bao gồm số tiền cá nhân cơ
+            bản,</span>
+        <span class="english 159"> charitable donation tax credit,</span> <span class="viet 159 hide"> tín dụng thuế
+            quyên góp từ thiện,</span>
+        <span class="english 160"> and tuition tax credit.</span> <span class="viet 160 hide"> và tín dụng thuế học
+            phí.</span>
+    </p>
+    <p><span class="english 161"> Refundable tax credits,</span> <span class="viet 161 hide"> Tín dụng thuế có thể hoàn
+            lại,</span>
+        <span class="english 162"> on the other hand,</span> <span class="viet 162 hide"> mặt khác,</span>
+        <span class="english 163"> can result in a refund if they exceed the tax payable.</span> <span
+            class="viet 163 hide"> có thể dẫn đến việc hoàn lại nếu chúng vượt quá số thuế phải nộp.</span>
+        <span class="english 164"> This means that even if a taxpayer has no tax liability,</span> <span
+            class="viet 164 hide"> Điều này có nghĩa là ngay cả khi người nộp thuế không có nghĩa vụ thuế,</span>
+        <span class="english 165"> they can still receive the full amount of the credit as a refund.</span> <span
+            class="viet 165 hide"> họ vẫn có thể nhận được toàn bộ số tiền tín dụng dưới dạng hoàn lại.</span>
+        <span class="english 166"> Examples of refundable tax credits include the GST/HST credit,</span> <span
+            class="viet 166 hide"> Ví dụ về tín dụng thuế có thể hoàn lại bao gồm tín dụng GST/HST,</span>
+        <span class="english 167"> Canada Child Benefit (CCB),</span> <span class="viet 167 hide"> Trợ cấp trẻ em Canada
+            (CCB),</span>
+        <span class="english 168"> and the working income tax benefit (WITB).</span> <span class="viet 168 hide"> và trợ
+            cấp thuế thu nhập lao động (WITB).</span>
+        <span class="english 169"> Understanding the distinction between non-refundable and refundable credits is
+            crucial for maximizing tax savings.</span> <span class="viet 169 hide"> Việc hiểu được sự khác biệt giữa
+            khoản tín dụng không hoàn lại và khoản tín dụng hoàn lại là rất quan trọng để tối đa hóa khoản tiết kiệm
+            thuế.</span>
+    </p>
+    <p><span class="english 170"> Taxpayers should review their eligibility for both types of credits and ensure that
+            they claim all available credits on their tax return.</span> <span class="viet 170 hide"> Người nộp thuế nên
+            xem xét tính đủ điều kiện của mình đối với cả hai loại tín dụng và đảm bảo rằng họ yêu cầu tất cả các khoản
+            tín dụng khả dụng trên tờ khai thuế của mình.</span>
+        <span class="english 171"> Proper documentation and accurate reporting are essential for ensuring that credits
+            are accepted by the CRA and that taxpayers receive the maximum benefit.</span> <span class="viet 171 hide">
+            Việc lập hồ sơ phù hợp và báo cáo chính xác là điều cần thiết để đảm bảo rằng các khoản tín dụng được CRA
+            chấp nhận và người nộp thuế nhận được lợi ích tối đa.</span>
+        <span class="english 172"> By strategically claiming non-refundable and refundable credits,</span> <span
+            class="viet 172 hide"> Bằng cách yêu cầu các khoản tín dụng không hoàn lại và hoàn lại một cách chiến
+            lược,</span>
+        <span class="english 173"> taxpayers can significantly reduce their overall tax liability.</span> <span
+            class="viet 173 hide"> người nộp thuế có thể giảm đáng kể nghĩa vụ thuế chung của mình.</span>
+    </p>
+    <h3><span class="english 175">Common Credits Available to Canadian Taxpayers</span> <span class="viet 175 hide">Các
+            khoản tín dụng chung dành cho người nộp thuế Canada</span></h3>
+    <p><span class="english 176"> Canadian taxpayers have access to a variety of tax credits that can help reduce their
+            overall tax liability.</span> <span class="viet 176 hide"> Người nộp thuế Canada có quyền tiếp cận nhiều
+            khoản tín dụng thuế khác nhau có thể giúp giảm nghĩa vụ thuế chung của họ.</span>
+        <span class="english 177"> Some of the most common credits include the basic personal amount,</span> <span
+            class="viet 177 hide"> Một số khoản tín dụng phổ biến nhất bao gồm số tiền cá nhân cơ bản,</span>
+        <span class="english 178"> Canada Child Benefit (CCB),</span> <span class="viet 178 hide"> Trợ cấp trẻ em Canada
+            (CCB),</span>
+        <span class="english 179"> GST/HST credit,</span> <span class="viet 179 hide"> Tín dụng GST/HST,</span>
+        <span class="english 180"> and tuition tax credit.</span> <span class="viet 180 hide"> và tín dụng thuế học
+            phí.</span>
+        <span class="english 181"> Each of these credits has speciﬁc eligibility criteria and reporting
+            requirements,</span> <span class="viet 181 hide"> Mỗi khoản tín dụng này đều có tiêu chí đủ điều kiện và yêu
+            cầu báo cáo cụ thể,</span>
+        <span class="english 182"> which taxpayers must adhere to in order to claim them.</span> <span
+            class="viet 182 hide"> mà người nộp thuế phải tuân thủ để yêu cầu chúng.</span>
+    </p>
+    <p><span class="english 183"> The basic personal amount is a non-refundable tax credit that all Canadian taxpayers
+            can claim.</span> <span class="viet 183 hide"> Số tiền cá nhân cơ bản là khoản tín dụng thuế không hoàn lại
+            mà tất cả người nộp thuế Canada đều có thể yêu cầu.</span>
+        <span class="english 184"> It represents a basic level of income that is exempt from tax,</span> <span
+            class="viet 184 hide"> Khoản này đại diện cho mức thu nhập cơ bản được miễn thuế,</span>
+        <span class="english 185"> reducing the overall tax payable.</span> <span class="viet 185 hide"> giảm tổng số
+            thuế phải nộp.</span>
+        <span class="english 186"> The amount is adjusted annually to account for inflation and changes in the cost of
+            living.</span> <span class="viet 186 hide"> Số tiền này được điều chỉnh hàng năm để tính đến lạm phát và
+            những thay đổi về chi phí sinh hoạt.</span>
+        <span class="english 187"> Properly claiming the basic personal amount ensures that taxpayers receive the full
+            benefit of this essential credit.</span> <span class="viet 187 hide"> Việc yêu cầu đúng số tiền cá nhân cơ
+            bản đảm bảo rằng người nộp thuế nhận được toàn bộ lợi ích của khoản tín dụng thiết yếu này.</span>
+    </p>
+    <p><span class="english 188"> The Canada Child Benefit (CCB) is a refundable tax credit that provides financial
+            assistance to families with children under the age of 18.</span> <span class="viet 188 hide"> Trợ cấp trẻ em
+            Canada (CCB) là khoản tín dụng thuế hoàn lại cung cấp hỗ trợ tài chính cho các gia đình có con dưới 18
+            tuổi.</span>
+        <span class="english 189"> The amount of the benefit is based on the family's income and the number of
+            children.</span> <span class="viet 189 hide"> Số tiền trợ cấp dựa trên thu nhập của gia đình và số lượng trẻ
+            em.</span>
+        <span class="english 190"> The CCB is intended to help with the cost of raising children and is paid monthly to
+            eligible families.</span> <span class="viet 190 hide"> CCB nhằm mục đích hỗ trợ chi phí nuôi dạy trẻ em và
+            được trả hàng tháng cho các gia đình đủ điều kiện.</span>
+        <span class="english 191"> Properly reporting income and updating family information with the CRA ensures that
+            families receive the correct amount of the CCB.</span> <span class="viet 191 hide"> Báo cáo thu nhập đúng
+            cách và cập nhật thông tin gia đình với CRA đảm bảo rằng các gia đình nhận được số tiền CCB chính
+            xác.</span>
+    </p>
+    <h3><span class="english 193">How Credits Are Applied to Reduce Tax Liability</span> <span
+            class="viet 193 hide">Cách áp dụng khoản tín dụng để giảm nghĩa vụ thuế</span></h3>
+    <p><span class="english 194"> Tax credits are applied to reduce the overall tax liability,</span> <span
+            class="viet 194 hide"> Khoản tín dụng thuế được áp dụng để giảm nghĩa vụ thuế chung,</span>
+        <span class="english 195"> either by lowering the tax payable or providing a direct refund.</span> <span
+            class="viet 195 hide"> bằng cách giảm số tiền thuế phải nộp hoặc hoàn lại trực tiếp.</span>
+        <span class="english 196"> Non-refundable tax credits are subtracted from the tax payable,</span> <span
+            class="viet 196 hide"> Khoản tín dụng thuế không được hoàn lại được trừ vào số tiền thuế phải nộp,</span>
+        <span class="english 197"> reducing the amount owed to zero if the credits exceed the tax liability.</span>
+        <span class="viet 197 hide"> giảm số tiền nợ xuống 0 nếu khoản tín dụng vượt quá nghĩa vụ thuế.</span>
+        <span class="english 198"> Refundable tax credits are paid out as refunds if they exceed the tax payable,</span>
+        <span class="viet 198 hide"> Khoản tín dụng thuế hoàn lại được trả dưới dạng khoản hoàn lại nếu vượt quá số thuế
+            phải nộp,</span>
+        <span class="english 199"> providing financial assistance to taxpayers with low or no tax liability.</span>
+        <span class="viet 199 hide"> cung cấp hỗ trợ tài chính cho người nộp thuế có nghĩa vụ thuế thấp hoặc không có
+            nghĩa vụ thuế.</span>
+    </p>
+    <p><span class="english 200"> The basic personal amount is a non-refundable tax credit that all Canadian taxpayers
+            can claim.</span> <span class="viet 200 hide"> Khoản tiền cá nhân cơ bản là khoản tín dụng thuế không hoàn
+            lại mà tất cả người nộp thuế Canada đều có thể yêu cầu.</span>
+        <span class="english 201"> It represents a basic level of income that is exempt from tax,</span> <span
+            class="viet 201 hide"> Khoản này đại diện cho mức thu nhập cơ bản được miễn thuế,</span>
+        <span class="english 202"> reducing the overall tax payable.</span> <span class="viet 202 hide"> giảm tổng số
+            thuế phải nộp.</span>
+        <span class="english 203"> The amount is adjusted annually to account for inflation and changes in the cost of
+            living.</span> <span class="viet 203 hide"> Khoản tiền này được điều chỉnh hàng năm để tính đến lạm phát và
+            những thay đổi về chi phí sinh hoạt.</span>
+        <span class="english 204"> Properly claiming the basic personal amount ensures that taxpayers receive the full
+            benefit of this essential credit.</span> <span class="viet 204 hide"> Việc yêu cầu đúng số tiền cá nhân cơ
+            bản đảm bảo rằng người nộp thuế nhận được toàn bộ lợi ích của khoản tín dụng thiết yếu này.</span>
+    </p>
+    <p><span class="english 205"> Taxpayers should review their eligibility for both types of credits and ensure that
+            they claim all available credits on their tax return.</span> <span class="viet 205 hide"> Người nộp thuế nên
+            xem xét lại đủ điều kiện cho cả hai loại tín dụng và đảm bảo rằng họ yêu cầu tất cả các khoản tín dụng có
+            sẵn trên tờ khai thuế của mình.</span>
+        <span class="english 206"> Proper documentation and accurate reporting are essential for ensuring that credits
+            are accepted by the CRA and that taxpayers receive the maximum benefit.</span> <span class="viet 206 hide">
+            Việc lập hồ sơ phù hợp và báo cáo chính xác là điều cần thiết để đảm bảo rằng các khoản tín dụng được CRA
+            chấp nhận và người nộp thuế nhận được lợi ích tối đa.</span>
+        <span class="english 207"> By strategically claiming non-refundable and refundable credits,</span> <span
+            class="viet 207 hide"> Bằng cách yêu cầu các khoản tín dụng không hoàn lại và hoàn lại một cách chiến
+            lược,</span>
+        <span class="english 208"> taxpayers can significantly reduce their overall tax liability.</span> <span
+            class="viet 208 hide"> người nộp thuế có thể giảm đáng kể nghĩa vụ thuế chung của mình.</span>
+    </p>
+    <h3><span class="english 210">Detailed Analysis of Key Credits Basic Personal Amount</span> <span
+            class="viet 210 hide">Phân tích chi tiết về các khoản tín dụng chính Số tiền cá nhân cơ bản</span></h3>
+    <p><span class="english 211"> The basic personal amount is a fundamental non-refundable tax credit available to all
+            Canadian taxpayers.</span> <span class="viet 211 hide"> Số tiền cá nhân cơ bản là khoản tín dụng thuế cơ bản
+            không hoàn lại dành cho tất cả người nộp thuế Canada.</span>
+        <span class="english 212"> It represents a basic level of income that is exempt from tax,</span> <span
+            class="viet 212 hide"> Đây là mức thu nhập cơ bản được miễn thuế,</span>
+        <span class="english 213"> reducing the overall tax payable.</span> <span class="viet 213 hide"> giảm tổng số
+            thuế phải nộp.</span>
+        <span class="english 214"> The basic personal amount is adjusted annually to account for inflation and changes
+            in the cost of living,</span> <span class="viet 214 hide"> Số tiền cá nhân cơ bản được điều chỉnh hàng năm
+            để tính đến lạm phát và những thay đổi về chi phí sinh hoạt,</span>
+        <span class="english 215"> ensuring that it reflects current economic conditions.</span> <span
+            class="viet 215 hide"> đảm bảo phản ánh tình hình kinh tế hiện tại.</span>
+    </p>
+    <p><span class="english 216"> The basic personal amount is claimed on line 30000 (Basic Personal Amount) of the T1
+            General form.</span> <span class="viet 216 hide"> Số tiền cá nhân cơ bản được khai báo trên dòng 30000 (Số
+            tiền cá nhân cơ bản) của biểu mẫu T1 General.</span>
+        <span class="english 217"> For the 2021 tax year,</span> <span class="viet 217 hide"> Đối với năm thuế
+            2021,</span>
+        <span class="english 218"> the basic personal amount is $13,808,</span> <span class="viet 218 hide"> số tiền cá
+            nhân cơ bản là 13.808 đô la,</span>
+        <span class="english 219"> which means that the first $13,808 of an individual's income is not subject to
+            federal tax.</span> <span class="viet 219 hide"> có nghĩa là 13.808 đô la đầu tiên trong thu nhập của một cá
+            nhân không phải chịu thuế liên bang.</span>
+        <span class="english 220"> Provincial and territorial governments also have their own basic personal
+            amounts,</span> <span class="viet 220 hide"> Chính quyền tỉnh và vùng lãnh thổ cũng có số tiền cá nhân cơ
+            bản của riêng họ,</span>
+        <span class="english 221"> which vary by region.</span> <span class="viet 221 hide"> thay đổi tùy theo khu
+            vực.</span>
+    </p>
+    <p><span class="english 222"> Taxpayers should ensure that they claim the basic personal amount on their tax return
+            to receive the full benefit of this essential credit.</span> <span class="viet 222 hide"> Người nộp thuế
+            phải đảm bảo rằng họ khai báo số tiền cá nhân cơ bản trên tờ khai thuế của mình để nhận được toàn bộ lợi ích
+            của khoản tín dụng thiết yếu này.</span>
+        <span class="english 223"> Properly reporting the basic personal amount reduces the overall tax liability and
+            ensures compliance with tax laws.</span> <span class="viet 223 hide"> Việc báo cáo đúng số tiền cá nhân cơ
+            bản sẽ làm giảm nghĩa vụ thuế chung và đảm bảo tuân thủ luật thuế.</span>
+        <span class="english 224"> Understanding the basic personal amount and its impact on tax liability is crucial
+            for effective tax planning and financial management.</span> <span class="viet 224 hide"> Hiểu được số tiền
+            cá nhân cơ bản và tác động của nó đối với nghĩa vụ thuế là rất quan trọng đối với việc lập kế hoạch thuế
+            hiệu quả và quản lý tài chính.</span>
+    </p>
+    <h3><span class="english 226">Canada Child Benefit (CCB)</span> <span class="viet 226 hide">Trợ cấp trẻ em Canada
+            (CCB)</span></h3>
+    <p><span class="english 227"> The Canada Child Benefit (CCB) is a significant refundable tax credit that provides
+            financial assistance to families with children under the age of 18.</span> <span class="viet 227 hide"> Trợ
+            cấp trẻ em Canada (CCB) là khoản tín dụng thuế hoàn lại đáng kể cung cấp hỗ trợ tài chính cho các gia đình
+            có trẻ em dưới 18 tuổi.</span>
+        <span class="english 228"> The CCB is intended to help with the cost of raising children and is paid monthly to
+            eligible families.</span> <span class="viet 228 hide"> CCB nhằm mục đích hỗ trợ chi phí nuôi dạy trẻ em và
+            được trả hàng tháng cho các gia đình đủ điều kiện.</span>
+        <span class="english 229"> The amount of the benefit is based on the family's income,</span> <span
+            class="viet 229 hide"> Số tiền trợ cấp dựa trên thu nhập của gia đình,</span>
+        <span class="english 230"> the number of children,</span> <span class="viet 230 hide"> số lượng trẻ em,</span>
+        <span class="english 231"> and the ages of the children.</span> <span class="viet 231 hide"> và độ tuổi của trẻ
+            em.</span>
+    </p>
+    <p><span class="english 232"> To be eligible for the CCB,</span> <span class="viet 232 hide"> Để đủ điều kiện nhận
+            CCB,</span>
+        <span class="english 233"> families must file their tax returns and ensure that their income and family
+            information are accurately reported to the CRA.</span> <span class="viet 233 hide"> các gia đình phải nộp tờ
+            khai thuế và đảm bảo rằng thông tin về thu nhập và gia đình của họ được báo cáo chính xác cho CRA.</span>
+        <span class="english 234"> The CCB is calculated based on the information provided in the tax return,</span>
+        <span class="viet 234 hide"> CCB được tính toán dựa trên thông tin được cung cấp trong tờ khai thuế,</span>
+        <span class="english 235"> so it is essential to keep records updated and report any changes in family
+            status,</span> <span class="viet 235 hide"> vì vậy, điều cần thiết là phải cập nhật hồ sơ và báo cáo bất kỳ
+            thay đổi nào về tình trạng gia đình,</span>
+        <span class="english 236"> such as the birth of a child or a change in marital status.</span> <span
+            class="viet 236 hide"> chẳng hạn như sinh con hoặc thay đổi tình trạng hôn nhân.</span>
+    </p>
+    <p><span class="english 237"> The CCB is claimed on line 11700 (Canada Child Benefit) of the T1 General form.</span>
+        <span class="viet 237 hide"> CCB được yêu cầu trên dòng 11700 (Trợ cấp trẻ em Canada) của biểu mẫu T1
+            General.</span>
+        <span class="english 238"> The amount of the benefit is calculated using a complex formula that takes into
+            account the family's adjusted net income and the number of eligible children.</span> <span
+            class="viet 238 hide"> Số tiền trợ cấp được tính toán bằng công thức phức tạp có tính đến thu nhập ròng đã
+            điều chỉnh của gia đình và số lượng trẻ em đủ điều kiện.</span>
+        <span class="english 239"> Properly reporting income and updating family information with the CRA ensures that
+            families receive the correct amount of the CCB.</span> <span class="viet 239 hide"> Việc báo cáo thu nhập
+            đúng cách và cập nhật thông tin gia đình với CRA đảm bảo rằng các gia đình nhận được số tiền CCB chính
+            xác.</span>
+    </p>
+    <h3><span class="english 241">GST/HST Credit</span> <span class="viet 241 hide">Tín dụng GST/HST</span></h3>
+    <p><span class="english 242"> The GST/HST credit is a refundable tax credit designed to help low- and
+            moderate-income individuals and families offset the cost of the Goods and Services Tax (GST) and Harmonized
+            Sales Tax (HST).</span> <span class="viet 242 hide"> Tín dụng GST/HST là khoản tín dụng thuế hoàn lại được
+            thiết kế để giúp các cá nhân và gia đình có thu nhập thấp và trung bình bù đắp chi phí Thuế hàng hóa và dịch
+            vụ (GST) và Thuế bán hàng hài hòa (HST).</span>
+        <span class="english 243"> The credit is paid quarterly and is based on the individual's or family's net income
+            from the previous tax year.</span> <span class="viet 243 hide"> Khoản tín dụng này được trả theo quý và dựa
+            trên thu nhập ròng của cá nhân hoặc gia đình từ năm thuế trước.</span>
+        <span class="english 244"> The amount of the credit varies depending on the number of eligible individuals and
+            dependents in the household.</span> <span class="viet 244 hide"> Số tiền tín dụng thay đổi tùy thuộc vào số
+            lượng cá nhân và người phụ thuộc đủ điều kiện trong hộ gia đình.</span>
+    </p>
+    <p><span class="english 245"> To be eligible for the GST/HST credit,</span> <span class="viet 245 hide"> Để đủ điều
+            kiện nhận tín dụng GST/HST,</span>
+        <span class="english 246"> individuals must file their tax returns and ensure that their income and personal
+            information are accurately reported to the CRA.</span> <span class="viet 246 hide"> cá nhân phải nộp tờ khai
+            thuế và đảm bảo rằng thu nhập và thông tin cá nhân của họ được báo cáo chính xác cho CRA.</span>
+        <span class="english 247"> The credit is automatically calculated based on the information provided in the tax
+            return,</span> <span class="viet 247 hide"> Khoản tín dụng được tự động tính toán dựa trên thông tin được
+            cung cấp trong tờ khai thuế,</span>
+        <span class="english 248"> so it is essential to keep records updated and report any changes in family status or
+            income.</span> <span class="viet 248 hide"> vì vậy, điều cần thiết là phải cập nhật hồ sơ và báo cáo mọi
+            thay đổi về tình trạng gia đình hoặc thu nhập.</span>
+    </p>
+    <p><span class="english 249"> The GST/HST credit is claimed on line 45600 (Refundable GST/HST Credit) of the T1
+            General form.</span> <span class="viet 249 hide"> Khoản tín dụng GST/HST được yêu cầu trên dòng 45600 (Khoản
+            tín dụng GST/HST có thể hoàn lại) của biểu mẫu T1 General.</span>
+        <span class="english 250"> The amount of the credit is calculated using a formula that takes into account the
+            individual's or family's adjusted net income and the number of eligible dependents.</span> <span
+            class="viet 250 hide"> Số tiền tín dụng được tính bằng công thức có tính đến thu nhập ròng đã điều chỉnh của
+            cá nhân hoặc gia đình và số lượng người phụ thuộc đủ điều kiện.</span>
+        <span class="english 251"> Properly reporting income and updating personal information with the CRA ensures that
+            taxpayers receive the correct amount of the GST/HST credit.</span> <span class="viet 251 hide"> Việc báo cáo
+            thu nhập và cập nhật thông tin cá nhân đúng cách với CRA đảm bảo rằng người nộp thuế nhận được số tiền tín
+            dụng GST/HST chính xác.</span>
+    </p>
+    <h3><span class="english 253">Education and Tuition Credits</span> <span class="viet 253 hide">Giáo dục và học phí
+            Tín dụng</span></h3>
+    <p><span class="english 254"> Students enrolled in post-secondary education may be eligible for tax credits for
+            tuition fees and other education-related expenses.</span> <span class="viet 254 hide"> Sinh viên theo học
+            giáo dục sau trung học có thể đủ điều kiện được hưởng tín dụng thuế cho học phí và các chi phí liên quan đến
+            giáo dục khác.</span>
+        <span class="english 255"> These credits help reduce the overall tax liability and support the financial burden
+            of higher education.</span> <span class="viet 255 hide"> Các khoản tín dụng này giúp giảm nghĩa vụ thuế
+            chung và hỗ trợ gánh nặng tài chính cho giáo dục đại học.</span>
+        <span class="english 256"> The tuition tax credit is based on the amount of eligible tuition fees paid to a
+            recognized educational institution.</span> <span class="viet 256 hide"> Tín dụng thuế học phí dựa trên số
+            tiền học phí đủ điều kiện đã trả cho một tổ chức giáo dục được công nhận.</span>
+    </p>
+    <p><span class="english 257"> To claim the tuition tax credit,</span> <span class="viet 257 hide"> Để yêu cầu tín
+            dụng thuế học phí,</span>
+        <span class="english 258"> students must obtain a T2202 (Tuition and Enrolment Certificate) from their
+            educational institution.</span> <span class="viet 258 hide"> sinh viên phải xin T2202 (Giấy chứng nhận học
+            phí và ghi danh) từ tổ chức giáo dục của mình.</span>
+        <span class="english 259"> The T2202 form details the eligible tuition fees paid and the number of months the
+            student was enrolled in parttime or fulltime studies.</span> <span class="viet 259 hide"> Biểu mẫu T2202 nêu
+            chi tiết học phí đủ điều kiện đã trả và số tháng sinh viên theo học chương trình bán thời gian hoặc toàn
+            thời gian.</span>
+        <span class="english 260"> The tuition tax credit is claimed on line 32300 (Tuition,</span> <span
+            class="viet 260 hide"> Khoản tín dụng thuế học phí được yêu cầu trên dòng 32300 (Học phí,</span>
+        <span class="english 261"> Education,</span> <span class="viet 261 hide"> Giáo dục,</span>
+        <span class="english 262"> and Textbook Amounts) of the T1 General form.</span> <span class="viet 262 hide"> và
+            Số tiền sách giáo khoa) của biểu mẫu T1 General.</span>
+    </p>
+    <p><span class="english 263"> In addition to the tuition tax credit,</span> <span class="viet 263 hide"> Ngoài khoản
+            tín dụng thuế học phí,</span>
+        <span class="english 264"> students may be eligible for other education-related credits and deductions.</span>
+        <span class="viet 264 hide"> sinh viên có thể đủ điều kiện để được hưởng các khoản tín dụng và khấu trừ liên
+            quan đến giáo dục khác.</span>
+        <span class="english 265"> These include the Canada training credit,</span> <span class="viet 265 hide"> Bao gồm
+            khoản tín dụng đào tạo Canada,</span>
+        <span class="english 266"> interest paid on student loans,</span> <span class="viet 266 hide"> lãi suất trả cho
+            các khoản vay sinh viên,</span>
+        <span class="english 267"> and the eligible educator school supply tax credit.</span> <span
+            class="viet 267 hide"> và khoản tín dụng thuế cung cấp trường học đủ điều kiện cho nhà giáo dục.</span>
+        <span class="english 268"> Proper documentation and accurate reporting of education and tuition receipts are
+            essential for maximizing these credits and reducing the overall tax liability.</span> <span
+            class="viet 268 hide"> Việc lập hồ sơ phù hợp và báo cáo chính xác về biên lai giáo dục và học phí là điều
+            cần thiết để tối đa hóa các khoản tín dụng này và giảm tổng nghĩa vụ thuế.</span>
+    </p>
+
+    <a href="./Canadian_Tax_4.html">Next</a>
+    <script>
+        const allEnglishElement = document.querySelectorAll(".english");
+        const allVietElement = document.querySelectorAll(".viet");
+
+        allEnglishElement.forEach((item, index) => {
+            item.addEventListener("click", (event) => handleClick(event))
+        })
+
+        function handleClick(event) {
+            const index = Number(event.target.classList[1])
+            allVietElement.forEach(e => {
+                if (e.classList[1] === event.target.classList[1]) {
+                    e.classList.contains("hide")
+                        ? e.classList.remove("hide")
+                        : e.classList.add("hide")
+                }
+            })
+
+        }
+        const msg = new SpeechSynthesisUtterance();
+        let voice = [];
+        const speakButton = document.querySelector('#speak');
+        const stopButton = document.querySelector('#stop');
+        const dungButton = document.querySelector('#dung');
+        const docButton = document.querySelector('#doc');
+
+        function toggle_E(startOver = true) {
+            speechSynthesis.cancel();
+            if (startOver) {
+                arr_len = document.getElementsByClassName('english').length;
+                console.log(arr_len);
+                let txt1 = '';
+                for (let i = 0; i < arr_len; i++) {
+                    temp_txt = document.getElementsByClassName('english')[i].innerHTML;
+                    temp_txt = temp_txt.trim() + '.\n';
+                    console.log(temp_txt);
+                    txt1 += temp_txt;
+                }
+                arr1 = txt1.split('\n');
+                arr1 = arr1.map((e) => e.trim());
+                // arr1[0] += '.';
+                arr1 = arr1.join(' ');
+                console.log(arr1);
+                msg.text = arr1;
+
+                msg.lang = 'en-US';
+                speechSynthesis.speak(msg);
+            }
+        }
+
+        function toggle_V(startOver = true) {
+            speechSynthesis.cancel();
+            allVietElement.forEach(e => e.classList.remove("hide"))
+
+            if (startOver) {
+                arr_len = document.getElementsByClassName('viet').length;
+                console.log(arr_len);
+                let txt1 = '';
+                for (let i = 0; i < arr_len; i++) {
+                    temp_txt = document.getElementsByClassName('viet')[i].innerHTML;
+                    temp_txt = temp_txt.trim() + '.\n';
+                    console.log(temp_txt);
+                    txt1 += temp_txt;
+                }
+                arr1 = txt1.split('\n');
+                arr1 = arr1.map((e) => e.trim());
+                // arr1[0] += '.';
+                arr1 = arr1.join(' ');
+                console.log(arr1);
+                msg.text = arr1;
+
+                msg.lang = 'vi-VN';
+                speechSynthesis.speak(msg);
+            }
+        }
+
+        speakButton.addEventListener('click', toggle_E);
+        stopButton.addEventListener('click', toggle_E.bind(null, false));
+        docButton.addEventListener('click', toggle_V);
+        dungButton.addEventListener('click', toggle_V.bind(null, false));
+
+    </script>
+</body>
+
+</html>
