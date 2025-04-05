@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML 3</title>
+</head>
+<style>
+    * {
+        cursor: pointer;
+    }
+
+    .hide {
+        display: none
+    }
+
+    .viet {
+        background-color: yellow;
+    }
+
+    img {
+        width: 75%;
+    }
+</style>
+
+<body>
+    <div>
+        <div>
+            <button id="stop">Stop!</button>
+            <button id="speak">Speak</button>
+            <button id="Dung">Dừng</button>
+            <button id="Doc">Đọc</button>
+        </div>
+    </div>
+
+
+    <h2><span class="english 51">Matrices and Matrix Arithmetic for Machine Learning</span> <span
+            class="viet 51 hide">Ma trận và số học ma trận cho máy học</span></h2>
+    <p><span class="english 52"> https://www.geeksforgeeks.org/matrices-and-matrix-arithmetic-for-machine-learning/<br>
+            Last Updated :</span> <span class="viet 52 hide"> Cập nhật lần cuối:</span>
+        <span class="english 53"> 07 Aug,</span> <span class="viet 53 hide"> 07 tháng 8,</span>
+        <span class="english 54"> 2024</span> <span class="viet 54 hide"> 2024</span>
+    </p>
+    <p><span class="english 55"> In machine learning,</span> <span class="viet 55 hide"> Trong máy học,</span>
+        <span class="english 56"> the data often comes in multi-dimensional arrays so matrices are best to handle such
+            inputs.</span> <span class="viet 56 hide"> dữ liệu thường nằm trong các mảng đa chiều nên ma trận là tốt
+            nhất để xử lý các đầu vào như vậy.</span>
+        <span class="english 57"> So we need to have some general idea on basic arithmetic operations in
+            matrices.</span> <span class="viet 57 hide"> Vì vậy, chúng ta cần có một số ý tưởng chung về các phép toán
+            số học cơ bản trong ma trận.</span>
+        <span class="english 58"> In this article,</span> <span class="viet 58 hide"> Trong bài viết này,</span>
+        <span class="english 59"> we will discuss about matrices and matrix arithmetic for machine learning.</span>
+        <span class="viet 59 hide"> chúng ta sẽ thảo luận về ma trận và số học ma trận cho máy học.</span>
+    </p>
+    <h3><span class="english 61">What is a Matrix?</span> <span class="viet 61 hide">Ma trận là gì?</span></h3>
+    <p><span class="english 62"> Matrix is a two dimensional array where the data is in the form of rows and
+            columns.</span> <span class="viet 62 hide"> Ma trận là một mảng hai chiều, trong đó dữ liệu ở dạng hàng và
+            cột.</span>
+        <span class="english 63"> The each element in the matrix is represented as a[ i ][ j ] where i represents the
+            row number and j represents the column number.</span> <span class="viet 63 hide"> Mỗi phần tử trong ma trận
+            được biểu diễn dưới dạng a[ i ][ j ] trong đó i biểu diễn số hàng và j biểu diễn số cột.</span>
+        <span class="english 64"> Each matrix has an order representing the total number of rows (m) and columns ( n )
+            in the matrix and it is written as m X n.</span> <span class="viet 64 hide"> Mỗi ma trận có một thứ tự biểu
+            diễn tổng số hàng (m) và số cột (n) trong ma trận và được viết là m X n.</span>
+    </p>
+    <p><span class="english 66"> Defining a matrix:</span> <span class="viet 66 hide"> Định nghĩa ma trận:</span></p>
+    <p><span class="english 67"> In Python,</span> <span class="viet 67 hide"> Trong Python,</span>
+        <span class="english 68"> we use numpy module to define a matrix.</span> <span class="viet 68 hide"> chúng ta sử
+            dụng mô-đun numpy để định nghĩa ma trận.</span>
+        <span class="english 69"> As we discussed that matrices are two dimensional arrays,</span> <span
+            class="viet 69 hide"> Như chúng ta đã thảo luận, ma trận là ma trận hai chiều mảng,</span>
+        <span class="english 70"> let us create a two dimensional array (matrix) using numpy.array( ) method.</span>
+        <span class="viet 70 hide"> hãy tạo một mảng hai chiều (ma trận) bằng phương thức numpy.array( ).</span>
+    </p>
+    <pre class="english">#importing numpy module
+import numpy as np
+#defining a matrix using np.array() method
+matrix = np.array([[1,2,3],[4,5,6],[7,8,9]])
+#printing the matrix
+print(matrix)
+</pre>
+    <p><span class="english 72"> we can see that it is in the form of list of lists which is a two-dimensional array
+            having 3 rows and 3 columns.</span> <span class="viet 72 hide"> chúng ta có thể thấy rằng nó ở dạng list of
+            lists là một mảng hai chiều có 3 hàng và 3 cột.</span>
+        <span class="english 73"> The order of the above matrix is 3 X 3.</span> <span class="viet 73 hide"> Thứ tự của
+            ma trận trên là 3 X 3.</span>
+    </p>
+    <h3><span class="english 75">Matrix Arithmetic</span> <span class="viet 75 hide">Matrix Arithmetic</span></h3>
+    <p><span class="english 76"> Matrix Addition</span> <span class="viet 76 hide"> Phép cộng ma trận</span></p>
+    <p><span class="english 77"> Addition of matrices can only be done when the two matrices have the same order.</span>
+        <span class="viet 77 hide"> Phép cộng ma trận chỉ có thể thực hiện khi hai ma trận có cùng thứ tự.</span>
+        <span class="english 78"> It is done by using ( + ) operator which adds corresponding elements of the
+            matrices.</span> <span class="viet 78 hide"> Phép cộng được thực hiện bằng cách sử dụng toán tử (+) để cộng
+            các phần tử tương ứng của ma trận.</span>
+        <span class="english 79"> For example,</span> <span class="viet 79 hide"> Ví dụ,</span>
+        <span class="english 80"> if we have two matrices A and B then the a[i][j] is added with b[i][j] where i is row
+            number and j is column number.</span> <span class="viet 80 hide"> nếu chúng ta có hai ma trận A và B thì
+            a[i][j] được cộng với b[i][j] trong đó i là số hàng và j là số cột.</span>
+    </p>
+    <pre class="english">import numpy as np
+A = np.array([[1,2],[3,4]])
+B = np.array([[5,6],[7,8]])
+#adding A and B matrices
+C = A + B
+print(C)
+</pre>
+    <p><span class="english 82"> We can see that the corresponding elements are added and we get the final matrix with
+            the same order.</span> <span class="viet 82 hide"> Ta có thể thấy các phần tử tương ứng được thêm vào và ta
+            có được ma trận cuối cùng có cùng thứ tự.</span></p>
+    <h3><span class="english 84">Matrix Subtraction</span> <span class="viet 84 hide">Phép trừ ma trận</span></h3>
+    <p><span class="english 85"> Subtraction of matrices is possible when both the matrices have same order.</span>
+        <span class="viet 85 hide"> Phép trừ ma trận có thể thực hiện được khi cả hai ma trận có cùng thứ tự.</span>
+        <span class="english 86"> Subtraction is done by using ( - ) operator in Python.</span> <span
+            class="viet 86 hide"> Phép trừ được thực hiện bằng cách sử dụng toán tử ( - ) trong Python.</span>
+        <span class="english 87"> When we perform subtraction on two matrices then the elements from the first matrix
+            are subtracted with their corresponding elements in second matrix.</span> <span class="viet 87 hide"> Khi
+            chúng ta thực hiện phép trừ trên hai ma trận thì các phần tử từ ma trận đầu tiên sẽ được trừ với các phần tử
+            tương ứng của chúng trong ma trận thứ hai.</span>
+    </p>
+    <pre class="english">import numpy as np
+A = np.array([[1 , 2],[3 , 4]])
+B = np.array([[0 , 1],[2 , 1]])
+C = A - B
+print(C)
+</pre>
+    <p><span class="english 89"> The elements of the matrix A are subtracted with elements of matrix B and we got the
+            resultant matrix with order 2 X 2.</span> <span class="viet 89 hide"> Các phần tử của ma trận A được trừ với
+            các phần tử của ma trận B và chúng ta có được ma trận kết quả có bậc 2 X 2.</span></p>
+    <h3><span class="english 91">Matrix Division</span> <span class="viet 91 hide">Phép chia ma trận</span></h3>
+    <p><span class="english 92"> Division of matrices is done by using ( / ) operator.</span> <span
+            class="viet 92 hide"> Phép chia ma trận được thực hiện bằng cách sử dụng toán tử ( / ).</span>
+        <span class="english 93"> It divides elements from first matrix with corresponding elements in the second
+            matrix.</span> <span class="viet 93 hide"> Phép chia này chia các phần tử từ ma trận đầu tiên với các phần
+            tử tương ứng trong ma trận thứ hai.</span>
+        <span class="english 94"> The matrices should have same dimensions.</span> <span class="viet 94 hide"> Các ma
+            trận phải có cùng kích thước.</span>
+    </p>
+    <pre class="english">import numpy as np
+A = np.array([[4 , 2],[6 , 8]])
+B = np.array([[2 , 2],[3 , 4]])
+C = A//B
+print(C)
+</pre>
+    <h3><span class="english 96">Matrix - Matrix Multiplication ( Dot product )</span> <span class="viet 96 hide">Ma
+            trận - Phép nhân ma trận (Tích vô hướng)</span></h3>
+    <p><span class="english 97"> Multiplication of matrices can only be done when the columns of first matrix is equal
+            to the rows of the second matrix.</span> <span class="viet 97 hide"> Phép nhân ma trận chỉ có thể thực hiện
+            khi các cột của ma trận đầu tiên bằng các hàng của ma trận thứ hai.</span>
+        <span class="english 98"> Suppose there is a matrix A of order m X n and matrix B of order n X k so here columns
+            of matrix A = rows of matrix B = n and the order of the resulting matrix C = AB is m X k.</span> <span
+            class="viet 98 hide"> Giả sử có một ma trận A bậc m X n và ma trận B bậc n X k, do đó ở đây các cột của ma
+            trận A = các hàng của ma trận B = n và bậc của ma trận kết quả C = AB là m X k.</span>
+        <span class="english 99"> Hence multiplication is possible for the above matrices.</span> <span
+            class="viet 99 hide"> Do đó, phép nhân có thể thực hiện được đối với các ma trận trên.</span>
+    </p>
+    <p><span class="english 100"> Note :</span> <span class="viet 100 hide"> Lưu ý:</span>
+        <span class="english 101"> Matrices do not satisfy commutative property</span> <span class="viet 101 hide"> Ma
+            trận không thỏa mãn tính chất giao hoán</span>
+    </p>
+    <p><span class="english 102"> AB is not equal to BA</span> <span class="viet 102 hide"> AB không bằng BA</span></p>
+    <pre class="english">import numpy as np
+A = np.array([[1, 2],[3, 4]])
+B = np.array([[5, 6],[7, 8]])
+C = A.dot(B)
+print(C)
+</pre>
+    <p><span class="english 104"> The matrix A is of order 2 X 2 and matrix B of order 2 X 2.</span> <span
+            class="viet 104 hide"> Ma trận A có bậc 2 X 2 và ma trận B có bậc 2 X 2.</span>
+        <span class="english 105"> Since the columns of A = rows of B = 2,</span> <span class="viet 105 hide"> Vì các
+            cột của A = các hàng của B = 2,</span>
+        <span class="english 106"> the multiplication is possible.</span> <span class="viet 106 hide"> nên phép nhân có
+            thể thực hiện được.</span>
+        <span class="english 107"> The multiplication is done in a way where the 1st row of A is multiplied with 1st and
+            2nd column of B giving us C[0][0] and C[ 0 ][ 1 ] and the 2nd row of A is multiplied with 1st and 2nd column
+            of B giving us C[ 1 ][ 0 ] and C[ 1 ] [ 1 ].</span> <span class="viet 107 hide"> Phép nhân được thực hiện
+            theo cách mà hàng thứ nhất của A được nhân với cột thứ nhất và thứ hai của B, ta được C[0][0] và C[ 0 ][ 1 ]
+            và hàng thứ hai của A được nhân với cột thứ nhất và thứ hai của B, ta được C[ 1 ][ 0 ] và C[ 1 ] [ 1
+            ].</span>
+    </p>
+    <h3><span class="english 109">Matrix - Vector multiplication</span> <span class="viet 109 hide">Phép nhân ma trận -
+            vectơ</span></h3>
+    <p><span class="english 110"> A vector is a one dimensional array having either a single row or single
+            column.</span> <span class="viet 110 hide"> A vector là một mảng một chiều có một hàng hoặc một cột.</span>
+        <span class="english 111"> A matrix having only one row is called as a row vector and matrix having only one
+            column is called as a column vector.</span> <span class="viet 111 hide"> Ma trận chỉ có một hàng được gọi là
+            vector hàng và ma trận chỉ có một cột được gọi là vector cột.</span>
+        <span class="english 112"> While multiplying the matrix with a vector,</span> <span class="viet 112 hide"> Khi
+            nhân ma trận với một vector,</span>
+        <span class="english 113"> we need to check the multiplication condition which is the columns of first matrix =
+            rows of the second matrix.</span> <span class="viet 113 hide"> chúng ta cần kiểm tra điều kiện nhân là các
+            cột của ma trận đầu tiên = các hàng của ma trận thứ hai.</span>
+    </p>
+    <pre class="english">import numpy as np
+A = np.array([[1, 2],[1 , 1]])
+V = np.array([[1] , [1]])
+
+#matrix - vector multiplication
+C = A.dot(V)
+print(C)
+</pre>
+    <p><span class="english 115"> Explanation :</span> <span class="viet 115 hide"> Giải thích:</span>
+        <span class="english 116"> We multplied the matrix A with vector V and we got a column vector C.</span> <span
+            class="viet 116 hide"> Chúng ta nhân ma trận A với vectơ V và thu được vectơ cột C.</span>
+        <span class="english 117"> In the same way we can multiply a matrix with a row vector and the dot product will
+            also be a row vector.</span> <span class="viet 117 hide"> Tương tự như vậy, chúng ta có thể nhân ma trận với
+            vectơ hàng và tích vô hướng cũng sẽ là vectơ hàng.</span>
+    </p>
+    <h3><span class="english 119">Matrix - Scalar multiplication</span> <span class="viet 119 hide">Phép nhân ma trận -
+            vô hướng</span></h3>
+    <p><span class="english 120"> When we multiply a matrix with a scalar then it is multiplied with each and every
+            element in the matrix.</span> <span class="viet 120 hide"> Khi chúng ta nhân ma trận với vô hướng thì nó
+            được nhân với mọi phần tử trong ma trận.</span>
+        <span class="english 121"> The order remains same even after multiplying the matrix with scalar.</span> <span
+            class="viet 121 hide"> Thứ tự vẫn giữ nguyên ngay cả sau khi nhân ma trận với vô hướng.</span>
+        <span class="english 122"> We use matrix - scalar multiplications while solving equations in linear
+            algebra.</span> <span class="viet 122 hide"> Chúng ta sử dụng phép nhân ma trận - vô hướng khi giải phương
+            trình trong đại số tuyến tính.</span>
+    </p>
+    <pre class="english">import numpy as np
+A = np.array([[1,2],[3,4]])
+b = 2
+print(A * b)
+</pre>
+    <p><span class="english 124"> Explanation :</span> <span class="viet 124 hide"> Giải thích:</span>
+        <span class="english 125"> In the above matrix,</span> <span class="viet 125 hide"> Trong ma trận trên,</span>
+        <span class="english 126"> we can see that b=2 is multiplied with each element in the matrix.</span> <span
+            class="viet 126 hide"> chúng ta có thể thấy rằng b=2 được nhân với mỗi phần tử trong ma trận.</span>
+    </p>
+
+    <a href="./ml4.html">Next</a>
+    <script>
+        const allEnglishElement = document.querySelectorAll(".english");
+        const allVietElement = document.querySelectorAll(".viet");
+
+        allEnglishElement.forEach((item, index) => {
+            item.addEventListener("click", (event) => handleClick(event))
+        })
+
+        function handleClick(event) {
+            const index = Number(event.target.classList[1])
+            allVietElement.forEach(e => {
+                if (e.classList[1] === event.target.classList[1]) {
+                    e.classList.contains("hide")
+                        ? e.classList.remove("hide")
+                        : e.classList.add("hide")
+                }
+            })
+
+        }
+        const msg = new SpeechSynthesisUtterance();
+        let voice = [];
+        const speakButton = document.querySelector('#speak');
+        const stopButton = document.querySelector('#stop');
+        const dungButton = document.querySelector('#dung');
+        const docButton = document.querySelector('#doc');
+
+        function toggle_E(startOver = true) {
+            speechSynthesis.cancel();
+            if (startOver) {
+                arr_len = document.getElementsByClassName('english').length;
+                console.log(arr_len);
+                let txt1 = '';
+                for (let i = 0; i < arr_len; i++) {
+                    temp_txt = document.getElementsByClassName('english')[i].innerHTML;
+                    temp_txt = temp_txt.trim() + '.\n';
+                    console.log(temp_txt);
+                    txt1 += temp_txt;
+                }
+                arr1 = txt1.split('\n');
+                arr1 = arr1.map((e) => e.trim());
+                // arr1[0] += '.';
+                arr1 = arr1.join(' ');
+                console.log(arr1);
+                msg.text = arr1;
+
+                msg.lang = 'en-US';
+                speechSynthesis.speak(msg);
+            }
+        }
+
+        function toggle_V(startOver = true) {
+            speechSynthesis.cancel();
+            allVietElement.forEach(e => e.classList.remove("hide"))
+
+            if (startOver) {
+                arr_len = document.getElementsByClassName('viet').length;
+                console.log(arr_len);
+                let txt1 = '';
+                for (let i = 0; i < arr_len; i++) {
+                    temp_txt = document.getElementsByClassName('viet')[i].innerHTML;
+                    temp_txt = temp_txt.trim() + '.\n';
+                    console.log(temp_txt);
+                    txt1 += temp_txt;
+                }
+                arr1 = txt1.split('\n');
+                arr1 = arr1.map((e) => e.trim());
+                // arr1[0] += '.';
+                arr1 = arr1.join(' ');
+                console.log(arr1);
+                msg.text = arr1;
+
+                msg.lang = 'vi-VN';
+                speechSynthesis.speak(msg);
+            }
+        }
+
+        speakButton.addEventListener('click', toggle_E);
+        stopButton.addEventListener('click', toggle_E.bind(null, false));
+        speakButton.addEventListener('click', toggle_V);
+        stopButton.addEventListener('click', toggle_V.bind(null, false));
+
+    </script>
+</body>
+
+</html>

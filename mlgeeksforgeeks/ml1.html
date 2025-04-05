@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML 1</title>
+</head>
+<style>
+    * {
+        cursor: pointer;
+    }
+
+    .hide {
+        display: none
+    }
+
+    .viet {
+        background-color: yellow;
+    }
+
+    img {
+        width: 75%;
+    }
+</style>
+
+<body>
+    <div>
+        <div>
+            <button id="stop">Stop!</button>
+            <button id="speak">Speak</button>
+            <button id="Dung">Dừng</button>
+            <button id="Doc">Đọc</button>
+        </div>
+    </div>
+    <h2><span class="english 1">Machine Learning Tutorial</span> <span class="viet 1 hide">Hướng dẫn về học máy</span>
+    </h2>
+    <p><span class="english 2"> https://www.geeksforgeeks.org/machine-learning/<br> Last Updated :</span> <span
+            class="viet 2 hide"> Cập nhật lần cuối:</span>
+        <span class="english 3"> 25 Dec, 2024</span> <span class="viet 3 hide"> Ngày 25 tháng 12, 2024</span>
+
+    </p>
+    <p><span class="english 5"> Machine learning is a subset of Artificial Intelligence (AI) that enables computers to
+            learn from data and make predictions without being explicitly programmed.</span> <span class="viet 5 hide">
+            Học máy là một tập hợp con của Trí tuệ nhân tạo (AI) cho phép máy tính học từ dữ liệu và đưa ra dự đoán mà
+            không cần được lập trình rõ ràng.</span>
+        <span class="english 6"> If you're new to this field,</span> <span class="viet 6 hide"> Nếu bạn mới tham gia
+            lĩnh vực này,</span>
+        <span class="english 7"> this tutorial will provide you with a comprehensive understanding of machine
+            learning,</span> <span class="viet 7 hide"> hướng dẫn này sẽ cung cấp cho bạn hiểu biết toàn diện về học
+            máy,</span>
+        <span class="english 8"> its types,</span> <span class="viet 8 hide"> các loại của nó,</span>
+        <span class="english 9"> algorithms,</span> <span class="viet 9 hide"> thuật toán,</span>
+        <span class="english 10"> tools,</span> <span class="viet 10 hide"> công cụ,</span>
+        <span class="english 11"> and practical applications.</span> <span class="viet 11 hide"> và các ứng dụng thực
+            tế.</span>
+    </p>
+    <h2><span class="english 13">Maths for Machine Learning</span> <span class="viet 13 hide">Toán học cho Học
+            máy</span></h2>
+    <p><span class="english 14"> https://www.geeksforgeeks.org/machine-learning-mathematics/<br> Last Updated :</span>
+        <span class="viet 14 hide"> Cập nhật lần cuối:</span>
+        <span class="english 15"> 24 Dec, 2024</span> <span class="viet 15 hide"> Ngày 24 tháng 12, 2024</span>
+
+    </p>
+    <p><span class="english 17"> Mathematics is the foundation of machine learning.</span> <span class="viet 17 hide">
+            Toán học là nền tảng của học máy.</span>
+        <span class="english 18"> Math concepts plays a crucial role in understanding how models learn from data and
+            optimizing their performance.</span> <span class="viet 18 hide"> Các khái niệm toán học đóng vai trò quan
+            trọng trong việc hiểu cách các mô hình học từ dữ liệu và tối ưu hóa hiệu suất của chúng.</span>
+    </p>
+    <p><span class="english 19"> Before diving into machine learning algorithms,</span> <span class="viet 19 hide">
+            Trước khi tìm hiểu sâu về các thuật toán học máy,</span>
+        <span class="english 20"> it’s important to familiarize yourself with foundational topics,</span> <span
+            class="viet 20 hide"> điều quan trọng là phải làm quen với các chủ đề cơ bản,</span>
+        <span class="english 21"> like Statistics,</span> <span class="viet 21 hide"> như Thống kê,</span>
+        <span class="english 22"> Probability Distributions,</span> <span class="viet 22 hide"> Xác suất Phân
+            phối,</span>
+        <span class="english 23"> Linear Algebra,</span> <span class="viet 23 hide"> Đại số tuyến tính,</span>
+        <span class="english 24"> Matrix Operations,</span> <span class="viet 24 hide"> Các phép toán ma trận,</span>
+        <span class="english 25"> Regression,</span> <span class="viet 25 hide"> Hồi quy,</span>
+        <span class="english 26"> Geometry,</span> <span class="viet 26 hide"> Hình học,</span>
+        <span class="english 27"> Dimensionality Reduction,</span> <span class="viet 27 hide"> Giảm chiều,</span>
+        <span class="english 28"> and Vector Calculus.</span> <span class="viet 28 hide"> và Giải tích vectơ.</span>
+    </p>
+    <h3><span class="english 30">Linear Algebra and Matrix Operations</span> <span class="viet 30 hide"> Đại số tuyến
+            tính và các phép toán ma trận</span></h3>
+    <p><span class="english 31"> Linear algebra is important for many machine learning algorithms.</span> <span
+            class="viet 31 hide"> Đại số tuyến tính rất quan trọng đối với nhiều thuật toán học máy.</span>
+        <span class="english 32"> Concepts like vectors,</span> <span class="viet 32 hide"> Các khái niệm như
+            vectơ,</span>
+        <span class="english 33"> matrices,</span> <span class="viet 33 hide"> ma trận,</span>
+        <span class="english 34"> and matrix operations are essential for understanding data representations,</span>
+        <span class="viet 34 hide"> và các phép toán ma trận là thiết yếu để hiểu các biểu diễn dữ liệu,</span>
+        <span class="english 35"> transformations,</span> <span class="viet 35 hide"> phép biến đổi,</span>
+        <span class="english 36"> and model computations.</span> <span class="viet 36 hide"> và tính toán mô
+            hình.</span>
+        <span class="english 37"> From calculating gradients to managing multidimensional datasets,</span> <span
+            class="viet 37 hide"> Từ việc tính toán độ dốc đến quản lý các tập dữ liệu đa chiều,</span>
+        <span class="english 38"> linear algebra enables efficient implementation of algorithms.</span> <span
+            class="viet 38 hide"> đại số tuyến tính cho phép triển khai hiệu quả các thuật toán.</span>
+    </p>
+    <h2><span class="english 40">How to create a vector in Python using NumPy</span> <span class="viet 40 hide">Cách tạo
+            vectơ trong Python bằng NumPy</span></h2>
+    <p><span class="english 41"> https://www.geeksforgeeks.org/how-to-create-a-vector-in-python-using-numpy/<br> Last
+            Updated :</span> <span class="viet 41 hide"> Cập nhật lần cuối:</span>
+        <span class="english 42"> 28 Oct,</span> <span class="viet 42 hide"> Ngày 28 tháng 10,</span>
+        <span class="english 43"> 2021</span> <span class="viet 43 hide"> 2021</span>
+    </p>
+    <p><span class="english 44"> NumPy is a general-purpose array-processing package.</span> <span class="viet 44 hide">
+            NumPy là một gói xử lý mảng đa năng.</span>
+        <span class="english 45"> It provides a high-performance multidimensional array object,</span> <span
+            class="viet 45 hide"> Nó cung cấp một đối tượng mảng đa chiều hiệu suất cao,</span>
+        <span class="english 46"> and tools for working with these arrays.</span> <span class="viet 46 hide"> và các
+            công cụ để làm việc với các mảng này.</span>
+        <span class="english 47"> It is the fundamental package for scientific computing with Python.</span> <span
+            class="viet 47 hide"> Đây là gói cơ bản để tính toán khoa học bằng Python.</span>
+        <span class="english 48"> Numpy is basically used for creating array of n dimensions.</span> <span
+            class="viet 48 hide"> Numpy về cơ bản được sử dụng để tạo mảng n chiều.</span>
+    </p>
+    <p><span class="english 49"> Vector are built from components,</span> <span class="viet 49 hide"> Vector được xây
+            dựng từ các thành phần,</span>
+        <span class="english 50"> which are ordinary numbers.</span> <span class="viet 50 hide"> là các số thông
+            thường.</span>
+        <span class="english 51"> We can think of a vector as a list of numbers,</span> <span class="viet 51 hide">
+            Chúng ta có thể coi vector là một danh sách các số,</span>
+        <span class="english 52"> and vector algebra as operations performed on the numbers in the list.</span> <span
+            class="viet 52 hide"> và đại số vector là các phép toán được thực hiện trên các số trong danh sách.</span>
+        <span class="english 53"> In other words vector is the numpy 1-D array.</span> <span class="viet 53 hide"> Nói
+            cách khác, vector là mảng numpy 1 chiều.</span>
+    </p>
+    <p><span class="english 54"> In order to create a vector,</span> <span class="viet 54 hide"> Để tạo một
+            vectơ,</span>
+        <span class="english 55"> we use np.array method.</span> <span class="viet 55 hide"> chúng ta sử dụng phương
+            thức np.array.</span>
+        <span class="english 56"> </span> <span class="viet 56 hide"> </span>
+    </p>
+    <p><span class="english 58"> Syntax :</span> <span class="viet 58 hide"> Cú pháp:</span>
+        <span class="english 59"> np.array(list)</span> <span class="viet 59 hide"> np.array(list)</span>
+    </p>
+    <p><span class="english 60"> Argument :</span> <span class="viet 60 hide"> Đối số:</span>
+        <span class="english 61"> It take 1-D list it can be 1 row and n columns or n rows and 1 column</span> <span
+            class="viet 61 hide"> Nó lấy danh sách 1-D, có thể là 1 hàng và n cột hoặc n hàng và 1 cột</span>
+    </p>
+    <p><span class="english 62"> Return :</span> <span class="viet 62 hide"> Trả về:</span>
+        <span class="english 63"> It returns vector which is numpy.ndarray</span> <span class="viet 63 hide"> Nó trả về
+            vectơ là numpy.ndarray</span>
+    </p>
+    <p><span class="english 65"> Note:</span> <span class="viet 65 hide"> Lưu ý:</span>
+        <span class="english 66"> We can create vector with other method as well which return 1-D numpy array for
+            example np.arange(10),</span> <span class="viet 66 hide"> Chúng ta cũng có thể tạo vectơ bằng phương thức
+            khác trả về Mảng numpy 1 chiều chẳng hạn np.arange(10),</span>
+        <span class="english 67"> np.zeros((4, 1)) gives 1-D array,</span> <span class="viet 67 hide"> np.zeros((4, 1))
+            cung cấp mảng 1
+            chiều,</span>
+
+        <span class="english 69"> but most appropriate way is using np.array with the 1-D list.</span> <span
+            class="viet 69 hide"> nhưng cách phù hợp nhất là sử dụng np.array với danh sách 1 chiều.</span>
+    </p>
+    <h3><span class="english 71">Creating a Vector</span> <span class="viet 71 hide">Tạo một vectơ</span></h3>
+    <p><span class="english 72"> In this example we will create a horizontal vector and a vertical vector </span> <span
+            class="viet 72 hide"> Trong ví dụ này, chúng ta sẽ tạo một vectơ ngang và một vectơ dọc </span></p>
+    <pre class="english"># importing numpy 
+import numpy as np 
+# creating a 1-D list (Horizontal) 
+list1 = [1, 2, 3] 
+# creating a 1-D list (Vertical) 
+list2 = [[10], 
+	[20], 
+	[30]] 
+# creating a vector1 
+# vector as row 
+vector1 = np.array(list1) 
+# creating a vector 2 
+# vector as column 
+vector2 = np.array(list2) 
+# showing horizontal vector 
+print("Horizontal Vector") 
+print(vector1) 
+print("----------------") 
+# showing vertical vector 
+print("Vertical Vector") 
+print(vector2) 
+</pre>
+    <h3><span class="english 74">Basic Arithmetic operation:</span> <span class="viet 74 hide">Phép tính số học cơ
+            bản:</span></h3>
+    <p><span class="english 75"> In this example we will see do arithmetic operations which are element-wise between two
+            vectors of equal length to result in a new vector with the same length </span> <span class="viet 75 hide">
+            Trong ví dụ này, chúng ta sẽ xem cách thực hiện các phép tính số học theo từng phần tử giữa hai vector có độ
+            dài bằng nhau để tạo ra một vector mới có cùng độ dài</span></p>
+    <pre class="english"># importing numpy 
+import numpy as np 
+# creating a 1-D list (Horizontal) 
+list1 = [5, 6, 9] 
+# creating a 1-D list (Horizontal) 
+list2 = [1, 2, 3] 
+# creating first vector 
+vector1 = np.array(list1) 
+# printing vector1 
+print("First Vector		 : " + str(vector1)) 
+# creating second vector 
+vector2 = np.array(list2) 
+# printing vector2 
+print("Second Vector		 : " + str(vector2)) 
+# adding both the vector 
+# a + b = (a1 + b1, a2 + b2, a3 + b3) 
+addition = vector1 + vector2 
+# printing addition vector 
+print("Vector Addition	 : " + str(addition)) 
+# subtracting both the vector 
+# a - b = (a1 - b1, a2 - b2, a3 - b3) 
+subtraction = vector1 - vector2 
+# printing addition vector 
+print("Vector Subtraction : " + str(subtraction)) 
+# multiplying both the vector 
+# a * b = (a1 * b1, a2 * b2, a3 * b3) 
+multiplication = vector1 * vector2 
+# printing multiplication vector 
+print("Vector Multiplication : " + str(multiplication)) 
+# dividing both the vector 
+# a / b = (a1 / b1, a2 / b2, a3 / b3) 
+division = vector1 / vector2 
+# printing division vector 
+print("Vector Division	 : " + str(division)) 
+</pre>
+    <h3><span class="english 77">Vector Dot Product</span> <span class="viet 77 hide">Tích vô hướng vector</span></h3>
+    <p><span class="english 78"> In mathematics,</span> <span class="viet 78 hide"> Trong toán học,</span>
+        <span class="english 79"> the dot product or scalar product is an algebraic operation that takes two
+            equal-length sequences of numbers and returns a single number.</span> <span class="viet 79 hide"> tích vô
+            hướng hoặc tích vô hướng là một phép toán đại số lấy hai chuỗi số có độ dài bằng nhau và trả về một số duy
+            nhất.</span>
+        <span class="english 80"> </span> <span class="viet 80 hide"> </span>
+    </p>
+    <p><span class="english 81"> For this we will use dot method.</span> <span class="viet 81 hide"> Đối với phép toán
+            này, chúng ta sẽ sử dụng phương thức dot.</span></p>
+    <pre class="english"># importing numpy 
+import numpy as np 
+# creating a 1-D list (Horizontal) 
+list1 = [5, 6, 9] 
+# creating a 1-D list (Horizontal) 
+list2 = [1, 2, 3] 
+# creating first vector 
+vector1 = np.array(list1) 
+# printing vector1 
+print("First Vector : " + str(vector1)) 
+# creating second vector 
+vector2 = np.array(list2) 
+# printing vector2 
+print("Second Vector : " + str(vector2)) 
+# getting dot product of both the vectors 
+# a . b = (a1 * b1 + a2 * b2 + a3 * b3) 
+# a . b = (a1b1 + a2b2 + a3b3) 
+dot_product = vector1.dot(vector2) 
+# printing dot product 
+print("Dot Product : " + str(dot_product)) 
+</pre>
+    <h3><span class="english 83">Vector-Scalar Multiplication</span> <span class="viet 83 hide">Phép nhân vectơ-vô
+            hướng</span></h3>
+    <p><span class="english 84"> Multiplying a vector by a scalar is called scalar multiplication.</span> <span
+            class="viet 84 hide"> Phép nhân vectơ với một vô hướng được gọi là phép nhân vô hướng.</span>
+        <span class="english 85"> To perform scalar multiplication,</span> <span class="viet 85 hide"> Để thực hiện phép
+            nhân vô hướng,</span>
+        <span class="english 86"> we need to multiply the scalar by each component of the vector.</span> <span
+            class="viet 86 hide"> chúng ta cần nhân vô hướng với từng thành phần của vectơ.</span>
+    </p>
+    <pre class="english"># importing numpy 
+import numpy as np 
+# creating a 1-D list (Horizontal) 
+list1 = [1, 2, 3] 
+# creating first vector 
+vector = np.array(list1) 
+# printing vector1 
+print("Vector : " + str(vector)) 
+# scalar value 
+scalar = 2
+# printing scalar value 
+print("Scalar : " + str(scalar)) 
+# getting scalar multiplication value 
+# s * v = (s * v1, s * v2, s * v3) 
+scalar_mul = vector * scalar 
+# printing dot product 
+print("Scalar Multiplication : " + str(scalar_mul)) 
+</pre>
+    <a href="./ml2.html">Next</a>
+    <script>
+        const allEnglishElement = document.querySelectorAll(".english");
+        const allVietElement = document.querySelectorAll(".viet");
+
+        allEnglishElement.forEach((item, index) => {
+            item.addEventListener("click", (event) => handleClick(event))
+        })
+
+        function handleClick(event) {
+            const index = Number(event.target.classList[1])
+            allVietElement.forEach(e => {
+                if (e.classList[1] === event.target.classList[1]) {
+                    e.classList.contains("hide")
+                        ? e.classList.remove("hide")
+                        : e.classList.add("hide")
+                }
+            })
+
+        }
+        const msg = new SpeechSynthesisUtterance();
+        let voice = [];
+        const speakButton = document.querySelector('#speak');
+        const stopButton = document.querySelector('#stop');
+        const dungButton = document.querySelector('#dung');
+        const docButton = document.querySelector('#doc');
+
+        function toggle_E(startOver = true) {
+            speechSynthesis.cancel();
+            if (startOver) {
+                arr_len = document.getElementsByClassName('english').length;
+                console.log(arr_len);
+                let txt1 = '';
+                for (let i = 0; i < arr_len; i++) {
+                    temp_txt = document.getElementsByClassName('english')[i].innerHTML;
+                    temp_txt = temp_txt.trim() + '.\n';
+                    console.log(temp_txt);
+                    txt1 += temp_txt;
+                }
+                arr1 = txt1.split('\n');
+                arr1 = arr1.map((e) => e.trim());
+                // arr1[0] += '.';
+                arr1 = arr1.join(' ');
+                console.log(arr1);
+                msg.text = arr1;
+
+                msg.lang = 'en-US';
+                speechSynthesis.speak(msg);
+            }
+        }
+
+        function toggle_V(startOver = true) {
+            speechSynthesis.cancel();
+            allVietElement.forEach(e => e.classList.remove("hide"))
+
+            if (startOver) {
+                arr_len = document.getElementsByClassName('viet').length;
+                console.log(arr_len);
+                let txt1 = '';
+                for (let i = 0; i < arr_len; i++) {
+                    temp_txt = document.getElementsByClassName('viet')[i].innerHTML;
+                    temp_txt = temp_txt.trim() + '.\n';
+                    console.log(temp_txt);
+                    txt1 += temp_txt;
+                }
+                arr1 = txt1.split('\n');
+                arr1 = arr1.map((e) => e.trim());
+                // arr1[0] += '.';
+                arr1 = arr1.join(' ');
+                console.log(arr1);
+                msg.text = arr1;
+
+                msg.lang = 'vi-VN';
+                speechSynthesis.speak(msg);
+            }
+        }
+
+        speakButton.addEventListener('click', toggle_E);
+        stopButton.addEventListener('click', toggle_E.bind(null, false));
+        speakButton.addEventListener('click', toggle_V);
+        stopButton.addEventListener('click', toggle_V.bind(null, false));
+
+    </script>
+</body>
+
+</html>

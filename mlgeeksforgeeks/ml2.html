@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML 2</title>
+</head>
+<style>
+    * {
+        cursor: pointer;
+    }
+
+    .hide {
+        display: none
+    }
+
+    .viet {
+        background-color: yellow;
+    }
+
+    img {
+        width: 75%;
+    }
+</style>
+
+<body>
+    <div>
+        <div>
+            <button id="stop">Stop!</button>
+            <button id="speak">Speak</button>
+            <button id="Dung">Dừng</button>
+            <button id="Doc">Đọc</button>
+        </div>
+    </div>
+    <h2><span class="english 1">Python – Matrix</span> <span class="viet 1 hide">Python – Ma trận</span></h2>
+    <p><span class="english 2"> https://www.geeksforgeeks.org/python-matrix/<br> Last Updated :</span> <span
+            class="viet 2 hide"> Cập nhật lần cuối:</span>
+        <span class="english 3"> 06 Aug, 2024</span> <span class="viet 3 hide"> Ngày 06 tháng 8, 2024</span>
+    </p>
+    <p><span class="english 5"> Here we will discuss different ways how we can form a matrix using Python within this
+            tutorial we will also discuss the various operation that can be performed on a matrix.</span> <span
+            class="viet 5 hide"> Ở đây chúng ta sẽ thảo luận về những cách khác nhau để tạo ma trận bằng Python trong
+            hướng dẫn này, chúng ta cũng sẽ thảo luận về các phép toán khác nhau có thể được thực hiện trên một ma
+            trận.</span>
+        <span class="english 6"> we will also cover the external module Numpy to form a matrix and its operations in
+            Python.</span> <span class="viet 6 hide"> chúng ta cũng sẽ tìm hiểu về mô-đun bên ngoài Numpy để tạo ma trận
+            và các phép toán của nó trong Python.</span>
+    </p>
+    <img src="./images/fig1.png" alt="fig1">
+    <h3><span class="english 9">What is the matrix?</span> <span class="viet 9 hide">Ma trận là gì?</span></h3>
+    <p><span class="english 10"> A matrix is a collection of numbers arranged in a rectangular array in rows and
+            columns.</span> <span class="viet 10 hide"> Ma trận là tập hợp các số được sắp xếp trong một mảng hình chữ
+            nhật theo hàng và cột.</span>
+        <span class="english 11"> In the fields of engineering,</span> <span class="viet 11 hide"> Trong các lĩnh vực kỹ
+            thuật,</span>
+        <span class="english 12"> physics,</span> <span class="viet 12 hide"> vật lý,</span>
+        <span class="english 13"> statistics,</span> <span class="viet 13 hide"> thống kê,</span>
+        <span class="english 14"> and graphics,</span> <span class="viet 14 hide"> và đồ họa,</span>
+        <span class="english 15"> matrices are widely used to express picture rotations and other types of
+            transformations.</span> <span class="viet 15 hide"> ma trận được sử dụng rộng rãi để biểu thị phép quay hình
+            ảnh và các loại phép biến đổi khác.</span>
+    </p>
+    <p><span class="english 16"> The matrix is referred to as an m by n matrix,</span> <span class="viet 16 hide"> Ma
+            trận được gọi là ma trận m x n,</span>
+        <span class="english 17"> denoted by the symbol “m x n” if there are m rows and n columns.</span> <span
+            class="viet 17 hide"> được biểu thị bằng ký hiệu "m x n" nếu có m hàng và n cột.</span>
+    </p>
+    <h3><span class="english 19">Creating a simple matrix using Python</span> <span class="viet 19 hide"> Tạo ma trận
+            đơn giản bằng Python</span></h3>
+    <h4><span class="english 20">Method 1: Creating a matrix with a List of list</span> <span class="viet 20 hide">
+            Phương pháp 1: Tạo ma trận bằng Danh sách danh sách</span></h4>
+    <p><span class="english 21"> Here,</span> <span class="viet 21 hide"> Ở đây,</span>
+        <span class="english 22"> we are going to create a matrix using the list of lists.</span> <span
+            class="viet 22 hide"> chúng ta sẽ tạo một ma trận bằng cách sử dụng danh sách các danh sách.</span>
+    </p>
+    <pre class="english">matrix = [[1, 2, 3, 4], 
+    [5, 6, 7, 8],
+    [9, 10, 11, 12]]
+print("Matrix =", matrix)
+</pre>
+    <h4><span class="english 24">Method 2: Take Matrix input from user in Python</span> <span
+            class="viet 24 hide">Phương pháp 2: Lấy đầu vào Ma trận từ người dùng trong Python</span></h4>
+    <p><span class="english 25"> Here,</span> <span class="viet 25 hide"> Ở đây,</span>
+        <span class="english 26"> we are taking a number of rows and columns from the user and printing the
+            Matrix.</span> <span class="viet 26 hide"> chúng ta sẽ lấy một số hàng và cột từ người dùng và in Ma
+            trận.</span>
+    </p>
+    <pre class="english">Row = int(input("Enter the number of rows:"))
+Column = int(input("Enter the number of columns:"))
+# Initialize matrix
+matrix = []
+print("Enter the entries row wise:")
+# For user input
+# A for loop for row entries
+for row in range(Row):    
+    a = []
+    # A for loop for column entries
+    for column in range(Column):   
+        a.append(int(input()))
+    matrix.append(a)
+# For printing the matrix
+for row in range(Row):
+    for column in range(Column):
+        print(matrix[row][column], end=" ")
+    print()
+</pre>
+    <h4><span class="english 28">Method 3: Create a matrix using list comprehension</span> <span
+            class="viet 28 hide">Phương pháp 3: Tạo ma trận bằng cách sử dụng list understanding</span></h4>
+    <p><span class="english 29"> List comprehension is an elegant way to define and create a list in Python,</span>
+        <span class="viet 29 hide"> List understanding là một cách thanh lịch để định nghĩa và tạo danh sách trong
+            Python,</span>
+        <span class="english 30"> we are using the range function for printing 4 rows and 4 columns.</span> <span
+            class="viet 30 hide"> chúng tôi đang sử dụng hàm range để in 4 hàng và 4 cột.</span>
+    </p>
+    <pre class="english">matrix = [[column for column in range(4)] for row in range(4)]
+print(matrix)
+</pre>
+    <h3><span class="english 32">Assigning Value in a matrix</span> <span class="viet 32 hide">Gán giá trị trong ma
+            trận</span></h3>
+    <h4><span class="english 33">Method 1: Assign value to an individual cell in Matrix</span> <span
+            class="viet 33 hide">Phương pháp 1: Gán giá trị cho một ô riêng lẻ trong Ma trận</span></h4>
+    <p><span class="english 34"> Here we are replacing and assigning value to an individual cell (1 row and 1 column =
+            11) in the Matrix.</span> <span class="viet 34 hide"> Ở đây chúng ta đang thay thế và gán giá trị cho một ô
+            riêng lẻ (1 hàng và 1 cột = 11) trong Ma trận.</span></p>
+    <pre class="english">X = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+row = column = 1
+X[row][column] = 11
+print(X)
+</pre>
+    <h4><span class="english 36">Method 2: Assign a value to an individual cell using negative indexing in Matrix</span>
+        <span class="viet 36 hide">Phương pháp 2: Gán giá trị cho một ô riêng lẻ bằng cách sử dụng chỉ mục âm trong Ma
+            trận</span>
+    </h4>
+    <p><span class="english 37"> Here we are replacing and assigning value to an individual cell (-2 row and -1 column =
+            21) in the Matrix.</span> <span class="viet 37 hide"> Ở đây chúng ta thay thế và gán giá trị cho một ô riêng
+            lẻ (-2 hàng và -1 cột = 21) trong Ma trận.</span></p>
+    <pre class="english">row = -2
+column = -1
+X[row][column] = 21
+print(X)
+</pre>
+    <h3><span class="english 39">Accessing Value in a matrix</span> <span class="viet 39 hide">Truy cập Giá trị trong ma
+            trận</span></h3>
+    <h4><span class="english 40">Method 1: Accessing Matrix values</span> <span class="viet 40 hide">Phương pháp 1: Truy
+            cập các giá trị Ma trận</span></h4>
+    <p><span class="english 41"> Here,</span> <span class="viet 41 hide"> Ở đây,</span>
+        <span class="english 42"> we are accessing elements of a Matrix by passing its row and column.</span> <span
+            class="viet 42 hide"> chúng ta truy cập các phần tử của Ma trận bằng cách truyền hàng và cột của nó.</span>
+    </p>
+    <pre class="english">print("Matrix at 1 row and 3 column=", X[0][2]) 
+print("Matrix at 3 row and 3 column=", X[2][2])
+</pre>
+    <h4><span class="english 44">Method 2: Accessing Matrix values using negative indexing</span> <span
+            class="viet 44 hide">Phương pháp 2: Truy cập các giá trị Ma trận bằng cách sử dụng chỉ mục âm</span></h4>
+    <p><span class="english 45"> Here,</span> <span class="viet 45 hide"> Ở đây,</span>
+        <span class="english 46"> we are accessing elements of a Matrix by passing its row and column on negative
+            indexing.</span> <span class="viet 46 hide"> chúng ta đang truy cập các phần tử của Ma trận bằng cách truyền
+            hàng và cột của nó theo chỉ mục âm.</span>
+    </p>
+    <pre class="english">import numpy as np
+X = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+print(X[-1][-2])
+</pre>
+    <h3><span class="english 48">Mathematical Operations with Matrix in Python</span> <span class="viet 48 hide">Các
+            phép toán với Ma trận trong Python</span></h3>
+    <p><span class="english 49"> Example 1:</span> <span class="viet 49 hide"> Ví dụ 1:</span>
+        <span class="english 50"> Adding values to a matrix with a for loop in python</span> <span class="viet 50 hide">
+            Thêm giá trị vào ma trận bằng vòng lặp for trong python</span>
+    </p>
+    <p><span class="english 51"> Here,</span> <span class="viet 51 hide"> Ở đây,</span>
+        <span class="english 52"> we are adding two matrices using the Python for-loop.</span> <span
+            class="viet 52 hide"> chúng ta đang cộng hai ma trận bằng vòng lặp for của Python.</span>
+    </p>
+    <pre class="english"># Program to add two matrices using nested loop
+X = [[1, 2, 3],[4, 5, 6], [7, 8, 9]]
+Y = [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+result = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+# iterate through rows
+for row in range(len(X)):
+    # iterate through columns
+    for column in range(len(X[0])):
+        result[row][column] = X[row][column]+ Y[row][column]
+for r in result:
+    print(r)
+</pre>
+    <p><span class="english 54"> Example 2:</span> <span class="viet 54 hide"> Ví dụ 2:</span>
+        <span class="english 55"> Adding and subtracting values to a matrix with list comprehension</span> <span
+            class="viet 55 hide"> Thêm và trừ các giá trị vào ma trận bằng cách hiểu danh sách</span>
+    </p>
+    <p><span class="english 56"> Performing the Basic addition and subtraction using list comprehension.</span> <span
+            class="viet 56 hide"> Thực hiện phép cộng và trừ cơ bản bằng cách hiểu danh sách.</span></p>
+    <pre class="english">Add_result = [[X[row][column] + Y[row][column]
+               for column in range(len(X[0]))] 
+               for row in range(len(X))]
+Sub_result = [[X[row][column] - Y[row][column]
+               for column in range(len(X[0]))] 
+               for row in range(len(X))]
+print("Matrix Addition")
+for r in Add_result:
+    print(r)
+print("\nMatrix Subtraction")
+for r in Sub_result:
+    print(r)
+</pre>
+    <p><span class="english 58"> Example 3:</span> <span class="viet 58 hide"> Ví dụ 3:</span>
+        <span class="english 59"> Python program to multiply and divide two matrices</span> <span class="viet 59 hide">
+            Chương trình Python để nhân và chia hai ma trận</span>
+    </p>
+    <p><span class="english 60"> Performing the Basic multiplication and division using Python loop.</span> <span
+            class="viet 60 hide"> Thực hiện phép nhân và chia cơ bản bằng vòng lặp Python.</span></p>
+    <pre class="english">rmatrix = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+for row in range(len(X)):
+    for column in range(len(X[0])):
+        rmatrix[row][column] = X[row][column] * Y[row][column]        
+print("Matrix Multiplication",)
+for r in rmatrix:
+    print(r)
+for i in range(len(X)):
+    for j in range(len(X[0])):
+        rmatrix[row][column] = X[row][column] // Y[row][column]
+print("\nMatrix Division",)   
+for r in rmatrix:
+    print(r)
+</pre>
+    <h3><span class="english 61">Transpose in matrix</span> <span class="viet 61 hide">Chuyển vị trong ma trận</span>
+    </h3>
+    <p><span class="english 62"> Example:</span> <span class="viet 62 hide"> Ví dụ:</span>
+        <span class="english 63"> Python Program to Transpose a Matrix using loop</span> <span class="viet 63 hide">
+            Chương trình Python để chuyển vị ma trận bằng vòng lặp</span>
+    </p>
+    <p><span class="english 64"> Transpose of a matrix is obtained by changing rows to columns and columns to
+            rows.</span> <span class="viet 64 hide"> Chuyển vị của ma trận được thực hiện bằng cách đổi hàng thành cột
+            và
+            cột thành hàng.</span>
+        <span class="english 65"> In other words,</span> <span class="viet 65 hide"> Nói cách khác,</span>
+        <span class="english 66"> transpose of A[][] is obtained by changing A[i][j] to A[j][i].</span> <span
+            class="viet 66 hide"> Chuyển vị của A[][] được thực hiện bằng cách đổi A[i][j] thành A[j][i].</span>
+    </p>
+    <pre class="english">X = [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+result = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+# iterate through rows
+for row in range(len(X)):
+# iterate through columns
+for column in range(len(X[0])):
+    result[column][row] = X[row][column]
+for r in result:
+print(r)
+# # Python Program to Transpose a Matrix using the list comprehension
+# rez = [[X[column][row] for column in range(len(X))] 
+#    for row in range(len(X[0]))]
+# for row in rez:
+#     print(row)
+</pre>
+    <h3><span class="english 68">Matrix using Numpy</span> <span class="viet 68 hide">Ma trận sử dụng Numpy</span></h3>
+    <p><span class="english 69"> Create a matrix using Numpy </span> <span class="viet 69 hide"> Tạo ma trận sử dụng
+            Numpy</span></p>
+    <p><span class="english 70"> Here we are creating a Numpy array using numpy.random and a random module.</span> <span
+            class="viet 70 hide"> Ở đây chúng ta đang tạo một mảng Numpy sử dụng numpy.random và một mô-đun ngẫu
+            nhiên.</span></p>
+    <pre class="english">import numpy as np
+# 1st argument --&gt; numbers ranging from 0 to 9, 
+# 2nd argument, row = 3, col = 3
+array = np.random.randint(10, size=(3, 3))
+print(array)
+</pre>
+
+    <h3><span class="english 72">Matrix mathematical operations in Python Using Numpy</span> <span
+            class="viet 72 hide">Các phép toán trên ma trận trong Python sử dụng Numpy</span></h3>
+    <p><span class="english 73"> Here we are covering different mathematical operations such as addition
+            subtraction,</span> <span class="viet 73 hide"> Ở đây chúng ta sẽ đề cập đến các phép toán khác nhau như
+            phép cộng, phép trừ,</span>
+        <span class="english 74"> multiplication,</span> <span class="viet 74 hide"> phép nhân,</span>
+        <span class="english 75"> and division using Numpy.</span> <span class="viet 75 hide"> và phép chia sử dụng
+            Numpy.</span>
+    </p>
+    <pre class="english"># initializing matrices
+x = numpy.array([[1, 2], [4, 5]])
+y = numpy.array([[7, 8], [9, 10]])
+# using add() to add matrices
+print ("The element wise addition of matrix is : ")
+print (numpy.add(x,y))
+# using subtract() to subtract matrices
+print ("The element wise subtraction of matrix is : ")
+print (numpy.subtract(x,y))
+print ("The element wise multiplication of matrix is : ")
+print (numpy.multiply(x,y))
+# using divide() to divide matrices
+print ("The element wise division of matrix is : ")
+print (numpy.divide(x,y))
+</pre>
+
+    <h3><span class="english 77">Dot and cross product with Matrix</span> <span class="viet 77 hide">Tích vô hướng và
+            tích có hướng với Ma trận</span></h3>
+    <p><span class="english 78"> Here,</span> <span class="viet 78 hide"> Tại đây,</span>
+        <span class="english 79"> we will find the inner,</span> <span class="viet 79 hide"> chúng ta sẽ tìm tích bên
+            trong,</span>
+        <span class="english 80"> outer,</span> <span class="viet 80 hide"> bên ngoài,</span>
+        <span class="english 81"> and cross products of matrices and vectors using NumPy in Python.</span> <span
+            class="viet 81 hide"> và tích có hướng của ma trận và vectơ bằng NumPy trong Python.</span>
+    </p>
+    <pre class="english">X = [[1, 2, 3],[4, 5, 6],[7, 8, 9]]
+Y = [[9, 8, 7], [6, 5, 4],[3, 2, 1]]
+dotproduct = np.dot(X, Y)
+print("Dot product of two array is:", dotproduct)
+dotproduct = np.cross(X, Y)
+print("Cross product of two array is:", dotproduct)
+</pre>
+    <h3><span class="english 83">Matrix transpose in Python using Numpy</span> <span class="viet 83 hide">Chuyển vị ma
+            trận trong Python bằng Numpy</span></h3>
+    <p><span class="english 84"> To perform transpose operation in matrix we can use the numpy.transpose()
+            method.</span> <span class="viet 84 hide"> Để thực hiện phép chuyển vị trong ma trận, chúng ta có thể sử
+            dụng phương thức numpy.transpose().</span></p>
+    <pre class="english">matrix = [[1, 2, 3], [4, 5, 6]]
+print("\n", numpy.transpose(matrix))
+</pre>
+    <h3><span class="english 86">Create an empty matrix with NumPy in Python</span> <span class="viet 86 hide">Tạo một
+            ma trận rỗng bằng NumPy trong Python</span></h3>
+    <p><span class="english 87"> Initializing an empty array,</span> <span class="viet 87 hide"> Khởi tạo một mảng
+            rỗng,</span>
+        <span class="english 88"> using the np.zeros().</span> <span class="viet 88 hide"> sử dụng np.zeros().</span>
+    </p>
+    <pre class="english">a = np.zeros([2, 2], dtype=int)
+print("\nMatrix of 2x2: \n", a)
+c = np.zeros([3, 3])
+print("\nMatrix of 3x3: \n", c)
+</pre>
+
+    <h3><span class="english 90">Slicing in Matrix using Numpy</span> <span class="viet 90 hide">Cắt trong Ma trận bằng
+            Numpy</span></h3>
+    <p><span class="english 91"> Slicing is the process of choosing specific rows and columns from a matrix and then
+            creating a new matrix by removing all of the non-selected elements.</span> <span class="viet 91 hide"> Cắt
+            là quá trình chọn các hàng và cột cụ thể từ một ma trận, sau đó tạo một ma trận mới bằng cách xóa tất cả các
+            các phần tử không được chọn.</span>
+        <span class="english 92"> In the first example,</span> <span class="viet 92 hide"> Trong ví dụ đầu tiên,</span>
+        <span class="english 93"> we are printing the whole matrix,</span> <span class="viet 93 hide"> chúng ta đang in
+            toàn bộ ma trận,</span>
+        <span class="english 94"> in the second we are passing 2 as an initial index,</span> <span class="viet 94 hide">
+            trong ví dụ thứ hai, chúng ta đang truyền 2 làm chỉ mục ban đầu,</span>
+        <span class="english 95"> 3 as the last index,</span> <span class="viet 95 hide"> 3 làm chỉ mục cuối
+            cùng,</span>
+        <span class="english 96"> and index jump as 1.</span> <span class="viet 96 hide"> và chỉ mục nhảy là 1.</span>
+        <span class="english 97"> The same is used in the next print we have just changed the index jump to 2.</span>
+        <span class="viet 97 hide"> Tương tự như vậy được sử dụng trong lần in tiếp theo, chúng ta vừa thay đổi chỉ mục
+            nhảy thành 2.</span>
+    </p>
+    <pre class="english">X = np.array([[6, 8, 10], 
+[ 9, -12, 15],
+[ 12, 16, 20],
+[ 15, -20, 25]])
+# Example of slicing 
+# Syntax: Lst[ Initial: End: IndexJump ]
+print(X[:])
+print("\nSlicing Third Row-Second Column: ", X[2:3,1])
+print("\nSlicing Third Row-Third Column: ", X[2:3,2])
+</pre>
+    <h3><span class="english 99">Delete rows and columns using Numpy</span> <span class="viet 99 hide">Xóa hàng và cột
+            bằng Numpy</span></h3>
+    <p><span class="english 100"> Here,</span> <span class="viet 100 hide"> Ở đây,</span>
+        <span class="english 101"> we are trying to delete rows using the np.delete() function.</span> <span
+            class="viet 101 hide"> chúng ta đang cố gắng xóa hàng bằng hàm np.delete().</span>
+        <span class="english 102"> In the code,</span> <span class="viet 102 hide"> Trong mã,</span>
+        <span class="english 103"> we first tried to delete the 0th row,</span> <span class="viet 103 hide"> đầu tiên
+            chúng ta cố gắng xóa hàng thứ 0,</span>
+        <span class="english 104"> then we tried to delete the 2nd row,</span> <span class="viet 104 hide"> sau đó chúng
+            ta cố gắng xóa hàng thứ 2,</span>
+        <span class="english 105"> and then the 3rd row.</span> <span class="viet 105 hide"> và sau đó là hàng thứ
+            3.</span>
+    </p>
+    <pre class="english"># create an array with integers
+# with 3 rows and 4 columns
+a = np.array([[6, 8, 10], 
+[ 9, -12, 15],
+[ 12, 16, 20],
+[ 15, -20, 25]])
+# delete 0 th row
+data = np.delete(a, 0, 0)
+print("data after 0 th row deleted: ", data)
+# delete 1 st row
+data = np.delete(a, 1, 0)
+print("\ndata after 1 st row deleted: ", data)
+# delete 2 nd row
+data = np.delete(a, 2, 0)
+print("\ndata after 2 nd row deleted: ", data)
+</pre>
+    <h3><span class="english 107">Add row/columns in the Numpy array</span> <span class="viet 107 hide">Thêm hàng/cột
+            trong Numpy array</span></h3>
+    <p><span class="english 108"> We added one more column at the 4th position using np.hstack.</span> <span
+            class="viet 108 hide"> Chúng tôi đã thêm một cột nữa ở vị trí thứ 4 bằng cách sử dụng np.hstack.</span>
+        <span class="english 109"> </span> <span class="viet 109 hide"> </span>
+    </p>
+    <pre class="english">ini_array = np.array([[6, 8, 10],
+              [9, -12, 15],
+              [15, -20, 25]])
+# Array to be added as column
+column_to_be_added = np.array([1, 2, 3])
+# Adding column to numpy array
+result = np.hstack((ini_array, np.atleast_2d(column_to_be_added).T))
+# printing result
+print("\nresultant array\n", str(result))
+</pre>
+    <a href="./ml3.html">Next</a>
+    <script>
+        const allEnglishElement = document.querySelectorAll(".english");
+        const allVietElement = document.querySelectorAll(".viet");
+
+        allEnglishElement.forEach((item, index) => {
+            item.addEventListener("click", (event) => handleClick(event))
+        })
+
+        function handleClick(event) {
+            const index = Number(event.target.classList[1])
+            allVietElement.forEach(e => {
+                if (e.classList[1] === event.target.classList[1]) {
+                    e.classList.contains("hide")
+                        ? e.classList.remove("hide")
+                        : e.classList.add("hide")
+                }
+            })
+
+        }
+        const msg = new SpeechSynthesisUtterance();
+        let voice = [];
+        const speakButton = document.querySelector('#speak');
+        const stopButton = document.querySelector('#stop');
+        const dungButton = document.querySelector('#dung');
+        const docButton = document.querySelector('#doc');
+
+        function toggle_E(startOver = true) {
+            speechSynthesis.cancel();
+            if (startOver) {
+                arr_len = document.getElementsByClassName('english').length;
+                console.log(arr_len);
+                let txt1 = '';
+                for (let i = 0; i < arr_len; i++) {
+                    temp_txt = document.getElementsByClassName('english')[i].innerHTML;
+                    temp_txt = temp_txt.trim() + '.\n';
+                    console.log(temp_txt);
+                    txt1 += temp_txt;
+                }
+                arr1 = txt1.split('\n');
+                arr1 = arr1.map((e) => e.trim());
+                // arr1[0] += '.';
+                arr1 = arr1.join(' ');
+                console.log(arr1);
+                msg.text = arr1;
+
+                msg.lang = 'en-US';
+                speechSynthesis.speak(msg);
+            }
+        }
+
+        function toggle_V(startOver = true) {
+            speechSynthesis.cancel();
+            allVietElement.forEach(e => e.classList.remove("hide"))
+
+            if (startOver) {
+                arr_len = document.getElementsByClassName('viet').length;
+                console.log(arr_len);
+                let txt1 = '';
+                for (let i = 0; i < arr_len; i++) {
+                    temp_txt = document.getElementsByClassName('viet')[i].innerHTML;
+                    temp_txt = temp_txt.trim() + '.\n';
+                    console.log(temp_txt);
+                    txt1 += temp_txt;
+                }
+                arr1 = txt1.split('\n');
+                arr1 = arr1.map((e) => e.trim());
+                // arr1[0] += '.';
+                arr1 = arr1.join(' ');
+                console.log(arr1);
+                msg.text = arr1;
+
+                msg.lang = 'vi-VN';
+                speechSynthesis.speak(msg);
+            }
+        }
+
+        speakButton.addEventListener('click', toggle_E);
+        stopButton.addEventListener('click', toggle_E.bind(null, false));
+        speakButton.addEventListener('click', toggle_V);
+        stopButton.addEventListener('click', toggle_V.bind(null, false));
+
+    </script>
+</body>
+
+</html>

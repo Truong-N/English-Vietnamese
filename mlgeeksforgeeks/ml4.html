@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML 4</title>
+</head>
+<style>
+    * {
+        cursor: pointer;
+    }
+
+    .hide {
+        display: none
+    }
+
+    .viet {
+        background-color: yellow;
+    }
+
+    img {
+        width: 75%;
+    }
+</style>
+
+<body>
+    <div>
+        <div>
+            <button id="stop">Stop!</button>
+            <button id="speak">Speak</button>
+            <button id="Dung">Dừng</button>
+            <button id="Doc">Đọc</button>
+        </div>
+    </div>
+
+    <h2><span class="english 128">Add Two Matrices Using for loop</span> <span class="viet 128 hide">Thêm hai ma trận
+            bằng vòng lặp for</span></h2>
+    <p><span class="english 129"> https://www.geeksforgeeks.org/python-program-add-two-matrices/<br> Here we will use
+            for loop with two matrices for adding the elements.</span> <span class="viet 129 hide"> Ở đây chúng ta sẽ sử
+            dụng vòng lặp for với hai ma trận để thêm các phần tử.</span>
+    </p>
+    <pre class="english"># Program to add two matrices using nested loop
+    X = [[1, 2, 3],
+         [4, 5, 6],
+         [7, 8, 9]]
+    Y = [[9, 8, 7],
+         [6, 5, 4],
+         [3, 2, 1]]
+    result = [[0, 0, 0],
+              [0, 0, 0],
+              [0, 0, 0]]
+    # iterate through rows
+    for i in range(len(X)):
+        # iterate through columns
+        for j in range(len(X[0])):
+            result[i][j] = X[i][j] + Y[i][j]
+    for r in result:
+        print(r)
+    </pre>
+    <h3><span class="english 131">Add Two Matrices Using List Comprehension</span> <span class="viet 131 hide">Thêm hai
+            ma trận bằng cách sử dụng List Comprehension</span></h3>
+    <p><span class="english 132"> In Python,</span> <span class="viet 132 hide"> Trong Python,</span>
+        <span class="english 133"> we can implement a matrix as nested list (list inside a list).</span> <span
+            class="viet 133 hide"> chúng ta có thể triển khai một ma trận dưới dạng danh sách lồng nhau (danh sách bên
+            trong danh sách).</span>
+        <span class="english 134"> We can treat each element as a row of the matrix.</span> <span class="viet 134 hide">
+            Chúng ta có thể coi mỗi phần tử như một hàng của ma trận.</span>
+        <span class="english 135"> In this program we have used nested for loops to iterate through each row and each
+            column.</span> <span class="viet 135 hide"> Trong chương trình này, chúng ta đã sử dụng các vòng lặp lồng
+            nhau để lặp qua từng hàng và từng cột.</span>
+        <span class="english 136"> At each point we add the corresponding elements in the two matrices and store it in
+            the result.</span> <span class="viet 136 hide"> Tại mỗi điểm, chúng ta thêm các phần tử tương ứng vào hai ma
+            trận và lưu trữ trong kết quả.</span>
+    </p>
+    <pre class="english"># Program to add two matrices
+    # using list comprehension
+    X = [[1, 2, 3],
+         [4, 5, 6],
+         [7, 8, 9]]
+    Y = [[9, 8, 7],
+         [6, 5, 4],
+         [3, 2, 1]]
+    result = [[X[i][j] + Y[i][j] for j in range
+               (len(X[0]))] for i in range(len(X))]
+    for r in result:
+        print(r)
+    </pre>
+    <h3><span class="english 138">Add Two Matrices Using zip() function</span> <span class="viet 138 hide">Thêm hai ma
+            trận bằng hàm zip()</span></h3>
+    <p><span class="english 139"> The output of this program is the same as above.</span> <span class="viet 139 hide">
+            Đầu ra của chương trình này giống như trên.</span>
+        <span class="english 140"> We have used nested list comprehension to iterate through each element in the
+            matrix.</span> <span class="viet 140 hide"> Chúng tôi đã sử dụng sự hiểu biết danh sách lồng nhau để lặp qua
+            từng phần tử trong ma trận.</span>
+        <span class="english 141"> List comprehension allows us to write concise codes and we must try to use them
+            frequently in Python.</span> <span class="viet 141 hide"> Sự hiểu biết danh sách cho phép chúng ta viết các
+            mã ngắn gọn và chúng ta phải cố gắng sử dụng chúng thường xuyên trong Python.</span>
+        <span class="english 142"> Here,</span> <span class="viet 142 hide"> Ở đây,</span>
+        <span class="english 143"> The zip function accepts iterator i of each element(list) of matrix,</span> <span
+            class="viet 143 hide"> Hàm zip chấp nhận iterator i của mỗi phần tử (danh sách) của ma trận,</span>
+        <span class="english 144"> mapping them,</span> <span class="viet 144 hide"> ánh xạ chúng,</span>
+        <span class="english 145"> adding them using sum(),</span> <span class="viet 145 hide"> thêm chúng bằng
+            sum(),</span>
+        <span class="english 146"> and storing them in the map form.</span> <span class="viet 146 hide"> và lưu trữ
+            chúng ở dạng bản đồ.</span>
+    </p>
+    <pre class="english"># Program to add two matrices using zip()
+    X = [[1, 2, 3],
+         [4, 5, 6],
+         [7, 8, 9]]
+    Y = [[9, 8, 7],
+         [6, 5, 4],
+         [3, 2, 1]]
+    result = [map(sum, zip(*t)) for t in zip(X, Y)]
+    print(result)
+    </pre>
+    <h3><span class="english 148">Add Two Matrices Using Numpy</span> <span class="viet 148 hide">Thêm hai ma trận bằng
+            Numpy</span></h3>
+    <p><span class="english 149"> The numpy library has a built-in overload of the operator +,</span> <span
+            class="viet 149 hide"> Thư viện numpy có hàm quá tải tích hợp của toán tử +,</span>
+        <span class="english 150"> that allows one to perform the addition of matrices.</span> <span
+            class="viet 150 hide"> cho phép thực hiện phép cộng các ma trận.</span>
+    </p>
+    <pre class="english">import numpy as np
+    X = [[1, 2, 3],
+         [4, 5, 6],
+         [7, 8, 9]]
+    Y = [[9, 8, 7],
+         [6, 5, 4],
+         [3, 2, 1]]
+    result = np.array(X) + np.array(Y)
+    print(result)
+    </pre>
+    <h3><span class="english 152">Add Two Matrices Using SymPy</span> <span class="viet 152 hide">Thêm hai ma trận bằng
+            SymPy</span></h3>
+    <p><span class="english 153"> To add matrices using a library,</span> <span class="viet 153 hide"> Để thêm ma trận
+            bằng thư viện,</span>
+        <span class="english 154"> you can use the Matrix class provided in the SymPy library.</span> <span
+            class="viet 154 hide"> bạn có thể sử dụng lớp Matrix được cung cấp trong thư viện SymPy.</span>
+    </p>
+    <pre class="english">from sympy import Matrix
+    X = [[1, 2, 3],
+         [4, 5, 6],
+         [7, 8, 9]]
+    Y = [[9, 8, 7],
+         [6, 5, 4],
+         [3, 2, 1]]
+    # Create Matrix objects from the lists
+    matrix_x = Matrix(X)
+    matrix_y = Matrix(Y)
+    # Add the matrices
+    result = matrix_x + matrix_y
+    # Print the result
+    print(result)
+    </pre>
+    <a href="./ml5.html">Next</a>
+    <script>
+        const allEnglishElement = document.querySelectorAll(".english");
+        const allVietElement = document.querySelectorAll(".viet");
+
+        allEnglishElement.forEach((item, index) => {
+            item.addEventListener("click", (event) => handleClick(event))
+        })
+
+        function handleClick(event) {
+            const index = Number(event.target.classList[1])
+            allVietElement.forEach(e => {
+                if (e.classList[1] === event.target.classList[1]) {
+                    e.classList.contains("hide")
+                        ? e.classList.remove("hide")
+                        : e.classList.add("hide")
+                }
+            })
+
+        }
+        const msg = new SpeechSynthesisUtterance();
+        let voice = [];
+        const speakButton = document.querySelector('#speak');
+        const stopButton = document.querySelector('#stop');
+        const dungButton = document.querySelector('#dung');
+        const docButton = document.querySelector('#doc');
+
+        function toggle_E(startOver = true) {
+            speechSynthesis.cancel();
+            if (startOver) {
+                arr_len = document.getElementsByClassName('english').length;
+                console.log(arr_len);
+                let txt1 = '';
+                for (let i = 0; i < arr_len; i++) {
+                    temp_txt = document.getElementsByClassName('english')[i].innerHTML;
+                    temp_txt = temp_txt.trim() + '.\n';
+                    console.log(temp_txt);
+                    txt1 += temp_txt;
+                }
+                arr1 = txt1.split('\n');
+                arr1 = arr1.map((e) => e.trim());
+                // arr1[0] += '.';
+                arr1 = arr1.join(' ');
+                console.log(arr1);
+                msg.text = arr1;
+
+                msg.lang = 'en-US';
+                speechSynthesis.speak(msg);
+            }
+        }
+
+        function toggle_V(startOver = true) {
+            speechSynthesis.cancel();
+            allVietElement.forEach(e => e.classList.remove("hide"))
+
+            if (startOver) {
+                arr_len = document.getElementsByClassName('viet').length;
+                console.log(arr_len);
+                let txt1 = '';
+                for (let i = 0; i < arr_len; i++) {
+                    temp_txt = document.getElementsByClassName('viet')[i].innerHTML;
+                    temp_txt = temp_txt.trim() + '.\n';
+                    console.log(temp_txt);
+                    txt1 += temp_txt;
+                }
+                arr1 = txt1.split('\n');
+                arr1 = arr1.map((e) => e.trim());
+                // arr1[0] += '.';
+                arr1 = arr1.join(' ');
+                console.log(arr1);
+                msg.text = arr1;
+
+                msg.lang = 'vi-VN';
+                speechSynthesis.speak(msg);
+            }
+        }
+
+        speakButton.addEventListener('click', toggle_E);
+        stopButton.addEventListener('click', toggle_E.bind(null, false));
+        speakButton.addEventListener('click', toggle_V);
+        stopButton.addEventListener('click', toggle_V.bind(null, false));
+
+    </script>
+</body>
+
+</html>
