@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dummy Classifier</title>
+</head>
+<style>
+    * {
+        cursor: pointer;
+    }
+
+    .hide {
+        display: none
+    }
+
+    .viet {
+        background-color: yellow;
+    }
+
+    img {
+        width: 75%;
+    }
+</style>
+
+<body>
+    <div>
+        <div>
+            <button id="stop">Stop!</button>
+            <button id="speak">Speak</button>
+            <button id="Dung">Dừng</button>
+            <button id="Doc">Đọc</button>
+        </div>
+    </div>
+    <h2><span class="english 1">Dummy Classifier Explained: A Visual Guide with Code Examples for Beginners</span> <span
+            class="viet 1 hide">Giải thích về Bộ phân loại giả: Hướng dẫn trực quan với các ví dụ về mã dành cho người
+            mới bắt đầu</span></h2>
+    <h3><span class="english 2">CLASSIFICATION ALGORITHM</span> <span class="viet 2 hide">THUẬT TOÁN PHÂN LOẠI</span>
+    </h3>
+    <p><span class="english 3"> Have you ever wondered how data scientists measure the performance of their Machine
+            Learning models?</span> <span class="viet 3 hide"> Bạn đã bao giờ tự hỏi các nhà khoa học dữ liệu đo lường
+            hiệu suất của các mô hình Học máy của họ như thế nào chưa?</span>
+        <span class="english 4"> Enter the dummy classifier – a simple yet powerful tool in the world of data
+            science.</span> <span class="viet 4 hide"> Hãy nhập bộ phân loại giả – một công cụ đơn giản nhưng mạnh mẽ
+            trong thế giới khoa học dữ liệu.</span>
+        <span class="english 5"> Think of it as the baseline player in a game,</span> <span class="viet 5 hide"> Hãy
+            nghĩ về nó như người chơi cơ bản trong một trò chơi,</span>
+        <span class="english 6"> setting the minimum standard that other,</span> <span class="viet 6 hide"> thiết lập
+            tiêu chuẩn tối thiểu mà các mô hình khác,</span>
+        <span class="english 7"> more sophisticated models need to beat.</span> <span class="viet 7 hide"> tinh vi hơn
+            cần phải vượt qua.</span>
+    </p>
+    <h3><span class="english 9">Definition</span> <span class="viet 9 hide">Định nghĩa</span></h3>
+    <p><span class="english 10"> A dummy classifier is a simple machine learning model that makes predictions using
+            basic rules,</span> <span class="viet 10 hide"> Bộ phân loại giả là một mô hình học máy đơn giản đưa ra dự
+            đoán bằng cách sử dụng quy tắc,</span>
+        <span class="english 11"> without actually learning from the input data.</span> <span class="viet 11 hide"> mà
+            không thực sự học từ dữ liệu đầu vào.</span>
+        <span class="english 12"> It serves as a baseline for comparing the performance of more complex models.</span>
+        <span class="viet 12 hide"> Nó đóng vai trò là cơ sở để so sánh hiệu suất của các mô hình phức tạp hơn.</span>
+        <span class="english 13"> The dummy classifier helps us understand if our sophisticated models are actually
+            learning useful patterns or just guessing.</span> <span class="viet 13 hide"> Bộ phân loại giả giúp chúng ta
+            hiểu liệu các mô hình phức tạp của chúng ta có thực sự học các mẫu hữu ích hay chỉ đoán.</span>
+    </p>
+    <h3><span class="english 15">Dataset &amp; Libraries</span> <span class="viet 15 hide"> Bộ dữ liệu &amp; Thư
+            viện</span></h3>
+    <p><span class="english 16"> Throughout this article,</span> <span class="viet 16 hide"> Trong suốt bài viết
+            này,</span>
+        <span class="english 17"> we’ll use this simple artificial golf dataset (inspired by [1]) as an example.</span>
+        <span class="viet 17 hide"> chúng ta sẽ sử dụng bộ dữ liệu chơi gôn nhân tạo đơn giản này (lấy cảm hứng từ [1])
+            làm ví dụ.</span>
+        <span class="english 18"> This dataset predicts whether a person will play golf based on weather
+            conditions.</span> <span class="viet 18 hide"> Bộ dữ liệu này dự đoán liệu một người có chơi gôn dựa trên
+            điều kiện thời tiết hay không.</span>
+        <span class="english 19"> It includes features like outlook,</span> <span class="viet 19 hide"> Nó bao gồm các
+            tính năng như quang cảnh,</span>
+        <span class="english 20"> temperature,</span> <span class="viet 20 hide"> nhiệt độ,</span>
+        <span class="english 21"> humidity,</span> <span class="viet 21 hide"> độ ẩm,</span>
+        <span class="english 22"> and wind,</span> <span class="viet 22 hide"> và gió,</span>
+        <span class="english 23"> with the target variable being whether to play golf or not.</span> <span
+            class="viet 23 hide"> với biến mục tiêu là có chơi golf hay không.</span>
+    </p>
+    <img src="./images/dummy-fig1.png" alt="dummy-fig1">
+    <p><span class="english 26"> Columns:</span> <span class="viet 26 hide"> Các cột:</span>
+        <span class="english 27"> ‘Outlook’,</span> <span class="viet 27 hide"> ‘Outlook’,</span>
+        <span class="english 28"> ‘Temperature’,</span> <span class="viet 28 hide"> ‘Nhiệt độ’,</span>
+        <span class="english 29"> ‘Humidity’,</span> <span class="viet 29 hide"> ‘Độ ẩm’,</span>
+        <span class="english 30"> ‘Wind’ and ‘Play’ (target feature)</span> <span class="viet 30 hide"> ‘Gió’ và ‘Chơi’
+            (tính năng mục tiêu)</span>
+    </p>
+    <pre class="english"># Import libraries
+from sklearn.model_selection import train_test_split
+import pandas as pd
+
+# Make a dataset
+dataset_dict = {
+    'Outlook': ['sunny', 'sunny', 'overcast', 'rain', 'rain', 'rain', 'overcast', 'sunny', 'sunny', 'rain', 'sunny', 'overcast', 'overcast', 'rain', 'sunny', 'overcast', 'rain', 'sunny', 'sunny', 'rain', 'overcast', 'rain', 'sunny', 'overcast', 'sunny', 'overcast', 'rain', 'overcast'],
+    'Temperature': [85.0, 80.0, 83.0, 70.0, 68.0, 65.0, 64.0, 72.0, 69.0, 75.0, 75.0, 72.0, 81.0, 71.0, 81.0, 74.0, 76.0, 78.0, 82.0, 67.0, 85.0, 73.0, 88.0, 77.0, 79.0, 80.0, 66.0, 84.0],
+    'Humidity': [85.0, 90.0, 78.0, 96.0, 80.0, 70.0, 65.0, 95.0, 70.0, 80.0, 70.0, 90.0, 75.0, 80.0, 88.0, 92.0, 85.0, 75.0, 92.0, 90.0, 85.0, 88.0, 65.0, 70.0, 60.0, 95.0, 70.0, 78.0],
+    'Wind': [False, True, False, False, False, True, True, False, False, False, True, True, False, True, True, False, False, True, False, True, True, False, True, False, False, True, False, False],
+    'Play': ['No', 'No', 'Yes', 'Yes', 'Yes', 'No', 'Yes', 'No', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'No', 'No', 'Yes', 'Yes', 'No', 'No', 'No', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'No', 'Yes']
+}
+df = pd.DataFrame(dataset_dict)
+
+# One-hot Encode 'Outlook' Column
+df = pd.get_dummies(df, columns=['Outlook'],  prefix='', prefix_sep='', dtype=int)
+
+# Convert 'Windy' (bool) and 'Play' (binary) Columns to 0 and 1
+df['Wind'] = df['Wind'].astype(int)
+df['Play'] = (df['Play'] == 'Yes').astype(int)
+
+# Set feature matrix X and target vector y
+X, y = df.drop(columns='Play'), df['Play']
+
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.5, shuffle=False)
+</pre>
+    <h3><span class="english 32">Main Mechanism</span> <span class="viet 32 hide">Cơ chế chính</span></h3>
+    <p><span class="english 33"> The dummy classifier operates on simple strategies to make predictions.</span> <span
+            class="viet 33 hide"> Bộ phân loại giả hoạt động dựa trên các chiến lược đơn giản để đưa ra dự đoán.</span>
+        <span class="english 34"> These strategies don’t involve any actual learning from the data.</span> <span
+            class="viet 34 hide"> Các chiến lược này không liên quan đến bất kỳ quá trình học thực tế nào từ dữ
+            liệu.</span>
+        <span class="english 35"> Instead,</span> <span class="viet 35 hide"> Thay vào đó,</span>
+        <span class="english 36"> they use basic rules like:</span> <span class="viet 36 hide"> chúng sử dụng các quy
+            tắc cơ bản như:</span>
+    </p>
+    <li><span class="english 38">Always predicting the most frequent class</span> <span class="viet 38 hide">Luôn dự
+            đoán lớp thường xuyên nhất</span></li>
+    <li><span class="english 39">Randomly predicting a class based on the training set’s class distribution</span> <span
+            class="viet 39 hide">Dự đoán ngẫu nhiên một lớp dựa trên phân phối lớp của tập huấn luyện</span></li>
+    <li><span class="english 40">Always predicting a specific class</span> <span class="viet 40 hide">Luôn dự đoán một
+            lớp cụ thể</span></li>
+    <img src="./images/dummy-fig2.png" alt="dummy-fig2">
+    <p><span class="english 43"> For our golf dataset,</span> <span class="viet 43 hide"> Đối với tập dữ liệu chơi gôn
+            của chúng tôi,</span>
+        <span class="english 44"> a dummy classifier might always predict "Yes" for playing golf if that’s the most
+            common outcome in the training data.</span> <span class="viet 44 hide"> một bộ phân loại giả có thể luôn dự
+            đoán "Có" khi chơi gôn nếu đó là kết quả phổ biến nhất trong dữ liệu đào tạo.</span>
+    </p>
+    <h3><span class="english 46">Training Steps</span> <span class="viet 46 hide">Các bước đào tạo</span></h3>
+    <p><span class="english 47"> The "training" process for a dummy classifier is quite simple and doesn’t involve the
+            usual learning algorithms.</span> <span class="viet 47 hide"> Quy trình "đào tạo" cho bộ phân loại giả khá
+            đơn giản và không liên quan đến các thuật toán học thông thường.</span>
+        <span class="english 48"> Here’s a general outline:</span> <span class="viet 48 hide"> Sau đây là phác thảo
+            chung:</span>
+    </p>
+    <h4><span class="english 50">1. Select Strategy</span> <span class="viet 50 hide">1. Chọn Chiến lược</span></h4>
+    <p><span class="english 51"> Choose one of the following strategies:</span> <span class="viet 51 hide"> Chọn một
+            trong các chiến lược sau:</span></p>
+    <li><span class="english 53"><b>Stratified:</b> Makes random guesses based on the original class
+            distribution.</span> <span class="viet 53 hide"><b>Phân tầng:</b> Đưa ra các dự đoán ngẫu nhiên dựa trên
+            phân phối lớp ban đầu.</span></li>
+    <li><span class="english 54"><b>Most Frequent:</b> Always picks the most common class.</span> <span
+            class="viet 54 hide"><b>Thường xuyên nhất:</b> Luôn chọn lớp phổ biến nhất.</span></li>
+    <li><span class="english 55"><b>Uniform:</b> Randomly picks any class.</span> <span class="viet 55 hide"><b>Đồng
+                nhất:</b> Chọn ngẫu nhiên bất kỳ lớp nào.</span></li>
+    <img src="./images/dummy-fig3.png" alt="dummy-fig3">
+    <p><span class="english 58"> Depends on the strategy,</span> <span class="viet 58 hide"> Tùy thuộc vào chiến
+            lược,</span>
+        <span class="english 59"> Dummy Classifier makes different prediction.</span> <span class="viet 59 hide"> Bộ
+            phân loại giả tạo đưa ra dự đoán khác nhau.</span>
+    </p>
+    <pre class="english">from sklearn.dummy import DummyClassifier
+
+# Choose a strategy for your DummyClassifier (e.g., 'most_frequent', 'stratified', etc.)
+strategy = 'most_frequent'
+</pre>
+    <h4><span class="english 61">2. Collect Training Labels</span> <span class="viet 61 hide">2. Thu thập nhãn đào
+            tạo</span></h4>
+    <p><span class="english 62"> Collect the class labels from the training dataset to determine the strategy
+            parameters.</span> <span class="viet 62 hide"> Thu thập nhãn lớp từ tập dữ liệu đào tạo để xác định các tham
+            số chiến lược.</span></p><img src="./images/dummy-fig4.png" alt="dummy-fig4">
+
+    <p><span class="english 64"> The algorithm is simply getting information of the "Most Frequent" class in the
+            training dataset – in this case "Yes".</span> <span class="viet 64 hide"> Thuật toán chỉ đơn giản là lấy
+            thông tin về lớp "Thường xuyên nhất" trong tập dữ liệu đào tạo – trong trường hợp này là "Có".</span></p>
+    <pre class="english"># Initialize the DummyClassifier
+dummy_clf = DummyClassifier(strategy=strategy)
+
+# "Train" the DummyClassifier (although no real training happens)
+dummy_clf.fit(X_train, y_train)
+</pre>
+    <h3><span class="english 66">3. Apply Strategy to Test Data</span> <span class="viet 66 hide">3. Áp dụng Chiến lược
+            cho Dữ liệu Kiểm tra</span></h3>
+    <p><span class="english 67"> Use the chosen strategy to generate a list of predicted labels for your test
+            data.</span> <span class="viet 67 hide"> Sử dụng chiến lược đã chọn để tạo danh sách các nhãn dự đoán cho dữ
+            liệu kiểm tra của bạn.</span></p>
+    <img src="./images/dummy-fig5.png" alt="dummy-fig5">
+    <p><span class="english 70"> If we choose the "most frequent" strategy and find that "Yes" (play golf) appears more
+            often in our training data,</span> <span class="viet 70 hide"> Nếu chúng ta chọn chiến lược "thường xuyên
+            nhất" và thấy rằng "Có" (chơi gôn) xuất hiện thường xuyên hơn trong dữ liệu đào tạo của chúng ta,</span>
+        <span class="english 71"> the dummy classifier will simply remember to always predict "Yes".</span> <span
+            class="viet 71 hide"> bộ phân loại giả sẽ chỉ nhớ luôn dự đoán "Có".</span>
+    </p>
+    <pre class="english"># Use the DummyClassifier to make predictions
+y_pred = dummy_clf.predict(X_test)
+print("Label     :",list(y_test))
+print("Prediction:",list(y_pred))
+</pre>
+    <h3><span class="english 73">Evaluate the Model</span> <span class="viet 73 hide">Đánh giá mô hình</span></h3>
+    <img src="./images/dummy-fig6.png" alt="dummy-fig6">
+    <p><span class="english 75"> Dummy classifier gives 64% accuracy as the baseline for future models.</span> <span
+            class="viet 75 hide"> Bộ phân loại giả cung cấp độ chính xác 64% làm cơ sở cho các mô hình trong tương
+            lai.</span></p>
+    <pre class="english"># Evaluate the DummyClassifier's accuracy
+from sklearn.metrics import accuracy_score
+
+accuracy = accuracy_score(y_test, y_pred)
+print(f"Dummy Classifier Accuracy: {accuracy.round(4)*100}%")
+</pre>
+    <h3><span class="english 77">Key Parameters</span> <span class="viet 77 hide">Các tham số chính</span></h3>
+    <p><span class="english 78"> While dummy classifiers are simple,</span> <span class="viet 78 hide"> Mặc dù bộ phân
+            loại giả rất đơn giản,</span>
+        <span class="english 79"> they do have a few important parameters:</span> <span class="viet 79 hide"> chúng có
+            một số tham số:</span>
+    </p>
+    <p><span class="english 81"> 1) Strategy:</span> <span class="viet 81 hide"> 1) Chiến lược:</span>
+        <span class="english 82"> This determines how the classifier makes predictions.</span> <span
+            class="viet 82 hide"> Điều này xác định cách bộ phân loại đưa ra dự đoán.</span>
+        <span class="english 83"> Common options include:</span> <span class="viet 83 hide"> Các tùy chọn phổ biến bao
+            gồm:</span>
+    </p>
+    <li><span class="english 85">‘most_frequent’: Always predicts the most common class in the training set.</span>
+        <span class="viet 85 hide">‘most_frequent’: Luôn dự đoán lớp phổ biến nhất trong tập huấn luyện.</span>
+    </li>
+    <li><span class="english 86">‘stratified’: Generates predictions based on the training set’s class
+            distribution.</span> <span class="viet 86 hide">‘phân tầng’: Tạo dự đoán dựa trên phân phối lớp của tập
+            huấn luyện.</span></li>
+    <li><span class="english 87">‘uniform’: Generates predictions uniformly at random.</span> <span
+            class="viet 87 hide">‘uniform’: Tạo dự đoán đồng đều ngẫu nhiên.</span></li>
+    <li><span class="english 88">‘constant’: Always predicts a specified class.</span> <span
+            class="viet 88 hide">‘constant’: Luôn dự đoán một lớp đã chỉ định.</span></li>
+    <p><span class="english 90"> 2) Random State:</span> <span class="viet 90 hide"> 2) Trạng thái ngẫu nhiên:</span>
+        <span class="english 91"> If using a strategy that involves randomness (like ‘stratified’ or ‘uniform’),</span>
+        <span class="viet 91 hide"> Nếu sử dụng chiến lược liên quan đến tính ngẫu nhiên (như ‘phân tầng’ hoặc ‘đồng
+            nhất’),</span>
+        <span class="english 92"> this parameter ensures reproducibility of results.</span> <span class="viet 92 hide">
+            tham số này đảm bảo khả năng tái tạo kết quả.</span>
+    </p>
+    <p><span class="english 93"> 3) Constant:</span> <span class="viet 93 hide"> 3) Hằng số:</span>
+        <span class="english 94"> When using the ‘constant’ strategy,</span> <span class="viet 94 hide"> Khi sử dụng
+            chiến lược ‘hằng số’,</span>
+        <span class="english 95"> this parameter specifies which class to always predict.</span> <span
+            class="viet 95 hide"> tham số này chỉ định lớp nào sẽ luôn dự đoán.</span>
+    </p>
+    <p><span class="english 97"> For our golf dataset,</span> <span class="viet 97 hide"> Đối với tập dữ liệu chơi gôn
+            của chúng tôi,</span>
+        <span class="english 98"> we might choose the ‘most_frequent’ strategy,</span> <span class="viet 98 hide"> chúng
+            tôi có thể chọn chiến lược ‘most_frequent’,</span>
+        <span class="english 99"> which doesn’t require additional parameters.</span> <span class="viet 99 hide"> không
+            yêu cầu thêm tham số.</span>
+    </p>
+    <h3><span class="english 101">Pros and Cons</span> <span class="viet 101 hide">Ưu và nhược điểm</span></h3>
+    <p><span class="english 102"> Like any tool in machine learning,</span> <span class="viet 102 hide"> Giống như bất
+            kỳ công cụ nào trong học máy,</span>
+        <span class="english 103"> dummy classifiers have their strengths and limitations.</span> <span
+            class="viet 103 hide"> bộ phân loại giả có những điểm mạnh và hạn chế riêng.</span>
+    </p>
+    <h4><span class="english 105">Pros:</span> <span class="viet 105 hide">Ưu điểm:</span></h4>
+    <li><span class="english 106"><b>Simplicity:</b> Easy to understand and implement.</span> <span
+            class="viet 106 hide"><b>Đơn giản:</b> Dễ hiểu và triển khai.</span></li>
+    <li><span class="english 107"><b>Baseline Performance:</b> Provides a minimum performance benchmark for other
+            models.</span> <span class="viet 107 hide"><b>Hiệu suất cơ sở:</b> Cung cấp điểm chuẩn hiệu suất tối thiểu
+            cho các mô hình khác.</span></li>
+    <li><span class="english 108"><b>Overfitting Check:</b> Helps identify when complex models are overfitting by
+            comparing their performance to the dummy classifier.</span> <span class="viet 108 hide"><b>Kiểm tra quá
+                khớp:</b> Giúp xác định thời điểm các mô hình phức tạp bị khớp quá mức bằng cách so sánh hiệu suất của
+            chúng với bộ phân loại giả.</span></li>
+    <li><span class="english 109"><b>Quick to Train and Predict:</b> Requires minimal computational resources.</span>
+        <span class="viet 109 hide"><b>Đào tạo và dự đoán nhanh:</b> Yêu cầu tài nguyên tính toán tối thiểu.</span>
+    </li>
+    <h4><span class="english 111">Cons:</span> <span class="viet 111 hide">Nhược điểm:</span></h4>
+    <li><span class="english 112"><b>Limited Predictive Power:</b> By design, it doesn’t learn from the data, so its
+            predictions are often inaccurate.</span> <span class="viet 112 hide"><b>Sức mạnh dự đoán hạn chế:</b> Bởi
+            thiết kế, nó không học từ dữ liệu, vì vậy các dự đoán của nó thường không chính xác.</span></li>
+    <li><span class="english 113"><b>No Feature Importance:</b> It doesn’t provide insights into which features are most
+            important for predictions.</span> <span class="viet 113 hide"><b>Không có tính năng quan trọng:</b> Nó không
+            cung cấp thông tin chi tiết về tính năng nào quan trọng nhất đối với các dự đoán.</span></li>
+    <li><span class="english 114"><b>Not Suitable for Complex Problems:</b> In real-world scenarios with intricate
+            patterns, dummy classifiers are too simplistic to be useful on their own.</span> <span
+            class="viet 114 hide"><b>Không phù hợp với các vấn đề phức tạp:</b> Trong các tình huống thực tế với các mẫu
+            phức tạp, các bộ phân loại giả quá đơn giản để có thể hữu ích khi sử dụng riêng lẻ.</span></li>
+    <h3><span class="english 116">Final Remarks</span> <span class="viet 116 hide">Nhận xét cuối cùng</span></h3>
+    <p><span class="english 117"> Understanding dummy classifiers is crucial for any data scientist or machine learning
+            enthusiast.</span> <span class="viet 117 hide"> Việc hiểu các bộ phân loại giả là rất quan trọng đối với bất
+            kỳ nhà khoa học dữ liệu hoặc người đam mê học máy nào.</span>
+        <span class="english 118"> They serve as a reality check,</span> <span class="viet 118 hide"> Chúng đóng vai trò
+            như một phép kiểm tra thực tế,</span>
+        <span class="english 119"> helping us ensure that our more complex models are actually learning useful patterns
+            from the data.</span> <span class="viet 119 hide"> giúp chúng tôi đảm bảo rằng các mô hình phức tạp hơn của
+            chúng tôi thực sự đang học các mẫu hữu ích từ dữ liệu.</span>
+        <span class="english 120"> As you continue your journey in machine learning,</span> <span class="viet 120 hide">
+            Khi bạn tiếp tục hành trình học máy,</span>
+        <span class="english 121"> always remember to compare your models against these simple baselines – you might be
+            surprised by what you learn!</span> <span class="viet 121 hide"> hãy luôn nhớ so sánh các mô hình của bạn
+            với các đường cơ sở đơn giản này – bạn có thể ngạc nhiên về những gì mình học được!</span>
+    </p>
+    <pre class="english"># Import necessary libraries
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+from sklearn.dummy import DummyClassifier
+
+# Make dataset
+dataset_dict = {
+    'Outlook': ['sunny', 'sunny', 'overcast', 'rain', 'rain', 'rain', 'overcast', 'sunny', 'sunny', 'rain', 'sunny', 'overcast', 'overcast', 'rain', 'sunny', 'overcast', 'rain', 'sunny', 'sunny', 'rain', 'overcast', 'rain', 'sunny', 'overcast', 'sunny', 'overcast', 'rain', 'overcast'],
+    'Temperature': [85.0, 80.0, 83.0, 70.0, 68.0, 65.0, 64.0, 72.0, 69.0, 75.0, 75.0, 72.0, 81.0, 71.0, 81.0, 74.0, 76.0, 78.0, 82.0, 67.0, 85.0, 73.0, 88.0, 77.0, 79.0, 80.0, 66.0, 84.0],
+    'Humidity': [85.0, 90.0, 78.0, 96.0, 80.0, 70.0, 65.0, 95.0, 70.0, 80.0, 70.0, 90.0, 75.0, 80.0, 88.0, 92.0, 85.0, 75.0, 92.0, 90.0, 85.0, 88.0, 65.0, 70.0, 60.0, 95.0, 70.0, 78.0],
+    'Wind': [False, True, False, False, False, True, True, False, False, False, True, True, False, True, True, False, False, True, False, True, True, False, True, False, False, True, False, False],
+    'Play': ['No', 'No', 'Yes', 'Yes', 'Yes', 'No', 'Yes', 'No', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'No', 'No', 'Yes', 'Yes', 'No', 'No', 'No', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'No', 'Yes']
+}
+df = pd.DataFrame(dataset_dict)
+
+# Perform one-hot encoding on 'Outlook' column
+df = pd.get_dummies(df, columns=['Outlook'], prefix='', prefix_sep='', dtype=int)
+
+# Convert 'Wind' and 'Play' columns to binary indicators
+df['Wind'] = df['Wind'].astype(int)
+df['Play'] = (df['Play'] == 'Yes').astype(int)
+
+# Split data into features (X) and target (y), then into training and test sets
+X, y = df.drop(columns='Play'), df['Play']
+X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.5, shuffle=False)
+
+# Initialize and train the dummy classifier model
+dummy_clf = DummyClassifier(strategy='most_frequent')
+dummy_clf.fit(X_train, y_train)
+
+# Make predictions on the test data
+y_pred = dummy_clf.predict(X_test)
+
+# Calculate and print the model's accuracy on the test data
+print(f"Accuracy: {accuracy_score(y_test, y_pred)*100:.4f}%")
+</pre>
+    <a href="./ml2_knn.html">Next</a>
+    <script>
+        const allEnglishElement = document.querySelectorAll(".english");
+        const allVietElement = document.querySelectorAll(".viet");
+
+        allEnglishElement.forEach((item, index) => {
+            item.addEventListener("click", (event) => handleClick(event))
+        })
+
+        function handleClick(event) {
+            const index = Number(event.target.classList[1])
+            allVietElement.forEach(e => {
+                if (e.classList[1] === event.target.classList[1]) {
+                    e.classList.contains("hide")
+                        ? e.classList.remove("hide")
+                        : e.classList.add("hide")
+                }
+            })
+
+        }
+        const msg = new SpeechSynthesisUtterance();
+        let voice = [];
+        const speakButton = document.querySelector('#speak');
+        const stopButton = document.querySelector('#stop');
+        const dungButton = document.querySelector('#dung');
+        const docButton = document.querySelector('#doc');
+
+        function toggle_E(startOver = true) {
+            speechSynthesis.cancel();
+            if (startOver) {
+                arr_len = document.getElementsByClassName('english').length;
+                console.log(arr_len);
+                let txt1 = '';
+                for (let i = 0; i < arr_len; i++) {
+                    temp_txt = document.getElementsByClassName('english')[i].innerHTML;
+                    temp_txt = temp_txt.trim() + '.\n';
+                    console.log(temp_txt);
+                    txt1 += temp_txt;
+                }
+                arr1 = txt1.split('\n');
+                arr1 = arr1.map((e) => e.trim());
+                // arr1[0] += '.';
+                arr1 = arr1.join(' ');
+                console.log(arr1);
+                msg.text = arr1;
+
+                msg.lang = 'en-US';
+                speechSynthesis.speak(msg);
+            }
+        }
+
+        function toggle_V(startOver = true) {
+            speechSynthesis.cancel();
+            allVietElement.forEach(e => e.classList.remove("hide"))
+
+            if (startOver) {
+                arr_len = document.getElementsByClassName('viet').length;
+                console.log(arr_len);
+                let txt1 = '';
+                for (let i = 0; i < arr_len; i++) {
+                    temp_txt = document.getElementsByClassName('viet')[i].innerHTML;
+                    temp_txt = temp_txt.trim() + '.\n';
+                    console.log(temp_txt);
+                    txt1 += temp_txt;
+                }
+                arr1 = txt1.split('\n');
+                arr1 = arr1.map((e) => e.trim());
+                // arr1[0] += '.';
+                arr1 = arr1.join(' ');
+                console.log(arr1);
+                msg.text = arr1;
+
+                msg.lang = 'vi-VN';
+                speechSynthesis.speak(msg);
+            }
+        }
+
+        speakButton.addEventListener('click', toggle_E);
+        stopButton.addEventListener('click', toggle_E.bind(null, false));
+        speakButton.addEventListener('click', toggle_V);
+        stopButton.addEventListener('click', toggle_V.bind(null, false));
+
+    </script>
+</body>
+
+</html>

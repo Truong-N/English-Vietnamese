@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaussian Bayes Classifier</title>
+</head>
+<style>
+    * {
+        cursor: pointer;
+    }
+
+    .hide {
+        display: none
+    }
+
+    .viet {
+        background-color: yellow;
+    }
+
+    img {
+        width: 75%;
+    }
+</style>
+
+<body>
+    <div>
+        <div>
+            <button id="stop">Stop!</button>
+            <button id="speak">Speak</button>
+            <button id="Dung">Dừng</button>
+            <button id="Doc">Đọc</button>
+        </div>
+    </div><a href="./ml3_bayes_classifier.html">Prev</a>
+    <h2><span class="english 1">Gaussian Naive Bayes, Explained: A Visual Guide with Code Examples for Beginners</span>
+        <span class="viet 1 hide">Giải thích về Gaussian Naive Bayes: Hướng dẫn trực quan có ví dụ về mã cho người mới
+            bắt đầu</span>
+    </h2>
+    <p><span class="english 2"> Bell-shaped assumptions for better predictions</span> <span class="viet 2 hide"> Giả
+            định hình chuông để dự đoán tốt hơn</span></p>
+    <p><span class="english 4"> Samy Baladram</span> <span class="viet 4 hide"> Samy Baladram</span></p>
+    <h3><span class="english 6">CLASSIFICATION ALGORITHM</span> <span class="viet 6 hide">THUẬT TOÁN PHÂN LOẠI</span>
+    </h3>
+    <p><span class="english 7"> Building on our previous article about Bernoulli Naive Bayes,</span> <span
+            class="viet 7 hide"> Dựa trên bài viết trước của chúng tôi về Bernoulli Naive Bayes,</span>
+        <span class="english 8"> which handles binary data,</span> <span class="viet 8 hide"> xử lý dữ liệu nhị
+            phân,</span>
+        <span class="english 9"> we now explore Gaussian Naive Bayes for continuous data.</span> <span
+            class="viet 9 hide"> giờ chúng ta sẽ khám phá Gaussian Naive Bayes cho dữ liệu liên tục.</span>
+        <span class="english 10"> Unlike the binary approach,</span> <span class="viet 10 hide"> Không giống như phương
+            pháp nhị phân,</span>
+        <span class="english 11"> this algorithm assumes each feature follows a normal (Gaussian) distribution.</span>
+        <span class="viet 11 hide"> thuật toán này giả định mỗi tính năng tuân theo một chuẩn (Gaussian) phân
+            phối.</span>
+    </p>
+    <p><span class="english 12"> Here,</span> <span class="viet 12 hide"> Tại đây,</span>
+        <span class="english 13"> we’ll see how Gaussian Naive Bayes handles continuous,</span> <span
+            class="viet 13 hide"> chúng ta sẽ xem cách Gaussian Naive Bayes xử lý dữ liệu liên tục,</span>
+        <span class="english 14"> bell-shaped data – ringing in accurate predictions – all without getting into the
+            intricate math of Bayes’ Theorem.</span> <span class="viet 14 hide"> hình chuông – đưa ra dự đoán chính xác
+            – tất cả mà không cần đi sâu vào phép toán phức tạp của Định lý Bayes.</span>
+    </p>
+    <h3><span class="english 16">Definition</span> <span class="viet 16 hide">Định nghĩa</span></h3>
+    <p><span class="english 17"> Like other Naive Bayes variants,</span> <span class="viet 17 hide"> Giống như các biến
+            thể Naive Bayes khác,</span>
+        <span class="english 18"> Gaussian Naive Bayes makes the "naive" assumption of feature independence.</span>
+        <span class="viet 18 hide"> Gaussian Naive Bayes đưa ra giả định "ngây thơ" về tính độc lập của đặc điểm.</span>
+        <span class="english 19"> It assumes that the features are conditionally independent given the class
+            label.</span> <span class="viet 19 hide"> Giả định rằng các đặc điểm độc lập có điều kiện với nhãn
+            lớp.</span>
+    </p>
+    <p><span class="english 20"> However,</span> <span class="viet 20 hide"> Tuy nhiên,</span>
+        <span class="english 21"> while Bernoulli Naive Bayes is suited for datasets with binary features,</span> <span
+            class="viet 21 hide"> trong khi Bernoulli Naive Bayes phù hợp với các tập dữ liệu có các đặc điểm nhị
+            phân,</span>
+        <span class="english 22"> Gaussian Naive Bayes assumes that the features follow a continuous normal (Gaussian)
+            distribution.</span> <span class="viet 22 hide"> Gaussian Naive Bayes giả định rằng các đặc điểm tuân theo
+            phân phối chuẩn liên tục (Gaussian).</span>
+        <span class="english 23"> Although this assumption may not always hold true in reality,</span> <span
+            class="viet 23 hide"> Mặc dù giả định này không phải lúc nào cũng đúng trong thực tế,</span>
+        <span class="english 24"> it simplifies the calculations and often leads to surprisingly accurate
+            results.</span> <span class="viet 24 hide"> nó đơn giản hóa các phép tính và thường dẫn đến kết quả chính
+            xác đáng ngạc nhiên.</span>
+    </p>
+    <h3><span class="english 26">Dataset Used</span> <span class="viet 26 hide">Bộ dữ liệu được sử dụng</span></h3>
+    <p><span class="english 27"> Throughout this article,</span> <span class="viet 27 hide"> Trong suốt bài viết
+            này,</span>
+        <span class="english 28"> we’ll use this artificial golf dataset (made by author) as an example.</span> <span
+            class="viet 28 hide"> chúng tôi sẽ sử dụng bộ dữ liệu chơi gôn nhân tạo này (do tác giả tạo ra) làm ví
+            dụ.</span>
+        <span class="english 29"> This dataset predicts whether a person will play golf based on weather
+            conditions.</span> <span class="viet 29 hide"> Bộ dữ liệu này dự đoán liệu một người có chơi gôn hay không
+            dựa trên điều kiện thời tiết.</span>
+    </p>
+    <img src="./images/gaussian-fig1.png" alt="gaussian-fig1">
+    <p><span class="english 32"> Columns:</span> <span class="viet 32 hide"> Các cột:</span>
+        <span class="english 33"> ‘RainfallAmount’ (in mm),</span> <span class="viet 33 hide"> ‘Lượng mưa’ (tính bằng
+            mm),</span>
+        <span class="english 34"> ‘Temperature’ (in Celcius),</span> <span class="viet 34 hide"> ‘Nhiệt độ’ (tính bằng
+            độ C),</span>
+        <span class="english 35"> ‘Humidity’ (in %),</span> <span class="viet 35 hide"> ‘Độ ẩm’ (tính bằng %),</span>
+        <span class="english 36"> ‘WindSpeed’ (in km/h) and ‘Play’ (Yes/No,</span> <span class="viet 36 hide"> ‘Tốc độ
+            gió’ (tính bằng km/h) và ‘Phát’ (Có/Không,</span>
+        <span class="english 37"> target feature)</span> <span class="viet 37 hide"> tính năng mục tiêu)</span>
+    </p>
+    <pre class="english"># IMPORTING DATASET #
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+import pandas as pd
+import numpy as np
+
+dataset_dict = {
+    'Rainfall': [0.0, 2.0, 7.0, 18.0, 3.0, 3.0, 0.0, 1.0, 0.0, 25.0, 0.0, 18.0, 9.0, 5.0, 0.0, 1.0, 7.0, 0.0, 0.0, 7.0, 5.0, 3.0, 0.0, 2.0, 0.0, 8.0, 4.0, 4.0],
+    'Temperature': [29.4, 26.7, 28.3, 21.1, 20.0, 18.3, 17.8, 22.2, 20.6, 23.9, 23.9, 22.2, 27.2, 21.7, 27.2, 23.3, 24.4, 25.6, 27.8, 19.4, 29.4, 22.8, 31.1, 25.0, 26.1, 26.7, 18.9, 28.9],
+    'Humidity': [85.0, 90.0, 78.0, 96.0, 80.0, 70.0, 65.0, 95.0, 70.0, 80.0, 70.0, 90.0, 75.0, 80.0, 88.0, 92.0, 85.0, 75.0, 92.0, 90.0, 85.0, 88.0, 65.0, 70.0, 60.0, 95.0, 70.0, 78.0],
+    'WindSpeed': [2.1, 21.2, 1.5, 3.3, 2.0, 17.4, 14.9, 6.9, 2.7, 1.6, 30.3, 10.9, 3.0, 7.5, 10.3, 3.0, 3.9, 21.9, 2.6, 17.3, 9.6, 1.9, 16.0, 4.6, 3.2, 8.3, 3.2, 2.2],
+    'Play': ['No', 'No', 'Yes', 'Yes', 'Yes', 'No', 'Yes', 'No', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'No', 'No', 'Yes', 'Yes', 'No', 'No', 'No', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'No', 'Yes']
+}
+df = pd.DataFrame(dataset_dict)
+
+# Set feature matrix X and target vector y
+X, y = df.drop(columns='Play'), df['Play']
+
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.5, shuffle=False)
+print(pd.concat([X_train, y_train], axis=1), end='nn')
+print(pd.concat([X_test, y_test], axis=1))
+</pre>
+    <h3><span class="english 39">Main Mechanism</span> <span class="viet 39 hide">Cơ chế chính</span></h3>
+    <p><span class="english 40"> Gaussian Naive Bayes works with continuous data,</span> <span class="viet 40 hide">
+            Gaussian Naive Bayes hoạt động với dữ liệu liên tục,</span>
+        <span class="english 41"> assuming each feature follows a Gaussian (normal) distribution.</span> <span
+            class="viet 41 hide"> giả sử mỗi tính năng tuân theo phân phối chuẩn Gaussian.</span>
+    </p>
+    <li><span class="english 43">Calculate the probability of each class in the training data.</span> <span
+            class="viet 43 hide">Tính xác suất của từng lớp trong dữ liệu đào tạo.</span></li>
+    <li><span class="english 44">For each feature and class, estimate the mean and variance of the feature values within
+            that class.</span> <span class="viet 44 hide">Đối với mỗi tính năng và lớp, hãy ước tính giá trị trung bình
+            và phương sai của các giá trị tính năng trong lớp đó.</span></li>
+    <li><span class="english 45">For a new instance: a. For each class, calculate the probability density function (PDF)
+            of each feature value under the Gaussian distribution of that feature within the class. b. Multiply the
+            class probability by the product of the PDF values for all features.</span> <span class="viet 45 hide">Đối
+            với một trường hợp mới: a. Đối với mỗi lớp, hãy tính hàm mật độ xác suất (PDF) của mỗi giá trị tính năng
+            theo phân phối chuẩn Gaussian của tính năng đó trong lớp. b. Nhân xác suất lớp với tích của các giá trị PDF
+            cho tất cả các tính năng.</span></li>
+    <li><span class="english 46">Predict the class with the highest resulting probability.</span> <span
+            class="viet 46 hide">Dự đoán lớp có xác suất cao nhất.</span></li>
+    <img src="./images/gaussian-fig2.png" alt="gaussian-fig2">
+    <p><span class="english 49"> Gaussian Naive Bayes uses the normal distribution to model the likelihood of different
+            feature values for each class.</span> <span class="viet 49 hide"> Gaussian Naive Bayes sử dụng phân phối
+            chuẩn để mô hình hóa khả năng xảy ra của các giá trị tính năng khác nhau cho mỗi lớp.</span>
+        <span class="english 50"> It then combines these likelihoods to make a prediction.</span> <span
+            class="viet 50 hide"> Sau đó, nó kết hợp các khả năng xảy ra này để đưa ra dự đoán.</span>
+    </p>
+    <h3><span class="english 52">Transforming non-Gaussian distributed data</span> <span class="viet 52 hide">Chuyển đổi
+            dữ liệu phân phối không theo chuẩn Gauss</span></h3>
+    <p><span class="english 53"> Remember that this algorithm naively assume that all the input features are having
+            Gaussian/normal distribution?</span> <span class="viet 53 hide"> Hãy nhớ rằng thuật toán này ngây thơ cho
+            rằng tất cả các tính năng đầu vào đều có phân phối chuẩn Gauss?</span></p>
+    <p><span class="english 54"> Since we are not really sure about the distribution of our data,</span> <span
+            class="viet 54 hide"> Vì chúng ta không thực sự chắc chắn về phân phối dữ liệu của mình,</span>
+        <span class="english 55"> especially for features that clearly don’t follow a Gaussian distribution,</span>
+        <span class="viet 55 hide"> đặc biệt đối với các tính năng rõ ràng không tuân theo phân phối chuẩn Gauss,</span>
+        <span class="english 56"> applying a power transformation (like Box-Cox) before using Gaussian Naive Bayes can
+            be beneficial.</span> <span class="viet 56 hide"> áp dụng phép biến đổi lũy thừa (như Box-Cox) trước khi sử
+            dụng Gaussian Naive Bayes có thể có lợi.</span>
+        <span class="english 57"> This approach can help make the data more Gaussian-like,</span> <span
+            class="viet 57 hide"> Phương pháp này có thể giúp dữ liệu giống chuẩn Gauss hơn,</span>
+        <span class="english 58"> which aligns better with the assumptions of the algorithm.</span> <span
+            class="viet 58 hide"> phù hợp hơn với các giả định của thuật toán.</span>
+    </p>
+    <img src="./images/gaussian-fig3.png" alt="gaussian-fig3">
+    <p><span class="english 61"> All columns are scaled using Power Transformation (Box-Cox Transformation) and then
+            standardized.</span> <span class="viet 61 hide"> Tất cả các cột được chia tỷ lệ bằng Power Transformation
+            (Box-Cox Transformation) và sau đó được chuẩn hóa.</span></p>
+    <pre class="english">
+    from sklearn.preprocessing import PowerTransformer
+    
+    # Initialize and fit the PowerTransformer
+    pt = PowerTransformer(standardize=True) # Standard Scaling already included
+    X_train_transformed = pt.fit_transform(X_train)
+    X_test_transformed = pt.transform(X_test)
+    </pre>
+    <p><span class="english 63"> Now we are ready for the training.</span><span class="viet 63 hide"> Bây giờ chúng ta
+            đã sẵn sàng cho quá trình đào tạo.</span></p>
+    <h3><span class="english 65">Training Steps</span> <span class="viet 65 hide">Các bước đào tạo</span></h3>
+    <p><span class="english 66"> 1.</span> <span class="viet 66 hide"> 1.</span>
+        <span class="english 67"> "Class Probability Calculation":</span> <span class="viet 67 hide"> "Tính toán xác
+            suất lớp":</span>
+        <span class="english 68"> For each class,</span> <span class="viet 68 hide"> Đối với mỗi lớp,</span>
+        <span class="english 69"> calculate its probability:</span> <span class="viet 69 hide"> tính xác suất của lớp
+            đó:</span>
+        <span class="english 70"> (Number of instances in this class) / (Total number of instances)</span> <span
+            class="viet 70 hide"> (Số lượng trường hợp trong lớp này) / (Tổng số trường hợp)</span>
+    </p>
+    <img src="./images/gaussian-fig4.png" alt="gaussian-fig4">
+    <pre class="english">
+    from fractions import Fraction
+            
+    def calc_target_prob(attr):
+        total_counts = attr.value_counts().sum()
+        prob_series = attr.value_counts().apply(lambda x: Fraction(x, total_counts).limit_denominator())
+        return prob_series
+    
+    print(calc_target_prob(y_train))
+            </pre>
+    <p><span class="english 73"> 2.</span> <span class="viet 73 hide"> 2.</span>
+        <span class="english 74"> "Feature Probability Calculation":</span> <span class="viet 74 hide"> "Tính toán xác
+            suất đặc điểm":</span>
+        <span class="english 75"> For each feature and each class,</span> <span class="viet 75 hide"> Đối với mỗi đặc
+            điểm và mỗi lớp,</span>
+        <span class="english 76"> calculate the mean (μ) and standard deviation (σ) of the feature values within that
+            class using the training data.</span> <span class="viet 76 hide"> tính giá trị trung bình (μ) và độ lệch
+            chuẩn (σ) của các giá trị đặc điểm trong lớp đó bằng cách sử dụng dữ liệu đào tạo.</span>
+        <span class="english 77"> Then,</span> <span class="viet 77 hide"> Sau đó,</span>
+        <span class="english 78"> calculate the probability using Gaussian Probability Density Function (PDF)
+            formula.</span> <span class="viet 78 hide"> tính xác suất bằng cách sử dụng công thức Hàm mật độ xác suất
+            Gauss (PDF).</span>
+    </p>
+    <img src="./images/gaussian-fig5.png" alt="gaussian-fig5">
+    <p><span class="english 81"> For each weather condition,</span> <span class="viet 81 hide"> Đối với mỗi điều kiện
+            thời tiết,</span>
+        <span class="english 82"> determine the mean and standard deviation for both "YES" and "NO" instances.</span>
+        <span class="viet 82 hide"> xác định giá trị trung bình và chuẩn độ lệch cho cả trường hợp "CÓ" và
+            "KHÔNG".</span>
+        <span class="english 83"> Then calculate their PDF using the PDF formula for normal/Gaussian
+            distribution.</span> <span class="viet 83 hide"> Sau đó tính toán PDF của chúng bằng công thức PDF cho phân
+            phối chuẩn/Gaussian.</span>
+    </p>
+    <img src="./images/gaussian-fig6.png" alt="gaussian-fig6">
+    <p><span class="english 86"> The same process is applied to all of the other features.</span> <span
+            class="viet 86 hide"> Áp dụng quy trình tương tự cho tất cả các tính năng khác.</span></p>
+    <pre class="english">def calculate_class_probabilities(X_train_transformed, y_train, feature_names):
+                    classes = y_train.unique()
+                    equations = pd.DataFrame(index=classes, columns=feature_names)
+                
+                    for cls in classes:
+                        X_class = X_train_transformed[y_train == cls]
+                        mean = X_class.mean(axis=0)
+                        std = X_class.std(axis=0)
+                        k1 = 1 / (std * np.sqrt(2 * np.pi))
+                        k2 = 2 * (std ** 2)
+                
+                        for i, column in enumerate(feature_names):
+                            equation = f"{k1[i]:.3f}·exp(-(x-({mean[i]:.2f}))²/{k2[i]:.3f})"
+                            equations.loc[cls, column] = equation
+                
+                    return equations
+                
+                # Use the function with the transformed training data
+                equation_table = calculate_class_probabilities(X_train_transformed, y_train, X.columns)
+                
+                # Display the equation table
+                print(equation_table)
+                </pre>
+    <img src="./images/gaussian-fig7.png" alt="gaussian-fig7">
+    <p><span class="english 89"> 3.</span> <span class="viet 89 hide"> 3.</span>
+        <span class="english 90"> "Smoothing":</span> <span class="viet 90 hide"> "Làm mịn":</span>
+        <span class="english 91"> Gaussian Naive Bayes uses a unique smoothing approach.</span> <span
+            class="viet 91 hide"> Gaussian Naive Bayes sử dụng phương pháp làm mịn độc đáo.</span>
+        <span class="english 92"> Unlike Laplace smoothing in other variants,</span> <span class="viet 92 hide"> Không
+            giống như làm mịn Laplace trong các biến thể khác,</span>
+        <span class="english 93"> it adds a tiny value (0.000000001 times the largest variance) to all variances.</span>
+        <span class="viet 93 hide"> nó thêm một giá trị nhỏ (0,000000001 lần phương sai lớn nhất) vào tất cả các phương
+            sai.</span>
+        <span class="english 94"> This prevents numerical instability from division by zero or very small
+            numbers.</span> <span class="viet 94 hide"> Điều này ngăn chặn sự bất ổn về số từ phép chia cho số không
+            hoặc các số rất nhỏ.</span>
+    </p>
+    <h3><span class="english 96">Prediction/Classification Step</span> <span class="viet 96 hide">Bước dự đoán/phân
+            loại</span></h3>
+    <p><span class="english 97"> Given a new instance with continuous features:</span> <span class="viet 97 hide"> Cho
+            một trường hợp mới với các đặc điểm liên tục:</span></p>
+    <p><span class="english 98"> 1.</span> <span class="viet 98 hide"> 1.</span>
+        <span class="english 99"> "Probability Collection":</span> <span class="viet 99 hide"> "Bộ sưu tập xác
+            suất":</span>
+        <span class="english 100"> For each possible class:</span> <span class="viet 100 hide"> Đối với mỗi lớp có
+            thể:</span>
+        <span class="english 101"> · Start with the probability of this class occurring (class probability).</span>
+        <span class="viet 101 hide"> · Bắt đầu với xác suất xảy ra của lớp này (xác suất lớp).</span>
+        <span class="english 102"> · For each feature in the new instance,</span> <span class="viet 102 hide"> · Đối với
+            mỗi đặc điểm trong trường hợp mới,</span>
+        <span class="english 103"> calculate the probability density function of that feature within the class.</span>
+        <span class="viet 103 hide"> tính toán hàm mật độ xác suất của đặc điểm đó trong lớp.</span>
+    </p>
+    <img src="./images/gaussian-fig8.png" alt="gaussian-fig8">
+    <p><span class="english 106"> For ID 14,</span> <span class="viet 106 hide"> Đối với ID 14,</span>
+        <span class="english 107"> we calculate the PDF each of the feature for both "YES" and "NO" instances.</span>
+        <span class="viet 107 hide"> chúng tôi tính toán PDF cho từng tính năng cho cả trường hợp "CÓ" và
+            "KHÔNG".</span>
+    </p>
+    <p><span class="english 109"> 2.</span> <span class="viet 109 hide"> 2.</span>
+        <span class="english 110"> "Score Calculation &amp; Prediction":</span> <span class="viet 110 hide"> "Tính điểm
+            &amp; Dự đoán":</span>
+        <span class="english 111"> For each class:</span> <span class="viet 111 hide"> Đối với mỗi lớp:</span>
+        <span class="english 112"> · Multiply all the collected PDF values together.</span> <span class="viet 112 hide">
+            · Nhân tất cả các giá trị PDF đã thu thập với nhau.</span>
+        <span class="english 113"> · The result is the score for this class.</span> <span class="viet 113 hide"> · Kết
+            quả là điểm cho lớp này.</span>
+        <span class="english 114"> · The class with the highest score is the prediction.</span> <span
+            class="viet 114 hide"> · Lớp có điểm cao nhất là dự đoán.</span>
+    </p>
+    <img src="./images/gaussian-fig9.png" alt="gaussian-fig9">
+    <pre class="english">from scipy.stats import norm
+    
+    def calculate_class_probability_products(X_train_transformed, y_train, X_new, feature_names, target_name):
+        classes = y_train.unique()
+        n_features = X_train_transformed.shape[1]
+    
+        # Create column names using actual feature names
+        column_names = [target_name] + list(feature_names) + ['Product']
+    
+        probability_products = pd.DataFrame(index=classes, columns=column_names)
+    
+        for cls in classes:
+            X_class = X_train_transformed[y_train == cls]
+            mean = X_class.mean(axis=0)
+            std = X_class.std(axis=0)
+    
+            prior_prob = np.mean(y_train == cls)
+            probability_products.loc[cls, target_name] = prior_prob
+    
+            feature_probs = []
+            for i, feature in enumerate(feature_names):
+                prob = norm.pdf(X_new[0, i], mean[i], std[i])
+                probability_products.loc[cls, feature] = prob
+                feature_probs.append(prob)
+    
+            product = prior_prob * np.prod(feature_probs)
+            probability_products.loc[cls, 'Product'] = product
+    
+        return probability_products
+    
+    # Assuming X_new is your new sample reshaped to (1, n_features)
+    X_new = np.array([-1.28, 1.115, 0.84, 0.68]).reshape(1, -1)
+    
+    # Calculate probability products
+    prob_products = calculate_class_probability_products(X_train_transformed, y_train, X_new, X.columns, y.name)
+    
+    # Display the probability product table
+    print(prob_products)
+    </pre>
+    <img src="./images/gaussian-fig10.png" alt="gaussian-fig10">
+    <h3><span class="english 118">Evaluation Step</span> <span class="viet 118 hide">Bước đánh giá</span></h3>
+    <img src="./images/gaussian-fig11.png" alt="gaussian-fig11">
+    <p><span class="english 120"> For this particular dataset,</span> <span class="viet 120 hide"> Đối với tập dữ liệu
+            cụ thể này,</span>
+        <span class="english 121"> this accuracy is considered quite good.</span> <span class="viet 121 hide"> độ chính
+            xác này được coi là khá tốt.</span>
+    </p>
+    <pre class="english">from sklearn.naive_bayes import GaussianNB
+    from sklearn.metrics import accuracy_score
+    
+    # Initialize and train the Gaussian Naive Bayes model
+    gnb = GaussianNB()
+    gnb.fit(X_train_transformed, y_train)
+    
+    # Make predictions on the test set
+    y_pred = gnb.predict(X_test_transformed)
+    
+    # Calculate the accuracy
+    accuracy = accuracy_score(y_test, y_pred)
+    
+    # Print the accuracy
+    print(f"Accuracy: {accuracy:.4f}")
+    </pre>
+    <h3><span class="english 123">Key Parameters</span> <span class="viet 123 hide">Các tham số chính</span></h3>
+    <p><span class="english 124"> GaussianNB is known for its simplicity and effectiveness.</span> <span
+            class="viet 124 hide"> GaussianNB được biết đến với tính đơn giản và hiệu quả của nó.</span>
+        <span class="english 125"> The main thing to remember about its parameters is:</span> <span
+            class="viet 125 hide"> Điều chính cần nhớ về các tham số của nó là:</span>
+    </p>
+    <li><span class="english 127">priors: This is the most notable parameter, similar to Bernoulli Naive Bayes. In most
+            cases, you don’t need to set it manually. By default, it’s calculated from your training data, which often
+            works well.</span> <span class="viet 127 hide">priors: Đây là tham số đáng chú ý nhất, tương tự như
+            Bernoulli Naive Bayes. Trong hầu hết các trường hợp, bạn không cần phải thiết lập thủ công. Theo mặc định,
+            nó được tính toán từ dữ liệu đào tạo của bạn, thường hoạt động tốt.</span></li>
+    <li><span class="english 128">var_smoothing: This is a stability parameter that you rarely need to adjust. (the
+            default is 0.000000001)</span> <span class="viet 128 hide">var_smoothing: Đây là tham số ổn định mà bạn hiếm
+            khi cần điều chỉnh. (mặc định là 0,000000001)</span></li>
+    <p><span class="english 130"> The key takeaway is that this algoritm is designed to work well out-of-the-box.</span>
+        <span class="viet 130 hide"> Điểm mấu chốt là thuật toán này được thiết kế để hoạt động tốt ngay khi cài
+            đặt.</span>
+        <span class="english 131"> In most situations,</span> <span class="viet 131 hide"> Trong hầu hết các trường
+            hợp,</span>
+        <span class="english 132"> you can use it without worrying about parameter tuning.</span> <span
+            class="viet 132 hide"> bạn có thể sử dụng mà không cần lo lắng về việc điều chỉnh tham số.</span>
+    </p>
+    <h3><span class="english 134">Pros &amp; Cons</span> <span class="viet 134 hide">Ưu và nhược điểm</span></h3>
+    <h4><span class="english 135">Pros:</span> <span class="viet 135 hide">Ưu điểm:</span></h4>
+    <li><span class="english 136">Simplicity: Maintains the easy-to-implement and understand trait.</span> <span
+            class="viet 136 hide">Đơn giản: Duy trì đặc điểm dễ triển khai và dễ hiểu.</span></li>
+    <li><span class="english 137">Efficiency: Remains swift in training and prediction, making it suitable for
+            large-scale applications with continuous features.</span> <span class="viet 137 hide">Hiệu quả: Vẫn nhanh
+            chóng trong quá trình đào tạo và dự đoán, phù hợp với các ứng dụng quy mô lớn có các tính năng liên
+            tục.</span></li>
+    <li><span class="english 138">Flexibility with Data: Handles both small and large datasets well, adapting to the
+            scale of the problem at hand.</span> <span class="viet 138 hide">Tính linh hoạt với Dữ liệu: Xử lý tốt cả
+            tập dữ liệu nhỏ và lớn, thích ứng với quy mô của vấn đề đang xét.</span></li>
+    <li><span class="english 139">Continuous Feature Handling: Thrives with continuous and real-valued features, making
+            it ideal for tasks like predicting real-valued outputs or working with data where features vary on a
+            continuum.</span> <span class="viet 139 hide">Xử lý Tính năng Liên tục: Phát triển mạnh với các tính năng
+            liên tục và có giá trị thực, lý tưởng cho các tác vụ như dự đoán đầu ra có giá trị thực hoặc làm việc với dữ
+            liệu trong đó các tính năng thay đổi theo một chuỗi liên tục.</span></li>
+    <h4><span class="english 141">Cons:</span> <span class="viet 141 hide">Nhược điểm:</span></h4>
+    <li><span class="english 142">Independence Assumption: Still assumes that features are conditionally independent
+            given the class, which might not hold in all real-world scenarios.</span> <span class="viet 142 hide">Giả
+            định Độc lập: Vẫn giả định rằng các tính năng độc lập có điều kiện với lớp, điều này có thể không đúng trong
+            mọi tình huống thực tế.</span></li>
+    <li><span class="english 143">Gaussian Distribution Assumption: Works best when feature values truly follow a normal
+            distribution. Non-normal distributions may lead to suboptimal performance (but can be fixed with Power
+            Transformation we’ve discussed)</span> <span class="viet 143 hide">Giả định Phân phối Gauss: Hoạt động tốt
+            nhất khi các giá trị tính năng thực sự tuân theo phân phối chuẩn. Phân phối không chuẩn có thể dẫn đến hiệu
+            suất không tối ưu (nhưng có thể khắc phục bằng Power Transformation mà chúng tôi đã thảo luận)</span></li>
+    <li><span class="english 144">Sensitivity to Outliers: Can be significantly affected by outliers in the training
+            data, as they skew the mean and variance calculations.</span> <span class="viet 144 hide">Độ nhạy với giá
+            trị ngoại lệ: Có thể bị ảnh hưởng đáng kể bởi giá trị ngoại lệ trong dữ liệu đào tạo vì chúng làm lệch các
+            phép tính trung bình và phương sai.</span></li>
+    <h3><span class="english 146">Final Remarks</span> <span class="viet 146 hide">Nhận xét cuối cùng</span></h3>
+    <p><span class="english 147"> Gaussian Naive Bayes stands as an efficient classifier for a wide range of
+            applications involving continuous data.</span> <span class="viet 147 hide"> Gaussian Naive Bayes là một bộ
+            phân loại hiệu quả cho nhiều ứng dụng liên quan đến dữ liệu liên tục.</span>
+        <span class="english 148"> Its ability to handle real-valued features extends its use beyond binary
+            classification tasks,</span> <span class="viet 148 hide"> Khả năng xử lý các đặc điểm có giá trị thực của nó
+            mở rộng việc sử dụng vượt ra ngoài các tác vụ phân loại nhị phân,</span>
+        <span class="english 149"> making it a go-to choice for numerous applications.</span> <span
+            class="viet 149 hide"> khiến nó trở thành lựa chọn phù hợp cho nhiều ứng dụng.</span>
+    </p>
+    <p><span class="english 150"> While it makes some assumptions about data (feature independence and normal
+            distribution),</span> <span class="viet 150 hide"> Mặc dù nó đưa ra một số giả định về dữ liệu (độc lập đặc
+            điểm và phân phối chuẩn),</span>
+        <span class="english 151"> when these conditions are met,</span> <span class="viet 151 hide"> khi các điều kiện
+            này được đáp ứng,</span>
+        <span class="english 152"> it gives robust performance,</span> <span class="viet 152 hide"> nó mang lại hiệu
+            suất mạnh mẽ,</span>
+        <span class="english 153"> making it a favorite among both beginners and seasoned data scientists for its
+            balance of simplicity and power.</span> <span class="viet 153 hide"> khiến nó trở thành lựa chọn yêu thích
+            của cả người mới bắt đầu và các nhà khoa học dữ liệu dày dặn kinh nghiệm vì sự cân bằng giữa tính đơn giản
+            và power.</span>
+    </p>
+    <pre class="english">
+        import pandas as pd
+        from sklearn.naive_bayes import GaussianNB
+        from sklearn.preprocessing import PowerTransformer
+        from sklearn.metrics import accuracy_score
+        from sklearn.model_selection import train_test_split
+        
+        # Load the dataset
+        dataset_dict = {
+            'Rainfall': [0.0, 2.0, 7.0, 18.0, 3.0, 3.0, 0.0, 1.0, 0.0, 25.0, 0.0, 18.0, 9.0, 5.0, 0.0, 1.0, 7.0, 0.0, 0.0, 7.0, 5.0, 3.0, 0.0, 2.0, 0.0, 8.0, 4.0, 4.0],
+            'Temperature': [29.4, 26.7, 28.3, 21.1, 20.0, 18.3, 17.8, 22.2, 20.6, 23.9, 23.9, 22.2, 27.2, 21.7, 27.2, 23.3, 24.4, 25.6, 27.8, 19.4, 29.4, 22.8, 31.1, 25.0, 26.1, 26.7, 18.9, 28.9],
+            'Humidity': [85.0, 90.0, 78.0, 96.0, 80.0, 70.0, 65.0, 95.0, 70.0, 80.0, 70.0, 90.0, 75.0, 80.0, 88.0, 92.0, 85.0, 75.0, 92.0, 90.0, 85.0, 88.0, 65.0, 70.0, 60.0, 95.0, 70.0, 78.0],
+            'WindSpeed': [2.1, 21.2, 1.5, 3.3, 2.0, 17.4, 14.9, 6.9, 2.7, 1.6, 30.3, 10.9, 3.0, 7.5, 10.3, 3.0, 3.9, 21.9, 2.6, 17.3, 9.6, 1.9, 16.0, 4.6, 3.2, 8.3, 3.2, 2.2],
+            'Play': ['No', 'No', 'Yes', 'Yes', 'Yes', 'No', 'Yes', 'No', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'No', 'No', 'Yes', 'Yes', 'No', 'No', 'No', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'No', 'Yes']
+        }
+        
+        df = pd.DataFrame(dataset_dict)
+        
+        # Prepare data for model
+        X, y = df.drop('Play', axis=1), (df['Play'] == 'Yes').astype(int)
+        
+        # Split data into training and testing sets
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, shuffle=False)
+        
+        # Apply PowerTransformer
+        pt = PowerTransformer(standardize=True)
+        X_train_transformed = pt.fit_transform(X_train)
+        X_test_transformed = pt.transform(X_test)
+        
+        # Train the model
+        nb_clf = GaussianNB()
+        nb_clf.fit(X_train_transformed, y_train)
+        
+        # Make predictions
+        y_pred = nb_clf.predict(X_test_transformed)
+        
+        # Check accuracy
+        accuracy = accuracy_score(y_test, y_pred)
+        print(f"Accuracy: {accuracy:.4f}")
+            </pre>
+    <a href="./ml5_decision_tree_classifier.html">Next</a>
+    <script>
+        const allEnglishElement = document.querySelectorAll(".english");
+        const allVietElement = document.querySelectorAll(".viet");
+
+        allEnglishElement.forEach((item, index) => {
+            item.addEventListener("click", (event) => handleClick(event))
+        })
+
+        function handleClick(event) {
+            const index = Number(event.target.classList[1])
+            allVietElement.forEach(e => {
+                if (e.classList[1] === event.target.classList[1]) {
+                    e.classList.contains("hide")
+                        ? e.classList.remove("hide")
+                        : e.classList.add("hide")
+                }
+            })
+
+        }
+        const msg = new SpeechSynthesisUtterance();
+        let voice = [];
+        const speakButton = document.querySelector('#speak');
+        const stopButton = document.querySelector('#stop');
+        const dungButton = document.querySelector('#dung');
+        const docButton = document.querySelector('#doc');
+
+        function toggle_E(startOver = true) {
+            speechSynthesis.cancel();
+            if (startOver) {
+                arr_len = document.getElementsByClassName('english').length;
+                console.log(arr_len);
+                let txt1 = '';
+                for (let i = 0; i < arr_len; i++) {
+                    temp_txt = document.getElementsByClassName('english')[i].innerHTML;
+                    temp_txt = temp_txt.trim() + '.\n';
+                    console.log(temp_txt);
+                    txt1 += temp_txt;
+                }
+                arr1 = txt1.split('\n');
+                arr1 = arr1.map((e) => e.trim());
+                // arr1[0] += '.';
+                arr1 = arr1.join(' ');
+                console.log(arr1);
+                msg.text = arr1;
+
+                msg.lang = 'en-US';
+                speechSynthesis.speak(msg);
+            }
+        }
+
+        function toggle_V(startOver = true) {
+            speechSynthesis.cancel();
+            allVietElement.forEach(e => e.classList.remove("hide"))
+
+            if (startOver) {
+                arr_len = document.getElementsByClassName('viet').length;
+                console.log(arr_len);
+                let txt1 = '';
+                for (let i = 0; i < arr_len; i++) {
+                    temp_txt = document.getElementsByClassName('viet')[i].innerHTML;
+                    temp_txt = temp_txt.trim() + '.\n';
+                    console.log(temp_txt);
+                    txt1 += temp_txt;
+                }
+                arr1 = txt1.split('\n');
+                arr1 = arr1.map((e) => e.trim());
+                // arr1[0] += '.';
+                arr1 = arr1.join(' ');
+                console.log(arr1);
+                msg.text = arr1;
+
+                msg.lang = 'vi-VN';
+                speechSynthesis.speak(msg);
+            }
+        }
+
+        speakButton.addEventListener('click', toggle_E);
+        stopButton.addEventListener('click', toggle_E.bind(null, false));
+        speakButton.addEventListener('click', toggle_V);
+        stopButton.addEventListener('click', toggle_V.bind(null, false));
+
+    </script>
+</body>
+
+</html>

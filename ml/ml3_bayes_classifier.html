@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bernoulli Bayes Classifier</title>
+</head>
+<style>
+    * {
+        cursor: pointer;
+    }
+
+    .hide {
+        display: none
+    }
+
+    .viet {
+        background-color: yellow;
+    }
+
+    img {
+        width: 75%;
+    }
+</style>
+
+<body>
+    <div>
+        <div>
+            <button id="stop">Stop!</button>
+            <button id="speak">Speak</button>
+            <button id="Dung">Dừng</button>
+            <button id="Doc">Đọc</button>
+        </div>
+    </div><a href="./ml2_knn.html">Prev</a>
+    <h2><span class="english 123">Bernoulli Naive Bayes, Explained: A Visual Guide with Code Examples for
+            Beginners</span> <span class="viet 123 hide">Giải thích về Bernoulli Naive Bayes: Hướng dẫn trực quan có ví
+            dụ về mã cho người mới bắt đầu</span></h2>
+    <p><span class="english 124"> Unlocking predictive power through Yes/No probability</span> <span
+            class="viet 124 hide"> Mở khóa sức mạnh dự đoán thông qua xác suất Có/Không</span></p>
+    <p><span class="english 125"> Samy Baladram</span> <span class="viet 125 hide"> Samy Baladram</span></p>
+    <h3><span class="english 127">CLASSIFICATION ALGORITHM</span> <span class="viet 127 hide">THUẬT TOÁN PHÂN
+            LOẠI</span></h3>
+    <p><span class="english 128"> Unlike the baseline approach of dummy classifiers or the similarity-based reasoning of
+            KNN,</span> <span class="viet 128 hide"> Không giống như phương pháp tiếp cận cơ sở của bộ phân loại giả
+            hoặc lý luận dựa trên sự tương đồng của KNN,</span>
+        <span class="english 129"> Naive Bayes leverages probability theory.</span> <span class="viet 129 hide"> Naive
+            Bayes tận dụng lý thuyết xác suất.</span>
+        <span class="english 130"> It combines the individual probabilities of each "clue" (or feature) to make a final
+            prediction.</span> <span class="viet 130 hide"> Phương pháp này kết hợp các xác suất riêng lẻ của từng "manh
+            mối" (hoặc tính năng) để đưa ra dự đoán cuối cùng.</span>
+        <span class="english 131"> This straightforward yet powerful method has proven invaluable in various Machine
+            Learning applications.</span> <span class="viet 131 hide"> Phương pháp đơn giản nhưng mạnh mẽ này đã được
+            chứng minh vô giá trong nhiều ứng dụng Học máy khác nhau.</span>
+    </p>
+    <h3><span class="english 133">Definition</span> <span class="viet 133 hide">Định nghĩa</span></h3>
+    <p><span class="english 134"> Naive Bayes is a machine learning algorithm that uses probability to classify
+            data.</span> <span class="viet 134 hide"> Naive Bayes là một thuật toán học máy sử dụng xác suất để phân
+            loại dữ liệu.</span>
+        <span class="english 135"> It’s based on Bayes’ Theorem,</span> <span class="viet 135 hide"> Thuật toán này dựa
+            trên Định lý Bayes,</span>
+        <span class="english 136"> a formula for calculating conditional probabilities.</span> <span
+            class="viet 136 hide"> một công thức để tính xác suất có điều kiện.</span>
+        <span class="english 137"> The "naive" part refers to its key assumption:</span> <span class="viet 137 hide">
+            Phần "ngây thơ" đề cập đến giả định chính của thuật toán:</span>
+        <span class="english 138"> it treats all features as independent of each other,</span> <span
+            class="viet 138 hide"> thuật toán này coi tất cả các tính năng là độc lập với nhau,</span>
+        <span class="english 139"> even when they might not be in reality.</span> <span class="viet 139 hide"> ngay cả
+            khi chúng có thể không tồn tại trong thực tế.</span>
+        <span class="english 140"> This simplification,</span> <span class="viet 140 hide"> Sự đơn giản hóa này,</span>
+        <span class="english 141"> while often unrealistic,</span> <span class="viet 141 hide"> trong khi thường không
+            thực tế,</span>
+        <span class="english 142"> greatly reduces computational complexity and works well in many practical
+            scenarios.</span> <span class="viet 142 hide"> làm giảm đáng kể độ phức tạp tính toán và hoạt động tốt trong
+            nhiều tình huống thực tế.</span>
+    </p>
+    <h3><span class="english 144">Main Types of Naive Bayes Classifier</span> <span class="viet 144 hide">Các loại chính
+            của phân loại Naive Bayes</span></h3>
+    <p><span class="english 145"> There are three main types of Naive Bayes classifiers.</span> <span
+            class="viet 145 hide"> Có ba loại chính của phân loại Naive Bayes.</span>
+        <span class="english 146"> The key difference between these types lies in the assumption they make about the
+            distribution of features:</span> <span class="viet 146 hide"> Sự khác biệt chính giữa các loại này nằm ở giả
+            định mà chúng đưa ra về phân phối các tính năng:</span>
+    </p>
+    <li><span class="english 148">Bernoulli Naive Bayes: Suited for binary/boolean features. It assumes each feature is
+            a binary-valued (0/1) variable.</span> <span class="viet 148 hide">Bernoulli Naive Bayes: Phù hợp với các
+            tính năng nhị phân/boolean. Nó giả định rằng mỗi tính năng là một biến có giá trị nhị phân (0/1).</span>
+    </li>
+    <li><span class="english 149">Multinomial Naive Bayes: Typically used for discrete counts. It’s often used in text
+            classification, where features might be word counts.</span> <span class="viet 149 hide">Bayes Naive đa thức:
+            Thường được sử dụng cho các số đếm rời rạc. Nó thường được sử dụng trong phân loại văn bản, trong đó các
+            tính năng có thể là số lượng từ.</span></li>
+    <li><span class="english 150">Gaussian Naive Bayes: Assumes that continuous features follow a normal
+            distribution.</span> <span class="viet 150 hide">Gaussian Naive Bayes: Giả định rằng các tính năng liên tục
+            tuân theo phân phối chuẩn.</span></li>
+    <img src="./images/bernoulli-fig1.png" alt="bernoulli-fig1">
+    <p><span class="english 153"> Bernoulli NB assumes binary data,</span> <span class="viet 153 hide"> Bernoulli NB giả
+            định dữ liệu nhị phân,</span>
+        <span class="english 154"> Multinomial NB works with discrete counts,</span> <span class="viet 154 hide">
+            Multinomial NB hoạt động với số lượng rời rạc,</span>
+        <span class="english 155"> and Gaussian NB handles continuous data assuming a normal distribution.</span> <span
+            class="viet 155 hide"> và Gaussian NB xử lý dữ liệu liên tục giả định phân phối chuẩn.</span>
+    </p>
+    <p><span class="english 156"> It is a good start to focus on the simplest one which is Bernoulli NB.</span> <span
+            class="viet 156 hide"> Tốt nhất là nên tập trung vào tính năng đơn giản nhất là Bernoulli NB.</span>
+        <span class="english 157"> The "Bernoulli" in its name comes from the assumption that each feature is
+            binary-valued.</span> <span class="viet 157 hide"> "Bernoulli" trong tên của nó xuất phát từ giả định rằng
+            mỗi tính năng là giá trị nhị phân.</span>
+    </p>
+    <h3><span class="english 159">Dataset Used</span> <span class="viet 159 hide">Bộ dữ liệu được sử dụng</span></h3>
+    <p><span class="english 160"> Throughout this article,</span> <span class="viet 160 hide"> Trong suốt bài viết
+            này,</span>
+        <span class="english 161"> we’ll use this artificial golf dataset (inspired by [1]) as an example.</span> <span
+            class="viet 161 hide"> chúng tôi sẽ sử dụng bộ dữ liệu chơi gôn nhân tạo này (lấy cảm hứng từ [1]) làm ví
+            dụ.</span>
+        <span class="english 162"> This dataset predicts whether a person will play golf based on weather
+            conditions.</span> <span class="viet 162 hide"> Bộ dữ liệu này dự đoán liệu một người có chơi gôn hay không
+            dựa trên điều kiện thời tiết.</span>
+    </p>
+    <img src="./images/bernoulli-fig2.png" alt="bernoulli-fig2">
+    <p><span class="english 165"> Columns:</span> <span class="viet 165 hide"> Các cột:</span>
+        <span class="english 166"> ‘Outlook’,</span> <span class="viet 166 hide"> ‘Triển vọng’,</span>
+        <span class="english 167"> ‘Temperature’ (in Fahrenheit),</span> <span class="viet 167 hide"> ‘Nhiệt độ’ (tính
+            bằng Fahrenheit),</span>
+        <span class="english 168"> ‘Humidity’ (in %),</span> <span class="viet 168 hide"> ‘Độ ẩm’ (tính bằng %),</span>
+        <span class="english 169"> ‘Wind’ and ‘Play’ (target feature)</span> <span class="viet 169 hide"> ‘Gió’ và
+            ‘Chơi’ (tính năng mục tiêu)</span>
+    </p>
+    <pre class="english"># IMPORTING DATASET #
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+import pandas as pd
+import numpy as np
+
+dataset_dict = {
+    'Outlook': ['sunny', 'sunny', 'overcast', 'rain', 'rain', 'rain', 'overcast', 'sunny', 'sunny', 'rain', 'sunny', 'overcast', 'overcast', 'rain', 'sunny', 'overcast', 'rain', 'sunny', 'sunny', 'rain', 'overcast', 'rain', 'sunny', 'overcast', 'sunny', 'overcast', 'rain', 'overcast'],
+    'Temperature': [85.0, 80.0, 83.0, 70.0, 68.0, 65.0, 64.0, 72.0, 69.0, 75.0, 75.0, 72.0, 81.0, 71.0, 81.0, 74.0, 76.0, 78.0, 82.0, 67.0, 85.0, 73.0, 88.0, 77.0, 79.0, 80.0, 66.0, 84.0],
+    'Humidity': [85.0, 90.0, 78.0, 96.0, 80.0, 70.0, 65.0, 95.0, 70.0, 80.0, 70.0, 90.0, 75.0, 80.0, 88.0, 92.0, 85.0, 75.0, 92.0, 90.0, 85.0, 88.0, 65.0, 70.0, 60.0, 95.0, 70.0, 78.0],
+    'Wind': [False, True, False, False, False, True, True, False, False, False, True, True, False, True, True, False, False, True, False, True, True, False, True, False, False, True, False, False],
+    'Play': ['No', 'No', 'Yes', 'Yes', 'Yes', 'No', 'Yes', 'No', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'No', 'No', 'Yes', 'Yes', 'No', 'No', 'No', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'No', 'Yes']
+}
+df = pd.DataFrame(dataset_dict)
+
+# ONE-HOT ENCODE 'Outlook' COLUMN
+df = pd.get_dummies(df, columns=['Outlook'],  prefix='', prefix_sep='', dtype=int)
+
+# CONVERT 'Windy' (bool) and 'Play' (binary) COLUMNS TO BINARY INDICATORS
+df['Wind'] = df['Wind'].astype(int)
+df['Play'] = (df['Play'] == 'Yes').astype(int)
+
+# Set feature matrix X and target vector y
+X, y = df.drop(columns='Play'), df['Play']
+
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.5, shuffle=False)
+
+print(pd.concat([X_train, y_train], axis=1), end='nn')
+print(pd.concat([X_test, y_test], axis=1))
+</pre>
+    <p><span class="english 171"> We’ll adapt it slightly for Bernoulli Naive Bayes by converting our features to
+            binary.</span> <span class="viet 171 hide"> Chúng tôi sẽ điều chỉnh một chút cho Bernoulli Naive Bayes bằng
+            cách chuyển đổi các tính năng của chúng tôi thành nhị phân.</span></p>
+    <img src="./images/bernoulli-fig3.png" alt="bernoulli-fig3">
+    <p><span class="english 174"> As all the data has to be in 0 &amp; 1 format,</span> <span class="viet 174 hide"> Vì
+            tất cả dữ liệu phải ở định dạng 0 &amp; 1,</span>
+        <span class="english 175"> the ‘Outlook’ is one-hot encoded while the Temperature is separated into ≤ 80 and
+            &gt; 80.</span> <span class="viet 175 hide"> 'Outlook' được mã hóa một nóng trong khi Nhiệt độ được phân
+            tách thành ≤ 80 và &gt; 80.</span>
+        <span class="english 176"> Similarly,</span> <span class="viet 176 hide"> Tương tự,</span>
+        <span class="english 177"> Humidity is separated into ≤ 75 and &gt; 75.</span> <span class="viet 177 hide"> Độ
+            ẩm được phân tách thành ≤ 75 và &gt; 75.</span>
+    </p>
+    <pre class="english"># One-hot encode the categorized columns and drop them after, but do it separately for training and test sets
+# Define categories for 'Temperature' and 'Humidity' for training set
+X_train['Temperature'] = pd.cut(X_train['Temperature'], bins=[0, 80, 100], labels=['Warm', 'Hot'])
+X_train['Humidity'] = pd.cut(X_train['Humidity'], bins=[0, 75, 100], labels=['Dry', 'Humid'])
+
+# Similarly, define for the test set
+X_test['Temperature'] = pd.cut(X_test['Temperature'], bins=[0, 80, 100], labels=['Warm', 'Hot'])
+X_test['Humidity'] = pd.cut(X_test['Humidity'], bins=[0, 75, 100], labels=['Dry', 'Humid'])
+
+# One-hot encode the categorized columns
+one_hot_columns_train = pd.get_dummies(X_train[['Temperature', 'Humidity']], drop_first=True, dtype=int)
+one_hot_columns_test = pd.get_dummies(X_test[['Temperature', 'Humidity']], drop_first=True, dtype=int)
+
+# Drop the categorized columns from training and test sets
+X_train = X_train.drop(['Temperature', 'Humidity'], axis=1)
+X_test = X_test.drop(['Temperature', 'Humidity'], axis=1)
+
+# Concatenate the one-hot encoded columns with the original DataFrames
+X_train = pd.concat([one_hot_columns_train, X_train], axis=1)
+X_test = pd.concat([one_hot_columns_test, X_test], axis=1)
+
+print(pd.concat([X_train, y_train], axis=1), 'n')
+print(pd.concat([X_test, y_test], axis=1))
+</pre>
+    <h3><span class="english 179">Main Mechanism</span> <span class="viet 179 hide">Cơ chế chính</span></h3>
+    <p><span class="english 180"> Bernoulli Naive Bayes operates on data where each feature is either 0 or 1.</span>
+        <span class="viet 180 hide"> Bernoulli Naive Bayes hoạt động trên dữ liệu trong đó mỗi đặc điểm là 0 hoặc
+            1.</span>
+    </p>
+    <li><span class="english 182">Calculate the probability of each class in the training data.</span> <span
+            class="viet 182 hide">Tính xác suất của từng lớp trong dữ liệu đào tạo.</span></li>
+    <li><span class="english 183">For each feature and class, calculate the probability of the feature being 1 and 0
+            given the class.</span> <span class="viet 183 hide">Đối với mỗi đặc điểm và lớp, hãy tính xác suất của đặc
+            điểm là 1 và 0 cho lớp đó.</span></li>
+    <li><span class="english 184">For a new instance: For each class, multiply its probability by the probability of
+            each feature value (0 or 1) for that class.</span> <span class="viet 184 hide">Đối với một trường hợp mới:
+            Đối với mỗi lớp, hãy nhân xác suất của lớp đó với xác suất của từng giá trị đặc điểm (0 hoặc 1) cho lớp
+            đó.</span></li>
+    <li><span class="english 185">Predict the class with the highest resulting probability.</span> <span
+            class="viet 185 hide">Dự đoán lớp có xác suất cao nhất.</span></li>
+    <img src="./images/bernoulli-fig4.png" alt="bernoulli-fig4">
+    <p><span class="english 188"> For our golf dataset,</span> <span class="viet 188 hide"> Đối với tập dữ liệu chơi gôn
+            của chúng tôi,</span>
+        <span class="english 189"> a Bernoulli NB classifier look at the probability of each feature happening for each
+            class (YES &amp; NO) then make decision based on which class has higher chance.</span> <span
+            class="viet 189 hide"> một bộ phân loại Bernoulli NB sẽ xem xét xác suất xảy ra của từng tính năng đối với
+            từng lớp (CÓ &amp; KHÔNG) sau đó đưa ra quyết định dựa trên lớp nào có cơ hội cao hơn.</span>
+    </p>
+    <h3><span class="english 191">Training Steps</span> <span class="viet 191 hide">Các bước đào tạo</span></h3>
+    <p><span class="english 192"> The training process for Bernoulli Naive Bayes involves calculating probabilities from
+            the training data:</span> <span class="viet 192 hide"> Quy trình đào tạo cho Bernoulli Naive Bayes bao gồm
+            việc tính toán xác suất từ ​​dữ liệu đào tạo:</span></p>
+    <p><span class="english 194"> 1.</span> <span class="viet 194 hide"> 1.</span>
+        <span class="english 195"> Class Probability Calculation:</span> <span class="viet 195 hide"> Tính toán xác suất
+            lớp:</span>
+        <span class="english 196"> For each class,</span> <span class="viet 196 hide"> Đối với mỗi lớp,</span>
+        <span class="english 197"> calculate its probability:</span> <span class="viet 197 hide"> tính xác suất của lớp
+            đó:</span>
+        <span class="english 198"> (Number of instances in this class) / (Total number of instances)</span> <span
+            class="viet 198 hide"> (Số lượng trường hợp trong lớp này) / (Tổng số của các trường hợp)</span>
+    </p>
+    <img src="./images/bernoulli-fig5.png" alt="bernoulli-fig5">
+    <p><span class="english 201"> In our golf example,</span> <span class="viet 201 hide"> Trong ví dụ về môn golf của
+            chúng tôi,</span>
+        <span class="english 202"> the algorithm would calculate how often golf is played overall.</span> <span
+            class="viet 202 hide"> thuật toán sẽ tính toán tần suất chơi golf nói chung.</span>
+    </p>
+    <pre class="english">from fractions import Fraction
+
+def calc_target_prob(attr):
+    total_counts = attr.value_counts().sum()
+    prob_series = attr.value_counts().apply(lambda x: Fraction(x, total_counts).limit_denominator())
+    return prob_series
+
+print(calc_target_prob(y_train))
+</pre>
+    <p><span class="english 204"> 2.Feature Probability Calculation:</span> <span class="viet 204 hide"> 2. Tính toán
+            xác suất đặc điểm:</span>
+        <span class="english 205"> For each feature and each class,</span> <span class="viet 205 hide"> Đối với mỗi đặc
+            điểm và mỗi lớp,</span>
+        <span class="english 206"> calculate:</span> <span class="viet 206 hide"> tính toán:</span>
+    </p>
+    <li><span class="english 208">(Number of instances where feature is 0 in this class) / (Number of instances in this
+            class)</span> <span class="viet 208 hide">(Số trường hợp mà đặc điểm là 0 trong lớp này) / (Số trường hợp
+            trong lớp này)</span></li>
+    <li><span class="english 209">(Number of instances where feature is 1 in this class) / (Number of instances in this
+            class)</span> <span class="viet 209 hide">(Số trường hợp mà đặc điểm là 1 trong lớp này) / (Số trường hợp
+            trong lớp này)</span></li>
+    <img src="./images/bernoulli-fig6.png" alt="bernoulli-fig6">
+    <p><span class="english 212"> For each weather condition (i.e.,</span> <span class="viet 212 hide"> Đối với mỗi
+            điều kiện thời tiết (trời nắng,</span>
+        <span class="english 213"> sunny),</span> <span class="viet 213 hide"> nắng),</span>
+        <span class="english 214"> how often golf is played when it’s sunny and how often it’s not played when it’s
+            sunny.</span> <span class="viet 214 hide"> tần suất chơi golf khi trời nắng và tần suất không chơi khi trời
+            nắng.</span>
+    </p>
+    <pre class="english">from fractions import Fraction
+    
+    def sort_attr_label(attr, lbl):
+        return (pd.concat([attr, lbl], axis=1)
+                .sort_values([attr.name, lbl.name])
+                .reset_index()
+                .rename(columns={'index': 'ID'})
+                .set_index('ID'))
+    
+    def calc_feature_prob(attr, lbl):
+        total_classes = lbl.value_counts()
+        counts = pd.crosstab(attr, lbl)
+        prob_df = counts.apply(lambda x: [Fraction(c, total_classes[x.name]).limit_denominator() for c in x])
+    
+        return prob_df
+    
+    print(sort_attr_label(y_train, X_train['sunny']))
+    print(calc_feature_prob(X_train['sunny'], y_train))
+    </pre>
+    <img src="./images/bernoulli-fig7.png" alt="bernoulli-fig7">
+    <p><span class="english 217"> The same process is applied to all of the other features.</span> <span
+            class="viet 217 hide"> Quy trình tương tự được áp dụng cho tất cả các tính năng khác.</span></p>
+    <pre class="english">for col in X_train.columns:
+      print(calc_feature_prob(X_train[col], y_train), "n")
+    </pre>
+    <p><span class="english 219"> 3.Smoothing (Optional):</span> <span class="viet 219 hide"> 3. Làm mịn (Tùy
+            chọn):</span>
+        <span class="english 220"> Add a small value (usually 1) to the numerator and denominator of each probability
+            calculation to avoid zero probabilities</span> <span class="viet 220 hide"> Thêm một giá trị nhỏ (thường là
+            1) vào tử số và mẫu số của mỗi phép tính xác suất để tránh xác suất bằng không</span>
+    </p>
+    <img src="./images/bernoulli-fig8.png" alt="bernoulli-fig8">
+    <p><span class="english 223"> We add 1 to all numerators,</span> <span class="viet 223 hide"> Chúng ta thêm 1 vào
+            tất cả các tử số,</span>
+        <span class="english 224"> and add 2 to all denominators,</span> <span class="viet 224 hide"> và thêm 2 vào tất
+            cả các mẫu số,</span>
+        <span class="english 225"> to keep the total class probability 1.</span> <span class="viet 225 hide"> để giữ
+            nguyên xác suất lớp tổng thể là 1.</span>
+    </p>
+    <pre class="english"># In sklearn, all processes above is summarized in this 'fit' method:
+    from sklearn.naive_bayes import BernoulliNB
+    nb_clf = BernoulliNB(alpha=1)
+    nb_clf.fit(X_train, y_train)
+    </pre>
+    <p><span class="english 227"> 4.</span> <span class="viet 227 hide"> 4.</span>
+        <span class="english 228"> Store Results:</span> <span class="viet 228 hide"> Lưu trữ kết quả:</span>
+        <span class="english 229"> Save all calculated probabilities for use during classification.</span> <span
+            class="viet 229 hide"> Lưu tất cả các xác suất đã tính toán để sử dụng trong quá trình phân loại.</span>
+    </p>
+    <img src="./images/bernoulli-fig9.png" alt="bernoulli-fig9">
+    <p><span class="english 232"> Smoothing is already applied to all feature probabilities.</span> <span
+            class="viet 232 hide"> Làm mịn đã được áp dụng cho tất cả các xác suất tính năng.</span>
+        <span class="english 233"> We will use these tables to make predictions.</span> <span class="viet 233 hide">
+            Chúng tôi sẽ sử dụng các bảng này để đưa ra dự đoán.</span>
+    </p>
+
+    <h3><span class="english 235">Classification Steps</span> <span class="viet 233 hide"> Chúng tôi sẽ sử dụng các bảng
+            này để đưa ra dự đoán.</span></h3>
+    <p><span class="english 235">Các bước phân loại</span></p>
+    <p><span class="english 236"> Given a new instance with features that are either 0 or 1:</span> <span
+            class="viet 236 hide"> Cho một trường hợp mới có các đặc điểm là 0 hoặc 1:</span></p>
+    <p><span class="english 238"> 1.</span> <span class="viet 238 hide"> 1.</span>
+        <span class="english 239"> Probability Collection:</span> <span class="viet 239 hide"> Bộ sưu tập xác
+            suất:</span>
+        <span class="english 240"> For each possible class:</span> <span class="viet 240 hide"> Đối với mỗi lớp có
+            thể:</span>
+    </p>
+    <li><span class="english 242">Start with the probability of this class occurring (class probability).</span> <span
+            class="viet 242 hide">Bắt đầu với xác suất xảy ra của lớp này (xác suất lớp).</span></li>
+    <li><span class="english 243">For each feature in the new instance, collect the probability of this feature being
+            0/1 for this class.</span> <span class="viet 243 hide">Đối với mỗi tính năng trong trường hợp mới, hãy thu
+            thập xác suất của tính năng này là 0/1 đối với lớp này.</span></li>
+    <img src="./images/bernoulli-fig10.png" alt="bernoulli-fig10">
+    <p><span class="english 246"> For ID 14,</span> <span class="viet 246 hide"> Đối với ID 14,</span>
+        <span class="english 247"> we select the probabilities of each of the feature (either 0 or 1) happening.</span>
+        <span class="viet 247 hide"> chúng tôi chọn xác suất xảy ra của từng tính năng (0 hoặc 1).</span>
+    </p>
+    <p><span class="english 249"> 2.</span> <span class="viet 249 hide"> 2.</span>
+        <span class="english 250"> Score Calculation &amp; Prediction:</span> <span class="viet 250 hide"> Tính toán
+            &amp; Dự đoán Điểm:</span>
+        <span class="english 251"> For each class:</span> <span class="viet 251 hide"> Đối với mỗi lớp:</span>
+    </p>
+    <li><span class="english 253">Multiply all the collected probabilities together</span> <span
+            class="viet 253 hide">Nhân tất cả các xác suất đã thu thập được cùng nhau</span></li>
+    <li><span class="english 254">The result is the score for this class</span> <span class="viet 254 hide">Kết quả là
+            điểm cho lớp này</span></li>
+    <li><span class="english 255">The class with the highest score is the prediction</span> <span
+            class="viet 255 hide">Lớp có điểm cao nhất là dự đoán</span></li>
+    <img src="./images/bernoulli-fig11.png" alt="bernoulli-fig11">
+    <p><span class="english 258"> After multiplying the class probability and all of the feature probabilities,</span>
+        <span class="viet 258 hide"> Sau khi nhân xác suất lớp và tất cả các xác suất đặc điểm,</span>
+        <span class="english 259"> we select the class that has the higher score.</span> <span class="viet 259 hide">
+            chúng tôi chọn lớp có điểm cao hơn.</span>
+    </p>
+    <pre class="english">y_pred = nb_clf.predict(X_test)
+        print(y_pred)
+        </pre>
+    </h3>
+    <h3><span class="english 261">Evaluation Step</span> <span class="viet 261 hide">Bước đánh giá</span></h3>
+    <img src="./images/bernoulli-fig12.png" alt="bernoulli-fig12">
+    <p><span class="english 263"> This simple probabilistic model give a great accuracy for this simple dataset.</span>
+        <span class="viet 263 hide"> Mô hình xác suất đơn giản này cung cấp độ chính xác tuyệt vời cho tập dữ liệu đơn
+            giản này.</span>
+    </p>
+    <pre class="english"># Evaluate the classifier
+        print(f"Accuracy: {accuracy_score(y_test, y_pred)}")
+        </pre>
+    <h3><span class="english 265">Key Parameters</span> <span class="viet 265 hide">Các tham số chính</span></h3>
+    <p><span class="english 266"> Bernoulli Naive Bayes has a few important parameters:</span> <span
+            class="viet 266 hide"> Bernoulli Naive Bayes có một số tham số quan trọng:</span></p>
+    <li><span class="english 268">Alpha (α): This is the smoothing parameter. It adds a small count to each feature to
+            prevent zero probabilities. Default is usually 1.0 (Laplace smoothing) as what was shown before.</span>
+        <span class="viet 268 hide">Alpha (α): Đây là tham số làm mịn. Nó thêm một số đếm nhỏ vào mỗi tính năng để ngăn
+            không cho giá trị bằng không xác suất. Mặc định thường là 1.0 (làm mịn Laplace) như đã trình bày trước
+            đó.</span>
+    </li>
+    <li><span class="english 269">Binarize: If your features aren’t already binary, this threshold converts them. Any
+            value above this threshold becomes 1, and any value below becomes 0.</span> <span class="viet 269 hide">Nhị
+            phân hóa: Nếu các tính năng của bạn chưa phải là nhị phân, ngưỡng này sẽ chuyển đổi chúng. Bất kỳ giá trị
+            nào trên ngưỡng này sẽ trở thành 1 và bất kỳ giá trị nào dưới ngưỡng này sẽ trở thành 0.</span></li>
+    <img src="./images/bernoulli-fig13.png" alt="bernoulli-fig13">
+    <p><span class="english 272"> For BernoulliNB in scikit-learn,</span> <span class="viet 272 hide"> Đối với
+            BernoulliNB trong scikit-learn,</span>
+        <span class="english 273"> numerical features are often standardized rather than manually binarized.</span>
+        <span class="viet 273 hide"> các đặc điểm số thường được chuẩn hóa thay vì nhị phân hóa thủ công.</span>
+        <span class="english 274"> The model then internally converts these standardized values to binary,</span> <span
+            class="viet 274 hide"> Sau đó, mô hình sẽ chuyển đổi nội bộ các giá trị chuẩn hóa này thành nhị phân,</span>
+        <span class="english 275"> usually using 0 (the mean) as the threshold.</span> <span class="viet 275 hide">
+            thường sử dụng 0 (giá trị trung bình) làm ngưỡng.</span>
+    </p>
+    <li><span class="english 277">Fit Prior: Whether to learn class prior probabilities or assume uniform priors
+            (50/50).</span> <span class="viet 277 hide">Phù hợp với trước: Có nên học xác suất trước của lớp hay giả
+            định trước thống nhất (50/50) không.</span></li>
+    <img src="./images/bernoulli-fig14.png" alt="bernoulli-fig14">
+    <p><span class="english 280"> For our golf dataset,</span> <span class="viet 280 hide"> Đối với tập dữ liệu golf của
+            chúng tôi,</span>
+        <span class="english 281"> we might start with the default α=1.0,</span> <span class="viet 281 hide"> chúng tôi
+            có thể bắt đầu với α=1.0 mặc định,</span>
+        <span class="english 282"> no binarization (since we’ve already made our features binary),</span> <span
+            class="viet 282 hide"> không có nhị phân hóa (vì chúng tôi đã biến các tính năng của mình thành nhị
+            phân),</span>
+        <span class="english 283"> and fit_prior=True.</span> <span class="viet 283 hide"> và fit_prior=True.</span>
+    </p>
+    <h3><span class="english 285">Pros &amp; Cons</span> <span class="viet 285 hide">Ưu và nhược điểm</span></h3>
+    <p><span class="english 286"> Like any algorithm in machine learning,</span> <span class="viet 286 hide"> Giống như
+            bất kỳ thuật toán nào trong máy học,</span>
+        <span class="english 287"> Bernoulli Naive Bayes has its strengths and limitations.</span> <span
+            class="viet 287 hide"> Bernoulli Naive Bayes có những điểm mạnh và hạn chế của nó.</span>
+    </p>
+    <h4><span class="english 289">Pros:</span> <span class="viet 289 hide">Ưu điểm:</span></h4>
+    <li><span class="english 290">Simplicity: Easy to implement and understand.</span> <span class="viet 290 hide">Đơn
+            giản: Dễ dàng để triển khai và hiểu.</span></li>
+    <li><span class="english 291">Efficiency: Fast to train and predict, works well with large feature spaces.</span>
+        <span class="viet 291 hide">Hiệu quả: Nhanh chóng đào tạo và dự đoán, hoạt động tốt với không gian tính năng
+            lớn.</span>
+    </li>
+    <li><span class="english 292">Performance with Small Datasets: Can perform well even with limited training
+            data.</span> <span class="viet 292 hide">Hiệu suất với Bộ dữ liệu nhỏ: Có thể hoạt động tốt ngay cả với dữ
+            liệu đào tạo hạn chế.</span></li>
+    <li><span class="english 293">Handles High-Dimensional Data: Works well with many features, especially in text
+            classification.</span> <span class="viet 293 hide">Xử lý Dữ liệu chiều cao: Hoạt động tốt với nhiều tính
+            năng, đặc biệt là trong phân loại văn bản.</span></li>
+    <h4><span class="english 295">Cons:</span> <span class="viet 295 hide">Nhược điểm:</span></h4>
+    <li><span class="english 296">Independence Assumption: Assumes all features are independent, which is often not true
+            in real-world data.</span> <span class="viet 296 hide">Giả định độc lập: Giả định tất cả các tính năng đều
+            độc lập, điều này thường không đúng trong dữ liệu thực tế.</span></li>
+    <li><span class="english 297">Limited to Binary Features: In its pure form, only works with binary data.</span>
+        <span class="viet 297 hide">Giới hạn ở Tính năng nhị phân: Ở dạng thuần túy, chỉ hoạt động với dữ liệu nhị
+            phân.</span>
+    </li>
+    <li><span class="english 298">Sensitivity to Input Data: Can be sensitive to how the features are binarized.</span>
+        <span class="viet 298 hide">Độ nhạy với Dữ liệu đầu vào: Có thể nhạy cảm với cách các tính năng được
+            binarized.</span>
+    </li>
+    <li><span class="english 299">Zero Frequency Problem: Without smoothing, zero probabilities can strongly affect
+            predictions.</span> <span class="viet 299 hide">Vấn đề tần suất bằng không: Nếu không làm mịn, xác suất bằng
+            không có thể ảnh hưởng mạnh đến dự đoán.</span></li>
+    <h3><span class="english 301">Final Remarks</span> <span class="viet 301 hide">Nhận xét cuối cùng</span></h3>
+    <p><span class="english 302"> The Bernoulli Naive Bayes classifier is a simple yet powerful machine learning
+            algorithm for binary classification.</span> <span class="viet 302 hide"> Bộ phân loại Bernoulli Naive Bayes
+            là một thuật toán học máy đơn giản nhưng mạnh mẽ để phân loại nhị phân.</span>
+        <span class="english 303"> It excels in text analysis and spam detection,</span> <span class="viet 303 hide"> Nó
+            vượt trội trong phân tích văn bản và phát hiện thư rác,</span>
+        <span class="english 304"> where features are typically binary.</span> <span class="viet 304 hide"> trong đó các
+            tính năng thường là nhị phân.</span>
+        <span class="english 305"> Known for its speed and efficiency,</span> <span class="viet 305 hide"> Được biết đến
+            với tốc độ và hiệu quả,</span>
+        <span class="english 306"> this probabilistic model performs well with small datasets and high-dimensional
+            spaces.</span> <span class="viet 306 hide"> mô hình xác suất này hoạt động tốt với các tập dữ liệu nhỏ và
+            không gian có nhiều chiều.</span>
+    </p>
+    <p><span class="english 307"> Despite its naive assumption of feature independence,</span> <span
+            class="viet 307 hide"> Mặc dù giả định ngây thơ về tính năng độc lập,</span>
+        <span class="english 308"> it often rivals more complex models in accuracy.</span> <span class="viet 308 hide">
+            thường có độ chính xác ngang bằng các mô hình phức tạp hơn.</span>
+        <span class="english 309"> Bernoulli Naive Bayes serves as an excellent baseline and real-time classification
+            tool.</span> <span class="viet 309 hide"> Bernoulli Naive Bayes đóng vai trò là công cụ phân loại theo thời
+            gian thực và đường cơ sở tuyệt vời.</span>
+    </p>
+    <pre class="english"># Import needed libraries
+        import pandas as pd
+        from sklearn.naive_bayes import BernoulliNB
+        from sklearn.preprocessing import StandardScaler
+        from sklearn.metrics import accuracy_score
+        from sklearn.model_selection import train_test_split
+        
+        # Load the dataset
+        dataset_dict = {
+            'Outlook': ['sunny', 'sunny', 'overcast', 'rainy', 'rainy', 'rainy', 'overcast', 'sunny', 'sunny', 'rainy', 'sunny', 'overcast', 'overcast', 'rainy', 'sunny', 'overcast', 'rainy', 'sunny', 'sunny', 'rainy', 'overcast', 'rainy', 'sunny', 'overcast', 'sunny', 'overcast', 'rainy', 'overcast'],
+            'Temperature': [85.0, 80.0, 83.0, 70.0, 68.0, 65.0, 64.0, 72.0, 69.0, 75.0, 75.0, 72.0, 81.0, 71.0, 81.0, 74.0, 76.0, 78.0, 82.0, 67.0, 85.0, 73.0, 88.0, 77.0, 79.0, 80.0, 66.0, 84.0],
+            'Humidity': [85.0, 90.0, 78.0, 96.0, 80.0, 70.0, 65.0, 95.0, 70.0, 80.0, 70.0, 90.0, 75.0, 80.0, 88.0, 92.0, 85.0, 75.0, 92.0, 90.0, 85.0, 88.0, 65.0, 70.0, 60.0, 95.0, 70.0, 78.0],
+            'Wind': [False, True, False, False, False, True, True, False, False, False, True, True, False, True, True, False, False, True, False, True, True, False, True, False, False, True, False, False],
+            'Play': ['No', 'No', 'Yes', 'Yes', 'Yes', 'No', 'Yes', 'No', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'No', 'No', 'Yes', 'Yes', 'No', 'No', 'No', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'No', 'Yes']
+        }
+        df = pd.DataFrame(dataset_dict)
+        
+        # Prepare data for model
+        df = pd.get_dummies(df, columns=['Outlook'],  prefix='', prefix_sep='', dtype=int)
+        df['Wind'] = df['Wind'].astype(int)
+        df['Play'] = (df['Play'] == 'Yes').astype(int)
+        
+        # Split data into training and testing sets
+        X, y = df.drop(columns='Play'), df['Play']
+        X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.5, shuffle=False)
+        
+        # Scale numerical features (for automatic binarization)
+        scaler = StandardScaler()
+        float_cols = X_train.select_dtypes(include=['float64']).columns
+        X_train[float_cols] = scaler.fit_transform(X_train[float_cols])
+        X_test[float_cols] = scaler.transform(X_test[float_cols])
+        
+        # Train the model
+        nb_clf = BernoulliNB()
+        nb_clf.fit(X_train, y_train)
+        
+        # Make predictions
+        y_pred = nb_clf.predict(X_test)
+        
+        # Check accuracy
+        print(f"Accuracy: {accuracy_score(y_test, y_pred)}")
+        </pre>
+    <a href="./ml4_gaussian_bayes.html">Next</a>
+    <script>
+        const allEnglishElement = document.querySelectorAll(".english");
+        const allVietElement = document.querySelectorAll(".viet");
+
+        allEnglishElement.forEach((item, index) => {
+            item.addEventListener("click", (event) => handleClick(event))
+        })
+
+        function handleClick(event) {
+            const index = Number(event.target.classList[1])
+            allVietElement.forEach(e => {
+                if (e.classList[1] === event.target.classList[1]) {
+                    e.classList.contains("hide")
+                        ? e.classList.remove("hide")
+                        : e.classList.add("hide")
+                }
+            })
+
+        }
+        const msg = new SpeechSynthesisUtterance();
+        let voice = [];
+        const speakButton = document.querySelector('#speak');
+        const stopButton = document.querySelector('#stop');
+        const dungButton = document.querySelector('#dung');
+        const docButton = document.querySelector('#doc');
+
+        function toggle_E(startOver = true) {
+            speechSynthesis.cancel();
+            if (startOver) {
+                arr_len = document.getElementsByClassName('english').length;
+                console.log(arr_len);
+                let txt1 = '';
+                for (let i = 0; i < arr_len; i++) {
+                    temp_txt = document.getElementsByClassName('english')[i].innerHTML;
+                    temp_txt = temp_txt.trim() + '.\n';
+                    console.log(temp_txt);
+                    txt1 += temp_txt;
+                }
+                arr1 = txt1.split('\n');
+                arr1 = arr1.map((e) => e.trim());
+                // arr1[0] += '.';
+                arr1 = arr1.join(' ');
+                console.log(arr1);
+                msg.text = arr1;
+
+                msg.lang = 'en-US';
+                speechSynthesis.speak(msg);
+            }
+        }
+
+        function toggle_V(startOver = true) {
+            speechSynthesis.cancel();
+            allVietElement.forEach(e => e.classList.remove("hide"))
+
+            if (startOver) {
+                arr_len = document.getElementsByClassName('viet').length;
+                console.log(arr_len);
+                let txt1 = '';
+                for (let i = 0; i < arr_len; i++) {
+                    temp_txt = document.getElementsByClassName('viet')[i].innerHTML;
+                    temp_txt = temp_txt.trim() + '.\n';
+                    console.log(temp_txt);
+                    txt1 += temp_txt;
+                }
+                arr1 = txt1.split('\n');
+                arr1 = arr1.map((e) => e.trim());
+                // arr1[0] += '.';
+                arr1 = arr1.join(' ');
+                console.log(arr1);
+                msg.text = arr1;
+
+                msg.lang = 'vi-VN';
+                speechSynthesis.speak(msg);
+            }
+        }
+
+        speakButton.addEventListener('click', toggle_E);
+        stopButton.addEventListener('click', toggle_E.bind(null, false));
+        speakButton.addEventListener('click', toggle_V);
+        stopButton.addEventListener('click', toggle_V.bind(null, false));
+
+    </script>
+</body>
+
+</html>

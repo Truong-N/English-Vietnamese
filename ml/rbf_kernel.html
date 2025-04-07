@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RBF Kernel</title>
+</head>
+<style>
+    * {
+        cursor: pointer;
+    }
+
+    .hide {
+        display: none
+    }
+
+    .viet {
+        background-color: yellow;
+    }
+
+    img {
+        width: 75%;
+    }
+</style>
+
+<body>
+    <div>
+        <div>
+            <button id="stop">Stop!</button>
+            <button id="speak">Speak</button>
+            <button id="Dung">Dừng</button>
+            <button id="Doc">Đọc</button>
+        </div>
+    </div>
+    <h2><span class="english 1">Radial Basis Function (RBF) Kernel: The Go-To Kernel</span> <span
+            class="viet 1 hide">Hạt nhân Radial Basis Function (RBF): Hạt nhân Go-To</span></h2>
+    <p><span class="english 2"> Sushanth Sreenivasa</span> <span class="viet 2 hide"> Sushanth Sreenivasa</span></p>
+    <p><span class="english 3"> Oct 12, 2020</span> <span class="viet 3 hide"> Ngày 12 tháng 10 năm 2020</span></p>
+    <p><span class="english 5"> 4 min read</span> <span class="viet 5 hide"> Đọc trong 4 phút</span></p>
+    <p><span class="english 7"> You’re working on a Machine Learning algorithm like Support Vector Machines for
+            non-linear datasets and you can’t seem to figure out the right feature transform or the right kernel to
+            use.</span> <span class="viet 7 hide"> Bạn đang làm việc trên một thuật toán Học máy như Máy vectơ hỗ trợ
+            cho các tập dữ liệu phi tuyến tính và bạn dường như không thể tìm ra phép biến đổi tính năng phù hợp hoặc
+            hạt nhân phù hợp để sử dụng.</span>
+        <span class="english 8"> Well, fear not because Radial Basis Function (RBF) Kernel is your savior.</span> <span
+            class="viet 8 hide"> Vâng, đừng lo lắng vì Hạt nhân Radial Basis Function (RBF) chính là vị cứu tinh của
+            bạn.</span>
+    </p>
+    <p><span class="english 11"> RBF kernels are the most generalized form of kernelization and is one of the most
+            widely used kernels due to its similarity to the Gaussian distribution.</span> <span class="viet 11 hide">
+            Hạt nhân RBF là dạng hạt nhân hóa tổng quát nhất và là một trong những hạt nhân được sử dụng rộng rãi nhất
+            do có điểm tương đồng với hạt nhân Gaussian phân phối.</span>
+        <span class="english 12"> The RBF kernel function for two points X₁ and X₂ computes the similarity or how close
+            they are to each other.</span> <span class="viet 12 hide"> Hàm hạt nhân RBF cho hai điểm X₁ và X₂ tính toán
+            mức độ tương đồng hoặc mức độ gần nhau của chúng.</span>
+        <span class="english 13"> This kernel can be mathematically represented as follows:</span> <span
+            class="viet 13 hide"> Hạt nhân này có thể được biểu diễn bằng toán học như sau:</span>
+    </p>
+    <pre class="english">K(X1,X2) = exp(-||X₁-X₂||^2 / 2σ²)
+where,
+‘σ’ (sigma) is the variance and our hyperparameter
+||X₁ – X₂|| is the Euclidean (L₂-norm) Distance between two points X₁ and X₂
+</pre>
+    <p><span class="english 15"> Let d₁₂ be the distance between the two points X₁ and X₂,</span> <span
+            class="viet 15 hide"> Giả sử d₁₂ là khoảng cách giữa hai điểm X₁ và X₂,</span>
+        <span class="english 16"> we can now represent d₁₂ as follows:</span> <span class="viet 16 hide"> bây giờ chúng
+            ta có thể biểu diễn d₁₂ như sau:</span>
+    </p>
+    <img src="./images/fig2.png" alt="fig2">
+    <p><span class="english 19"> The kernel equation can be re-written as follows:</span> <span class="viet 19 hide">
+            Phương trình hạt nhân có thể được viết lại như sau:</span></p>
+    <p><span class="english 21"> K(X₁,X₂)=exp(-d₁₂/2σ²)</span> <span class="viet 21 hide"> K(X₁,X₂)=exp(-d₁₂/2σ²)</span>
+    </p>
+    <p><span class="english 22"> The maximum value that the RBF kernel can be is 1 and occurs when d₁₂ is 0 which is
+            when the points are the same,</span> <span class="viet 22 hide"> Giá trị lớn nhất mà hạt nhân RBF có thể đạt
+            được là 1 và xảy ra khi d₁₂ bằng 0, tức là khi các điểm giống nhau,</span>
+        <span class="english 23"> i.e. X₁ = X₂.</span> <span class="viet 23 hide"> thidu X₁ = X₂.</span>
+    </p>
+    <li><span class="english 25">When the points are the same, there is no distance between them and therefore they are
+            extremely similar</span> <span class="viet 25 hide">Khi các điểm giống nhau, không có khoảng cách giữa chúng
+            và do đó chúng cực kỳ giống nhau</span></li>
+    <li><span class="english 26">When the points are separated by a large distance, then the kernel value is less than 1
+            and close to 0 which would mean that the points are dissimilar</span> <span class="viet 26 hide">Khi các
+            điểm cách nhau một khoảng cách lớn, thì giá trị hạt nhân nhỏ hơn 1 và gần bằng 0, điều này có nghĩa là các
+            điểm không giống nhau</span></li>
+    <p><span class="english 28"> Distance can be thought of as an equivalent to dissimilarity because we can notice that
+            when distance between the points increases,</span> <span class="viet 28 hide"> Khoảng cách có thể được coi
+            là tương đương với sự không giống nhau vì chúng ta có thể nhận thấy rằng khi khoảng cách giữa các điểm tăng
+            lên,</span>
+        <span class="english 29"> they are less similar.</span> <span class="viet 29 hide"> chúng ít giống nhau
+            hơn.</span>
+    </p>
+    <img src="./images/fig3.png" alt="fig3">
+    <p><span class="english 32"> Fig 3:</span> <span class="viet 32 hide"> Hình 3:</span>
+        <span class="english 33"> Similarity decreases as distance increases</span> <span class="viet 33 hide"> Độ giống
+            nhau giảm dần khi khoảng cách tăng</span>
+    </p>
+    <p><span class="english 34"> It is important to find the right value of ‘σ’ (sigma) to decide which points should be
+            considered similar and this can be demonstrated on a case by case basis.</span> <span class="viet 34 hide">
+            Điều quan trọng là phải tìm đúng giá trị của ‘σ’ để quyết định những điểm nào được coi là tương tự và điều
+            này có thể được chứng minh trên cơ sở từng trường hợp cụ thể.</span></p>
+    <h3><span class="english 36">a] σ = 1</span> <span class="viet 36 hide">a] σ = 1</span></h3>
+    <p><span class="english 37"> When σ = 1,</span> <span class="viet 37 hide"> Khi σ = 1,</span>
+        <span class="english 38"> σ² = 1 and the RBF kernel’s mathematical equation will be as follows:</span> <span
+            class="viet 38 hide"> σ² = 1 và phương trình toán học của hạt nhân RBF sẽ như sau:</span>
+    </p>
+    <p><span class="english 40"> K(X₁,X₂) = exp(-||X₁-X₂||^2 / 2)</span> <span class="viet 40 hide"> K(X₁,X₂) =
+            exp(-||X₁-X₂||^2 / 2)</span></p>
+    <p><span class="english 41"> The curve for this equation is given below and we can notice that as the distance
+            increases,</span> <span class="viet 41 hide"> Đường cong cho phương trình này được đưa ra bên dưới và chúng
+            ta có thể nhận thấy rằng khi khoảng cách tăng lên,</span>
+        <span class="english 42"> the RBF Kernel decreases exponentially and is 0 for distances greater than 4.</span>
+        <span class="viet 42 hide"> Hạt nhân RBF giảm theo cấp số nhân và bằng 0 đối với khoảng cách lớn hơn 4.</span>
+    </p>
+    <img src="./images/fig4.png" alt="fig4">
+
+    <p><span class="english 44"> Fig 4:</span> <span class="viet 44 hide"> Hình 4:</span>
+        <span class="english 45"> RBF Kernel for σ = 1 </span> <span class="viet 45 hide"> Hạt nhân RBF cho σ = 1
+        </span>
+    </p>
+    <li><span class="english 47">We can notice that when d₁₂ = 0, the similarity is 1 and as d₁₂ increases beyond 4
+            units, the similarity is 0</span> <span class="viet 47 hide">Chúng ta có thể nhận thấy rằng khi d₁₂ = 0, độ
+            tương đồng là 1 và khi d₁₂ tăng vượt quá 4 đơn vị, độ tương đồng là 0</span></li>
+    <li><span class="english 48">From the graph, we see that if the distance is below 4, the points can be considered
+            similar and if the distance is greater than 4 then the points are dissimilar</span> <span
+            class="viet 48 hide">Từ đồ thị, chúng ta thấy rằng nếu khoảng cách dưới 4, các điểm có thể được coi là tương
+            tự và nếu khoảng cách lớn hơn 4 thì các điểm không giống nhau</span></li>
+    <h3><span class="english 50">b] σ = 0.1</span> <span class="viet 50 hide">b] σ = 0,1</span></h3>
+    <p><span class="english 51"> When σ = 0.1,</span> <span class="viet 51 hide"> Khi σ = 0,1,</span>
+        <span class="english 52"> σ² = 0.01 and the RBF kernel’s mathematical equation will be as follows:</span> <span
+            class="viet 52 hide"> σ² = 0,01 và phương trình toán học của hạt nhân RBF sẽ như sau:</span>
+    </p>
+    <p><span class="english 53"> K(X₁,X₂) = exp(-||X₁-X₂||^2 / .01)</span> <span class="viet 53 hide"> K(X₁,X₂) =
+            exp(-||X₁-X₂||^2 / .01)</span></p>
+    <p><span class="english 54"> The width of the Region of Similarity is minimal for σ = 0.1 and hence,</span> <span
+            class="viet 54 hide"> Chiều rộng của Vùng tương đồng là tối thiểu đối với σ = 0,1 và do đó,</span>
+        <span class="english 55"> only if points are extremely close they are considered similar.</span> <span
+            class="viet 55 hide"> chỉ khi các điểm cực kỳ gần nhau thì chúng mới được coi là tương tự.</span>
+    </p>
+    <img src="./images/fig5.png" alt="fig5">
+    <p><span class="english 58"> Fig 5:</span> <span class="viet 58 hide"> Hình 5:</span>
+        <span class="english 59"> RBF Kernel for σ = 0.1</span> <span class="viet 59 hide"> Hạt nhân RBF đối với σ =
+            0,1</span>
+    </p>
+    <li><span class="english 61">We see that the curve is extremely peaked and is 0 for distances greater than
+            0.2</span> <span class="viet 61 hide">Chúng ta thấy rằng đường cong cực kỳ nhọn và là 0 đối với khoảng cách
+            lớn hơn 0,2</span></li>
+    <li><span class="english 62">The points are considered similar only if the distance is less than or equal to
+            0.2</span> <span class="viet 62 hide">Các điểm chỉ được coi là tương tự nếu khoảng cách nhỏ hơn hoặc bằng
+            0,2</span></li>
+    <h3><span class="english 64">b] σ = 10</span> <span class="viet 64 hide">b] σ = 10</span></h3>
+    <p><span class="english 65"> When σ = 10,</span> <span class="viet 65 hide"> Khi σ = 10,</span>
+        <span class="english 66"> σ² = 100 and the RBF kernel’s mathematical equation will be as follows:</span> <span
+            class="viet 66 hide"> σ² = 100 và phương trình toán học của hạt nhân RBF sẽ như sau:</span>
+    </p>
+    <p><span class="english 67"> K(X₁,X₂) = exp(-||X₁-X₂||^2 / 100)</span> <span class="viet 67 hide"> K(X₁,X₂) =
+            exp(-||X₁-X₂||^2 / 100)</span></p>
+    <p><span class="english 68"> The width of the Region of Similarity is large for σ = 100 because of which the points
+            that are farther away can be considered to be similar.</span> <span class="viet 68 hide"> Chiều rộng của
+            Vùng tương tự lớn đối với σ = 100 do đó các điểm xa hơn có thể được coi là tương tự.</span></p>
+    <img src="./images/fig6.png" alt="fig6">
+    <p><span class="english 71"> Fig 6:</span> <span class="viet 71 hide"> Hình 6:</span>
+        <span class="english 72"> RBF Kernel for σ = 10 </span> <span class="viet 72 hide"> Hạt nhân RBF cho σ = 10
+        </span>
+    </p>
+    <li><span class="english 74">The width of the curve is large</span> <span class="viet 74 hide"> Chiều rộng của đường
+            cong lớn</span></li>
+    <li><span class="english 75">The points are considered similar for distances up to 10 units and beyond 10 units they
+            are dissimilar</span> <span class="viet 75 hide"> Các điểm được coi là tương tự nhau đối với khoảng cách lên
+            đến 10 đơn vị và vượt quá 10 đơn vị thì chúng không giống nhau</span></li>
+    <p><span class="english 77"> It is evident from the above cases that the width of the Region of Similarity changes
+            as σ **** changes.</span> <span class="viet 77 hide"> Rõ ràng từ các trường hợp trên, chiều rộng của Vùng
+            tương tự thay đổi khi σ **** thay đổi.</span>
+        <span class="english 78"> Finding the right σ (sigma) for a given dataset is important and can be done by using
+            hyperparameter tuning techniques like Grid Search Cross Validation and Random Search Cross
+            Validation.</span> <span class="viet 78 hide"> Việc tìm đúng σ cho một tập dữ liệu nhất định là rất quan
+            trọng và có thể thực hiện được bằng cách sử dụng các kỹ thuật điều chỉnh siêu tham số như Xác thực chéo tìm
+            kiếm lưới và Xác thực chéo tìm kiếm ngẫu nhiên.</span>
+    </p>
+    <p><span class="english 79"> RBF Kernel is popular because of its similarity to K-Nearest Neighborhood
+            Algorithm.</span> <span class="viet 79 hide"> RBF Kernel phổ biến vì nó tương tự như Thuật toán lân cận
+            K-gần nhất.</span>
+        <span class="english 80"> It has the advantages of K-NN and overcomes the space complexity problem as RBF Kernel
+            Support Vector Machines just needs to store the support vectors during training and not the entire
+            dataset.</span> <span class="viet 80 hide"> Nó có những ưu điểm của K-NN và khắc phục được vấn đề về độ phức
+            tạp không gian vì RBF Kernel Support Vector Machines chỉ cần lưu trữ các vectơ hỗ trợ trong quá trình đào
+            tạo chứ không phải toàn bộ tập dữ liệu.</span>
+    </p>
+    <p><span class="english 81"> The RBF Kernel Support Vector Machines is implemented in the scikit-learn library and
+            has two hyperparameters associated with it,</span> <span class="viet 81 hide"> RBF Kernel Support Vector
+            Machines được triển khai trong thư viện scikit-learn và có hai siêu tham số liên kết với nó,</span>
+        <span class="english 82"> ‘C’ for SVM and ‘γ’ (gamma) for the RBF Kernel.</span> <span class="viet 82 hide"> ‘C’
+            cho SVM
+            và ‘γ’ cho RBF Kernel.</span>
+        <span class="english 83"> Here,</span> <span class="viet 83 hide"> Tại đây,</span>
+        <span class="english 84"> γ (gamma) is inversely proportional to σ (sigma).</span> <span class="viet 84 hide"> γ
+            tỷ lệ
+            nghịch
+            với σ.</span>
+    </p>
+    <img src="./images/fig7.png" alt="fig7">
+    <p><span class="english 87"> Fig 7:</span> <span class="viet 87 hide"> Hình 7:</span>
+        <span class="english 88"> RBF Kernel SVM for Iris Dataset</span> <span class="viet 88 hide"> RBF Kernel SVM cho
+            Bộ dữ liệu Iris</span>
+    </p>
+    <p><span class="english 89"> From the figure,</span> <span class="viet 89 hide"> Từ hình,</span>
+        <span class="english 90"> we can see that as γ (gamma) increases,</span> <span class="viet 90 hide"> chúng ta có
+            thể
+            thấy rằng khi γ tăng,</span>
+        <span class="english 91"> i.e. σ (sigma) reduces,</span> <span class="viet 91 hide"> khi đó σ giảm,</span>
+        <span class="english 92"> the model tends to overfit for a given value of C.</span> <span class="viet 92 hide">
+            mô hình có xu hướng quá phù hợp với một giá trị C nhất định.</span>
+    </p>
+    <p><span class="english 93"> Finding the right γ (gamma) or σ (sigma) along with the value of C is essential in
+            order to
+            achieve the
+            best Bias-Variance Trade off.</span><span class="viet 93 hide"> Việc tìm đúng γ hoặc σ cùng với giá trị C là
+            điều cần thiết để đạt được Sự đánh đổi giữa Độ lệch và Phương sai tốt nhất.</span></p>
+
+    <script>
+        const allEnglishElement = document.querySelectorAll(".english");
+        const allVietElement = document.querySelectorAll(".viet");
+
+        allEnglishElement.forEach((item, index) => {
+            item.addEventListener("click", (event) => handleClick(event))
+        })
+
+        function handleClick(event) {
+            const index = Number(event.target.classList[1])
+            allVietElement.forEach(e => {
+                if (e.classList[1] === event.target.classList[1]) {
+                    e.classList.contains("hide")
+                        ? e.classList.remove("hide")
+                        : e.classList.add("hide")
+                }
+            })
+
+        }
+        const msg = new SpeechSynthesisUtterance();
+        let voice = [];
+        const speakButton = document.querySelector('#speak');
+        const stopButton = document.querySelector('#stop');
+        const dungButton = document.querySelector('#dung');
+        const docButton = document.querySelector('#doc');
+
+        function toggle_E(startOver = true) {
+            speechSynthesis.cancel();
+            if (startOver) {
+                arr_len = document.getElementsByClassName('english').length;
+                console.log(arr_len);
+                let txt1 = '';
+                for (let i = 0; i < arr_len; i++) {
+                    temp_txt = document.getElementsByClassName('english')[i].innerHTML;
+                    temp_txt = temp_txt.trim() + '.\n';
+                    console.log(temp_txt);
+                    txt1 += temp_txt;
+                }
+                arr1 = txt1.split('\n');
+                arr1 = arr1.map((e) => e.trim());
+                // arr1[0] += '.';
+                arr1 = arr1.join(' ');
+                console.log(arr1);
+                msg.text = arr1;
+
+                msg.lang = 'en-US';
+                speechSynthesis.speak(msg);
+            }
+        }
+
+        function toggle_V(startOver = true) {
+            speechSynthesis.cancel();
+            allVietElement.forEach(e => e.classList.remove("hide"))
+
+            if (startOver) {
+                arr_len = document.getElementsByClassName('viet').length;
+                console.log(arr_len);
+                let txt1 = '';
+                for (let i = 0; i < arr_len; i++) {
+                    temp_txt = document.getElementsByClassName('viet')[i].innerHTML;
+                    temp_txt = temp_txt.trim() + '.\n';
+                    console.log(temp_txt);
+                    txt1 += temp_txt;
+                }
+                arr1 = txt1.split('\n');
+                arr1 = arr1.map((e) => e.trim());
+                // arr1[0] += '.';
+                arr1 = arr1.join(' ');
+                console.log(arr1);
+                msg.text = arr1;
+
+                msg.lang = 'vi-VN';
+                speechSynthesis.speak(msg);
+            }
+        }
+
+        speakButton.addEventListener('click', toggle_E);
+        stopButton.addEventListener('click', toggle_E.bind(null, false));
+        speakButton.addEventListener('click', toggle_V);
+        stopButton.addEventListener('click', toggle_V.bind(null, false));
+
+    </script>
+</body>
+
+</html>

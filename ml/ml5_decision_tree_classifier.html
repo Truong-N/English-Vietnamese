@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        cursor: pointer;
+    }
+
+    .hide {
+        display: none
+    }
+
+    .viet {
+        background-color: yellow;
+    }
+
+    img {
+        width: 75%;
+    }
+</style>
+
+<body>
+    <div>
+        <div>
+            <button id="stop">Stop!</button>
+            <button id="speak">Speak</button>
+            <button id="dung">Dừng</button>
+            <button id="doc">Đọc</button>
+        </div>
+    </div>
+    <h2><span class="english 1">Decision Tree Classifier, Explained: A Visual Guide with Code Examples for
+            Beginners</span> <span class="viet 1 hide">Giải thích về Phân loại cây quyết định: Hướng dẫn trực quan với
+            các ví dụ mã cho người mới bắt đầu</span></h2>
+    <p><span class="english 2"> A fresh look on our favorite upside-down tree</span> <span class="viet 2 hide"> Một góc
+            nhìn mới về cây ngược yêu thích của chúng tôi</span></p>
+    <p><span class="english 3"> Samy Baladram</span> <span class="viet 3 hide"> Samy Baladram</span></p>
+    <h3><span class="english 5">CLASSIFICATION ALGORITHM</span> <span class="viet 5 hide">THUẬT TOÁN PHÂN LOẠI</span>
+    </h3>
+    <p><span class="english 6"> Decision Trees are everywhere in machine learning,</span> <span class="viet 6 hide"> Cây
+            quyết định có mặt ở khắp mọi nơi trong học máy,</span>
+        <span class="english 7"> beloved for their intuitive output.</span> <span class="viet 7 hide"> được yêu thích vì
+            đầu ra trực quan của chúng.</span>
+        <span class="english 8"> Who doesn’t love a simple "if-then" flowchart?</span> <span class="viet 8 hide"> Ai mà
+            không thích sơ đồ luồng "nếu-thì" đơn giản chứ?</span>
+        <span class="english 9"> Despite their popularity,</span> <span class="viet 9 hide"> Mặc dù rất phổ biến,</span>
+        <span class="english 10"> it’s surprising how challenging it is to find a clear,</span> <span
+            class="viet 10 hide"> nhưng thật đáng ngạc nhiên khi thấy việc tìm ra một sơ đồ rõ ràng,</span>
+        <span class="english 11"> step-by-step explanation of how Decision Trees work.</span> <span
+            class="viet 11 hide"> giải thích từng bước về cách thức hoạt động của Cây quyết định.</span>
+        <span class="english 12"> (I’m actually embarrassed by how long it took me to actually understand how the
+            algorithm works.)</span> <span class="viet 12 hide"> (Tôi thực sự xấu hổ vì mất quá nhiều thời gian để thực
+            sự hiểu cách thức hoạt động của thuật toán.)</span>
+    </p>
+    <p><span class="english 13"> So,</span> <span class="viet 13 hide"> Vì vậy,</span>
+        <span class="english 14"> in this breakdown,</span> <span class="viet 14 hide"> trong phần phân tích này,</span>
+        <span class="english 15"> I’ll be focusing on the essentials of tree construction.</span> <span
+            class="viet 15 hide"> Tôi sẽ tập trung vào những điều cốt yếu của việc xây dựng cây.</span>
+        <span class="english 16"> We’ll unpack exactly what’s happening in each node and why,</span> <span
+            class="viet 16 hide"> Chúng ta sẽ giải thích chính xác những gì đang xảy ra trong từng nút và lý do tại
+            sao,</span>
+        <span class="english 17"> from root to final leaves (with visuals of course).</span> <span class="viet 17 hide">
+            từ gốc đến lá cuối cùng (tất nhiên là có hình ảnh minh họa).</span>
+    </p>
+    <h3><span class="english 19">Definition</span> <span class="viet 19 hide">Định nghĩa</span></h3>
+    <p><span class="english 20"> A Decision Tree classifier creates an upside-down tree to make predictions,</span>
+        <span class="viet 20 hide"> Bộ phân loại Cây quyết định tạo ra một cây ngược để đưa ra dự đoán,</span>
+        <span class="english 21"> starting at the top with a question about an important feature in your data,</span>
+        <span class="viet 21 hide"> bắt đầu từ đầu với một câu hỏi về một tính năng quan trọng trong dữ liệu của
+            bạn,</span>
+        <span class="english 22"> then branches out based on the answers.</span> <span class="viet 22 hide"> sau đó phân
+            nhánh dựa trên các câu trả lời.</span>
+        <span class="english 23"> As you follow these branches down,</span> <span class="viet 23 hide"> Khi bạn đi theo
+            các nhánh này xuống,</span>
+        <span class="english 24"> each stop asks another question,</span> <span class="viet 24 hide"> mỗi điểm dừng sẽ
+            đặt một câu hỏi khác,</span>
+        <span class="english 25"> narrowing down the possibilities.</span> <span class="viet 25 hide"> thu hẹp các khả
+            năng.</span>
+        <span class="english 26"> This question-and-answer game continues until you reach the bottom – a leaf node –
+            where you get your final prediction or classification.</span> <span class="viet 26 hide"> Trò chơi hỏi đáp
+            này tiếp tục cho đến khi bạn đến cuối – một nút lá – nơi bạn nhận được dự đoán hoặc phân loại cuối cùng của
+            mình.</span>
+    </p>
+    <h3><span class="english 28">Dataset Used</span> <span class="viet 28 hide">Bộ dữ liệu được sử dụng</span></h3>
+    <p><span class="english 29"> Throughout this article,</span> <span class="viet 29 hide"> Trong suốt bài viết
+            này,</span>
+        <span class="english 30"> we’ll use this artificial golf dataset (inspired by [1]) as an example.</span> <span
+            class="viet 30 hide"> chúng tôi sẽ sử dụng bộ dữ liệu chơi gôn nhân tạo này (lấy cảm hứng từ [1]) làm ví
+            dụ.</span>
+        <span class="english 31"> This dataset predicts whether a person will play golf based on weather
+            conditions.</span> <span class="viet 31 hide"> Bộ dữ liệu này dự đoán liệu một người có chơi gôn hay không
+            dựa trên điều kiện thời tiết.</span>
+    </p>
+    <img src="./images/decision-fig1.png" alt="decision-fig1">
+    <p><span class="english 34"> Columns:</span> <span class="viet 34 hide"> Các cột:</span>
+        <span class="english 35"> ‘Outlook’ (already one-hot encoded to sunny,</span> <span class="viet 35 hide">
+            ‘Outlook’ (đã được mã hóa thành nắng,</span>
+        <span class="english 36"> overcast,</span> <span class="viet 36 hide"> u ám,</span>
+        <span class="english 37"> rainy),</span> <span class="viet 37 hide"> mưa),</span>
+        <span class="english 38"> ‘Temperature’ (in Fahrenheit),</span> <span class="viet 38 hide"> ‘Nhiệt độ’ (tính
+            bằng độ F),</span>
+        <span class="english 39"> ‘Humidity’ (in %),</span> <span class="viet 39 hide"> ‘Độ ẩm’ (tính bằng %),</span>
+        <span class="english 40"> ‘Wind’ (yes/no),</span> <span class="viet 40 hide"> ‘Gió’ (có/không),</span>
+        <span class="english 41"> and ‘Play’ (target feature)</span> <span class="viet 41 hide"> và ‘Phát’ (tính năng
+            mục tiêu)</span>
+    </p>
+    <pre class="english"># Import libraries
+    from sklearn.model_selection import train_test_split
+    from sklearn.metrics import accuracy_score
+    import pandas as pd
+    import numpy as np
+    
+    # Load data
+    dataset_dict = {
+        'Outlook': ['sunny', 'sunny', 'overcast', 'rainy', 'rainy', 'rainy', 'overcast', 'sunny', 'sunny', 'rainy', 'sunny', 'overcast', 'overcast', 'rainy', 'sunny', 'overcast', 'rainy', 'sunny', 'sunny', 'rainy', 'overcast', 'rainy', 'sunny', 'overcast', 'sunny', 'overcast', 'rainy', 'overcast'],
+        'Temperature': [85.0, 80.0, 83.0, 70.0, 68.0, 65.0, 64.0, 72.0, 69.0, 75.0, 75.0, 72.0, 81.0, 71.0, 81.0, 74.0, 76.0, 78.0, 82.0, 67.0, 85.0, 73.0, 88.0, 77.0, 79.0, 80.0, 66.0, 84.0],
+        'Humidity': [85.0, 90.0, 78.0, 96.0, 80.0, 70.0, 65.0, 95.0, 70.0, 80.0, 70.0, 90.0, 75.0, 80.0, 88.0, 92.0, 85.0, 75.0, 92.0, 90.0, 85.0, 88.0, 65.0, 70.0, 60.0, 95.0, 70.0, 78.0],
+        'Wind': [False, True, False, False, False, True, True, False, False, False, True, True, False, True, True, False, False, True, False, True, True, False, True, False, False, True, False, False],
+        'Play': ['No', 'No', 'Yes', 'Yes', 'Yes', 'No', 'Yes', 'No', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'No', 'No', 'Yes', 'Yes', 'No', 'No', 'No', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'No', 'Yes']
+    }
+    df = pd.DataFrame(dataset_dict)
+    
+    # Preprocess data
+    df = pd.get_dummies(df, columns=['Outlook'],  prefix='', prefix_sep='', dtype=int)
+    df['Wind'] = df['Wind'].astype(int)
+    df['Play'] = (df['Play'] == 'Yes').astype(int)
+    
+    # Reorder the columns
+    df = df[['sunny', 'overcast', 'rainy', 'Temperature', 'Humidity', 'Wind', 'Play']]
+    
+    # Prepare features and target
+    X, y = df.drop(columns='Play'), df['Play']
+    
+    # Split data
+    X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.5, shuffle=False)
+    
+    # Display results
+    print(pd.concat([X_train, y_train], axis=1), 'n')
+    print(pd.concat([X_test, y_test], axis=1))
+    </pre>
+    <h3><span class="english 43">Main Mechanism</span> <span class="viet 43 hide">Cơ chế chính</span></h3>
+    <p><span class="english 44"> The Decision Tree classifier operates by recursively splitting the data based on the
+            most informative features.</span> <span class="viet 44 hide"> Bộ phân loại Cây quyết định hoạt động bằng
+            cách phân chia dữ liệu theo cách đệ quy dựa trên các tính năng cung cấp nhiều thông tin nhất.</span>
+        <span class="english 45"> Here’s how it works:</span> <span class="viet 45 hide"> Sau đây là cách thức hoạt
+            động:</span>
+    </p>
+    <li><span class="english 47">Start with the entire dataset at the root node.</span> <span class="viet 47 hide">Bắt
+            đầu với toàn bộ tập dữ liệu tại nút gốc.</span></li>
+    <li><span class="english 48">Select the best feature to split the data (based on measures like Gini
+            impurity).</span> <span class="viet 48 hide">Chọn tính năng tốt nhất để chia dữ liệu (dựa trên các biện pháp
+            như tạp chất Gini).</span></li>
+    <li><span class="english 49">Create child nodes for each possible value of the selected feature.</span> <span
+            class="viet 49 hide">Tạo các nút con cho mỗi giá trị có thể có của tính năng đã chọn.</span></li>
+    <li><span class="english 50">Repeat steps 2–3 for each child node until a stopping criterion is met (e.g., maximum
+            depth reached, minimum samples per leaf, or pure leaf nodes).</span> <span class="viet 50 hide">Lặp lại các
+            bước 2–3 cho mỗi nút con cho đến khi đạt được tiêu chí dừng (ví dụ: đạt đến độ sâu tối đa, số mẫu tối thiểu
+            trên mỗi lá hoặc các nút lá thuần túy).</span></li>
+    <li><span class="english 51">Assign the majority class to each leaf node.</span> <span class="viet 51 hide">Gán lớp
+            đa số cho mỗi nút lá.</span></li>
+    <img src="./images/decision-fig2.png" alt="decision-fig2">
+
+    <script>
+        const allEnglishElement = document.querySelectorAll(".english");
+        const allVietElement = document.querySelectorAll(".viet");
+
+        allEnglishElement.forEach((item, index) => {
+            item.addEventListener("click", (event) => handleClick(event))
+        })
+
+        function handleClick(event) {
+            const index = Number(event.target.classList[1])
+            allVietElement.forEach(e => {
+                if (e.classList[1] === event.target.classList[1]) {
+                    e.classList.contains("hide")
+                        ? e.classList.remove("hide")
+                        : e.classList.add("hide")
+                }
+            })
+
+        }
+        const msg = new SpeechSynthesisUtterance();
+        let voice = [];
+        const speakButton = document.querySelector('#speak');
+        const stopButton = document.querySelector('#stop');
+        const dungButton = document.querySelector('#dung');
+        const docButton = document.querySelector('#doc');
+
+        function toggle_E(startOver = true) {
+            speechSynthesis.cancel();
+            if (startOver) {
+                arr_len = document.getElementsByClassName('english').length;
+                console.log(arr_len);
+                let txt1 = '';
+                for (let i = 0; i < arr_len; i++) {
+                    temp_txt = document.getElementsByClassName('english')[i].innerHTML;
+                    temp_txt = temp_txt.trim() + '.\n';
+                    console.log(temp_txt);
+                    txt1 += temp_txt;
+                }
+                arr1 = txt1.split('\n');
+                arr1 = arr1.map((e) => e.trim());
+                // arr1[0] += '.';
+                arr1 = arr1.join(' ');
+                console.log(arr1);
+                msg.text = arr1;
+
+                msg.lang = 'en-US';
+                speechSynthesis.speak(msg);
+            }
+        }
+
+        function toggle_V(startOver = true) {
+            speechSynthesis.cancel();
+            allVietElement.forEach(e => e.classList.remove("hide"))
+
+            if (startOver) {
+                arr_len = document.getElementsByClassName('viet').length;
+                console.log(arr_len);
+                let txt1 = '';
+                for (let i = 0; i < arr_len; i++) {
+                    temp_txt = document.getElementsByClassName('viet')[i].innerHTML;
+                    temp_txt = temp_txt.trim() + '.\n';
+                    console.log(temp_txt);
+                    txt1 += temp_txt;
+                }
+                arr1 = txt1.split('\n');
+                arr1 = arr1.map((e) => e.trim());
+                // arr1[0] += '.';
+                arr1 = arr1.join(' ');
+                console.log(arr1);
+                msg.text = arr1;
+
+                msg.lang = 'vi-VN';
+                speechSynthesis.speak(msg);
+            }
+        }
+
+        speakButton.addEventListener('click', toggle_E);
+        stopButton.addEventListener('click', toggle_E.bind(null, false));
+        docButton.addEventListener('click', toggle_V);
+        dungButton.addEventListener('click', toggle_V.bind(null, false));
+
+    </script>
+</body>
+
+</html>

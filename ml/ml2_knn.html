@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-NN Classifier</title>
+</head>
+<style>
+    * {
+        cursor: pointer;
+    }
+
+    .hide {
+        display: none
+    }
+
+    .viet {
+        background-color: yellow;
+    }
+
+    img {
+        width: 75%;
+    }
+</style>
+
+<body>
+    <div>
+        <div>
+            <button id="stop">Stop!</button>
+            <button id="speak">Speak</button>
+            <button id="Dung">Dừng</button>
+            <button id="Doc">Đọc</button>
+        </div>
+    </div><a href="./ml1_dummy_classifier.html">Prev</a>
+    <h2><span class="english 1">K Nearest Neighbor Classifier, Explained: A Visual Guide with Code Examples for
+            Beginners</span> <span class="viet 1 hide">K Nearest Neighbor Classifier, Explained: A Visual Guide with
+            Code Examples for Beginners</span></h2>
+    <p><span class="english 2"> Imagine a method that makes predictions by looking at the most similar examples it has
+            seen before.</span> <span class="viet 2 hide"> Hãy tưởng tượng một phương pháp đưa ra dự đoán bằng cách xem
+            xét các ví dụ tương tự nhất mà nó từng thấy trước đây.</span>
+        <span class="english 3"> This is the essence of the Nearest Neighbor Classifier — a simple yet intuitive
+            algorithm that brings a touch of real-world logic to machine learning.</span> <span class="viet 3 hide"> Đây
+            chính là bản chất của Nearest Neighbor Classifier — một thuật toán đơn giản nhưng trực quan mang đến một
+            chút logic thực tế cho máy học.</span>
+    </p>
+    <p><span class="english 4"> While the dummy classifier sets the bare minimum performance standard,</span> <span
+            class="viet 4 hide"> Trong khi bộ phân loại giả định đặt ra tiêu chuẩn hiệu suất tối thiểu,</span>
+        <span class="english 5"> the Nearest Neighbor approach mimics how we often make decisions in daily life:</span>
+        <span class="viet 5 hide"> thì phương pháp Nearest Neighbor mô phỏng cách chúng ta thường đưa ra quyết định
+            trong cuộc sống hàng ngày:</span>
+        <span class="english 6"> by recalling similar past experiences.</span> <span class="viet 6 hide"> bằng cách nhớ
+            lại những trải nghiệm tương tự trong quá khứ.</span>
+        <span class="english 7"> It’s like asking your neighbors how they dressed for today’s weather to decide what you
+            should wear.</span> <span class="viet 7 hide"> Giống như việc hỏi hàng xóm của bạn xem họ mặc gì cho thời
+            tiết hôm nay để quyết định bạn nên mặc gì.</span>
+        <span class="english 8"> In the realm of data science,</span> <span class="viet 8 hide"> Trong lĩnh vực khoa học
+            dữ liệu,</span>
+        <span class="english 9"> this classifier examines the closest data points to make its predictions.</span> <span
+            class="viet 9 hide"> bộ phân loại này kiểm tra các điểm dữ liệu gần nhất để đưa ra dự đoán của nó.</span>
+    </p>
+    <h3><span class="english 11">Definition</span> <span class="viet 11 hide">Định nghĩa</span></h3>
+    <p><span class="english 12"> A K Nearest Neighbor classifier is a machine learning model that makes predictions
+            based on the majority class of the K nearest data points in the feature space.</span> <span
+            class="viet 12 hide"> Bộ phân loại K Nearest Neighbor là một mô hình học máy đưa ra dự đoán dựa trên lớp
+            phần lớn của K điểm dữ liệu gần nhất trong không gian đặc điểm.</span>
+        <span class="english 13"> The KNN algorithm assumes that similar things exist in close proximity,</span> <span
+            class="viet 13 hide"> Thuật toán KNN giả định rằng những thứ tương tự tồn tại ở gần nhau,</span>
+        <span class="english 14"> making it intuitive and easy to understand.</span> <span class="viet 14 hide"> làm cho
+            nó trực quan và dễ hiểu.</span>
+    </p>
+    <h3><span class="english 16">Dataset Used</span> <span class="viet 16 hide">Bộ dữ liệu được sử dụng</span></h3>
+    <p><span class="english 17"> Throughout this article,</span> <span class="viet 17 hide"> Trong suốt bài viết
+            này,</span>
+        <span class="english 18"> we’ll use this simple artificial golf dataset (inspired by [1]) as an example.</span>
+        <span class="viet 18 hide"> chúng tôi sẽ sử dụng bộ dữ liệu chơi gôn nhân tạo đơn giản này (lấy cảm hứng từ [1])
+            làm ví dụ.</span>
+        <span class="english 19"> This dataset predicts whether a person will play golf based on weather
+            conditions.</span> <span class="viet 19 hide"> Bộ dữ liệu này dự đoán liệu một người có chơi golf hay không
+            dựa trên điều kiện thời tiết.</span>
+        <span class="english 20"> It includes features like outlook,</span> <span class="viet 20 hide"> Bộ dữ liệu này
+            bao gồm các tính năng như triển vọng,</span>
+        <span class="english 21"> temperature,</span> <span class="viet 21 hide"> nhiệt độ,</span>
+        <span class="english 22"> humidity,</span> <span class="viet 22 hide"> độ ẩm,</span>
+        <span class="english 23"> and wind,</span> <span class="viet 23 hide"> và gió,</span>
+        <span class="english 24"> with the target variable being whether to play golf or not.</span> <span
+            class="viet 24 hide"> với biến mục tiêu là có chơi golf hay không.</span>
+    </p>
+    <img src="./images/knn-fig1.png" alt="knn-fig1">
+    <p><span class="english 27"> Columns:</span> <span class="viet 27 hide"> Các cột:</span>
+        <span class="english 28"> ‘Outlook’,</span> <span class="viet 28 hide"> ‘Triển vọng’,</span>
+        <span class="english 29"> ‘Temperature’,</span> <span class="viet 29 hide"> ‘Nhiệt độ’,</span>
+        <span class="english 30"> ‘Humidity’,</span> <span class="viet 30 hide"> ‘Độ ẩm’,</span>
+        <span class="english 31"> ‘Wind’ and ‘Play’ (target feature)</span> <span class="viet 31 hide"> ‘Gió’ và ‘Phát’
+            (tính năng mục tiêu)</span>
+    </p>
+    <pre class="english"># Import libraries
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+import pandas as pd
+import numpy as np
+
+# Make the dataset
+dataset_dict = {
+    'Outlook': ['sunny', 'sunny', 'overcast', 'rainy', 'rainy', 'rainy', 'overcast', 'sunny', 'sunny', 'rainy', 'sunny', 'overcast', 'overcast', 'rainy', 'sunny', 'overcast', 'rainy', 'sunny', 'sunny', 'rainy', 'overcast', 'rainy', 'sunny', 'overcast', 'sunny', 'overcast', 'rainy', 'overcast'],
+    'Temperature': [85.0, 80.0, 83.0, 70.0, 68.0, 65.0, 64.0, 72.0, 69.0, 75.0, 75.0, 72.0, 81.0, 71.0, 81.0, 74.0, 76.0, 78.0, 82.0, 67.0, 85.0, 73.0, 88.0, 77.0, 79.0, 80.0, 66.0, 84.0],
+    'Humidity': [85.0, 90.0, 78.0, 96.0, 80.0, 70.0, 65.0, 95.0, 70.0, 80.0, 70.0, 90.0, 75.0, 80.0, 88.0, 92.0, 85.0, 75.0, 92.0, 90.0, 85.0, 88.0, 65.0, 70.0, 60.0, 95.0, 70.0, 78.0],
+    'Wind': [False, True, False, False, False, True, True, False, False, False, True, True, False, True, True, False, False, True, False, True, True, False, True, False, False, True, False, False],
+    'Play': ['No', 'No', 'Yes', 'Yes', 'Yes', 'No', 'Yes', 'No', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'No', 'No', 'Yes', 'Yes', 'No', 'No', 'No', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'No', 'Yes']
+}
+original_df = pd.DataFrame(dataset_dict)
+
+print(original_df)
+</pre>
+    <p><span class="english 33"> KNN algorithm requires the data to be scaled first.</span> <span class="viet 33 hide">
+            Thuật toán KNN yêu cầu dữ liệu phải được chia tỷ lệ trước.</span>
+        <span class="english 34"> Convert categorical columns into 0 &amp; 1 and also scale the numerical features so
+            that no single feature dominates the distance metric.</span> <span class="viet 34 hide"> Chuyển đổi các cột
+            phân loại thành 0 &amp; 1 và cũng chia tỷ lệ các đặc điểm số để không có đặc điểm đơn lẻ nào chiếm ưu thế
+            trong số liệu khoảng cách.</span>
+    </p>
+    <img src="./images/knn-fig2.png" alt="knn-fig2">
+    <p><span class="english 37"> The categorical columns (Outlook &amp; Windy) are encoded using one-hot encoding while
+            the numerical columns are scaled using standard scaling (z-normalization).</span> <span
+            class="viet 37 hide"> Các cột phân loại (Outlook &amp; Windy) được mã hóa bằng mã hóa one-hot trong khi các
+            cột số được chia tỷ lệ bằng cách chia tỷ lệ chuẩn (chuẩn hóa z).</span>
+        <span class="english 38"> The process is done separately for training and test set.</span> <span
+            class="viet 38 hide"> Quá trình này được thực hiện riêng cho tập huấn luyện và tập kiểm tra.</span>
+    </p>
+    <pre class="english">from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+
+# Preprocess data
+df = pd.get_dummies(original_df, columns=['Outlook'], prefix='', prefix_sep='', dtype=int)
+df['Wind'] = df['Wind'].astype(int)
+df['Play'] = (df['Play'] == 'Yes').astype(int)
+df = df[['sunny','rainy','overcast','Temperature','Humidity','Wind','Play']]
+
+# Split data and standardize features
+X, y = df.drop(columns='Play'), df['Play']
+X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.5, shuffle=False)
+
+scaler = StandardScaler()
+float_cols = X_train.select_dtypes(include=['float64']).columns
+X_train[float_cols] = scaler.fit_transform(X_train[float_cols])
+X_test[float_cols] = scaler.transform(X_test[float_cols])
+
+# Print results
+print(pd.concat([X_train, y_train], axis=1).round(2), '\n')
+print(pd.concat([X_test, y_test], axis=1).round(2), '\n')
+</pre>
+    <h3><span class="english 40">Main Mechanism</span> <span class="viet 40 hide">Cơ chế chính</span></h3>
+    <p><span class="english 41"> The KNN classifier operates by finding the K nearest neighbors to a new data point and
+            then voting on the most common class among these neighbors.</span> <span class="viet 41 hide"> Bộ phân loại
+            KNN hoạt động bằng cách tìm K láng giềng gần nhất với điểm dữ liệu mới và sau đó bỏ phiếu cho lớp phổ biến
+            nhất trong số những láng giềng này.</span>
+        <span class="english 42"> Here’s how it works:</span> <span class="viet 42 hide"> Sau đây là cách thức hoạt
+            động:</span>
+    </p>
+    <li><span class="english 44">Calculate the distance between the new data point and all points in the training
+            set.</span> <span class="viet 44 hide">Tính toán khoảng cách giữa điểm dữ liệu mới và tất cả các điểm trong
+            tập huấn luyện.</span></li>
+    <li><span class="english 45">Select the K nearest neighbors based on these distances.</span> <span
+            class="viet 45 hide">Chọn K láng giềng gần nhất dựa trên các khoảng cách này.</span></li>
+    <li><span class="english 46">Take a majority vote of the classes of these K neighbors.</span> <span
+            class="viet 46 hide">Lấy phiếu bầu đa số cho các lớp của K láng giềng này.</span></li>
+    <li><span class="english 47">Assign the majority class to the new data point.</span> <span class="viet 47 hide">Gán
+            lớp đa số cho điểm dữ liệu mới.</span></li>
+    <img src="./images/knn-fig3.png" alt="knn-fig3">
+    <p><span class="english 50"> For our golf dataset,</span> <span class="viet 50 hide"> Đối với tập dữ liệu chơi gôn
+            của chúng tôi,</span>
+        <span class="english 51"> a KNN classifier might look at the 5 most similar weather conditions in the past to
+            predict whether someone will play golf today.</span> <span class="viet 51 hide"> bộ phân loại KNN có thể xem
+            xét 5 điều kiện thời tiết giống nhau nhất trong quá khứ để dự đoán liệu hôm nay ai đó có chơi golf
+            không.</span>
+    </p>
+    <h3><span class="english 52"> Training Steps</span> <span class="viet 52 hide"> Các bước đào tạo</span></h3>
+    <p><span class="english 54"> Unlike many other algorithms,</span> <span class="viet 54 hide"> Không giống như nhiều
+            thuật toán khác,</span>
+        <span class="english 55"> KNN doesn’t have a distinct training phase.</span> <span class="viet 55 hide"> KNN
+            không có giai đoạn đào tạo riêng biệt.</span>
+        <span class="english 56"> Instead,</span> <span class="viet 56 hide"> Thay vào đó,</span>
+        <span class="english 57"> it memorizes the entire training dataset.</span> <span class="viet 57 hide"> nó ghi
+            nhớ toàn bộ tập dữ liệu đào tạo.</span>
+        <span class="english 58"> Here’s the process:</span> <span class="viet 58 hide"> Sau đây là quy trình:</span>
+    </p>
+    <p><span class="english 60"> 1.</span> <span class="viet 60 hide"> 1.</span>
+        <span class="english 61"> Choose a value for K (the number of neighbors to consider).</span> <span
+            class="viet 61 hide"> Chọn giá trị cho K (số lượng hàng xóm cần xem xét).</span>
+    </p>
+    <img src="./images/knn-fig4.png" alt="knn-fig4">
+    <p><span class="english 63"> In 2D setting,</span> <span class="viet 63 hide"> Trong thiết lập 2D,</span>
+        <span class="english 64"> it is like finding the majority of the closest colors.</span> <span
+            class="viet 64 hide"> giống như tìm phần lớn các màu gần nhất.</span>
+    </p>
+    <pre class="english">from sklearn.neighbors import KNeighborsClassifier
+
+# Select the Number of Neighbors ('k')
+k = 5
+</pre>
+    <p><span class="english 66"> 2.</span> <span class="viet 66 hide"> 2.</span>
+        <span class="english 67"> Select a distance metric (i.e.,</span> <span class="viet 67 hide"> Chọn một phép đo
+            khoảng cách (thidu,</span>
+        <span class="english 68"> Euclidean distance,</span> <span class="viet 68 hide"> Khoảng cách Euclid,</span>
+        <span class="english 69"> Manhattan distance).</span> <span class="viet 69 hide"> Khoảng cách Manhattan).</span>
+    </p>
+    <img src="./images/knn-fig5.png" alt="knn-fig5">
+    <p><span class="english 72"> The most common distance metric is Euclidean Distance.</span> <span
+            class="viet 72 hide"> Phép đo khoảng cách phổ biến nhất là Khoảng cách Euclid.</span>
+        <span class="english 73"> This is just like finding the straight line distance between two points in real
+            world.</span> <span class="viet 73 hide"> Điều này giống như việc tìm khoảng cách đường thẳng giữa hai điểm
+            trong thế giới thực.</span>
+    </p>
+    <pre class="english">import numpy as np
+
+# Choose a Distance Metric
+distance_metric = 'euclidean'
+
+# Trying to calculate distance between ID 0 and ID 1
+print(np.linalg.norm(X_train.loc[0].values - X_train.loc[1].values))
+</pre>
+    <p><span class="english 75"> 3.</span> <span class="viet 75 hide"> 3.</span>
+        <span class="english 76"> Store/Memorize all the training data points and their corresponding labels.</span>
+        <span class="viet 76 hide"> Lưu trữ/Ghi nhớ tất cả các điểm dữ liệu đào tạo và nhãn tương ứng của chúng.</span>
+    </p>
+    <pre class="english"># Initialize the k-NN Classifier
+knn_clf = KNeighborsClassifier(n_neighbors=k, metric=distance_metric)
+
+# "Train" the kNN (although no real training happens)
+knn_clf.fit(X_train, y_train)
+</pre>
+    <h3><span class="english 78">Classification Steps</span> <span class="viet 78 hide">Các bước phân loại</span></h3>
+    <p><span class="english 79"> Once the Nearest Neighbor Classifier has been “trained” (i.e.,</span> <span
+            class="viet 79 hide"> Sau khi Bộ phân loại lân cận gần nhất đã được "đào tạo" (thidu,</span>
+        <span class="english 80"> the training data has been stored),</span> <span class="viet 80 hide"> dữ liệu đào tạo
+            đã được lưu trữ),</span>
+        <span class="english 81"> here’s how it makes predictions for new instances:</span> <span class="viet 81 hide">
+            sau đây là cách nó đưa ra dự đoán cho các trường hợp mới:</span>
+    </p>
+    <p><span class="english 83"> 1) Distance Calculation:</span> <span class="viet 83 hide"> 1) Tính toán khoảng
+            cách:</span>
+        <span class="english 84"> For the new instance,</span> <span class="viet 84 hide"> Đối với trường hợp
+            mới,</span>
+        <span class="english 85"> calculate its distance from all stored training instances using the chosen distance
+            metric.</span> <span class="viet 85 hide"> tính toán khoảng cách của nó từ tất cả các trường hợp đào tạo đã
+            lưu trữ bằng cách sử dụng số liệu khoảng cách đã chọn.</span>
+    </p>
+    <img src="./images/knn-fig6.png" alt="knn-fig6">
+    <p><span class="english 88"> For ID 14,</span> <span class="viet 88 hide"> Đối với ID 14,</span>
+        <span class="english 89"> we calculate the distance to each member of the training set (ID 0 — ID 13).</span>
+        <span class="viet 89 hide"> chúng tôi tính toán khoảng cách đến từng thành viên của tập huấn luyện (ID 0 — ID
+            13).</span>
+    </p>
+    <pre class="english">from scipy.spatial import distance
+
+# Compute the distances from the first row of X_test to all rows in X_train
+distances = distance.cdist(X_test.iloc[0:1], X_train, metric='euclidean')
+
+# Create a DataFrame to display the distances
+distance_df = pd.DataFrame({
+    'Train_ID': X_train.index,
+    'Distance': distances[0].round(2),
+    'Label': y_train
+}).set_index('Train_ID')
+
+print(distance_df.sort_values(by='Distance'))
+</pre>
+    <p><span class="english 91"> 2) Neighbor Selection and Prediction:</span> <span class="viet 91 hide"> 2) Lựa chọn và
+            dự đoán hàng xóm:</span>
+        <span class="english 92"> Identify the K nearest neighbors based on the calculated distances,</span> <span
+            class="viet 92 hide"> Xác định K hàng xóm gần nhất dựa trên khoảng cách đã tính toán,</span>
+        <span class="english 93"> then assign the most common class among these neighbors as the predicted class for the
+            new instance.</span> <span class="viet 93 hide"> sau đó chỉ định lớp phổ biến nhất trong số những hàng xóm
+            này làm lớp dự đoán cho phiên bản mới.</span>
+    </p>
+    <img src="./images/knn-fig7.png" alt="knn-fig7">
+    <p><span class="english 96"> After calculating its distance to all stored data points and sorting from lowest to
+            highest,</span> <span class="viet 96 hide"> Sau khi tính toán khoảng cách đến tất cả các điểm dữ liệu đã lưu
+            trữ và sắp xếp từ thấp nhất đến cao nhất,</span>
+        <span class="english 97"> we identify the 5 nearest neighbors (top 5).</span> <span class="viet 97 hide"> chúng
+            tôi xác định 5 hàng xóm gần nhất (top 5).</span>
+        <span class="english 98"> If the majority (3 or more) of these neighbors are labeled “NO”,</span> <span
+            class="viet 98 hide"> Nếu phần lớn (3 hoặc nhiều hơn) trong số những hàng xóm này được gắn nhãn
+            "KHÔNG",</span>
+        <span class="english 99"> we predict “NO” for ID 14.</span> <span class="viet 99 hide"> chúng tôi dự đoán
+            "KHÔNG" cho ID 14.</span>
+    </p>
+    <pre class="english"># Use the k-NN Classifier to make predictions
+y_pred = knn_clf.predict(X_test)
+print("Label     :",list(y_test))
+print("Prediction:",list(y_pred))
+</pre>
+    <h3><span class="english 101">Evaluation Step</span> <span class="viet 101 hide">Bước đánh giá</span></h3>
+    <img src="./images/knn-fig8.png" alt="knn-fig8">
+    <p><span class="english 103"> With this simple model,</span> <span class="viet 103 hide"> Với mô hình đơn giản
+            này,</span>
+        <span class="english 104"> we manage to get good enough accuracy,</span> <span class="viet 104 hide"> chúng ta
+            có thể đạt được độ chính xác đủ tốt,</span>
+        <span class="english 105"> much better than guessing randomly!</span> <span class="viet 105 hide"> tốt hơn nhiều
+            so với việc đoán ngẫu nhiên!</span>
+    </p>
+    <pre class="english">from sklearn.metrics import accuracy_score
+
+# Evaluation Phase
+accuracy = accuracy_score(y_test, y_pred)
+print(f'Accuracy: {accuracy.round(4)*100}%')
+</pre>
+    <h3><span class="english 107">Key Parameters</span> <span class="viet 107 hide">Các tham số chính</span></h3>
+    <p><span class="english 108"> While KNN is conceptually simple,</span> <span class="viet 108 hide"> Mặc dù KNN đơn
+            giản về mặt khái niệm,</span>
+        <span class="english 109"> it does have a few important parameters:</span> <span class="viet 109 hide"> nhưng nó
+            có một số tham số quan trọng:</span>
+    </p>
+    <p><span class="english 110"> 1) K:</span> <span class="viet 110 hide"> 1) K:</span>
+        <span class="english 111"> The number of neighbors to consider.</span> <span class="viet 111 hide"> Số lượng
+            hàng xóm cần xem xét.</span>
+        <span class="english 112"> A smaller K can lead to noise-sensitive results,</span> <span class="viet 112 hide">
+            K nhỏ hơn có thể dẫn đến kết quả nhạy cảm với tiếng ồn,</span>
+        <span class="english 113"> while a larger K may smooth out the decision boundary.</span> <span
+            class="viet 113 hide"> trong khi K lớn hơn có thể làm mịn ranh giới quyết định.</span>
+    </p>
+    <img src="./images/knn-fig9.png" alt="knn-fig9">
+    <p><span class="english 116"> The higher the value of k,</span> <span class="viet 116 hide"> Giá trị k càng
+            cao,</span>
+        <span class="english 117"> the more likely that it will select the majority class (”YES”).</span> <span
+            class="viet 117 hide"> thì khả năng nó sẽ chọn lớp đa số (”YES”) càng cao.</span>
+    </p>
+    <pre class="english">labels, predictions, accuracies = list(y_test), [], []
+
+k_list = [3, 5, 7]
+for k in k_list:
+    knn_clf = KNeighborsClassifier(n_neighbors=k)
+    knn_clf.fit(X_train, y_train)
+    y_pred = knn_clf.predict(X_test)
+    predictions.append(list(y_pred))
+    accuracies.append(accuracy_score(y_test, y_pred).round(4)*100)
+
+df_predictions = pd.DataFrame({'Label': labels})
+for k, pred in zip(k_list, predictions):
+    df_predictions[f'k = {k}'] = pred
+
+df_accuracies = pd.DataFrame({'Accuracy ': accuracies}, index=[f'k = {k}' for k in k_list]).T
+
+print(df_predictions)
+print(df_accuracies)
+</pre>
+    <p><span class="english 119"> 2) Distance Metric:</span> <span class="viet 119 hide"> 2) Đo lường khoảng
+            cách:</span>
+        <span class="english 120"> This determines how similarity between points is calculated.</span> <span
+            class="viet 120 hide"> Điều này xác định cách tính độ tương đồng giữa các điểm.</span>
+        <span class="english 121"> Common options include:</span> <span class="viet 121 hide"> Các tùy chọn phổ biến bao
+            gồm:</span>
+    </p>
+    <li><span class="english 123">Euclidean distance (straight-line distance)</span> <span class="viet 123 hide">Khoảng
+            cách Euclid (khoảng cách đường thẳng)</span></li>
+    <li><span class="english 124">Manhattan distance (sum of absolute differences)</span> <span
+            class="viet 124 hide">Khoảng cách Manhattan (tổng các chênh lệch tuyệt đối)</span></li>
+    <li><span class="english 125">Minkowski distance (a generalization of Euclidean and Manhattan distances)</span>
+        <span class="viet 125 hide">Khoảng cách Minkowski (tổng quát của khoảng cách Euclid và Manhattan)</span>
+    </li>
+    <p><span class="english 127"> 3) Weight Function:</span> <span class="viet 127 hide"> 3) Hàm trọng số:</span>
+        <span class="english 128"> This decides how to weight the contribution of each neighbor.</span> <span
+            class="viet 128 hide"> Hàm này quyết định cách cân nhắc đóng góp của từng hàng xóm.</span>
+        <span class="english 129"> Options include:</span> <span class="viet 129 hide"> Các tùy chọn bao gồm:</span>
+    </p>
+    <li><span class="english 131">‘uniform’: All neighbors are weighted equally.</span> <span
+            class="viet 131 hide">‘đồng đều’: Tất cả các hàng xóm đều được cân nhắc như nhau.</span></li>
+    <li><span class="english 132">‘distance’: Closer neighbors have a greater influence than those farther away.</span>
+        <span class="viet 132 hide">‘khoảng cách’: Những hàng xóm gần hơn có ảnh hưởng lớn hơn những hàng xóm xa
+            hơn.</span>
+    </li>
+    <h3><span class="english 134">Pros &amp; Cons</span> <span class="viet 134 hide">Ưu và nhược điểm</span></h3>
+    <p><span class="english 135"> Like any algorithm in machine learning,</span> <span class="viet 135 hide"> Giống như
+            bất kỳ thuật toán nào trong học máy,</span>
+        <span class="english 136"> KNN has its strengths and limitations.</span> <span class="viet 136 hide"> KNN có
+            những điểm mạnh và hạn chế riêng.</span>
+    </p>
+    <h4><span class="english 138">Pros:</span> <span class="viet 138 hide">Ưu điểm:</span></h4>
+    <li><span class="english 139">Simplicity: Easy to understand and implement.</span> <span class="viet 139 hide">Đơn
+            giản: Dễ hiểu và thực hiện.</span></li>
+    <li><span class="english 140">No Assumptions: Doesn’t assume anything about the data distribution.</span> <span
+            class="viet 140 hide">Không có giả định: Không giả định bất cứ điều gì về phân phối dữ liệu.</span></li>
+    <li><span class="english 141">Versatility: Can be used for both classification and regression tasks.</span> <span
+            class="viet 141 hide">Tính linh hoạt: Có thể sử dụng cho cả nhiệm vụ phân loại và hồi quy.</span></li>
+    <li><span class="english 142">No Training Phase: Can quickly incorporate new data without retraining.</span> <span
+            class="viet 142 hide">Không có giai đoạn đào tạo: Có thể nhanh chóng kết hợp dữ liệu mới mà không cần đào
+            tạo lại.</span></li>
+    <h4><span class="english 144">Cons:</span> <span class="viet 144 hide">Nhược điểm:</span></h4>
+    <li><span class="english 145">Computationally Expensive: Needs to compute distances to all training samples for each
+            prediction.</span> <span class="viet 145 hide">Đắt tiền về mặt tính toán: Cần tính toán khoảng cách đến tất
+            cả các mẫu đào tạo cho mỗi dự đoán.</span></li>
+    <li><span class="english 146">Memory Intensive: Requires storing all training data.</span> <span
+            class="viet 146 hide">Tốn nhiều bộ nhớ: Yêu cầu lưu trữ tất cả dữ liệu đào tạo.</span></li>
+    <li><span class="english 147">Sensitive to Irrelevant Features: Can be thrown off by features that aren’t important
+            to the classification.</span> <span class="viet 147 hide">Nhạy cảm với các tính năng không liên quan: Có thể
+            bị loại bỏ bởi các tính năng không quan trọng đối với phân loại.</span></li>
+    <li><span class="english 148">Curse of Dimensionality: Performance degrades in high-dimensional spaces.</span> <span
+            class="viet 148 hide">Lời nguyền của đa chiều: Hiệu suất giảm trong không gian đa chiều.</span></li>
+    <h3><span class="english 150">Final Remarks</span> <span class="viet 150 hide">Nhận xét cuối cùng</span></h3>
+    <p><span class="english 151"> The K-Nearest Neighbors (KNN) classifier stands out as a fundamental algorithm in
+            machine learning,</span> <span class="viet 151 hide"> Bộ phân loại K-Nearest Neighbors (KNN) nổi bật là một
+            thuật toán cơ bản trong học máy,</span>
+        <span class="english 152"> offering an intuitive and effective approach to classification tasks.</span> <span
+            class="viet 152 hide"> cung cấp một cách tiếp cận trực quan và hiệu quả cho các tác vụ phân loại.</span>
+        <span class="english 153"> Its simplicity makes it an ideal starting point for beginners,</span> <span
+            class="viet 153 hide"> Tính đơn giản của nó khiến nó trở thành điểm khởi đầu lý tưởng cho người mới bắt
+            đầu,</span>
+        <span class="english 154"> while its versatility ensures its value for experienced data scientists.</span> <span
+            class="viet 154 hide"> trong khi tính linh hoạt của nó đảm bảo giá trị của nó đối với các nhà khoa học dữ
+            liệu có kinh nghiệm.</span>
+        <span class="english 155"> KNN’s power lies in its ability to make predictions based on the proximity of data
+            points,</span> <span class="viet 155 hide"> Sức mạnh của KNN nằm ở khả năng đưa ra dự đoán dựa trên vị trí
+            gần của các điểm dữ liệu,</span>
+        <span class="english 156"> without requiring complex training processes.</span> <span class="viet 156 hide"> mà
+            không yêu cầu các quy trình đào tạo phức tạp.</span>
+    </p>
+    <p><span class="english 157"> However,</span> <span class="viet 157 hide"> Tuy nhiên,</span>
+        <span class="english 158"> it’s crucial to remember that KNN is just one tool in the vast machine learning
+            toolkit.</span> <span class="viet 158 hide"> điều quan trọng cần nhớ là KNN chỉ là một công cụ trong bộ công
+            cụ học máy khổng lồ.</span>
+        <span class="english 159"> As you progress in your data science journey,</span> <span class="viet 159 hide"> Khi
+            bạn tiến bộ trong hành trình khoa học dữ liệu của mình,</span>
+        <span class="english 160"> use KNN as a stepping stone to understand more complex algorithms,</span> <span
+            class="viet 160 hide"> hãy sử dụng KNN như một bước đệm để hiểu các thuật toán phức tạp hơn,</span>
+        <span class="english 161"> always considering your specific data characteristics and problem requirements when
+            choosing a model.</span> <span class="viet 161 hide"> luôn cân nhắc các đặc điểm dữ liệu cụ thể và yêu cầu
+            của vấn đề khi chọn mô hình.</span>
+        <span class="english 162"> By mastering KNN,</span> <span class="viet 162 hide"> Bằng cách thành thạo
+            KNN,</span>
+        <span class="english 163"> you’ll gain valuable insights into classification techniques,</span> <span
+            class="viet 163 hide"> bạn sẽ có được những hiểu biết có giá trị về các kỹ thuật phân loại,</span>
+        <span class="english 164"> setting a strong foundation for tackling more advanced machine learning
+            challenges.</span> <span class="viet 164 hide"> thiết lập nền tảng vững chắc để giải quyết các thách thức
+            học máy nâng cao hơn.</span>
+    </p>
+    <pre class="english"># Import libraries
+import pandas as pd
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import accuracy_score
+
+# Load data
+dataset_dict = {
+    'Outlook': ['sunny', 'sunny', 'overcast', 'rainy', 'rainy', 'rainy', 'overcast', 'sunny', 'sunny', 'rainy', 'sunny', 'overcast', 'overcast', 'rainy', 'sunny', 'overcast', 'rainy', 'sunny', 'sunny', 'rainy', 'overcast', 'rainy', 'sunny', 'overcast', 'sunny', 'overcast', 'rainy', 'overcast'],
+    'Temperature': [85.0, 80.0, 83.0, 70.0, 68.0, 65.0, 64.0, 72.0, 69.0, 75.0, 75.0, 72.0, 81.0, 71.0, 81.0, 74.0, 76.0, 78.0, 82.0, 67.0, 85.0, 73.0, 88.0, 77.0, 79.0, 80.0, 66.0, 84.0],
+    'Humidity': [85.0, 90.0, 78.0, 96.0, 80.0, 70.0, 65.0, 95.0, 70.0, 80.0, 70.0, 90.0, 75.0, 80.0, 88.0, 92.0, 85.0, 75.0, 92.0, 90.0, 85.0, 88.0, 65.0, 70.0, 60.0, 95.0, 70.0, 78.0],
+    'Wind': [False, True, False, False, False, True, True, False, False, False, True, True, False, True, True, False, False, True, False, True, True, False, True, False, False, True, False, False],
+    'Play': ['No', 'No', 'Yes', 'Yes', 'Yes', 'No', 'Yes', 'No', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'No', 'No', 'Yes', 'Yes', 'No', 'No', 'No', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'No', 'Yes']
+}
+df = pd.DataFrame(dataset_dict)
+
+# Preprocess data
+df = pd.get_dummies(df, columns=['Outlook'], prefix='', prefix_sep='', dtype=int)
+df['Wind'] = df['Wind'].astype(int)
+df['Play'] = (df['Play'] == 'Yes').astype(int)
+
+# Split data
+X, y = df.drop(columns='Play'), df['Play']
+X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.5, shuffle=False)
+
+# Standardize features
+scaler = StandardScaler()
+float_cols = X_train.select_dtypes(include=['float64']).columns
+X_train[float_cols] = scaler.fit_transform(X_train[float_cols])
+X_test[float_cols] = scaler.transform(X_test[float_cols])
+
+# Train model
+knn_clf = KNeighborsClassifier(n_neighbors=3, metric='euclidean')
+knn_clf.fit(X_train, y_train)
+
+# Predict and evaluate
+y_pred = knn_clf.predict(X_test)
+print(f"Accuracy: {accuracy_score(y_test, y_pred)}")
+</pre>
+    <a href="./ml3_bayes_classifier.html">Next</a>
+    <script>
+        const allEnglishElement = document.querySelectorAll(".english");
+        const allVietElement = document.querySelectorAll(".viet");
+
+        allEnglishElement.forEach((item, index) => {
+            item.addEventListener("click", (event) => handleClick(event))
+        })
+
+        function handleClick(event) {
+            const index = Number(event.target.classList[1])
+            allVietElement.forEach(e => {
+                if (e.classList[1] === event.target.classList[1]) {
+                    e.classList.contains("hide")
+                        ? e.classList.remove("hide")
+                        : e.classList.add("hide")
+                }
+            })
+
+        }
+        const msg = new SpeechSynthesisUtterance();
+        let voice = [];
+        const speakButton = document.querySelector('#speak');
+        const stopButton = document.querySelector('#stop');
+        const dungButton = document.querySelector('#dung');
+        const docButton = document.querySelector('#doc');
+
+        function toggle_E(startOver = true) {
+            speechSynthesis.cancel();
+            if (startOver) {
+                arr_len = document.getElementsByClassName('english').length;
+                console.log(arr_len);
+                let txt1 = '';
+                for (let i = 0; i < arr_len; i++) {
+                    temp_txt = document.getElementsByClassName('english')[i].innerHTML;
+                    temp_txt = temp_txt.trim() + '.\n';
+                    console.log(temp_txt);
+                    txt1 += temp_txt;
+                }
+                arr1 = txt1.split('\n');
+                arr1 = arr1.map((e) => e.trim());
+                // arr1[0] += '.';
+                arr1 = arr1.join(' ');
+                console.log(arr1);
+                msg.text = arr1;
+
+                msg.lang = 'en-US';
+                speechSynthesis.speak(msg);
+            }
+        }
+
+        function toggle_V(startOver = true) {
+            speechSynthesis.cancel();
+            allVietElement.forEach(e => e.classList.remove("hide"))
+
+            if (startOver) {
+                arr_len = document.getElementsByClassName('viet').length;
+                console.log(arr_len);
+                let txt1 = '';
+                for (let i = 0; i < arr_len; i++) {
+                    temp_txt = document.getElementsByClassName('viet')[i].innerHTML;
+                    temp_txt = temp_txt.trim() + '.\n';
+                    console.log(temp_txt);
+                    txt1 += temp_txt;
+                }
+                arr1 = txt1.split('\n');
+                arr1 = arr1.map((e) => e.trim());
+                // arr1[0] += '.';
+                arr1 = arr1.join(' ');
+                console.log(arr1);
+                msg.text = arr1;
+
+                msg.lang = 'vi-VN';
+                speechSynthesis.speak(msg);
+            }
+        }
+
+        speakButton.addEventListener('click', toggle_E);
+        stopButton.addEventListener('click', toggle_E.bind(null, false));
+        speakButton.addEventListener('click', toggle_V);
+        stopButton.addEventListener('click', toggle_V.bind(null, false));
+
+    </script>
+</body>
+
+</html>
