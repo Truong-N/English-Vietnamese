@@ -1314,9 +1314,10 @@
               Pháp,</span>
             <span class="english 10"> and to demonstrate adequate knowledge of either English or French.</span> <span
               class="viet 10 hide"> và chứng minh được kiến ​​thức đã học về tiếng Anh hoặc tiếng Pháp đầy đủ.</span>
-            <span class="english 11"> The citizenship test is not used to assess an applicant’s knowledge of English
-              or French.</span> <span class="viet 11 hide">Bài kiểm tra quốc tịch không được sử dụng cho nhiều ứng
-              dụng kiến ​​thức bằng tiếng Anh hoặc tiếng Pháp.</span>
+            <span class="english 11"> The citizenship test is <strong>not used</strong> to assess an applicant’s
+              knowledge of English
+              or French.</span> <span class="viet 11 hide">Bài kiểm tra nhập tịch <strong>không được sử dụng</strong> để
+              đánh giá trình độ tiếng Anh hoặc tiếng Pháp của người nộp đơn</span>
             <span class="english 12"> <a
                 href="https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-citizenship/become-canadian-citizen/eligibility.html">Learn
                 how language abilities are assessed.</a></span> <span class="viet 12 hide"> Tìm hiểu cách xác nhận kỹ
@@ -3539,6 +3540,8 @@
   <script src="./common_files/ep-pp.min.js.download"></script>
   <script src="./common_files/wet-boew.min.js.download"></script><span id="wb-rsz" class="wb-init">&nbsp;</span>
   <script src="./common_files/theme.min.js.download"></script>
+
+
   <script>
     const allEnglishElement = document.querySelectorAll(".english");
     const allVietElement = document.querySelectorAll(".viet");
@@ -3550,11 +3553,11 @@
     function handleClick(event) {
       const index = Number(event.target.classList[1])
       allVietElement.forEach(e => {
-        // if (e.classList[1] === event.target.classList[1]) {
-        e.classList.contains("hide")
-          ? e.classList.remove("hide")
-          : e.classList.add("hide")
-        // }
+        if (e.classList[1] === event.target.classList[1]) {
+          e.classList.contains("hide")
+            ? e.classList.remove("hide")
+            : e.classList.add("hide")
+        }
       })
 
     }

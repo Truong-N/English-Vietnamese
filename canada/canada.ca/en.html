@@ -126,10 +126,6 @@
     .viet {
       background-color: yellow;
     }
-
-    img {
-      width: 75%;
-    }
   </style>
 
 </head><iframe style="width: 0px; height: 0px; display: none;" src="./en_files/saved_resource(1).html"></iframe>
@@ -3587,37 +3583,6 @@
       })
 
     }
-    const msg = new SpeechSynthesisUtterance();
-    msg.lang = 'en-US';
-    let voice = [];
-    const speakButton = document.querySelector('#speak');
-    const stopButton = document.querySelector('#stop');
-    function toggle(startOver = true) {
-      speechSynthesis.cancel();
-      if (startOver) {
-        arr_len = document.getElementsByClassName('english').length;
-        console.log(arr_len);
-        let txt1 = '';
-        for (let i = 0; i < arr_len; i++) {
-          temp_txt = document.getElementsByClassName('english')[i].innerHTML;
-          temp_txt = temp_txt.trim() + '.\n';
-          console.log(temp_txt);
-          txt1 += temp_txt;
-        }
-        arr1 = txt1.split('\n');
-        arr1 = arr1.map((e) => e.trim());
-        // arr1[0] += '.';
-        arr1 = arr1.join(' ');
-        console.log(arr1);
-        msg.text = arr1;
-
-        msg.lang = 'en-US';
-        speechSynthesis.speak(msg);
-      }
-    }
-
-    speakButton.addEventListener('click', toggle);
-    stopButton.addEventListener('click', toggle.bind(null, false));
 
   </script>
 </body><iframe id="mWao8blqxfSS0FNd" style="display: none;" src="./en_files/saved_resource(2).html"></iframe>
