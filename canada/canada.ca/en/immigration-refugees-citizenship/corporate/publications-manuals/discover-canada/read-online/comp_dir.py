@@ -3,7 +3,7 @@ import os
 
 print(os.listdir())
 # Get the list of all files and directories
-path1 = "English-Vietnamese/canada/canada.ca/en/immigration-refugees-citizenship/corporate/publications-manuals/discover-canada/read-online/notice_files"
+path1 = "English-Vietnamese/canada/canada.ca/en/immigration-refugees-citizenship/corporate/publications-manuals/discover-canada/read-online/oath-citizenship_files"
 dir_list1 = os.listdir(path1)
 print("Files and directories in '", path1, "' :")
 # prints all files
