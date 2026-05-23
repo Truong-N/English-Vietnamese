@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title> kinhTrungBo-1</title>
+</head>
+<style>
+   * {
+      cursor: pointer;
+   }
+
+   .translate {
+      color: blue;
+   }
+
+   img {
+      width: 75%;
+   }
+
+   .floating {
+      position: fixed;
+      /* Keeps it fixed to the viewport */
+      top: 0px;
+      /* Distance from the top of the viewport */
+      right: 0px;
+      /* Distance from the right of the viewport */
+      z-index: 1000;
+      /* Ensures it stays above other elements */
+      background-color: black;
+      color: white;
+   }
+
+   .floating a {
+      color: white;
+   }
+
+   table,
+   th,
+   td {
+      border: 1px solid black;
+      border-collapse: collapse;
+   }
+
+   th {
+      background-color: #96D4D4;
+   }
+</style>
+
+<body>
+   <div class="floating">
+      <!-- <button id="stop">Reset</button> -->
+      <button id="speak">Speak</button>
+      <button id="pause">Pause</button>
+      <label> <input type="checkbox" id="readEnglishOnly" name="pencil">read English only</label>
+      <!-- <a         href="./kinhTrungBo2.html">Next</a> -->
+   </div>
+   <h2>
+      <span class="source"> 1. Kinh Pháp Môn Căn Bản </span><span class="translate"> 1. The Fundamental Teaching of the
+         Dharma</span>
+   </h2>
+   <p>
+      <span class="source"> Như vầy tôi nghe. </span><span class="translate">Thus I have heard.</span>
+   </p>
+   <p>
+      <span class="source"> Một thời Thế Tôn trú tại (tụ lạc) Ukkattha, trong rừng Subhaga (rừng Hạnh phúc), dưới gốc
+         cây Sa-la vương. </span><span class="translate">At one time the Blessed One was residing in Ukkattha, in the
+         Subhaga forest (Forest of Happiness), under a Sala tree.</span><span class="source"> Tại chỗ ấy, Thế Tôn gọi
+         các Tỷ-kheo: “Này các Tỷ-kheo!”. </span><span class="translate">At that place the Blessed One called the monks:
+         “Monks!”</span><span class="source"> – “Bạch Thế Tôn”, những Tỷ-kheo ấy vâng đáp Thế Tôn. </span><span
+         class="translate"> – “Yes, Blessed One,” the monks replied to the Blessed One.</span><span class="source"> Thế
+         Tôn nói: “Này các Tỷ-kheo. </span><span class="translate">The Blessed One said: “Monks,</span><span
+         class="source"> Ta sẽ giảng cho các Người “Pháp môn căn bản tất cả pháp”. </span><span class="translate">I will
+         teach you the fundamental teaching of all dharmas.”</span><span class="source"> Hãy nghe và khéo tác ý, Ta sẽ
+         nói”. </span><span class="translate">Listen carefully and pay close attention, I will speak.” </span><span
+         class="source"> – “Thưa vâng, bạch Thế Tôn”, những Tỷ-kheo ấy vâng đáp Thế Tôn. </span><span class="translate">
+         – “Yes, Venerable Lord,” those monks replied to the Buddha. </span><span class="source"> Thế Tôn nói như sau:
+      </span><span class="translate"> The Buddha spoke as follows: </span>
+   </p>
+   <h3>
+      <span class="source"> (Phàm phu) </span><span class="translate"> (Ordinary Person) </span>
+   </h3>
+   <p>
+      <span class="source"> — Này các Tỷ-kheo, ở đây, có kẻ phàm phu ít nghe, không được thấy các bậc Thánh, không thuần
+         thục pháp các bậc Thánh, không tu tập pháp các bậc Thánh, không được thấy các bậc Chơn nhân, không thuần thục
+         pháp các bậc Chơn nhân, không tu tập pháp các bậc Chơn nhân, tưởng tri địa đại là địa đại. </span><span
+         class="translate"> — “Monks, here there is an ordinary person who has heard little, has not seen the Noble
+         Ones, is not skilled in the teachings of the Noble Ones, does not practice the teachings of the Noble Ones, has
+         not seen the True Ones, is not skilled in the teachings of the True Ones, does not practice the teachings of
+         the True Ones, and thinks of the earth element as the earth element. </span><span class="source"> Vì tưởng tri
+         địa đại là địa đại, người ấy nghĩ đến địa đại, nghĩ đến (tự ngã) đối chiếu với địa đại, nghĩ đến (tự ngã) như
+         là địa đại, người ấy nghĩ: “Ðịa đại là của ta” – dục hỷ địa đại. </span><span class="translate"> Because he
+         thinks of the earth element as the earth element, he thinks of the earth element, thinks of (the self) in
+         relation to the earth element, thinks of (the self) as the earth element, he thinks: “The earth element is
+         mine” – he desires and rejoices in the earth element. </span><span class="source"> Vì sao vậy? </span><span
+         class="translate"> Why is that?</span><span class="source"> Ta nói người ấy không liễu tri địa đại.
+      </span><span class="translate"> I say that person does not fully understand the earth element.</span>
+   </p>
+   <p>
+      <span class="source"> Người ấy tưởng tri thủy đại là thủy đại. </span><span class="translate"> That person thinks
+         of the water element as the water element.</span><span class="source"> Vì tưởng tri thủy đại là thủy đại, người
+         ấy nghĩ đến thủy đại, nghĩ đến (tự ngã) đối chiếu với thủy đại, nghĩ đến (tự ngã) như là thủy đại, người ấy
+         nghĩ: “Thủy đại là của ta” – dục hỷ thủy đại. </span><span class="translate"> Because they think of the water
+         element as the water element, they think of the water element, think of (the self) in relation to the water
+         element, think of (the self) as the water element, they think: “The water element is mine” – they desire and
+         delight in the water element.</span><span class="source"> Vì sao vậy? </span><span class="translate"> Why is
+         that?</span><span class="source"> Ta nói người ấy không liễu tri thủy đại. </span><span class="translate"> I
+         say that person does not fully understand the water element.</span>
+   </p>
+   <p>
+      <span class="source"> Người ấy tưởng tri hỏa đại là hỏa đại. </span><span class="translate"> That person thinks of
+         the fire element as the fire element. </span><span class="source"> Vì tưởng tri hỏa đại là hỏa đại, người ấy
+         nghĩ đến hỏa đại, nghĩ đến (tự ngã) đối chiếu với hỏa đại, nghĩ đến (tự ngã) như là hỏa đại, người ấy nghĩ:
+         “Hỏa đại là của ta”- dục hỷ hỏa đại. </span><span class="translate"> Because he perceives fire as fire, he
+         thinks of fire, thinks of (the self) in relation to fire, thinks of (the self) as fire, and thinks: “Fire is
+         mine”—desire and delight in fire.</span><span class="source"> Vì sao vậy? </span><span class="translate"> Why
+         is that?</span><span class="source"> Ta nói người ấy không liễu tri hỏa đại. </span><span class="translate"> I
+         say that he does not fully understand fire.</span>
+   </p>
+   <p>
+      <span class="source"> Người ấy tưởng tri phong đại là phong đại. </span><span class="translate"> He perceives wind
+         as wind.</span><span class="source"> Vì tưởng tri phong đại là phong đại, người ấy nghĩ đến (tự ngã) đối chiếu
+         với phong đại, nghĩ đến (tự ngã) như là phong đại, người ấy nghĩ: “Phong đại là của ta”- dục hỷ phong đại.
+      </span><span class="translate"> Because he perceives wind as wind, he thinks of (the self) in relation to wind,
+         thinks of (the self) as wind, and thinks: “Wind is mine”—desire and delight in wind.</span><span
+         class="source"> Vì sao vậy? </span><span class="translate"> Why is that?</span><span class="source"> Ta nói
+         người ấy không liễu tri phong đại. </span><span class="translate"> I say that he does not fully understand
+         wind. </span>
+   </p>
+   <p>
+      <span class="source"> Người ấy tưởng tri Sanh vật là Sanh vật... </span><span class="translate"> That person
+         perceives Living Beings as Living Beings...</span><span class="source"> Người ấy tưởng tri chư Thiên là chư
+         Thiên... </span><span class="translate"> That person perceives Devas as Devas...</span><span class="source">
+         Người ấy tưởng tri Sanh chủ là Sanh chủ... </span><span class="translate"> That person perceives the Lord of
+         Birth as the Lord of Birth...</span><span class="source"> Người ấy tưởng tri Phạm thiên là Phạm thiên...
+      </span><span class="translate"> That person perceives Brahma as Brahma...</span><span class="source"> Người ấy
+         tưởng tri Quang âm thiên là Quang âm thiên... </span><span class="translate"> That person perceives the Heaven
+         of Light and Sound as the Heaven of Light and Sound...</span><span class="source"> Người ấy tưởng tri Biến tịnh
+         thiên là Biến tịnh thiên... </span><span class="translate"> That person perceives the Heaven of Transformation
+         and Purity as the Heaven of Transformation and Purity...</span><span class="source"> Người ấy tưởng tri Quảng
+         quả thiên là Quảng quả thiên... </span><span class="translate"> That person perceives the Heaven of Abundant
+         Fruits as the Heaven of Abundant Fruits...</span><span class="source"> Người ấy tưởng tri Abhibhù (Thắng Giả)
+         là Abhibhù... </span><span class="translate"> That person perceives Abhibhadra (the Victorious One) as
+         Abhibhadra...</span><span class="source"> </span><span class="translate"> </span>
+   </p>
+   <p>
+      <span class="source"> Người ấy tưởng tri Không vô biên xứ là Không vô biên xứ... </span><span class="translate">
+         That person perceives the Realm of Infinite Space as the Realm of Infinite Space...</span><span class="source">
+         Người ấy tưởng tri Thức vô biên xứ là Thức vô biên xứ... </span><span class="translate"> That person perceives
+         the Realm of Infinite Consciousness as the Realm of Infinite Consciousness... </span><span class="source">
+         Người ấy tưởng tri Vô sở hữu xứ là Vô sở hữu xứ... </span><span class="translate"> That person perceives the
+         Realm of Nothingness as the Realm of Nothingness... </span><span class="source"> Người ấy tưởng tri Phi tưởng
+         phi phi tưởng xứ là Phi tưởng phi phi tưởng xứ... </span><span class="translate"> That person perceives the
+         Realm of Neither Perception Nor Non-Perception as the Realm of Neither Perception Nor Non-Perception...
+      </span><span class="source"> </span><span class="translate"> </span>
+   </p>
+   <p>
+      <span class="source"> Người ấy tưởng tri sở kiến là sở kiến... </span><span class="translate"> That person
+         perceives what is seen as what is seen... </span><span class="source"> Người ấy tưởng tri sở văn là sở văn...
+      </span><span class="translate"> That person perceives what is heard as what is heard... </span><span
+         class="source"> Người ấy tưởng tri sở tư niệm là sở tư niệm... </span><span class="translate"> That person
+         perceives what is thought as what is thought... </span><span class="source"> Người ấy tưởng tri sở tri là sở
+         tri... </span><span class="translate"> That person perceives what is known as what is known... </span><span
+         class="source"> </span><span class="translate"> </span>
+   </p>
+   <p>
+      <span class="source"> Người ấy tưởng tri đồng nhất là đồng nhất... </span><span class="translate"> That person
+         perceives oneness as oneness... </span><span class="source"> Người ấy tưởng tri sai biệt là sai biệt...
+      </span><span class="translate"> That person perceives difference as difference... </span><span class="source">
+         Người ấy tưởng tri tất cả là tất cả... </span><span class="translate"> That person perceives all as all...
+      </span><span class="source"> </span><span class="translate"> </span>
+   </p>
+   <p>
+      <span class="source"> Người ấy tưởng tri Niết-bàn là Niết-bàn. </span><span class="translate">That person
+         perceives Nirvana as Nirvana.</span><span class="source"> Vì tưởng tri Niết-bàn là Niết-bàn, người ấy nghĩ đến
+         Niết-bàn, nghĩ đến (tự ngã) đối chiếu với Niết-bàn. </span><span class="translate">Because that person
+         perceives Nirvana as Nirvana, that person thinks of Nirvana, thinks of (the self) in relation to
+         Nirvana.</span><span class="source"> Nghĩ đến (tự ngã) như là Niết-bàn, người ấy nghĩ: “Niết-bàn là của ta” –
+         dục hỷ Niết-bàn. </span><span class="translate">Thinking of (the self) as Nirvana, that person thinks: “Nirvana
+         is mine” – desiring and rejoicing in Nirvana.</span><span class="source"> Vì sao vậy? </span><span
+         class="translate">Why is that?</span><span class="source"> Ta nói: Người ấy không liễu tri Niết-bàn.
+      </span><span class="translate">I say: That person does not fully understand Nirvana.</span>
+   </p>
+   <h3>
+      <span class="source"> Vị hữu học </span><span class="translate"> The Learner</span>
+   </h3>
+   <p>
+      <span class="source"> Này các Tỷ-kheo, có Tỷ-kheo, hữu học tâm chưa thành tựu, đang sống cần cầu vô thượng an ổn
+         khỏi khổ ách. </span><span class="translate"> O monks, there is a monk whose mind is not yet perfected, who is
+         living seeking supreme peace and freedom from suffering.</span><span class="source"> Vị ấy thắng tri địa đại là
+         địa đại. </span><span class="translate"> He knows perfectly that the earth element is the earth
+         element.</span><span class="source"> Vì thắng tri địa đại là địa đại, vị ấy đã không nghĩ đến địa đại, đã không
+         nghĩ (tự ngã) đối chiếu với địa đại, đã không nghĩ (tự ngã) như là địa đại, đã không nghĩ: “Ðịa đại là của ta”,
+         – không dục hỷ địa đại. </span><span class="translate"> Because he knows perfectly that the earth element is
+         the earth element, he does not think of the earth element, he does not think (of himself) in relation to the
+         earth element, he does not think (of himself) as the earth element, he does not think: “The earth element is
+         mine,” – he does not desire or delight in the earth element.</span><span class="source"> Vì sao vậy?
+      </span><span class="translate"> Why is that?</span><span class="source"> Ta nói vị ấy có thể liễu tri địa đại.
+      </span><span class="translate"> I say that he can fully comprehend the earth element. </span>
+   </p>
+   <p>
+      <span class="source"> Vị ấy thắng tri thủy đại... </span><span class="translate">He has mastered the great water
+         element...</span><span class="source"> hỏa đại... </span><span class="translate">the great fire
+         element...</span><span class="source"> phong đại... </span><span class="translate">the great wind
+         element...</span><span class="source"> Sanh vật... </span><span class="translate">living things...</span><span
+         class="source"> chư Thiên... </span><span class="translate">the gods...</span><span class="source"> Sanh chủ...
+      </span><span class="translate">the master of life...</span><span class="source"> Phạm thiên... </span><span
+         class="translate">Brahma...</span><span class="source"> Quang âm thiên... </span><span class="translate">the
+         heaven of light and sound...</span><span class="source"> Biến tịnh thiên... </span><span class="translate">the
+         heaven of transformation and purity...</span><span class="source"> Quảng quả thiên... </span><span
+         class="translate">the heaven of vast fruits...</span><span class="source"> Abhibhù (Thắng Giả)... </span><span
+         class="translate">Abhibhadra (the Victorious One)...</span><span class="source"> Không vô biên xứ...
+      </span><span class="translate">the realm of infinite space...</span><span class="source"> Thức vô biên xứ...
+      </span><span class="translate">the realm of infinite consciousness...</span><span class="source"> Vô sở hữu xứ...
+      </span><span class="translate">the realm of nothingness...</span><span class="source"> Phi tưởng phi phi tưởng
+         xứ... </span><span class="translate">the realm of neither perception nor non-perception...</span><span
+         class="source"> sở kiến... </span><span class="translate">what is seen...</span> <span class="source"> sở
+         văn... </span><span class="translate"> knowledge...</span><span class="source"> sở tư niệm... </span><span
+         class="translate"> thoughts...</span><span class="source"> sở tri... </span><span class="translate">
+         knowledge...</span><span class="source"> đồng nhất... </span><span class="translate"> identity...</span><span
+         class="source"> sai biệt... </span><span class="translate"> differences...</span><span class="source"> tất
+         cả... </span><span class="translate"> all...</span><span class="source"> </span><span class="translate">
+      </span>
+   </p>
+   <p>
+      <span class="source"> Vị ấy thắng tri Niết-bàn là Niết-bàn; </span><span class="translate"> He understands Nirvana
+         as Nirvana;</span><span class="source"> vì thắng tri Niết-bàn là Niết-bàn, vị ấy đã không nghĩ đến Niết-bàn, đã
+         không nghĩ (tự ngã) đối chiếu với Niết-bàn, đã không nghĩ (tự ngã) như là Niết-bàn, đã không nghĩ: “Niết-bàn là
+         của ta” – không dục hỷ Niết-bàn. </span><span class="translate">Because he understands Nirvana as Nirvana, he
+         did not think of Nirvana, he did not think (of himself) in relation to Nirvana, he did not think (of himself)
+         as Nirvana, he did not think: “Nirvana is mine” – he did not desire or rejoice in Nirvana.</span><span
+         class="source"> Vì sao vậy? </span><span class="translate"> Why is that? </span><span class="source"> Ta nói vị
+         ấy có thể liễu tri Niết-bàn. </span><span class="translate"> We say that he can comprehend Nirvana.</span>
+   </p>
+   <h3>
+      <span class="source"> Bậc A-la-hán – I </span><span class="translate"> The Arhat – I</span>
+   </h3>
+   <p>
+      <span class="source"> Lại nữa, này các Tỷ-kheo, có Tỷ-kheo là bậc A-la-hán, các lậu hoặc đã tận, tu hành thành
+         mãn, các việc nên làm đã làm, đã đặt gánh nặng xuống, đã thành đạt lý tưởng, đã tận trừ hữu kiết sử, chánh trí
+         giải thoát. </span><span class="translate"> Furthermore, O monks, there is a monk who is an Arhat, whose
+         defilements are eradicated, whose practice is complete, whose tasks have been accomplished, whose burden has
+         been laid down, whose ideal has been achieved, whose fetters of existence have been eradicated, whose right
+         knowledge has been attained.</span><span class="source"> Vị ấy thắng tri địa đại là địa đại. </span><span
+         class="translate"> He knows perfectly that the earth element is the earth element.</span><span class="source">
+         Vì thắng tri địa đại là địa đại, vị ấy không nghĩ đến địa đại, không nghĩ (tự ngã) đối chiếu với địa đại, không
+         nghĩ đến (tự ngã) như là địa đại, không nghĩ: “Ðịa đại là của ta” – không dục hỷ địa đại. </span><span
+         class="translate"> Because he knows perfectly that the earth element is the earth element, he does not think of
+         the earth element, does not think (of himself) in relation to the earth element, does not think of (the self)
+         as the earth element, does not think: “The earth element is mine” – he does not desire or delight in the earth
+         element.</span><span class="source"> Vì sao vậy? </span><span class="translate"> Why is that? </span><span
+         class="source"> Ta nói vị ấy đã liễu tri địa đại. </span><span class="translate"> We say that he has fully
+         understood the great earth. </span>
+   </p>
+   <p>
+      <span class="source"> Vị ấy thắng tri thủy đại... </span><span class="translate">He has perfected knowledge of the
+         water element...</span><span class="source"> hỏa đại... </span><span class="translate">the fire
+         element...</span><span class="source"> phong đại... </span><span class="translate">the wind
+         element...</span><span class="source"> sanh vật... </span><span class="translate">living beings...</span><span
+         class="source"> chư Thiên... </span><span class="translate">the Devas...</span><span class="source"> Sanh
+         chủ... </span><span class="translate">the Lord of Life...</span><span class="source"> Phạm thiên...
+      </span><span class="translate">Brahma...</span><span class="source"> Quang âm thiên... </span><span
+         class="translate">Heaven of Light and Sound...</span><span class="source"> Biến tịnh thiên... </span><span
+         class="translate">Heaven of Purification...</span><span class="source"> Quảng quả thiên... </span><span
+         class="translate">Heaven of Abundant Fruits...</span><span class="source"> Abhibhù (Thắng Giả)... </span><span
+         class="translate">Abhibhava (the Victorious One)...</span><span class="source"> Không vô biên xứ...
+      </span><span class="translate">the Realm of Infinite Space...</span><span class="source"> Thức vô biên xứ...
+      </span><span class="translate">the Realm of Infinite Consciousness...</span><span class="source"> Vô sở hữu xứ...
+      </span><span class="translate">the Realm of Nothingness...</span><span class="source"> Phi tưởng phi phi tưởng
+         xứ... </span><span class="translate">the Realm of Neither Perception Nor Non-Perception...</span><span
+         class="source"> sở kiến... </span><span class="translate">what is seen...</span> <span class="source"> sở
+         văn... </span><span class="translate"> knowledge...</span><span class="source"> sở tư niệm... </span><span
+         class="translate"> thoughts...</span><span class="source"> sở tri... </span><span class="translate">
+         knowledge...</span><span class="source"> đồng nhất... </span><span class="translate"> identity...</span><span
+         class="source"> sai biệt... </span><span class="translate"> differences...</span><span class="source"> tất
+         cả... </span><span class="translate"> all...</span><span class="source"> Vị ấy thắng tri Niết-bàn là Niết-bàn.
+      </span><span class="translate"> He understands Nirvana as Nirvana.</span><span class="source"> Vì thắng tri
+         Niết-bàn là Niết-bàn, vị ấy không nghĩ đến Niết-bàn, vị ấy không nghĩ đến (tự ngã) đối chiếu với Niết-bàn,
+         không nghĩ đến (tự ngã) như là Niết-bàn, không nghĩ: “Niết-bàn là của ta” – không dục hỷ Niết-bàn. </span><span
+         class="translate">Because he understands Nirvana as Nirvana, he does not think of Nirvana, he does not think of
+         (self) in relation to Nirvana, he does not think of (self) as Nirvana, he does not think: “Nirvana is mine” –
+         he does not desire or rejoice in Nirvana.</span><span class="source"> Vì sao vậy? </span><span
+         class="translate">Why is that?</span><span class="source"> Ta nói vị ấy đã liễu tri Niết-bàn”. </span><span
+         class="translate">I say he has fully understood Nirvana.”</span>
+   </p>
+   <h3>
+      <span class="source"> Vị hữu học </span><span class="translate"> The Learner</span>
+   </h3>
+   <p>
+      <span class="source"> Này các Tỷ-kheo, có Tỷ-kheo, hữu học tâm chưa thành tựu, đang sống cần cầu vô thượng an ổn
+         khỏi khổ ách. </span><span class="translate"> O monks, there is a monk whose mind is not yet perfected, who is
+         living seeking supreme peace and freedom from suffering.</span><span class="source"> Vị ấy thắng tri địa đại là
+         địa đại. </span><span class="translate"> He knows perfectly that the earth element is the earth
+         element.</span><span class="source"> Vì thắng tri địa đại là địa đại, vị ấy đã không nghĩ đến địa đại, đã không
+         nghĩ (tự ngã) đối chiếu với địa đại, đã không nghĩ (tự ngã) như là địa đại, đã không nghĩ: “Ðịa đại là của ta”,
+         – không dục hỷ địa đại. </span><span class="translate"> Because he knows perfectly that the earth element is
+         the earth element, he does not think of the earth element, he does not think (of himself) in relation to the
+         earth element, he does not think (of himself) as the earth element, he does not think: “The earth element is
+         mine,” – he does not desire or delight in the earth element.</span><span class="source"> Vì sao vậy?
+      </span><span class="translate"> Why is that?</span><span class="source"> Ta nói vị ấy có thể liễu tri địa đại.
+      </span><span class="translate"> I say that he can fully comprehend the earth element. </span>
+   </p>
+   <p>
+      <span class="source"> Vị ấy thắng tri thủy đại... </span><span class="translate">He has mastered the great water
+         element...</span><span class="source"> hỏa đại... </span><span class="translate">the great fire
+         element...</span><span class="source"> phong đại... </span><span class="translate">the great wind
+         element...</span><span class="source"> Sanh vật... </span><span class="translate">living things...</span><span
+         class="source"> chư Thiên... </span><span class="translate">the gods...</span><span class="source"> Sanh chủ...
+      </span><span class="translate">the master of life...</span><span class="source"> Phạm thiên... </span><span
+         class="translate">Brahma...</span><span class="source"> Quang âm thiên... </span><span class="translate">the
+         heaven of light and sound...</span><span class="source"> Biến tịnh thiên... </span><span class="translate">the
+         heaven of transformation and purity...</span><span class="source"> Quảng quả thiên... </span><span
+         class="translate">the heaven of vast fruits...</span><span class="source"> Abhibhù (Thắng Giả)... </span><span
+         class="translate">Abhibhadra (the Victorious One)...</span><span class="source"> Không vô biên xứ...
+      </span><span class="translate">the realm of infinite space...</span><span class="source"> Thức vô biên xứ...
+      </span><span class="translate">the realm of infinite consciousness...</span><span class="source"> Vô sở hữu xứ...
+      </span><span class="translate">the realm of nothingness...</span><span class="source"> Phi tưởng phi phi tưởng
+         xứ... </span><span class="translate">the realm of neither perception nor non-perception...</span><span
+         class="source"> sở kiến... </span><span class="translate">what is seen...</span> <span class="source"> sở
+         văn... </span><span class="translate"> knowledge...</span><span class="source"> sở tư niệm... </span><span
+         class="translate"> thoughts...</span><span class="source"> sở tri... </span><span class="translate">
+         knowledge...</span><span class="source"> đồng nhất... </span><span class="translate"> identity...</span><span
+         class="source"> sai biệt... </span><span class="translate"> differences...</span><span class="source"> tất
+         cả... </span><span class="translate"> all...</span><span class="source"> </span><span class="translate">
+      </span>
+   </p>
+   <p>
+      <span class="source"> Vị ấy thắng tri Niết-bàn là Niết-bàn; </span><span class="translate"> He understands Nirvana
+         as Nirvana;</span><span class="source"> vì thắng tri Niết-bàn là Niết-bàn, vị ấy đã không nghĩ đến Niết-bàn, đã
+         không nghĩ (tự ngã) đối chiếu với Niết-bàn, đã không nghĩ (tự ngã) như là Niết-bàn, đã không nghĩ: “Niết-bàn là
+         của ta” – không dục hỷ Niết-bàn. </span><span class="translate">Because he understands Nirvana as Nirvana, he
+         did not think of Nirvana, he did not think (of himself) in relation to Nirvana, he did not think (of himself)
+         as Nirvana, he did not think: “Nirvana is mine” – he did not desire or rejoice in Nirvana.</span><span
+         class="source"> Vì sao vậy? </span><span class="translate"> Why is that? </span><span class="source"> Ta nói vị
+         ấy có thể liễu tri Niết-bàn. </span><span class="translate"> We say that he can comprehend Nirvana.</span>
+   </p>
+   <h3>
+      <span class="source"> Bậc A-la-hán – I </span><span class="translate"> The Arhat – I</span>
+   </h3>
+   <p>
+      <span class="source"> Lại nữa, này các Tỷ-kheo, có Tỷ-kheo là bậc A-la-hán, các lậu hoặc đã tận, tu hành thành
+         mãn, các việc nên làm đã làm, đã đặt gánh nặng xuống, đã thành đạt lý tưởng, đã tận trừ hữu kiết sử, chánh trí
+         giải thoát. </span><span class="translate"> Furthermore, O monks, there is a monk who is an Arhat, whose
+         defilements are eradicated, whose practice is complete, whose tasks have been accomplished, whose burden has
+         been laid down, whose ideal has been achieved, whose fetters of existence have been eradicated, whose right
+         knowledge has been attained.</span><span class="source"> Vị ấy thắng tri địa đại là địa đại. </span><span
+         class="translate"> He knows perfectly that the earth element is the earth element.</span><span class="source">
+         Vì thắng tri địa đại là địa đại, vị ấy không nghĩ đến địa đại, không nghĩ (tự ngã) đối chiếu với địa đại, không
+         nghĩ đến (tự ngã) như là địa đại, không nghĩ: “Ðịa đại là của ta” – không dục hỷ địa đại. </span><span
+         class="translate"> Because he knows perfectly that the earth element is the earth element, he does not think of
+         the earth element, does not think (of himself) in relation to the earth element, does not think of (the self)
+         as the earth element, does not think: “The earth element is mine” – he does not desire or delight in the earth
+         element.</span><span class="source"> Vì sao vậy? </span><span class="translate"> Why is that? </span><span
+         class="source"> Ta nói vị ấy đã liễu tri địa đại. </span><span class="translate"> We say that he has fully
+         understood the great earth. </span>
+   </p>
+   <p>
+      <span class="source"> Vị ấy thắng tri thủy đại... </span><span class="translate">He has perfected knowledge of the
+         water element...</span><span class="source"> hỏa đại... </span><span class="translate">the fire
+         element...</span><span class="source"> phong đại... </span><span class="translate">the wind
+         element...</span><span class="source"> sanh vật... </span><span class="translate">living beings...</span><span
+         class="source"> chư Thiên... </span><span class="translate">the Devas...</span><span class="source"> Sanh
+         chủ... </span><span class="translate">the Lord of Life...</span><span class="source"> Phạm thiên...
+      </span><span class="translate">Brahma...</span><span class="source"> Quang âm thiên... </span><span
+         class="translate">Heaven of Light and Sound...</span><span class="source"> Biến tịnh thiên... </span><span
+         class="translate">Heaven of Purification...</span><span class="source"> Quảng quả thiên... </span><span
+         class="translate">Heaven of Abundant Fruits...</span><span class="source"> Abhibhù (Thắng Giả)... </span><span
+         class="translate">Abhibhava (the Victorious One)...</span><span class="source"> Không vô biên xứ...
+      </span><span class="translate">the Realm of Infinite Space...</span><span class="source"> Thức vô biên xứ...
+      </span><span class="translate">the Realm of Infinite Consciousness...</span><span class="source"> Vô sở hữu xứ...
+      </span><span class="translate">the Realm of Nothingness...</span><span class="source"> Phi tưởng phi phi tưởng
+         xứ... </span><span class="translate">the Realm of Neither Perception Nor Non-Perception...</span><span
+         class="source"> sở kiến... </span><span class="translate">what is seen...</span> <span class="source"> sở
+         văn... </span><span class="translate"> knowledge...</span><span class="source"> sở tư niệm... </span><span
+         class="translate"> thoughts...</span><span class="source"> sở tri... </span><span class="translate">
+         knowledge...</span><span class="source"> đồng nhất... </span><span class="translate"> identity...</span><span
+         class="source"> sai biệt... </span><span class="translate"> differences...</span><span class="source"> tất
+         cả... </span><span class="translate"> all...</span><span class="source"> Vị ấy thắng tri Niết-bàn là Niết-bàn.
+      </span><span class="translate"> He knows that Nirvana is Nirvana.</span><span class="source"> Vì thắng tri
+         Niết-bàn là Niết-bàn, vị ấy không nghĩ đến Niết-bàn, vị ấy không nghĩ đến (tự ngã) đối chiếu với Niết-bàn,
+         không nghĩ đến (tự ngã) như là Niết-bàn, không nghĩ: “Niết-bàn là của ta” – không dục hỷ Niết-bàn. </span><span
+         class="translate"> Because he knows that Nirvana is Nirvana, he does not think of Nirvana, he does not think of
+         (the self) in relation to Nirvana, he does not think of (the self) as Nirvana, he does not think: “Nirvana is
+         mine” – he does not desire or rejoice in Nirvana.</span><span class="source"> Vì sao vậy? </span><span
+         class="translate"> Why is that? </span><span class="source"> Ta nói vị ấy đã liễu tri Niết-bàn”. </span><span
+         class="translate"> We say that he has attained Nirvana.” </span>
+   </p>
+   <h3>
+      <span class="source"> Bậc A-la-hán – II </span><span class="translate"> The Arhat – II</span>
+   </h3>
+   <p>
+      <span class="source"> Lại nữa, này các Tỷ-kheo, có Tỷ-kheo là bậc A-la-hán, các lậu hoặc đã tận, tu hành thành
+         mãn, các việc nên làm đã làm, đã đặt gánh nặng xuống, đã thành đạt lý tưởng, đã tận trừ hữu kiết sử, chánh trí
+         giải thoát. </span><span class="translate"> Furthermore, O monks, there is a monk who is an Arhat, whose
+         defilements are eradicated, whose practice is complete, whose tasks have been accomplished, whose burden has
+         been laid down, whose ideal has been achieved, whose fetters of existence have been eradicated, whose right
+         knowledge has been attained.</span><span class="source"> Vị ấy thắng tri địa đại là địa đại. </span><span
+         class="translate"> He knows perfectly the earth element as the earth element.</span><span class="source"> Vì
+         thắng trí địa đại là địa đại, vị ấy không nghĩ đến địa đại, không nghĩ đến (tự ngã) đối chiếu với địa đại,
+         không nghĩ đến (tự ngã) như là địa đại, không nghĩ: “Ðịa đại là của ta” – không dục hỷ địa đại. </span><span
+         class="translate">Because he has perfect knowledge of the earth element, he does not think of the earth
+         element, does not think of (self) in relation to the earth element, does not think of (self) as the earth
+         element, does not think: “The earth element is mine” – he does not desire or delight in the earth
+         element.</span><span class="source"> Vì sao vậy? </span><span class="translate">Why is that?</span><span
+         class="source"> Vì vị ấy không có tham dục, nhờ tham dục đã được đoạn trừ. </span><span
+         class="translate">Because he has no craving, because craving has been eradicated.</span>
+   </p>
+   <p>
+      <span class="source"> Vị ấy thắng tri thủy đại... </span><span class="translate">He has perfect knowledge of the
+         water element...</span><span class="source"> hỏa đại... </span><span class="translate">the fire
+         element...</span><span class="source"> Vị ấy thắng tri Niết-bàn là Niết-bàn. </span><span class="translate">He
+         has perfect knowledge of Nirvana as Nirvana. </span><span class="source"> Vì thắng tri Niết-bàn là Niết-bàn, vị
+         ấy không nghĩ đến Niết-bàn, không nghĩ đến (tự ngã) đối chiếu với Niết-bàn, không nghĩ đến (tự ngã) như là
+         Niết-bàn, không nghĩ: “Niết-bàn là của ta” – không dục hỷ Niết-bàn. </span><span class="translate"> Because the
+         one who understands Nirvana is Nirvana, he does not think of Nirvana, does not think of (the self) in relation
+         to Nirvana, does not think of (the self) as Nirvana, does not think: “Nirvana is mine”—he does not desire or
+         rejoice in Nirvana.</span><span class="source"> Vì sao vậy? </span><span class="translate"> Why is
+         that?</span><span class="source"> Vì vị ấy không có tham dục, nhờ tham dục đã được đoạn trừ. </span><span
+         class="translate"> Because he has no craving, because craving has been eradicated.</span>
+   </p>
+   <h3>
+      <span class="source"> Bậc A-la-hán – III </span><span class="translate"> The Arhat – III</span>
+   </h3>
+   <p>
+      <span class="source"> Lại nữa, này các Tỷ-kheo, có Tỷ-kheo là bậc A-la-hán, các lậu hoặc đã tận, tu hành thành
+         mãn, các việc nên làm đã làm, đã đặt gánh nặng xuống, đã thành đạt lý tưởng, đã tận trừ hữu kiết sử, chánh trí
+         giải thoát. </span><span class="translate"> Again, O monks, there is a monk who is an Arhat, whose defilements
+         are eradicated, whose practice is complete, whose tasks have been accomplished, whose burden has been laid
+         down, whose ideal has been achieved, whose fetters of existence have been eradicated, whose right knowledge has
+         been attained.</span><span class="source"> Vị ấy thắng tri địa đại là địa đại. </span><span class="translate">
+         He knows perfectly that the earth element is the earth element.</span><span class="source"> Vì thắng tri địa
+         đại là địa đại, vị ấy không nghĩ đến địa đại, không nghĩ đến (tự ngã) đối chiếu với địa đại, không nghĩ đến (tự
+         ngã) như là địa đại, không nghĩ: “Ðịa đại là của ta” – không dục hỷ địa đại. </span><span class="translate">
+         Because he knows perfectly that the earth element is the earth element, he does not think of the earth element,
+         does not think of (the self) in relation to the earth element, does not think of (the self) as the earth
+         element, does not think: “The earth element is mine” – he does not desire or delight in the earth
+         element.</span><span class="source"> Vì sao vậy? </span><span class="translate"> Why is this so?</span><span
+         class="source"> Vì vị ấy không có sân hận, nhờ sân hận đã được đoạn trừ. </span><span class="translate">
+         Because he has no anger, because anger has been eradicated. </span>
+   </p>
+   <p>
+      <span class="source"> Vị ấy thắng tri thủy đại... </span><span class="translate"> He understands the water
+         element...</span><span class="source"> hỏa đại... </span><span class="translate"> the fire
+         element...</span><span class="source"> Vị ấy thắng tri Niết-bàn là Niết-bàn. </span><span class="translate"> He
+         understands Nirvana is Nirvana.</span><span class="source"> Vì thắng tri Niết-bàn là Niết-bàn, vị ấy không nghĩ
+         đến Niết-bàn, không nghĩ đến (tự ngã) đối chiếu với Niết-bàn, không nghĩ đến (tự ngã) như là Niết-bàn, không
+         nghĩ: “Niết-bàn là của ta” – không dục hỷ Niết-bàn. </span><span class="translate"> Because he understands
+         Nirvana is Nirvana, he does not think of Nirvana, he does not think of (the self) in relation to Nirvana, he
+         does not think of (the self) as Nirvana, he does not think: “Nirvana is mine” – he does not desire or rejoice
+         in Nirvana.</span><span class="source"> Vì sao vậy? </span><span class="translate"> Why is that?</span><span
+         class="source"> Vì vị ấy không có sân hận, nhờ sân hận đã được đoạn trừ. </span><span class="translate">
+         Because he has no anger, because anger has been eradicated.</span>
+   </p>
+   <h3>
+      <span class="source"> Bậc A-la-hán – IV </span><span class="translate"> The Arhat – IV </span>
+   </h3>
+   <p>
+      <span class="source"> Lại nữa, này các Tỷ-kheo, có Tỷ-kheo là bậc A-la-hán, các lậu hoặc đã tận, tu hành thành
+         mãn, các việc nên làm đã làm, đã đặt gánh nặng xuống, đã thành đạt lý tưởng, đã tận trừ hữu kiết sử, chánh trí
+         giải thoát. </span><span class="translate"> Again, O monks, there is a monk who is an Arhat, whose defilements
+         are eradicated, whose practice is complete, whose tasks have been accomplished, whose burden has been laid
+         down, whose ideal has been achieved, whose fetters of existence have been eradicated, whose right knowledge has
+         been attained.</span><span class="source"> Vị ấy thắng tri địa đại là địa đại. </span><span class="translate">
+         He knows perfectly that the earth element is the earth element.</span><span class="source"> Vì thắng trí địa
+         đại là địa đại, vị ấy không nghĩ đến địa đại, không nghĩ đến (tự ngã) đối chiếu với địa đại, không nghĩ đến (tự
+         ngã) như là địa đại, không nghĩ: “Ðịa đại là của ta” – không dục hỷ địa đại. </span><span class="translate">
+         Because he knows perfectly that the earth element is the earth element, he does not think of the earth element,
+         does not think of (the self) in relation to the earth element, does not think of (the self) as the earth
+         element, does not think: “The earth element is mine” – he does not desire or delight in the earth
+         element.</span><span class="source"> Vì sao vậy? </span><span class="translate"> Why is this so?</span><span
+         class="source"> Vì vị ấy không có si mê, nhờ si mê đã được đoạn trừ. </span><span class="translate"> Because he
+         is free from delusion, because delusion has been eradicated. </span>
+   </p>
+   <p>
+      <span class="source"> Vị ấy thắng tri thủy đại... </span><span class="translate"> He understands the water
+         element...</span><span class="source"> hỏa đại... </span><span class="translate"> the fire
+         element...</span><span class="source"> Vị ấy thắng tri Niết-bàn là Niết-bàn. </span><span class="translate"> He
+         understands Nirvana is Nirvana.</span><span class="source"> Vì thắng tri Niết-bàn là Niết-bàn, vị ấy không nghĩ
+         đến Niết-bàn, không nghĩ đến (tự ngã) đối chiếu với Niết-bàn, không nghĩ đến (tự ngã) như là Niết-bàn, không
+         nghĩ: “Niết-bàn là của ta” – không dục hỷ Niết-bàn. </span><span class="translate"> Because he understands
+         Nirvana is Nirvana, he does not think of Nirvana, he does not think of (the self) in relation to Nirvana, he
+         does not think of (the self) as Nirvana, he does not think: “Nirvana is mine” – he does not desire or rejoice
+         in Nirvana.</span><span class="source"> Vì sao vậy? </span><span class="translate"> Why is that?</span><span
+         class="source"> Vì vị ấy không có si mê, nhờ si mê đã được đoạn trừ. </span><span class="translate"> Because he
+         has no delusion, because delusion has been eradicated.</span>
+   </p>
+   <h3>
+      <span class="source"> Ðấng Như Lai – I </span><span class="translate"> The Tathagata – I</span>
+   </h3>
+   <p>
+      <span class="source"> Này các Tỷ-kheo, Như Lai là bậc A-la-hán, Chánh Ðẳng Giác, thắng tri địa đại là địa đại.
+      </span><span class="translate"> O monks, the Tathagata is an Arhat, a Perfectly Enlightened One, who knows
+         perfectly the earth element as the earth element.</span><span class="source"> Vì thắng tri địa đại là địa đại,
+         Ngài không nghĩ đến địa đại, không nghĩ đến (tự ngã) đối chiếu với địa đại, không nghĩ đến (tự ngã) như là địa
+         đại, không nghĩ: “Ðịa đại là của ta” – không dục hỷ địa đại. </span><span class="translate">Because He knows
+         perfectly the earth element as the earth element, He does not think of the earth element, does not think of
+         (the self) in relation to the earth element, does not think of (the self) as the earth element, does not think:
+         “The earth element is mine” – He does not desire or delight in the earth element.</span><span class="source">
+         Vì sao vậy? </span><span class="translate">Why is that?</span><span class="source"> Ta nói vì Như Lai đã liễu
+         tri địa đại. </span><span class="translate">I say because the Tathagata has fully understood the earth
+         element.</span>
+   </p>
+   <p>
+      <span class="source"> Như Lai thắng tri thủy đại... </span><span class="translate">The Tathagata knows perfectly
+         the water element...</span><span class="source"> hỏa đại... </span><span class="translate">fire
+         element...</span><span class="source"> Như Lai thắng tri Niết-bàn là Niết-bàn. </span><span
+         class="translate">The Tathagata knows perfectly Nirvana as Nirvana. </span><span class="source"> Vì thắng tri
+         Niết-bàn là Niết-bàn, Như Lai không nghĩ đến Niết-bàn, không nghĩ đến (tự ngã) đối chiếu với Niết-bàn, không
+         nghĩ đến (tự ngã) như là Niết-bàn, không nghĩ đến (tự ngã) như là Niết-bàn, không nghĩ: “Niết-bàn là của ta” –
+         không dục hỷ Niết-bàn. </span><span class="translate"> Because the ultimate realization of Nirvana is Nirvana,
+         the Tathagata does not think of Nirvana, does not think of (the self) in relation to Nirvana, does not think of
+         (the self) as Nirvana, does not think of (the self) as Nirvana, does not think: “Nirvana is mine” – does not
+         desire or rejoice in Nirvana.</span><span class="source"> Vì sao vậy? </span><span class="translate"> Why is
+         that?</span><span class="source"> Ta nói vì Như Lai đã liễu tri Niết-bàn. </span><span class="translate"> I say
+         this because the Tathagata has already realized Nirvana.</span>
+   </p>
+   <h3>
+      <span class="source"> Ðấng Như Lai – II </span><span class="translate"> The Tathagata – II</span>
+   </h3>
+   <p>
+      <span class="source"> Này các Tỷ-kheo, Như Lai là bậc A-la-hán, Chánh Ðẳng Giác, thắng tri địa đại là địa đại.
+      </span><span class="translate"> O monks, the Tathagata is an Arhat, a Perfectly Enlightened One, who knows
+         perfectly well that the earth element is the earth element.</span><span class="source"> Vì thắng tri địa đại là
+         địa đại, Như Lai không nghĩ đến địa đại, không nghĩ đến (tự ngã) đối chiếu với địa đại, không nghĩ đến (tự ngã)
+         như là địa đại, không nghĩ: “Ðịa đại là của ta” – không dục hỷ địa đại. </span><span class="translate">Because
+         he knows perfectly well that the earth element is the earth element, the Tathagata does not think of the earth
+         element, does not think of (the self) in relation to the earth element, does not think of (the self) as the
+         earth element, does not think: “The earth element is mine” – he does not desire or delight in the earth
+         element.</span><span class="source"> Vì sao vậy? </span><span class="translate">Why is that?</span><span
+         class="source"> Vì Như Lai biết rằng: “Dục hỷ là căn bản của đau khổ, từ hữu, sanh khởi lên, và già và chết đến
+         với loài sinh vật”. </span><span class="translate">Because the Tathagata knows that: “Desire and delight are
+         the root of suffering, arising from existence, and old age and death come to living beings.” </span><span
+         class="source"> Do vậy, này các Tỷ-kheo, Ta nói vì Như Lai, với sự diệt trừ hoàn toàn các ái, sự ly tham, sự
+         đoạn diệt, sự xả ly, sự từ bỏ hoàn toàn các ái, đã chơn chánh giác ngộ vô thượng chánh đẳng chánh giác.
+      </span><span class="translate"> Therefore, monks, I say that the Tathagata, with the complete eradication of
+         craving, detachment, cessation, renunciation, and complete abandonment of craving, has truly attained supreme
+         perfect enlightenment.</span>
+   </p>
+   <p>
+      <span class="source"> Như Lai thắng tri thủy đại... </span><span class="translate"> The Tathagata knows the water
+         element...</span><span class="source"> hỏa đại... </span><span class="translate"> the fire
+         element...</span><span class="source"> Như Lai thắng tri Niết-bàn là Niết-bàn. </span><span class="translate">
+         The Tathagata knows Nirvana is Nirvana.</span><span class="source"> Vì thắng tri Niết-bàn là Niết-bàn, Như Lai
+         không nghĩ đến Niết-bàn, không nghĩ đến (tự ngã) đối chiếu với Niết-bàn, không nghĩ đến (tự ngã) như là
+         Niết-bàn, không nghĩ: “Niết-bàn là của Ta” — không dục hỷ Niết-bàn. </span><span class="translate"> Because he
+         knows Nirvana is Nirvana, the Tathagata does not think of Nirvana, does not think of (the self) in relation to
+         Nirvana, does not think of (the self) as Nirvana, does not think: “Nirvana is mine”—he does not desire or
+         rejoice in Nirvana.</span><span class="source"> Vì sao vậy? </span><span class="translate"> Why is that?
+      </span><span class="source"> Vì Như Lai biết rằng: “Dục hỷ là căn bản của đau khổ, từ hữu, sanh khởi lên, và già
+         chết đến với loài sinh vật”. </span><span class="translate"> For the Tathagata knows that: “Desire and pleasure
+         are the root of suffering, arising from existence, and old age and death come to living beings.” </span><span
+         class="source"> Do vậy, này các Tỷ-kheo, Ta nói vì Như Lai, với sự diệt trừ hoàn toàn các ái, sự ly tham, sự
+         đoạn diệt, sự xả ly, sự trừ bỏ hoàn toàn các ái, đã chơn chánh giác ngộ vô thượng chánh đẳng chánh giác.”
+      </span><span class="translate"> Therefore, O monks, I say that the Tathagata, with the complete eradication of
+         craving, detachment, cessation, renunciation, and complete elimination of craving, has truly attained supreme
+         perfect enlightenment.” </span>
+   </p>
+   <p>
+      <span class="source"> Như vậy, Thế Tôn thuyết giảng. </span><span class="translate"> Thus the Blessed One taught.
+      </span><span class="source"> Các Tỷ-kheo ấy hoan hỷ tín thọ lời dạy của Thế Tôn. </span><span class="translate">
+         Those monks rejoiced and accepted the Blessed One's teaching. </span>
+   </p>
+   <script>let sourceLang = "vi-VN"
+      let translateLang = "en-US"
+      const readEnglishOnly = document.querySelector("#readEnglishOnly")
+      const source = document.querySelectorAll(".source")
+      const translate = document.querySelectorAll(".translate")
+      readEnglishOnly.checked = false
+      function refreshPage(forceReload = false) {
+         try {
+            // forceReload = true will reload from the server, bypassing cache
+            location.reload(forceReload);
+         } catch (error) {
+            console.error("Error reloading page:", error);
+         }
+      }
+      let sourceReadArr = []
+      source.forEach(e => sourceReadArr.push(e.textContent))
+      let translateReadArr = []
+      translate.forEach(e => translateReadArr.push(e.textContent))
+      let cnt = 0
+      function speakMinutes_source() {
+         isPause = false
+         if (sourceReadArr.length > 0) {
+            let txt = sourceReadArr[cnt]//.shift(); // extract first item
+            let utterance = new SpeechSynthesisUtterance(txt);
+            utterance.onstart = () => {
+               source[cnt].style.backgroundColor = "yellow"
+            }
+            // When the current utterance ends, speak the next one
+            utterance.onend = function (event) {
+               source[cnt].style.backgroundColor = "white"
+               speakMinutes_translate(); // Recursively call the function for the next item
+            };
+            // Handle potential errors
+            utterance.onerror = function (event) {
+               console.error("Speech synthesis error: " + event.error);
+            };
+
+            if (sourceLang === 'vi-VN' && readEnglishOnly.checked) {
+               utterance.text = ""
+            }
+            utterance.lang = sourceLang;
+            speechSynthesis.speak(utterance);
+         }
+      }
+
+      function speakMinutes_translate() {
+         if (translateReadArr.length > 0) {
+            let txt = translateReadArr[cnt]//.shift() // extract first item
+            let utterance = new SpeechSynthesisUtterance(txt);
+            utterance.onstart = () => {
+               translate[cnt].style.backgroundColor = "yellow"
+            }
+            // When the current utterance ends, speak the next one
+            utterance.onend = function (event) {
+               translate[cnt].style.backgroundColor = "white"
+               cnt++
+               console.log("Speech ended, starting next minute.");
+               // document.querySelector(".source").remove()
+               // document.querySelector(".translate").remove()
+               isPause ? "" : speakMinutes_source(); // Recursively call the function fo the next item
+            };
+            // Handle potential errors
+            utterance.onerror = function (event) {
+               console.error("Speech synthesis error: " + event.error);
+            };
+
+            if (translateLang === 'vi-VN' && readEnglishOnly.checked) {
+               utterance.text = ""
+            }
+            utterance.lang = translateLang
+            speechSynthesis.speak(utterance);
+         }
+      }
+
+      const speakBtn = document.querySelector("#speak");
+      const pauseBtn = document.querySelector("#pause");
+      const stopBtn = document.querySelector("#stop");
+      let isPause = true
+      speakBtn.addEventListener("click", speakMinutes_source);
+      stopBtn.addEventListener("click", refreshPage.bind(null, true));
+      pauseBtn.addEventListener("click", () => isPause = true)
+   </script>
+</body>
+
+</html>
