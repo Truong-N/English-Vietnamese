@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>profSkill7</title>
+   <style>
+      .f {
+         display: flex;
+         padding: 5px;
+         gap: 15px;
+      }
+      .t,
+      .s {
+         width: 45%;
+      }
+      .floating {
+position: fixed; /* Keeps it fixed to the viewport */
+top: 0px; /* Distance from the top of the viewport */
+right: 0px; /* Distance from the right of the viewport */
+z-index: 1000; /* Ensures it stays above other elements */
+background-color: black;
+color: white;}
+.floating a { color: white;}
+   </style>
+</head>
+
+<body>
+<div class="floating">
+<button id="speak">Speak</button>
+<button id="doc">Doc</button>
+<button id="pause">Pause</button>
+<a href="./profSkill6.html">Prev</a>
+<a href="./profSkill8.html">Next</a>
+</div>
+<div class="f">
+<div class="s"> STEP 3: DESCRIBE EACH EXPERIENCE</div>
+<div class="t"> BƯỚC 3: MÔ TẢ TỪNG TRẢI NGHIỆM</div></div>
+<div class="f">
+<div class="s"> - Timeframe: Year or year cycle</div>
+<div class="t"> - Khung thời gian: Một năm hoặc chu kỳ năm</div></div>
+<div class="f">
+<div class="s"> - Category: Paid work, volunteering, etc.</div>
+<div class="t"> - Danh mục: Công việc được trả lương, tình nguyện, v.v.</div></div>
+<div class="f">
+<div class="s"> - Experience #: 1, 2, 3... (Note: do at least 2 within each category).</div>
+<div class="t"> - Số trải nghiệm: 1, 2, 3... (Lưu ý: thực hiện ít nhất 2 trải nghiệm trong mỗi danh mục).</div></div>
+<div class="f">
+<div class="s"> - Role/Title: Optional</div>
+<div class="t"> - Chức vụ/Vai trò: Tùy chọn</div></div>
+<div class="f">
+<div class="s"> - What/When/Why (Describe an experience)</div>
+<div class="t"> - Cái gì/Khi nào/Tại sao (Mô tả một trải nghiệm)</div></div>
+<div class="f">
+<div class="s"> - Skills / Knowledge / Traits</div>
+<div class="t"> - Kỹ năng / Kiến thức / Phẩm chất</div></div>
+<div class="f">
+<div class="s"> - Tip: Tier 2 & 3 can skip timeline if desired.</div>
+<div class="t"> - Mẹo: Cấp độ 2 & 3 có thể bỏ qua mốc thời gian nếu muốn.</div></div>
+<div class="f">
+<div class="s"> EXAMPLE 1 - VOLUNTEER EXPERIENCE (CATEGORY)</div>
+<div class="t"> VÍ DỤ 1 - TRẢI NGHIỆM TÌNH NGUYỆN (DANH MỤC)</div></div>
+<div class="f">
+<div class="s"> - Timeframe: 2023</div>
+<div class="t"> - Khung thời gian: 2023</div></div>
+<div class="f">
+<div class="s"> - Category: Volunteer Experience</div>
+<div class="t"> - Danh mục: Trải nghiệm tình nguyện</div></div>
+<div class="f">
+<div class="s"> - Role/Title: Volunteer - Bhangra Jam (Red FM Radio)</div>
+<div class="t"> - Chức vụ/Vai trò: Tình nguyện viên - Bhangra Jam (Đài phát thanh Red FM)</div></div>
+<div class="f">
+<div class="s"> - What/When/Why: Brampton, ON | Year | Supported children's activities at a community event</div>
+<div class="t"> - Cái gì/Khi nào/Tại sao: Brampton, ON | Năm | Hỗ trợ các hoạt động cho trẻ em tại một sự kiện cộng đồng</div></div>
+<div class="f">
+<div class="s"> - Skills: Teamwork, Communication, Leadership</div>
+<div class="t"> - Kỹ năng: Làm việc nhóm, Giao tiếp, Lãnh đạo</div></div>
+<div class="f">
+<div class="s"> - Knowledge: Event planning, Child development basics</div>
+<div class="t"> - Kiến thức: Lập kế hoạch sự kiện, Kiến thức cơ bản về phát triển trẻ em</div></div>
+<div class="f">
+<div class="s"> - Traits: Patience, Creativity, Responsibility</div>
+<div class="t"> - Phẩm chất: Kiên nhẫn, Sáng tạo, Trách nhiệm</div></div>
+<div class="f">
+<div class="s"> EXAMPLE 2 — WORK EXPERIENCE </div>
+<div class="t"> VÍ DỤ 2 — KINH NGHIỆM LÀM VIỆC</div></div>
+<div class="f">
+<div class="s"> - Timeframe: 2018-2019</div>
+<div class="t"> - Thời gian: 2018-2019</div></div>
+<div class="f">
+<div class="s"> - Category: Paid Work</div>
+<div class="t"> - Loại hình: Việc làm có lương</div></div>
+<div class="f">
+<div class="s"> - Role/Title: Kindergarten Teacher —B G Blossom School</div>
+<div class="t"> - Chức vụ: Giáo viên Mầm non — Trường B G Blossom</div></div>
+<div class="f">
+<div class="s"> - What/When/Why: Gurdaspur, India | Aug 2018 —- Nov 2019 | Taught literacy and arts to kindergarten students</div>
+<div class="t"> - Hoạt động/Thời gian/Lý do: Gurdaspur, Ấn Độ | Tháng 8 năm 2018 — Tháng 11 năm 2019 | Dạy đọc viết và nghệ thuật cho học sinh mẫu giáo</div></div>
+<div class="f">
+<div class="s"> - Skills: Classroom management, Data analysis, Parent communication</div>
+<div class="t"> - Kỹ năng: Quản lý lớp học, Phân tích dữ liệu, Giao tiếp với phụ huynh</div></div>
+<div class="f">
+<div class="s"> - Knowledge: Early childhood education methods</div>
+<div class="t"> - Kiến thức: Phương pháp giáo dục mầm non</div></div>
+<div class="f">
+<div class="s"> STEP 4: FILL ONE EXPERIENCE A TIME</div>
+<div class="t"> BƯỚC 4: ĐIỀN MỘT KINH NGHIỆM MỘT LẦN</div></div>
+<div class="f">
+<div class="s"> - Timeframe: 2023</div>
+<div class="t"> - Thời gian: 2023</div></div>
+<div class="f">
+<div class="s"> - Category: Volunteer Experience</div>
+<div class="t"> - Loại hình: Kinh nghiệm tình nguyện</div></div>
+<div class="f">
+<div class="s"> - Role/Title: Volunteer — Bhangra Jam (Red FM Radio)</div>
+<div class="t"> - Chức vụ: Tình nguyện viên — Bhangra Jam (Đài phát thanh Red FM)</div></div>
+<div class="f">
+<div class="s"> - What/When/Why: Brampton, ON | Year | Supported children’s activities at a community event</div>
+<div class="t"> - Hoạt động/Thời gian/Lý do: Brampton, ON | Năm | Hỗ trợ các hoạt động cho trẻ em tại một sự kiện cộng đồng</div></div>
+<div class="f">
+<div class="s"> - Skills: Teamwork, Communication, Leadership</div>
+<div class="t"> - Kỹ năng: Làm việc nhóm, Giao tiếp, Lãnh đạo</div></div>
+<div class="f">
+<div class="s"> - Knowledge: Event planning, Child development basics</div>
+<div class="t"> - Kiến thức: Lập kế hoạch sự kiện, Kiến thức cơ bản về phát triển trẻ em</div></div>
+<div class="f">
+<div class="s"> - Traits: Patience, Creativity, Responsibility</div>
+<div class="t"> - Phẩm chất: Kiên nhẫn, Sáng tạo, Trách nhiệm</div></div>
+<div class="f">
+<div class="s"> STEP 5: BUILD STAR BULLETS</div>
+<div class="t"> BƯỚC 5: XÂY DỰNG CÁC GẠCH ĐẦU DÒNG STAR</div></div>
+<div class="f">
+<div class="s"> - Transform experiences into resume-ready statements using STAR (Acronym):</div>
+<div class="t"> - Chuyển đổi kinh nghiệm thành các câu sẵn sàng cho sơ yếu lý lịch bằng cách sử dụng STAR (Từ viết tắt):</div></div>
+<div class="f">
+<div class="s"> - S- Situation</div>
+<div class="t"> - S - Tình huống</div></div>
+<div class="f">
+<div class="s"> - T- Task</div>
+<div class="t"> - T - Nhiệm vụ</div></div>
+<div class="f">
+<div class="s"> - A- Action</div>
+<div class="t"> - A - Hành động</div></div>
+<div class="f">
+<div class="s"> - R- Result</div>
+<div class="t"> - R - Kết quả</div></div>
+<div class="f">
+<div class="s"> Tip: STAR makes experiences ready for chronological or functional resumes</div>
+<div class="t"> Mẹo: STAR giúp chuẩn bị kinh nghiệm cho sơ yếu lý lịch theo trình tự thời gian hoặc theo chức năng</div></div>
+<div class="f">
+<div class="s"> STAR SYSTEM EXPLAIN</div>
+<div class="t"> GIẢI THÍCH HỆ THỐNG STAR</div></div>
+<div class="f">
+<div class="s"> - S-Situation</div>
+<div class="t"> - S - Tình huống</div></div>
+<div class="f">
+<div class="s"> -- Set the context briefly. Example: Sales team was underperforming at XYZ Corp.</div>
+<div class="t"> -- Mô tả bối cảnh ngắn gọn. Ví dụ: Đội ngũ bán hàng hoạt động kém hiệu quả tại Tập đoàn XYZ.</div></div>
+<div class="f">
+<div class="s"> - T-Task</div>
+<div class="t"> - T - Nhiệm vụ</div></div>
+<div class="f">
+<div class="s"> -- State your responsibility or goal. Example: Tasked with boosting quarterly sales.</div>
+<div class="t"> -- Nêu rõ trách nhiệm hoặc mục tiêu của bạn. Ví dụ: Được giao nhiệm vụ thúc đẩy doanh số bán hàng hàng quý.</div></div>
+<div class="f">
+<div class="s"> - A-Action</div>
+<div class="t"> - A - Hành động</div></div>
+<div class="f">
+<div class="s"> -- Describe what you did. Example: 'Implemented CRM, trained team, reorganized territories.</div>
+<div class="t"> -- Mô tả những gì bạn đã làm. Ví dụ: 'Triển khai CRM, đào tạo đội ngũ, tổ chức lại khu vực bán hàng.'</div></div>
+<div class="f">
+<div class="s"> - R-Result</div>
+<div class="t"> - R - Kết quả</div></div>
+<div class="f">
+<div class="s"> -- Show measurable impact. Example: Increased sales by 35%, exceeding targets.</div>
+<div class="t"> -- Cho thấy tác động có thể đo lường được. Ví dụ: Tăng doanh số bán hàng 35%, vượt chỉ tiêu.</div></div>
+<div class="f">
+<div class="s"> STAR EXAMPLE - WORK</div>
+<div class="t"> VÍ DỤ STAR - CÔNG VIỆC</div></div>
+<div class="f">
+<div class="s"> - Original: Collected and analyzed student learning data.</div>
+<div class="t"> - Nguyên văn: Thu thập và phân tích dữ liệu học tập của học sinh.</div></div>
+<div class="f">
+<div class="s"> - STAR Bullet: Analyzed kindergarten student progress data to identify learning gaps, improving teaching strategies and boosting overall literacy outcomes.</div>
+<div class="t"> - Điểm nổi bật: Phân tích dữ liệu tiến bộ của học sinh mẫu giáo để xác định những lỗ hổng trong học tập, cải thiện chiến lược giảng dạy và nâng cao kết quả đọc viết tổng thể.</div></div>
+<div class="f">
+<div class="s"> - Tip: Don't include the bracketed labels in your resume.</div>
+<div class="t"> - Mẹo: Không bao gồm các nhãn trong ngoặc trong sơ yếu lý lịch của bạn.</div></div>
+<div class="f">
+<div class="s"> STAR EXAMPLE - VOLUNTEER</div>
+<div class="t"> VÍ DỤ STAR - TÌNH NGUYỆN</div></div>
+<div class="f">
+<div class="s"> - Original: Assisted in organizing children’s activities.</div>
+<div class="t"> - Nguyên văn: Hỗ trợ tổ chức các hoạt động cho trẻ em.</div></div>
+<div class="f">
+<div class="s"> - STAR Bullet: Organized storytelling and arts activities at Bhangra Jam event, creating a safe and engaging ENVIRONMENT FOR 50+ children.</div>
+<div class="t"> - Điểm nổi bật: Tổ chức các hoạt động kể chuyện và nghệ thuật tại sự kiện Bhangra Jam, tạo ra một MÔI TRƯỜNG an toàn và hấp dẫn CHO hơn 50 trẻ em.</div></div>
+<div class="f">
+<div class="s"> STEP 6: REVIEW & SELECT</div>
+<div class="t"> BƯỚC 6: XEM XÉT & LỰA CHỌN</div></div>
+<div class="f">
+<div class="s"> - Aim for 3 experiences per essential category (Work, Volunteer, Education).</div>
+<div class="t"> - Chọn 3 kinh nghiệm cho mỗi hạng mục thiết yếu (Công việc, Tình nguyện, Giáo dục).</div></div>
+<div class="f">
+<div class="s"> - Review for clarity, impact, and skills.</div>
+<div class="t"> - Xem xét về sự rõ ràng, tác động và kỹ năng. </div></div>
+<div class="f">
+<div class="s"> - Select strongest entries for resumes, Linkedln, or interviews</div>
+<div class="t"> - Chọn những mục nổi bật nhất cho sơ yếu lý lịch, LinkedIn hoặc phỏng vấn</div></div>
+<div class="f">
+<div class="s"> MASTER LIST STRUCTURE</div>
+<div class="t"> CẤU TRÚC DANH SÁCH CHÍNH</div></div>
+<div class="f">
+<div class="s"> - Contact Information: Name, Phone, Email, Linkedln, Address</div>
+<div class="t"> - Thông tin liên hệ: Tên, Số điện thoại, Email, LinkedIn, Địa chỉ</div></div>
+<div class="f">
+<div class="s"> - Year -> Category -> Experience</div>
+<div class="t"> - Năm -> Danh mục -> Kinh nghiệm</div></div>
+<div class="f">
+<div class="s"> - Minimum 2 entries each in Work, Volunteer, Education</div>
+<div class="t"> - Tối thiểu 2 mục cho mỗi phần: Công việc, Tình nguyện, Học vấn</div></div>
+<div class="f">
+<div class="s"> - Tier 2 & 3 add depth but are optional</div>
+<div class="t"> - Cấp độ 2 & 3 bổ sung chiều sâu nhưng không bắt buộc</div></div>
+<div class="f">
+<div class="s"> - Use clear bullet points</div>
+<div class="t"> - Sử dụng gạch đầu dòng rõ ràng</div></div>
+<div class="f">
+<div class="s"> APPENDIX 1 - TIERS OF CATEGORIES</div>
+<div class="t"> PHỤ LỤC 1 - CÁC CẤP ĐỘ DANH MỤC</div></div>
+<div class="f">
+<div class="s"> Tier 1 - Core Responsibilities (Essential)</div>
+<div class="t"> Cấp độ 1 - Trách nhiệm cốt lõi (Thiết yếu)</div></div>
+<div class="f">
+<div class="s"> - Paid Employment: Jobs, projects, temp work, mini-businesses</div>
+<div class="t"> - Việc làm được trả lương: Công việc, dự án, công việc tạm thời, kinh doanh nhỏ</div></div>
+<div class="f">
+<div class="s"> - Volunteer Activities: Civic, religious, political, or community service</div>
+<div class="t"> - Hoạt động tình nguyện: Phục vụ cộng đồng, tôn giáo, chính trị hoặc xã hội</div></div>
+<div class="f">
+<div class="s"> - Formal Learning: Courses, workshops, internships, research, co-ops</div>
+<div class="t"> - Học tập chính quy: Các khóa học, hội thảo, thực tập, nghiên cứu, chương trình hợp tác</div></div>
+<div class="f">
+<div class="s"> Tier 2 - Growth & Engagement (Supportive)</div>
+<div class="t"> Cấp độ 2 - Phát triển & Gắn kết (Hỗ trợ)</div></div>
+<div class="f">
+<div class="s"> - Informal Learning: Self-study, online courses, software practice</div>
+<div class="t"> - Học tập không chính quy: Tự học, các khóa học trực tuyến, thực hành phần mềm</div></div>
+<div class="f">
+<div class="s"> - Organizational Participation: Leadership or membership in clubs/organizations</div>
+<div class="t"> - Tham gia tổ chức: Lãnh đạo hoặc thành viên trong các câu lạc bộ/tổ chức</div></div>
+<div class="f">
+<div class="s"> - Personal Honors: Awards, recognitions, skill acknowledgments</div>
+<div class="t"> - Danh hiệu cá nhân: Giải thưởng, sự công nhận, chứng nhận kỹ năng</div></div>
+<div class="f">
+<div class="s"> Tier 3 —- Enrichment & Exploration (Optional)</div>
+<div class="t"> Cấp độ 3 — Làm giàu & Khám phá (Tùy chọn)</div></div>
+<div class="f">
+<div class="s"> - Major Hobbies: Sports, arts, collecting, etc.</div>
+<div class="t"> - Chuyên ngành Sở thích: Thể thao, nghệ thuật, sưu tầm, v.v.</div></div>
+<div class="f">
+<div class="s"> - Travel: Personal or work/volunteer trips</div>
+<div class="t"> - Du lịch: Du lịch cá nhân hoặc công tác/tình nguyện</div></div>
+<div class="f">
+<div class="s"> - Cultural Experiences: Study abroad, cross-cultural roles</div>
+<div class="t"> - Trải nghiệm văn hóa: Du học, các vai trò giao thoa văn hóa</div></div>
+<div class="f">
+<div class="s"> - Family Circumstances: Caregiving, supporting family, or other responsibilities</div>
+<div class="t"> - Hoàn cảnh gia đình: Chăm sóc người thân, hỗ trợ gia đình hoặc các trách nhiệm khác</div></div>
+<div class="f">
+<div class="s"> APPENDIX 2 - MASTER LIST CHECK LIST - PAGE 1</div>
+<div class="t"> PHỤ LỤC 2 - DANH SÁCH KIỂM TRA CHÍNH - TRANG 1</div></div>
+<div class="f">
+<div class="s"> Essential (Core for Resume / Career Focus) </div>
+<div class="t"> Thông tin cần thiết (Cốt lõi cho CV / Định hướng nghề nghiệp)</div></div>
+<div class="f">
+<div class="s"> Personal Information</div>
+<div class="t"> Thông tin cá nhân</div></div>
+<div class="f">
+<div class="s"> - Full Name: ____</div>
+<div class="t"> - Họ và tên: ____</div></div>
+<div class="f">
+<div class="s"> - Email: ____</div>
+<div class="t"> - Email: ____</div></div>
+<div class="f">
+<div class="s"> - Phone Number: ___</div>
+<div class="t"> - Số điện thoại: ___</div></div>
+<div class="f">
+<div class="s"> - Linkedin / Portfolio / Website: ___</div>
+<div class="t"> - Linkedin / Portfolio / Website: ___</div></div>
+<div class="f">
+<div class="s"> - Professional Experience</div>
+<div class="t"> - Kinh nghiệm chuyên môn</div></div>
+<div class="f">
+<div class="s"> - Volunteering / Community Work</div>
+<div class="t"> - Hoạt động tình nguyện / Công tác cộng đồng</div></div>
+<div class="f">
+<div class="s"> - Education (Formal)</div>
+<div class="t"> - Học vấn (Chính quy)</div></div>
+<div class="f">
+<div class="s"> Skills</div>
+<div class="t"> Kỹ năng</div></div>
+<div class="f">
+<div class="s"> - Soft Skills: ____</div>
+<div class="t"> - Kỹ năng mềm: ____</div></div>
+<div class="f">
+<div class="s"> - Languages: ____</div>
+<div class="t"> - Ngôn ngữ: ____</div></div>
+<div class="f">
+<div class="s"> - Tools / Software: ____</div>
+<div class="t"> - Công cụ / Phần mềm: ____</div></div>
+<div class="f">
+<div class="s"> - Traits / Personal Development</div>
+<div class="t"> - Phẩm chất / Phát triển cá nhân</div></div>
+<div class="f">
+<div class="s"> - Strengths: _____ -  ____</div>
+<div class="t"> - Điểm mạnh: _____ - ____</div></div>
+<div class="f">
+<div class="s"> - Habits / Routines:  _____ -  ____</div>
+<div class="t"> - Thói quen / Lịch trình: _____ - ____</div></div>
+<div class="f">
+<div class="s"> - Mindset / Growth: _____ -  _____</div>
+<div class="t"> - Tư duy / Phát triển: _____ - _____</div></div>
+<div class="f">
+<div class="s"> - Values: _____ -  ___</div>
+<div class="t"> - Giá trị: _____ - ___</div></div>
+<div class="f">
+<div class="s"> - Principles: _____ -  _____</div>
+<div class="t"> - Nguyên tắc: _____ - _____</div></div>
+<div class="f">
+<div class="s"> - Mission:  _____</div>
+<div class="t"> - Sứ mệnh: _____ </div></div>
+<div class="f">
+<div class="s"> APPENDIX 2 - MASTER LIST CHECK LIST - PAGE 1</div>
+<div class="t"> DANH SÁCH KIỂM TRA - TRANG 1</div></div>
+<div class="f">
+<div class="s"> Extra (Optional / Holistic Profile)</div>
+<div class="t"> Thông tin bổ sung (Tùy chọn / Hồ sơ toàn diện)</div></div>
+<div class="f">
+<div class="s"> - Relationships & Community</div>
+<div class="t"> - Quan hệ & Cộng đồng</div></div>
+<div class="f">
+<div class="s"> - Lifestyle & Leisure</div>
+<div class="t"> - Phong cách sống & Giải trí</div></div>
+<div class="f">
+<div class="s"> - Health & Fitness</div>
+<div class="t"> - Sức khỏe & Thể chất</div></div>
+<div class="f">
+<div class="s"> - Spirituality & Mindfulness</div>
+<div class="t"> - Tâm linh & Chánh niệm</div></div>
+<div class="f">
+<div class="s"> - Impact & Legacy</div>
+<div class="t"> - Tác động & Di sản</div></div>
+<div class="f">
+<div class="s"> WHAT IS A PORTFOLIO?</div>
+<div class="t"> DANH MỤC ĐẦU TƯ LÀ GÌ?</div></div>
+<div class="f">
+<div class="s"> - A portfolio is a curated collection of documents and materials highlighting your skills, work experience, and achievements. </div>
+<div class="t"> - Danh mục đầu tư là một bộ sưu tập các tài liệu và vật liệu được tuyển chọn, làm nổi bật các kỹ năng, kinh nghiệm làm việc và thành tích của bạn.</div></div>
+<div class="f">
+<div class="s"> - Portfolios can be physical or digital, depending on the type of work. </div>
+<div class="t"> - Danh mục đầu tư có thể là bản cứng hoặc bản điện tử, tùy thuộc vào loại công việc.</div></div>
+<div class="f">
+<div class="s"> For example, a painter may opt for a physical design portfolio, while a web designer might create a digital portfolio or portfolio website using platforms like Wix, Squarespace, or WordPress.</div>
+<div class="t"> Ví dụ, một họa sĩ có thể chọn danh mục đầu tư thiết kế bản cứng, trong khi một nhà thiết kế web có thể tạo danh mục đầu tư kỹ thuật số hoặc trang web danh mục đầu tư bằng cách sử dụng các nền tảng như Wix, Squarespace hoặc WordPress.</div></div><script>
+      let translateLang = "en-US"
+      const source = document.querySelectorAll(".s")
+      const translate = document.querySelectorAll(".t")
+      let cnt = 0
+      function speakMinutes_source() {
+         isPause = false;
+         let sourceArr = []
+      	 source.forEach(e => sourceArr.push(e.textContent))
+	 if (sourceArr.length > 0) {
+            let txt = sourceArr[cnt]
+            let utterance = new SpeechSynthesisUtterance(txt);
+            utterance.onstart = () => {
+               source[cnt].style.backgroundColor = "yellow"
+            }
+            // When the current utterance ends, speak the next one
+            utterance.onend = function (event) {
+               source[cnt].style.backgroundColor = "white"
+               cnt++
+               console.log("Speech ended, starting next minute.");
+               isPause ? "" : speakMinutes_source(); // Recursively call the function fo the next item
+            };
+            // Handle potential errors
+            utterance.onerror = function (event) {
+               console.error("Speech synthesis error: " + event.error);
+            };
+            utterance.lang = "en-US"
+            speechSynthesis.speak(utterance);
+         }
+      }
+function speakMinutes_translate() {
+         isPause = false;
+         let translateReadArr = []
+      	 translate.forEach(e => translateReadArr.push(e.textContent))
+	 if (translateReadArr.length > 0) {
+            let txt = translateReadArr[cnt]
+            let utterance = new SpeechSynthesisUtterance(txt);
+            utterance.onstart = () => {
+               translate[cnt].style.backgroundColor = "yellow"
+            }
+            // When the current utterance ends, speak the next one
+            utterance.onend = function (event) {
+               translate[cnt].style.backgroundColor = "white"
+               cnt++
+               console.log("Speech ended, starting next minute.");
+               isPause ? "" : speakMinutes_translate(); // Recursively call the function fo the next item
+            };
+            // Handle potential errors
+            utterance.onerror = function (event) {
+               console.error("Speech synthesis error: " + event.error);
+            };
+
+            utterance.lang = "vi-VN"
+            speechSynthesis.speak(utterance);
+         }
+      }
+
+      const speakBtn = document.querySelector("#speak");
+	const pauseBtn = document.querySelector("#pause");
+      
+      const docBtn = document.querySelector("#doc");
+      const stopBtn = document.querySelector("#stop");
+      let isPause = false
+      speakBtn.addEventListener("click", speakMinutes_source);
+      docBtn.addEventListener("click", speakMinutes_translate);
+      
+
+   </script>
+</body>
+</html>

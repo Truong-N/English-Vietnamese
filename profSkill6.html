@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>profSkill6</title>
+   <style>
+      .f {
+         display: flex;
+         padding: 5px;
+         gap: 15px;
+      }
+      .t,
+      .s {
+         width: 45%;
+      }
+      .floating {
+position: fixed; /* Keeps it fixed to the viewport */
+top: 0px; /* Distance from the top of the viewport */
+right: 0px; /* Distance from the right of the viewport */
+z-index: 1000; /* Ensures it stays above other elements */
+background-color: black;
+color: white;}
+.floating a { color: white;}
+   </style>
+</head>
+
+<body>
+<div class="floating">
+<button id="speak">Speak</button>
+<button id="doc">Doc</button>
+<button id="pause">Pause</button>
+<a href="./profSkill5.html">Prev</a>
+<a href="./profSkill7.html">Next</a>
+</div>
+<div class="f">
+<div class="s"> WELLBEING BALANCE</div>
+<div class="t"> CÂN BẰNG SỨC KHỎE</div></div>
+<div class="f">
+<div class="s"> Physical Development</div>
+<div class="t"> Phát triển thể chất</div></div>
+<div class="f">
+<div class="s"> - Aim for 7-8 hours of sleep each night (National Sleep Foundation, 2020)</div>
+<div class="t"> - Cố gắng ngủ 7-8 tiếng mỗi đêm (Tổ chức Giấc ngủ Quốc gia, 2020)</div></div>
+<div class="f">
+<div class="s"> - Engage in regular exercise (150 min/week recommended by WHO, 2020)</div>
+<div class="t"> - Tập thể dục thường xuyên (150 phút/tuần theo khuyến nghị của WHO, 2020)</div></div>
+<div class="f">
+<div class="s"> - Eat a balanced, nutritious diet to fuel your body</div>
+<div class="t"> - Ăn uống cân bằng, đầy đủ chất dinh dưỡng để cung cấp năng lượng cho cơ thể</div></div>
+<div class="f">
+<div class="s"> Mental/Intellectual Development</div>
+<div class="t"> Phát triển tinh thần/trí tuệ</div></div>
+<div class="f">
+<div class="s"> - Practice journaling to enhance reflection and self-awareness (Pennebaker, 1997)</div>
+<div class="t"> - Thực hành viết nhật ký để tăng cường khả năng tự phản tỉnh và nhận thức bản thân (Pennebaker, 1997)</div></div>
+<div class="f">
+<div class="s"> - Cultivate virtues such as patience, resilience, and integrity</div>
+<div class="t"> - Trau dồi các đức tính như kiên nhẫn, kiên cường và chính trực</div></div>
+<div class="f">
+<div class="s"> - Seek support when needed: mentors, coaches, or counselors</div>
+<div class="t"> - Tìm kiếm sự hỗ trợ khi cần thiết: người hướng dẫn, huấn luyện viên hoặc cố vấn</div></div>
+<div class="f">
+<div class="s"> Spiritual Development</div>
+<div class="t"> Phát triển tâm linh</div></div>
+<div class="f">
+<div class="s"> - Meditate daily or regularly to develop inner calm (Kabat-Zinn, 1994)</div>
+<div class="t"> - Thiền định hàng ngày hoặc thường xuyên để phát triển sự bình tĩnh nội tâm (Kabat-Zinn, 1994)</div></div>
+<div class="f">
+<div class="s"> - Reflect on values, experiences, and life purpose</div>
+<div class="t"> - Suy ngẫm về các giá trị, kinh nghiệm và mục đích sống</div></div>
+<div class="f">
+<div class="s"> - Read timeless works (philosophy, literature, spiritual texts)</div>
+<div class="t"> - Đọc các tác phẩm kinh điển (triết học, văn học, kinh sách tâm linh)</div></div>
+<div class="f">
+<div class="s"> - Seek wise company: connect with mentors, elders, or role models</div>
+<div class="t"> - Tìm kiếm sự đồng hành của những người khôn ngoan: kết nối với người hướng dẫn, người lớn tuổi hoặc hình mẫu</div></div>
+<div class="f">
+<div class="s"> MENTAL HEALTH & MEDITATION</div>
+<div class="t"> SỨC KHỎE TINH THẦN & THIỀN ĐỊNH</div></div>
+<div class="f">
+<div class="s"> - Workplace Gaps</div>
+<div class="t"> - Khoảng cách nơi làm việc</div></div>
+<div class="f">
+<div class="s"> - Stress - impacts decision-making and focus (reduces stress)</div>
+<div class="t"> - Căng thẳng - ảnh hưởng đến việc ra quyết định và sự tập trung (làm giảm (căng thẳng)</div></div>
+<div class="f">
+<div class="s"> - Poor communication - leads to misunderstanding and conflict</div>
+<div class="t"> - Giao tiếp kém - dẫn đến hiểu lầm và xung đột</div></div>
+<div class="f">
+<div class="s"> - Cultural misunderstandings - can reduce team cohesion and trust</div>
+<div class="t"> - Hiểu lầm về văn hóa - có thể làm giảm sự gắn kết và tin tưởng trong nhóm</div></div>
+<div class="f">
+<div class="s"> cohesion and trust</div>
+<div class="t"> gắn kết và tin tưởng</div></div>
+<div class="f">
+<div class="s"> cohesion: sự gắn kết</div>
+<div class="t"> gắn kết: sự gắn kết</div></div>
+<div class="f">
+<div class="s"> - Meditation Benefits</div>
+<div class="t"> - Lợi ích của Thiền định</div></div>
+<div class="f">
+<div class="s"> -- Strengthens self-regulation — prefrontal cortex gains control over amygdala responses (Tang etal., 2015)</div>
+<div class="t"> -- Tăng cường khả năng tự điều chỉnh — vỏ não trước trán kiểm soát phản ứng của hạch hạnh nhân (Tang và cộng sự, 2015)</div></div>
+<div class="f">
+<div class="s"> -- Increases empathy and compassion — improves social awareness and connection (Lutz ef al., 2008)</div>
+<div class="t"> -- Tăng cường sự đồng cảm và lòng trắc ẩn — cải thiện nhận thức và kết nối xã hội (Lutz và cộng sự, 2008)</div></div>
+<div class="f">
+<div class="s"> -- Reduces bias & builds prosocial behavior — encourages justice, fairness and collaboration (Kang et al., 2014)</div>
+<div class="t"> -- Giảm thành kiến ​​và xây dựng hành vi hướng thiện — khuyến khích công lý, sự công bằng và hợp tác (Kang và cộng sự, 2014)</div></div>
+<div class="f">
+<div class="s"> -- Promotes wise-thinking and feelings of awe, transcendence</div>
+<div class="t"> -- Thúc đẩy tư duy khôn ngoan và cảm giác kính sợ, siêu việt</div></div>
+<div class="f">
+<div class="s"> SUPPORT FOR MEDITATION</div>
+<div class="t"> HỖ TRỢ THIỀN ĐỊNH</div></div>
+<div class="f">
+<div class="s"> - Oprah: “ I give myself a healthy dose of quiet time at least once (and when I'm on point, twice) a day: twenty minutes in the morning, twenty in the evening. </div>
+<div class="t"> - Oprah: “Tôi dành cho bản thân một khoảng thời gian yên tĩnh lành mạnh ít nhất một lần (và khi tôi đang tập trung, hai lần) mỗi ngày: 20 phút vào buổi sáng, 20 phút vào buổi tối.” </div></div>
+<div class="f">
+<div class="s"> Knowing that stillness is the space where all creative expression, peace, light, and love come to be is a powerfully energizing, yet calming experience...</div>
+<div class="t"> Nhận ra rằng sự tĩnh lặng là không gian nơi mọi biểu hiện sáng tạo, sự bình an, ánh sáng và tình yêu được sinh ra là một trải nghiệm đầy năng lượng nhưng cũng rất thanh thản...</div></div>
+<div class="f">
+<div class="s"> Only from that space can you create your best work and your best life.”</div>
+<div class="t"> Chỉ từ không gian đó bạn mới có thể tạo ra tác phẩm tốt nhất và cuộc sống tốt nhất của mình.”</div></div>
+<div class="f">
+<div class="s"> GUIDED MEDITATION</div>
+<div class="t"> THIỀN ĐỊNH CÓ HƯỚNG DẪN</div></div>
+<div class="f">
+<div class="s"> - Take 10 minutes to follow and complete a guided meditation</div>
+<div class="t"> - Dành 10 phút để thực hiện và hoàn thành bài thiền định có hướng dẫn</div></div>
+<div class="f">
+<div class="s"> - Reflect & Share your experiences with classmates or journal</div>
+<div class="t"> - Suy ngẫm & Chia sẻ trải nghiệm của bạn với bạn cùng lớp hoặc viết nhật ký</div></div>
+<div class="f">
+<div class="s"> MEDITATION STEPS</div>
+<div class="t"> CÁC BƯỚC THIỀN ĐỊNH</div></div>
+<div class="f">
+<div class="s"> - Sit comfortably and set your intention.</div>
+<div class="t"> - Ngồi thoải mái và đặt ý định của bạn.</div></div>
+<div class="f">
+<div class="s"> - Visualize sitting solitary a peaceful natural setting.</div>
+<div class="t"> - Hình dung bạn đang ngồi một mình trong một khung cảnh thiên nhiên yên bình.</div></div>
+<div class="f">
+<div class="s"> - Scan your body from toes to head.</div>
+<div class="t"> - Quét cơ thể từ ngón chân đến đầu.</div></div>
+<div class="f">
+<div class="s"> - Focus on slow, steady breathing.</div>
+<div class="t"> - Tập trung vào hơi thở chậm và đều.</div></div>
+<div class="f">
+<div class="s"> - Reflect on limitlessness, peace, and balance.</div>
+<div class="t"> - Suy ngẫm về sự vô hạn, bình an và cân bằng. </div></div>
+<div class="f">
+<div class="s"> SELF-EVALUATION</div>
+<div class="t"> TỰ ĐÁNH GIÁ</div></div>
+<div class="f">
+<div class="s"> - Choose one well-being or reflective practice (journaling, meditation, gratitude)</div>
+<div class="t"> - Chọn một phương pháp rèn luyện sức khỏe tinh thần hoặc suy ngẫm (viết nhật ký, thiền định, lòng biết ơn)</div></div>
+<div class="f">
+<div class="s"> - Journal its impact on your attitude, relationships, and goals</div>
+<div class="t"> - Ghi lại tác động của nó đến thái độ, các mối quan hệ và mục tiêu của bạn</div></div>
+<div class="f">
+<div class="s"> - Goal: Build awareness of your strengths and growth areas</div>
+<div class="t"> - Mục tiêu: Xây dựng nhận thức về điểm mạnh và lĩnh vực cần phát triển của bản thân</div></div>
+<div class="f">
+<div class="s"> PROFESSIONAL JOURNEY (STEP BY STEP)</div>
+<div class="t"> HÀNH TRÌNH NGHỀ NGHIỆP (TỪNG BƯỚC MỘT)</div></div>
+<div class="f">
+<div class="s"> - Build mindset and character</div>
+<div class="t"> - Xây dựng tư duy và phẩm chất</div></div>
+<div class="f">
+<div class="s"> - Create your Master List</div>
+<div class="t"> - Tạo Danh sách Tổng hợp</div></div>
+<div class="f">
+<div class="s"> - Identify relevant knowledge, skills, traits</div>
+<div class="t"> - Xác định kiến ​​thức, kỹ năng, phẩm chất liên quan</div></div>
+<div class="f">
+<div class="s"> - Organize your content</div>
+<div class="t"> - Tổ chức nội dung</div></div>
+<div class="f">
+<div class="s"> - Format entries for resumes, cover letters, interviews</div>
+<div class="t"> - Định dạng các mục cho sơ yếu lý lịch, thư xin việc, phỏng vấn</div></div>
+<div class="f">
+<div class="s"> - Write a summary statement</div>
+<div class="t"> - Viết một bản tóm tắt</div></div>
+<div class="f">
+<div class="s"> - Edit and refine</div>
+<div class="t"> - Chỉnh sửa và hoàn thiện</div></div>
+<div class="f">
+<div class="s"> - Prepare references</div>
+<div class="t"> - Chuẩn bị thư giới thiệu</div></div>
+<div class="f">
+<div class="s"> - Draft cover letter</div>
+<div class="t"> - Soạn thảo thư xin việc</div></div>
+<div class="f">
+<div class="s"> - Finalize resume</div>
+<div class="t"> - Hoàn thiện sơ yếu lý lịch</div></div>
+<div class="f">
+<div class="s"> WHAT IS A MASTER LIST?</div>
+<div class="t"> DANH SÁCH TỔNG HỢP LÀ GÌ?</div></div>
+<div class="f">
+<div class="s"> - Master list is a Tool</div>
+<div class="t"> - Danh sách tổng hợp là một công cụ</div></div>
+<div class="f">
+<div class="s"> -- A Resume Master List is a comprehensive document containing all your professional experiences, skills, education, and achievements.</div>
+<div class="t"> -- Danh sách tổng hợp sơ yếu lý lịch là một tài liệu toàn diện chứa tất cả kinh nghiệm nghề nghiệp, kỹ năng, trình độ học vấn và thành tích của bạn.</div></div>
+<div class="f">
+<div class="s"> -- It serves as a single source to create tailored resumes and cover letters for specific job applications.</div>
+<div class="t"> - Nó đóng vai trò là nguồn duy nhất để tạo ra sơ yếu lý lịch và thư xin việc được điều chỉnh phù hợp cho các đơn xin việc cụ thể.</div></div>
+<div class="f">
+<div class="s"> - To create one:</div>
+<div class="t"> - Để tạo một danh sách:</div></div>
+<div class="f">
+<div class="s"> -- Gather all job details, training, volunteer work, projects, and skills.</div>
+<div class="t"> -- Thu thập tất cả thông tin chi tiết về công việc, đào tạo, công việc tình nguyện, dự án và kỹ năng.</div></div>
+<div class="f">
+<div class="s"> -- Organize by category in reverse-chronological order.</div>
+<div class="t"> - Tổ chức theo từng hạng mục theo thứ tự thời gian ngược. </div></div>
+<div class="f">
+<div class="s"> -- (Start from this year and go back in time)</div>
+<div class="t"> -- (Bắt đầu từ năm nay và quay ngược thời gian)</div></div>
+<div class="f">
+<div class="s"> -- Update regularly throughout your career.</div>
+<div class="t"> -- Cập nhật thường xuyên trong suốt sự nghiệp của bạn.</div></div>
+<div class="f">
+<div class="s"> WHAT TO INCLUDE?</div>
+<div class="t"> CẦN BAO GỒM NHỮNG GÌ?</div></div>
+<div class="f">
+<div class="s"> - A chronological list of relevant life experiences (paid work, volunteering, education and etc.).</div>
+<div class="t"> - Danh sách theo thứ tự thời gian các kinh nghiệm sống liên quan (công việc được trả lương, tình nguyện, học tập, v.v.).</div></div>
+<div class="f">
+<div class="s"> - A brief analysis of each experience demonstrating your skills, knowledge, and traits.</div>
+<div class="t"> - Phân tích ngắn gọn từng kinh nghiệm thể hiện kỹ năng, kiến ​​thức và phẩm chất của bạn.</div></div>
+<div class="f">
+<div class="s"> - A summary of your skills, knowledge, and traits.</div>
+<div class="t"> - Tóm tắt các kỹ năng, kiến ​​thức và phẩm chất của bạn.</div></div>
+<div class="f">
+<div class="s"> WHY CREATE A MASTER LIST?</div>
+<div class="t"> TẠI SAO CẦN TẠO DANH SÁCH TỔNG HỢP?</div></div>
+<div class="f">
+<div class="s"> - Although it may take time to compile</div>
+<div class="t"> - Mặc dù có thể mất thời gian để biên soạn</div></div>
+<div class="f">
+<div class="s"> - It's one of the most useful tools for career development and job hunting.</div>
+<div class="t"> - Đây là một trong những công cụ hữu ích nhất cho việc phát triển sự nghiệp và tìm kiếm việc làm.</div></div>
+<div class="f">
+<div class="s"> - Focused resumes: Choose experiences that best highlight your skills.</div>
+<div class="t"> - CV tập trung: Chọn những kinh nghiệm làm nổi bật nhất các kỹ năng của bạn.</div></div>
+<div class="f">
+<div class="s"> - Easy recall: Keep a record of job titles, dates, and duties.</div>
+<div class="t"> - Dễ dàng nhớ lại: Ghi lại chức danh công việc, ngày tháng và nhiệm vụ.</div></div>
+<div class="f">
+<div class="s"> - Self-awareness: Identify work you enjoy and patterns in your career.</div>
+<div class="t"> - Tự nhận thức: Xác định công việc bạn yêu thích và các mô hình trong sự nghiệp của bạn.</div></div>
+<div class="f">
+<div class="s"> - Spot skill gaps: See which skills to develop for your dream job.</div>
+<div class="t"> - Phát hiện lỗ hổng kỹ năng: Xem những kỹ năng nào cần phát triển cho công việc mơ ước của bạn.</div></div>
+<div class="f">
+<div class="s"> - Discover opportunities: A complete view of your skills may reveal roles you hadn't considered.</div>
+<div class="t"> - Khám phá cơ hội: Cái nhìn toàn diện về kỹ năng của bạn có thể tiết lộ những vai trò mà bạn chưa từng xem xét.</div></div>
+<div class="f">
+<div class="s"> STEP 1: SELECT A YEAR</div>
+<div class="t"> BƯỚC 1: CHỌN MỘT NĂM</div></div>
+<div class="f">
+<div class="s"> - Choose a timeframe (e.g., last 5 years).</div>
+<div class="t"> - Chọn một khung thời gian (ví dụ: 5 năm gần đây). </div></div>
+<div class="f">
+<div class="s"> - Note: Select a year-cycle (if you don't have much experience. E.G: 2020-2025)</div>
+<div class="t"> - Lưu ý: Chọn chu kỳ năm (nếu bạn không có nhiều kinh nghiệm. Ví dụ: 2020-2025)</div></div>
+<div class="f">
+<div class="s"> - For extensive experience, list by individual year; for less, group into year cycles.</div>
+<div class="t"> - Đối với kinh nghiệm phong phú, hãy liệt kê theo từng năm; đối với kinh nghiệm ít hơn, hãy nhóm theo chu kỳ năm.</div></div>
+<div class="f">
+<div class="s"> - Include everything: jobs, volunteering, school, training, projects.</div>
+<div class="t"> - Bao gồm tất cả mọi thứ: công việc, hoạt động tình nguyện, học tập, đào tạo, dự án.</div></div>
+<div class="f">
+<div class="s"> - Tip: Don't filter just collect first</div>
+<div class="t"> - Mẹo: Không cần lọc, chỉ cần thu thập trước</div></div>
+<div class="f">
+<div class="s"> STEP 2: SELECT A CATEGORY</div>
+<div class="t"> BƯỚC 2: CHỌN MỘT DANH MỤC</div></div>
+<div class="f">
+<div class="s"> - Tier 1 (Essential): Paid Work, Volunteer Work, Formal Education</div>
+<div class="t"> - Cấp 1 (Thiết yếu): Công việc được trả lương, Công việc tình nguyện, Giáo dục chính quy</div></div>
+<div class="f">
+<div class="s"> - Tier 2 (Supportive): Organizational Roles, Informal Learning, Personal Honors</div>
+<div class="t"> - Cấp 2 (Hỗ trợ): Vai trò trong tổ chức, Học tập không chính thức, Danh hiệu cá nhân</div></div>
+<div class="f">
+<div class="s"> - Tier 3 (Extra): Hobbies, Travel, Cultural Experiences, Family Responsibilities</div>
+<div class="t"> - Cấp 3 (Bổ sung): Sở thích, Du lịch, Trải nghiệm văn hóa, Trách nhiệm gia đình</div></div>
+<div class="f">
+<div class="s"> - Note: Focus on Essential and Supportive Categories.</div>
+<div class="t"> - Lưu ý: Tập trung vào các Danh mục Thiết yếu và Hỗ trợ.</div></div>
+<div class="f">
+<div class="s"> - Note: You can use the Master List Checklist Document and template to guide your creation of your Master List</div>
+<div class="t"> - Lưu ý: Bạn có thể sử dụng Tài liệu Danh sách Kiểm tra Chính và mẫu để hướng dẫn việc tạo Danh sách Chính của mình</div></div><script>
+      let translateLang = "en-US"
+      const source = document.querySelectorAll(".s")
+      const translate = document.querySelectorAll(".t")
+      let cnt = 0
+      function speakMinutes_source() {
+         isPause = false;
+         let sourceArr = []
+      	 source.forEach(e => sourceArr.push(e.textContent))
+	 if (sourceArr.length > 0) {
+            let txt = sourceArr[cnt]
+            let utterance = new SpeechSynthesisUtterance(txt);
+            utterance.onstart = () => {
+               source[cnt].style.backgroundColor = "yellow"
+            }
+            // When the current utterance ends, speak the next one
+            utterance.onend = function (event) {
+               source[cnt].style.backgroundColor = "white"
+               cnt++
+               console.log("Speech ended, starting next minute.");
+               isPause ? "" : speakMinutes_source(); // Recursively call the function fo the next item
+            };
+            // Handle potential errors
+            utterance.onerror = function (event) {
+               console.error("Speech synthesis error: " + event.error);
+            };
+            utterance.lang = "en-US"
+            speechSynthesis.speak(utterance);
+         }
+      }
+function speakMinutes_translate() {
+         isPause = false;
+         let translateReadArr = []
+      	 translate.forEach(e => translateReadArr.push(e.textContent))
+	 if (translateReadArr.length > 0) {
+            let txt = translateReadArr[cnt]
+            let utterance = new SpeechSynthesisUtterance(txt);
+            utterance.onstart = () => {
+               translate[cnt].style.backgroundColor = "yellow"
+            }
+            // When the current utterance ends, speak the next one
+            utterance.onend = function (event) {
+               translate[cnt].style.backgroundColor = "white"
+               cnt++
+               console.log("Speech ended, starting next minute.");
+               isPause ? "" : speakMinutes_translate(); // Recursively call the function fo the next item
+            };
+            // Handle potential errors
+            utterance.onerror = function (event) {
+               console.error("Speech synthesis error: " + event.error);
+            };
+
+            utterance.lang = "vi-VN"
+            speechSynthesis.speak(utterance);
+         }
+      }
+
+      const speakBtn = document.querySelector("#speak");
+	const pauseBtn = document.querySelector("#pause");
+      
+      const docBtn = document.querySelector("#doc");
+      const stopBtn = document.querySelector("#stop");
+      let isPause = false
+      speakBtn.addEventListener("click", speakMinutes_source);
+      docBtn.addEventListener("click", speakMinutes_translate);
+      
+
+   </script>
+</body>
+</html>
