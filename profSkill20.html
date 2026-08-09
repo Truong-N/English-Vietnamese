@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>profSkill 20</title>
+   <style>
+      .f {
+         display: flex;
+         padding: 5px;
+         gap: 15px;
+      }
+      .t,
+      .s {
+         width: 45%;
+      }
+      .floating {
+position: fixed; /* Keeps it fixed to the viewport */
+top: 0px; /* Distance from the top of the viewport */
+right: 0px; /* Distance from the right of the viewport */
+z-index: 1000; /* Ensures it stays above other elements */
+background-color: black;
+color: white;}
+.floating a { color: white;}
+   </style>
+</head>
+
+<body>
+<div class="floating">
+<button id="speak">Speak</button>
+<button id="doc">Doc</button>
+<button id="pause">Pause</button>
+<a href="./profSkill19.html">Prev</a>
+<a href="./profSkill21.html">Next</a>
+</div>
+<div class="f">
+<div class="s"> DURING AN INTERVIEW</div>
+<div class="t"> TRONG BUỔI PHỎNG VẤN</div></div>
+<div class="f">
+<div class="s"> Behavioural Questions (STARR Formula)</div>
+<div class="t"> Câu hỏi về hành vi (Công thức STARR)</div></div>
+<div class="f">
+<div class="s"> - S-Situation - describe the scenario</div>
+<div class="t"> - S - Tình huống: Mô tả tình huống</div></div>
+<div class="f">
+<div class="s"> - T-Task - explain the challenge</div>
+<div class="t"> - T - Nhiệm vụ: Giải thích thử thách</div></div>
+<div class="f">
+<div class="s"> - A:Action - What you did</div>
+<div class="t"> - A - Hành động: Bạn đã làm gì</div></div>
+<div class="f">
+<div class="s"> - R-Result - what happened</div>
+<div class="t"> - R - Kết quả: Điều gì đã xảy ra</div></div>
+<div class="f">
+<div class="s"> - R-Relevance - relate skills to the role</div>
+<div class="t"> - R - Mức độ liên quan: Liên hệ kỹ năng với vai trò công việc</div></div>
+<div class="f">
+<div class="s"> - Example: Describe a time you worked in a team.</div>
+<div class="t"> - Ví dụ: Mô tả một lần bạn làm việc nhóm.</div></div>
+<div class="f">
+<div class="s"> Situational Questions: </div>
+<div class="t"> Câu hỏi tình huống:</div></div>
+<div class="f">
+<div class="s"> - Hypothetical scenarios: What would you do if ...?</div>
+<div class="t"> - Tình huống giả định: Bạn sẽ làm gì nếu...?</div></div>
+<div class="f">
+<div class="s"> - Use STARR to structure responses and connect skills to the role.</div>
+<div class="t"> - Sử dụng công thức STARR để cấu trúc câu trả lời và kết nối kỹ năng với vai trò công việc.</div></div>
+<div class="f">
+<div class="s"> - You can reference real-life experiences where appropriate.</div>
+<div class="t"> - Bạn có thể đề cập đến kinh nghiệm thực tế khi thích hợp.</div></div>
+<div class="f">
+<div class="s"> DRESS CODE</div>
+<div class="t"> QUẢN LÝ TRANG PHỤC</div></div>
+<div class="f">
+<div class="s"> First Impressions Matter</div>
+<div class="t"> Ấn tượng đầu tiên rất quan trọng</div></div>
+<div class="f">
+<div class="s"> - First impressions count in interviews, networking events, job fairs and information interviews.</div>
+<div class="t"> - Ấn tượng đầu tiên rất quan trọng trong các cuộc phỏng vấn, sự kiện kết nối, hội chợ việc làm và phỏng vấn tìm hiểu thông tin.</div></div>
+<div class="f">
+<div class="s"> - A key part of making a strong impression is how you dress.</div>
+<div class="t"> - Một phần quan trọng để tạo ấn tượng tốt là cách bạn ăn mặc.</div></div>
+<div class="f">
+<div class="s"> Tip for Professional Appearance</div>
+<div class="t"> Mẹo để có vẻ ngoài chuyên nghiệp</div></div>
+<div class="f">
+<div class="s"> - Choose clean, neat, and professional clothing.</div>
+<div class="t"> - Chọn trang phục sạch sẽ, gọn gàng và chuyên nghiệp.</div></div>
+<div class="f">
+<div class="s"> - Dress in a way that fits the workplace culture.</div>
+<div class="t"> - Ăn mặc phù hợp với văn hóa nơi làm việc.</div></div>
+<div class="f">
+<div class="s"> - Avoid clothing that is too casual or distracting.</div>
+<div class="t"> - Tránh mặc quần áo quá xuềnh xà hoặc gây mất tập trung.</div></div>
+<div class="f">
+<div class="s"> - Pay attention to grooming and personal hygiene.</div>
+<div class="t"> - Chú ý đến việc chải chuốt và vệ sinh cá nhân. </div></div>
+<div class="f">
+<div class="s"> DRESS CODE</div>
+<div class="t"> QUY ĐỊNH VỀ TRANG PHỤC</div></div>
+<div class="f">
+<div class="s"> Basic Expectations</div>
+<div class="t"> Những điều cơ bản</div></div>
+<div class="f">
+<div class="s"> - Every interview or event is different.</div>
+<div class="t"> - Mỗi cuộc phỏng vấn hoặc sự kiện đều khác nhau.</div></div>
+<div class="f">
+<div class="s"> - Research what's appropriate before attending,</div>
+<div class="t"> - Hãy tìm hiểu về trang phục phù hợp trước khi tham dự.</div></div>
+<div class="f">
+<div class="s"> - Aim to dress slightly above the basic expectation to make a strong impression.</div>
+<div class="t"> - Nên ăn mặc lịch sự hơn một chút so với quy định cơ bản để tạo ấn tượng tốt.</div></div>
+<div class="f">
+<div class="s"> Interview</div>
+<div class="t"> Phỏng vấn</div></div>
+<div class="f">
+<div class="s"> - Dress for the most important day on the job (e.g., meeting the CEO or a client).</div>
+<div class="t"> - Hãy ăn mặc như thể đó là ngày quan trọng nhất trong công việc (ví dụ: gặp gỡ CEO hoặc khách hàng).</div></div>
+<div class="f">
+<div class="s"> - If unsure:</div>
+<div class="t"> - Nếu không chắc chắn:</div></div>
+<div class="f">
+<div class="s"> -- Check the company's website.</div>
+<div class="t"> -- Kiểm tra trang web của công ty.</div></div>
+<div class="f">
+<div class="s"> -- Recall how staff dressed on past visits.</div>
+<div class="t"> -- Nhớ lại cách nhân viên ăn mặc trong những lần đến trước.</div></div>
+<div class="f">
+<div class="s"> -- Copy the style of the best-dressed employees</div>
+<div class="t"> -- Học hỏi phong cách của những nhân viên ăn mặc đẹp nhất.</div></div>
+<div class="f">
+<div class="s"> OTHER PROFESSIONAL TIPS</div>
+<div class="t"> NHỮNG LỜI KHUYÊN CHUYÊN NGHIỆP KHÁC</div></div>
+<div class="f">
+<div class="s"> Budget Tips for Professional Attire</div>
+<div class="t"> Mẹo tiết kiệm chi phí cho trang phục chuyên nghiệp</div></div>
+<div class="f">
+<div class="s"> - Employers understand students often have a limited budget.</div>
+<div class="t"> - Nhà tuyển dụng hiểu rằng sinh viên thường có ngân sách hạn chế.</div></div>
+<div class="f">
+<div class="s"> - 1-2 well-chosen outfits are enough for interviews and events.</div>
+<div class="t"> - 1-2 bộ trang phục được lựa chọn kỹ lưỡng là đủ cho các cuộc phỏng vấn và sự kiện.</div></div>
+<div class="f">
+<div class="s"> - Mix and match clothing items to create multiple looks</div>
+<div class="t"> - Phối hợp các món đồ để tạo ra nhiều phong cách khác nhau.</div></div>
+<div class="f">
+<div class="s"> - Consider vintage or second-hand stores for affordable options.</div>
+<div class="t"> - Cân nhắc các cửa hàng đồ cũ hoặc đồ đã qua sử dụng để có những lựa chọn giá cả phải chăng.</div></div>
+<div class="f">
+<div class="s"> EMOTIONAL REGULATION (TONE) & NON-VERBAL COMMUNICATION (BODY LANGUAGE)</div>
+<div class="t"> KIỂM SOÁT CẢM XÚC (GIỌNG ĐIỆU) & GIAO TIẾP PHI NGÔN NGỮ (NGÔN NGỮ CƠ THỂ)</div></div>
+<div class="f">
+<div class="s"> Tips</div>
+<div class="t"> Mẹo</div></div>
+<div class="f">
+<div class="s"> - Pause before answering difficult questions.</div>
+<div class="t"> - Hãy tạm dừng trước khi trả lời những câu hỏi khó.</div></div>
+<div class="f">
+<div class="s"> - Reflect on past experiences and what you learned.</div>
+<div class="t"> - Suy ngẫm về những kinh nghiệm trong quá khứ và những gì bạn đã học được. </div></div>
+<div class="f">
+<div class="s"> - Be genuine and tie experiences to personal growth.</div>
+<div class="t"> - Hãy chân thành và gắn kết kinh nghiệm với sự phát triển cá nhân.</div></div>
+<div class="f">
+<div class="s"> Key: Emotional intelligence - managing yourself + relating well to others.</div>
+<div class="t"> Từ khóa: Trí tuệ cảm xúc - quản lý bản thân + giao tiếp tốt với người khác.</div></div>
+<div class="f">
+<div class="s"> VERBAL & NON-VERBAL COMMUNICATION</div>
+<div class="t"> GIAO TIẾP BẰNG LỜI NÓI & PHI NGÔN NGỮ</div></div>
+<div class="f">
+<div class="s"> Eye Contact</div>
+<div class="t"> Giao tiếp bằng mắt</div></div>
+<div class="f">
+<div class="s"> - Direct, natural eye contact shows confidence and sincerity.</div>
+<div class="t"> - Giao tiếp bằng mắt trực tiếp, tự nhiên thể hiện sự tự tin và chân thành.</div></div>
+<div class="f">
+<div class="s"> - Avoid staring or looking away too often.</div>
+<div class="t"> - Tránh nhìn chằm chằm hoặc nhìn đi chỗ khác quá thường xuyên.</div></div>
+<div class="f">
+<div class="s"> Body Language</div>
+<div class="t"> Ngôn ngữ cơ thể</div></div>
+<div class="f">
+<div class="s"> - Sit upright, nod, lean slightly forward.</div>
+<div class="t"> - Ngồi thẳng lưng, gật đầu, hơi nghiêng người về phía trước.</div></div>
+<div class="f">
+<div class="s"> - Avoid folded arms or cowering: handshake should be firm.</div>
+<div class="t"> - Tránh khoanh tay hoặc co rúm người: bắt tay nên chắc chắn.</div></div>
+<div class="f">
+<div class="s"> WHAT IS LINKEDLN?</div>
+<div class="t"> LINKEDIN LÀ GÌ?</div></div>
+<div class="f">
+<div class="s"> - Professional social networking platform</div>
+<div class="t"> - Nền tảng mạng xã hội chuyên nghiệp</div></div>
+<div class="f">
+<div class="s"> - Post a professional profile, network, research employers, and apply for positions</div>
+<div class="t"> - Đăng hồ sơ chuyên nghiệp, kết nối, tìm kiếm nhà tuyển dụng và ứng tuyển vào các vị trí</div></div>
+<div class="f">
+<div class="s"> - Over 930 million users worldwide, 29 million in Canada</div>
+<div class="t"> - Hơn 930 triệu người dùng trên toàn thế giới, 29 triệu người ở Canada</div></div>
+<div class="f">
+<div class="s"> DO EMPLOYERS USE LINKDLN?</div>
+<div class="t"> NHÀ TUYỂN DỤNG CÓ SỬ DỤNG LINKEDIN KHÔNG? </div></div>
+<div class="f">
+<div class="s"> - 72% of employers recruit via Linkedln (2020 Jobvite Recruiter Nation Survey)</div>
+<div class="t"> - 72% nhà tuyển dụng tuyển dụng qua LinkedIn (Khảo sát Nhà tuyển dụng Quốc gia Jobvite năm 2020)</div></div>
+<div class="f">
+<div class="s"> - Critical tool for career college students entering the job market</div>
+<div class="t"> - Công cụ quan trọng cho sinh viên cao đẳng nghề bước vào thị trường lao động</div></div>
+<div class="f">
+<div class="s"> BUILDING A PROFESSIONAL PROFILE</div>
+<div class="t"> XÂY DỰNG HỒ SƠ CHUYÊN NGHIỆP</div></div>
+<div class="f">
+<div class="s"> - Professional photo, consistent across platforms </div>
+<div class="t"> - Ảnh chuyên nghiệp, nhất quán trên các nền tảng</div></div>
+<div class="f">
+<div class="s"> - Strong headline and summary</div>
+<div class="t"> - Tiêu đề và tóm tắt mạnh mẽ</div></div>
+<div class="f">
+<div class="s"> - Highlight education, internships, projects, and work experience</div>
+<div class="t"> - Nêu bật học vấn, thực tập, dự án và kinh nghiệm làm việc</div></div>
+<div class="f">
+<div class="s"> - Personalized Linkedln URL</div>
+<div class="t"> - URL LinkedIn cá nhân hóa</div></div>
+<div class="f">
+<div class="s"> - Recommendations from mentors or employers</div>
+<div class="t"> - Thư giới thiệu từ người hướng dẫn hoặc nhà tuyển dụng</div></div>
+<div class="f">
+<div class="s"> - Keep your profile updated regularly</div>
+<div class="t"> - Cập nhật hồ sơ thường xuyên</div></div>
+<div class="f">
+<div class="s"> FEATURING YOUR WORK</div>
+<div class="t"> TRÌNH BÀY CÔNG VIỆC CỦA BẠN</div></div>
+<div class="f">
+<div class="s"> - Upload work samples: documents, videos, links, presentations</div>
+<div class="t"> - Tải lên các mẫu công việc: tài liệu, video, liên kết, bài thuyết trình</div></div>
+<div class="f">
+<div class="s"> - Check for copy right or  confidentiality issues before posting</div>
+<div class="t"> - Kiểm tra vấn đề bản quyền hoặc bảo mật trước khi đăng tải</div></div>
+<div class="f">
+<div class="s"> - Use 'Edit Profile -> Upload' to add samples</div>
+<div class="t"> - Sử dụng 'Chỉnh sửa hồ sơ -> Tải lên' để thêm mẫu</div></div>
+<div class="f">
+<div class="s"> CONNECTING WITH CONTACTS</div>
+<div class="t"> KẾT NỐI VỚI CÁC LIÊN HỆ</div></div>
+<div class="f">
+<div class="s"> 1. Personalize connection invitations</div>
+<div class="t"> 1. Cá nhân hóa lời mời kết nối</div></div>
+<div class="f">
+<div class="s"> 2. Import contacts from email or other social media</div>
+<div class="t"> 2. Nhập liên hệ từ email hoặc mạng xã hội khác</div></div>
+<div class="f">
+<div class="s"> 3. Treat your connections professionally: thank them maintain relationships</div>
+<div class="t"> 3. Đối xử chuyên nghiệp với các kết nối của bạn: cảm ơn họ và duy trì mối quan hệ</div></div>
+<div class="f">
+<div class="s"> NETWORKING ON LINKEDLN</div>
+<div class="t"> KẾT NỐI TRÊN LINKEDLN</div></div>
+<div class="f">
+<div class="s"> Search for College's alumni and industry professionals.</div>
+<div class="t"> Tìm kiếm cựu sinh viên của trường và các chuyên gia trong ngành. </div></div>
+<div class="f">
+<div class="s"> Request introductions through mutual contacts</div>
+<div class="t"> Yêu cầu được giới thiệu thông qua các mối quan hệ chung</div></div>
+<div class="f">
+<div class="s"> Join and participate in relevant groups</div>
+<div class="t"> Tham gia và đóng góp vào các nhóm liên quan</div></div>
+<div class="f">
+<div class="s"> Ask for advice, not a job - learn about industries and hiring trends</div>
+<div class="t"> Hỏi xin lời khuyên, không phải xin việc - tìm hiểu về các ngành nghề và xu hướng tuyển dụng</div></div>
+<div class="f">
+<div class="s"> MAINTAINING RELATIONSHIP</div>
+<div class="t"> DUY TRÌ MỐI QUAN HỆ</div></div>
+<div class="f">
+<div class="s"> - Send thank-you notes and updates</div>
+<div class="t"> - Gửi thư cảm ơn và cập nhật tình hình</div></div>
+<div class="f">
+<div class="s"> - Keep requests reasonable</div>
+<div class="t"> - Đưa ra các yêu cầu hợp lý</div></div>
+<div class="f">
+<div class="s"> - Give back share valuable articles or resources</div>
+<div class="t"> - Chia sẻ lại những bài viết hoặc tài nguyên có giá trị</div></div>
+<div class="f">
+<div class="s"> - Periodically update contacts on your progress</div>
+<div class="t"> - Thường xuyên cập nhật tiến độ của bạn cho các mối liên hệ</div></div>
+<div class="f">
+<div class="s"> FINDING CAREER & EMPLOYMENT INFORMATION</div>
+<div class="t"> TÌM KIẾM THÔNG TIN NGHỀ NGHIỆP & VIỆC LÀM</div></div>
+<div class="f">
+<div class="s"> - Company search: learn about employees, stats, and posted positions</div>
+<div class="t"> - Tìm kiếm công ty: tìm hiểu về nhân viên, số liệu thống kê và các vị trí đã đăng</div></div>
+<div class="f">
+<div class="s"> - Job listing: filter by location, company, experience level</div>
+<div class="t"> - Danh sách việc làm: lọc theo địa điểm, công ty, cấp độ kinh nghiệm</div></div>
+<div class="f">
+<div class="s"> - Industry information: join groups to learn trends and events</div>
+<div class="t"> - Thông tin ngành nghề: tham gia các nhóm để tìm hiểu xu hướng và sự kiện</div></div>
+<div class="f">
+<div class="s"> PUBLISHING ARTICLES ON LINKEDLN</div>
+<div class="t"> ĐĂNG BÀI VIẾT TRÊN LINKEDLN</div></div>
+<div class="f">
+<div class="s"> Post articles to showcase professional knowledge and writing skills</div>
+<div class="t"> Đăng bài viết để thể hiện kiến ​​thức chuyên môn và kỹ năng viết</div></div>
+<div class="f">
+<div class="s"> Great way to demonstrate expertise</div>
+<div class="t"> Cách tuyệt vời để chứng minh chuyên môn</div></div>
+<div class="f">
+<div class="s"> Check Linkedln Help Centre for tips and best practices</div>
+<div class="t"> Kiểm tra Trung tâm Trợ giúp của LinkedLn để biết các mẹo và phương pháp hay nhất</div></div>
+<div class="f">
+<div class="s"> HOW CAN LINKEDLN</div>
+<div class="t"> LINKEDLN ​​CÓ THỂ</div></div>
+<div class="f">
+<div class="s"> EMAIL ETIQUETTE</div>
+<div class="t"> QUY TẮC ỨNG XỬ QUA EMAIL</div></div>
+<div class="f">
+<div class="s"> - Profiles are public, set privacy according to comfort level</div>
+<div class="t"> - Hồ sơ là công khai, hãy thiết lập quyền riêng tư theo mức độ thoải mái của bạn</div></div>
+<div class="f">
+<div class="s"> - Keep your profile professional and positive</div>
+<div class="t"> - Giữ hồ sơ của bạn chuyên nghiệp và tích cực</div></div>
+<div class="f">
+<div class="s"> - ATS (Applicant Tracking Systems) may scan your Linkedln presence</div>
+<div class="t"> - Hệ thống theo dõi ứng viên (ATS) có thể quét hồ sơ LinkedLn của bạn</div></div>
+<div class="f">
+<div class="s"> EFFECTIVE COLD CALLING EMAILING STRATEGIES</div>
+<div class="t"> CÁC CHIẾN LƯỢC GỌI ĐIỆN THOẠI LẠNH VÀ GỬI EMAIL HIỆU QUẢ</div></div>
+<div class="f">
+<div class="s"> - Focus on internships, co-ops, and part-time opportunities</div>
+<div class="t"> - Tập trung vào các cơ hội thực tập, hợp tác và việc làm bán thời gian</div></div>
+<div class="f">
+<div class="s"> - Emphasize transferable skill gained in college programs</div>
+<div class="t"> - Nhấn mạnh các kỹ năng có thể chuyển đổi được tích lũy trong các chương trình đại học</div></div>
+<div class="f">
+<div class="s"> - Highlight projects, certifications, and volunteering </div>
+<div class="t"> - Nêu bật các dự án, chứng chỉ và hoạt động tình nguyện</div></div>
+<div class="f">
+<div class="s"> - Seek guidance from career Centre for photos, profile review, and networking</div>
+<div class="t"> - Tìm kiếm sự hướng dẫn từ Trung tâm Hướng nghiệp về ảnh, xem xét hồ sơ và kết nối mạng lưới</div></div><script>
+      let translateLang = "en-US"
+      const source = document.querySelectorAll(".s")
+      const translate = document.querySelectorAll(".t")
+      let cnt = 0
+      function speakMinutes_source() {
+         isPause = false;
+         let sourceArr = []
+      	 source.forEach(e => sourceArr.push(e.textContent))
+	 if (sourceArr.length > 0) {
+            let txt = sourceArr[cnt]
+            let utterance = new SpeechSynthesisUtterance(txt);
+            utterance.onstart = () => {
+               source[cnt].style.backgroundColor = "yellow"
+            }
+            // When the current utterance ends, speak the next one
+            utterance.onend = function (event) {
+               source[cnt].style.backgroundColor = "white"
+               cnt++
+               console.log("Speech ended, starting next minute.");
+               isPause ? "" : speakMinutes_source(); // Recursively call the function fo the next item
+            };
+            // Handle potential errors
+            utterance.onerror = function (event) {
+               console.error("Speech synthesis error: " + event.error);
+            };
+            utterance.lang = "en-US"
+            speechSynthesis.speak(utterance);
+         }
+      }
+function speakMinutes_translate() {
+         isPause = false;
+         let translateReadArr = []
+      	 translate.forEach(e => translateReadArr.push(e.textContent))
+	 if (translateReadArr.length > 0) {
+            let txt = translateReadArr[cnt]
+            let utterance = new SpeechSynthesisUtterance(txt);
+            utterance.onstart = () => {
+               translate[cnt].style.backgroundColor = "yellow"
+            }
+            // When the current utterance ends, speak the next one
+            utterance.onend = function (event) {
+               translate[cnt].style.backgroundColor = "white"
+               cnt++
+               console.log("Speech ended, starting next minute.");
+               isPause ? "" : speakMinutes_translate(); // Recursively call the function fo the next item
+            };
+            // Handle potential errors
+            utterance.onerror = function (event) {
+               console.error("Speech synthesis error: " + event.error);
+            };
+
+            utterance.lang = "vi-VN"
+            speechSynthesis.speak(utterance);
+         }
+      }
+
+      const speakBtn = document.querySelector("#speak");
+	const pauseBtn = document.querySelector("#pause");
+      
+      const docBtn = document.querySelector("#doc");
+      const stopBtn = document.querySelector("#stop");
+      let isPause = false
+      speakBtn.addEventListener("click", speakMinutes_source);
+      docBtn.addEventListener("click", speakMinutes_translate);
+      
+
+   </script>
+</body>
+</html>

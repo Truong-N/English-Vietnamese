@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>profSkill 15</title>
+   <style>
+      .f {
+         display: flex;
+         padding: 5px;
+         gap: 15px;
+      }
+      .t,
+      .s {
+         width: 45%;
+      }
+      .floating {
+position: fixed; /* Keeps it fixed to the viewport */
+top: 0px; /* Distance from the top of the viewport */
+right: 0px; /* Distance from the right of the viewport */
+z-index: 1000; /* Ensures it stays above other elements */
+background-color: black;
+color: white;}
+.floating a { color: white;}
+   </style>
+</head>
+
+<body>
+<div class="floating">
+<button id="speak">Speak</button>
+<button id="doc">Doc</button>
+<button id="pause">Pause</button>
+<a href="./profSkill14.html">Prev</a>
+<a href="./profSkill16.html">Next</a>
+</div>
+<div class="f">
+<div class="s"> PERSONAL & INFORMATIONAL RESOURCES</div>
+<div class="t"> NGUỒN LỰC CÁ NHÂN & THÔNG TIN</div></div>
+<div class="f">
+<div class="s"> - Personal Network</div>
+<div class="t"> - Mạng lưới cá nhân:</div></div>
+<div class="f">
+<div class="s"> - Your existing network of friends, family, neighbors, and former colleagues are valuable resources for expanding your connections.</div>
+<div class="t"> - Mạng lưới bạn bè, gia đình, hàng xóm và đồng nghiệp cũ hiện có của bạn là những nguồn lực quý giá để mở rộng các mối quan hệ.</div></div>
+<div class="f">
+<div class="s"> - Educational Contacts:</div>
+<div class="t"> - Liên hệ học thuật:</div></div>
+<div class="f">
+<div class="s"> - Professors, teachers, and academic advisors can be great sources of contacts and can offer opportunities for informational interviews.</div>
+<div class="t"> - Giáo sư, giáo viên và cố vấn học thuật có thể là những nguồn liên hệ tuyệt vời và có thể mang đến cơ hội phỏng vấn tìm hiểu thông tin.</div></div>
+<div class="f">
+<div class="s"> PERSONAL & INFORMATIONAL RESOURCES</div>
+<div class="t"> NGUỒN LỰC CÁ NHÂN & THÔNG TIN</div></div>
+<div class="f">
+<div class="s"> - Informational Interviews:</div>
+<div class="t"> - Phỏng vấn tìm hiểu thông tin:</div></div>
+<div class="f">
+<div class="s"> - Reach out to people in roles or companies that interest you for short informational interviews to learn about their career paths and get advice.</div>
+<div class="t"> - Liên hệ với những người giữ các vị trí hoặc làm việc tại các công ty mà bạn quan tâm để thực hiện các cuộc phỏng vấn ngắn tìm hiểu thông tin, tìm hiểu về con đường sự nghiệp của họ và nhận lời khuyên.</div></div>
+<div class="f">
+<div class="s"> - Volunteering:</div>
+<div class="t"> - Tình nguyện:</div></div>
+<div class="f">
+<div class="s"> - Offer your time to organizations whose values or interests align with yours, creating opportunities to build new relationships.</div>
+<div class="t"> - Dành thời gian của bạn cho các tổ chức có giá trị hoặc sở thích phù hợp với bạn, tạo cơ hội xây dựng các mối quan hệ mới.</div></div>
+<div class="f">
+<div class="s"> IN-PERSON & COMMUNITY RESOURCES</div>
+<div class="t"> NGUỒN LỰC TRỰC TIẾP & CỘNG ĐỒNG</div></div>
+<div class="f">
+<div class="s"> - Professional Association Websites:</div>
+<div class="t"> - Trang web của các Hiệp hội Chuyên môn:</div></div>
+<div class="f">
+<div class="s"> -- Join groups relevant to your industry or interests to attend regular meetings and connect with peers.</div>
+<div class="t"> -- Tham gia các nhóm liên quan đến ngành nghề hoặc sở thích của bạn để tham dự các cuộc họp thường xuyên và kết nối với đồng nghiệp.</div></div>
+<div class="f">
+<div class="s"> - Community Organizations:</div>
+<div class="t"> - Tổ chức Cộng đồng:</div></div>
+<div class="f">
+<div class="s"> -- Engaging with community groups, social clubs, and volunteer opportunities can introduce you to new people and potential contacts.</div>
+<div class="t"> -- Tham gia các nhóm cộng đồng, câu lạc bộ xã hội và các cơ hội tình nguyện có thể giúp bạn làm quen với những người mới và các mối liên hệ tiềm năng.</div></div>
+<div class="f">
+<div class="s"> - Industry-Specific Events:</div>
+<div class="t"> - Sự kiện chuyên ngành:</div></div>
+<div class="f">
+<div class="s"> -- Attend job fairs and other events organized by your field to network directly with employers and industry professionals.</div>
+<div class="t"> -- Tham dự các hội chợ việc làm và các sự kiện khác do lĩnh vực của bạn tổ chức để kết nối trực tiếp với nhà tuyển dụng và các chuyên gia trong ngành.</div></div>
+<div class="f">
+<div class="s"> ATTEND CONFERENCES</div>
+<div class="t"> THAM DỰ HỘI NGHỊ</div></div>
+<div class="f">
+<div class="s"> - For people new to networking</div>
+<div class="t"> - Dành cho những người mới bắt đầu kết nối mạng lưới</div></div>
+<div class="f">
+<div class="s"> - Held world wide (and online too)</div>
+<div class="t"> - Được tổ chức trên toàn thế giới (và cả trực tuyến)</div></div>
+<div class="f">
+<div class="s"> ONLINE & DIGITAL RESOURCES</div>
+<div class="t"> TÀI NGUYÊN TRỰC TUYẾN & KỸ THUẬT SỐ</div></div>
+<div class="f">
+<div class="s"> - Linkedln: A primary platform for professional networking, connecting with individuals and associations, and staying updated on industry trends.</div>
+<div class="t"> - LinkedIn: Nền tảng chính để kết nối mạng lưới chuyên nghiệp, kết nối với các cá nhân và hiệp hội, và cập nhật các xu hướng trong ngành.</div></div>
+<div class="f">
+<div class="s"> - Eventbrite & Meetup: Website and App that help you discover and sign up for local and online events, including workshops, conferences, and social gatherings, to meet people in your field.</div>
+<div class="t"> - Eventbrite & Meetup: Trang web và ứng dụng giúp bạn khám phá và đăng ký các sự kiện địa phương và trực tuyến, bao gồm hội thảo, hội nghị và các buổi gặp gỡ xã hội, để gặp gỡ những người trong lĩnh vực của bạn.</div></div>
+<div class="f">
+<div class="s"> VOLUNTEER:</div>
+<div class="t"> TÌNH NGUYỆN:</div></div>
+<div class="f">
+<div class="s"> - Websites:</div>
+<div class="t"> - Trang web:</div></div>
+<div class="f">
+<div class="s"> SUMMARY </div>
+<div class="t"> TÓM TẮT</div></div>
+<div class="f">
+<div class="s"> - Attend events -> meet people.</div>
+<div class="t"> - Tham dự các sự kiện -> gặp gỡ mọi người.</div></div>
+<div class="f">
+<div class="s"> - Start with peers, then people slightly ahead of you.</div>
+<div class="t"> - Bắt đầu với những người cùng ngành, sau đó là những người có kinh nghiệm hơn bạn một chút.</div></div>
+<div class="f">
+<div class="s"> - Personal & Informational Resources</div>
+<div class="t"> - Tài nguyên cá nhân & thông tin</div></div>
+<div class="f">
+<div class="s"> - Community Resources & Volunteering</div>
+<div class="t"> - Tài nguyên cộng đồng & Tình nguyện</div></div>
+<div class="f">
+<div class="s"> - Help other (even in small ways)</div>
+<div class="t"> - Giúp đỡ người khác (dù chỉ là những việc nhỏ)</div></div>
+<div class="f">
+<div class="s"> - Digital Resources</div>
+<div class="t"> - Tài nguyên kỹ thuật số</div></div>
+<div class="f">
+<div class="s"> - Stay active online too.</div>
+<div class="t"> - Luôn hoạt động trực tuyến.</div></div>
+<div class="f">
+<div class="s"> VOLUNTEERING</div>
+<div class="t"> TÌNH NGUYỆN</div></div>
+<div class="f">
+<div class="s"> WHY VOLUNTEER?</div>
+<div class="t"> TẠI SAO NÊN TÌNH NGUYỆN? </div></div>
+<div class="f">
+<div class="s"> - Career Exploration:</div>
+<div class="t"> - Khám phá nghề nghiệp:</div></div>
+<div class="f">
+<div class="s"> -- Test out a career area before committing </div>
+<div class="t"> -- Thử nghiệm một lĩnh vực nghề nghiệp trước khi cam kết</div></div>
+<div class="f">
+<div class="s"> -- (Volunteer in the industry, where you want to work)</div>
+<div class="t"> -- (Tình nguyện trong ngành mà bạn muốn làm việc)</div></div>
+<div class="f">
+<div class="s"> -- Learn required skills for success in the field</div>
+<div class="t"> -- Học các kỹ năng cần thiết để thành công trong lĩnh vực đó</div></div>
+<div class="f">
+<div class="s"> - Develop Skills and Gain Experience:</div>
+<div class="t"> -- Phát triển kỹ năng và tích lũy kinh nghiệm:</div></div>
+<div class="f">
+<div class="s"> -- Communication, problem-solving, teamwork, organization, tech skills</div>
+<div class="t"> -- Kỹ năng giao tiếp, giải quyết vấn đề, làm việc nhóm, tổ chức, kỹ năng công nghệ</div></div>
+<div class="f">
+<div class="s"> -- Many volunteer roles mirror paid work experiences.</div>
+<div class="t"> -- Nhiều vai trò tình nguyện tương tự như kinh nghiệm làm việc được trả lương.</div></div>
+<div class="f">
+<div class="s"> WHY VOLUNTEER?</div>
+<div class="t"> TẠI SAO NÊN TÌNH NGUYỆN?</div></div>
+<div class="f">
+<div class="s"> - Build Contacts:</div>
+<div class="t"> -- Xây dựng mối quan hệ:</div></div>
+<div class="f">
+<div class="s"> -- Networking is crucial; many jobs are never advertised</div>
+<div class="t"> -- Mạng lưới quan hệ rất quan trọng; nhiều công việc không bao giờ được quảng cáo</div></div>
+<div class="f">
+<div class="s"> -- Volunteering helps you connect with professionals in your field</div>
+<div class="t"> -- Tình nguyện giúp bạn kết nối với các chuyên gia trong lĩnh vực của mình</div></div>
+<div class="f">
+<div class="s"> - Support Your Community:</div>
+<div class="t"> - Hỗ trợ cộng đồng:</div></div>
+<div class="f">
+<div class="s"> -- Give back and gain personal satisfaction</div>
+<div class="t"> -- Cống hiến và nhận được sự hài lòng cá nhân</div></div>
+<div class="f">
+<div class="s"> -- Balance personal and professional growth</div>
+<div class="t"> -- Cân bằng sự phát triển cá nhân và nghề nghiệp</div></div>
+<div class="f">
+<div class="s"> WHERE?</div>
+<div class="t"> -- Ở ĐÂU?</div></div>
+<div class="f">
+<div class="s"> Major Organizations & Networks</div>
+<div class="t"> Các tổ chức và mạng lưới lớn</div></div>
+<div class="f">
+<div class="s"> - Volunteer Canada: Offers a national platform to connect volunteers with organizations.</div>
+<div class="t"> - Volunteer Canada: Cung cấp một nền tảng quốc gia để kết nối các tình nguyện viên với các tổ chức.</div></div>
+<div class="f">
+<div class="s"> - Ontario Volunteer Centre Network (OVCN): Provides resources and listings, often with local chapters like the Volunteer Centre of Toronto and Volunteer Resource Centre for Durham Region.</div>
+<div class="t"> - - Mạng lưới Trung tâm Tình nguyện Ontario (OVCN): Cung cấp các nguồn lực và danh sách, thường có các chi nhánh địa phương như Trung tâm Tình nguyện Toronto và Trung tâm Tài nguyên Tình nguyện cho Vùng Durham.</div></div>
+<div class="f">
+<div class="s"> - Canadian Red Cross: Has opportunities for a variety of roles including drivers, friendly callers, and mobile food assistants.</div>
+<div class="t"> - Hội Chữ thập đỏ Canada: Có cơ hội cho nhiều vai trò khác nhau bao gồm lái xe, người gọi điện thân thiện và trợ lý thực phẩm lưu động. </div></div>
+<div class="f">
+<div class="s"> - Habitat for Humanity: Connects volunteers with opportunities in housing construction and related initiatives.</div>
+<div class="t"> - Habitat for Humanity: Kết nối các tình nguyện viên với các cơ hội xây dựng nhà ở và các sáng kiến ​​liên quan.</div></div>
+<div class="f">
+<div class="s"> WHERE?</div>
+<div class="t"> Ở ĐÂU?</div></div>
+<div class="f">
+<div class="s"> Online platform:</div>
+<div class="t"> Nền tảng trực tuyến:</div></div>
+<div class="f">
+<div class="s"> - Indeed: A job board where you can filter for volunteer positions across Ontario.</div>
+<div class="t"> - Indeed: Một trang web tuyển dụng nơi bạn có thể lọc các vị trí tình nguyện trên khắp Ontario.</div></div>
+<div class="f">
+<div class="s"> - Volunteer Match: A global database to find and connect with nonprofit organizations.</div>
+<div class="t"> - Volunteer Match: Một cơ sở dữ liệu toàn cầu để tìm kiếm và kết nối với các tổ chức phi lợi nhuận.</div></div>
+<div class="f">
+<div class="s"> - Charity Village: A platform for finding volunteer roles in the nonprofit sector.</div>
+<div class="t"> - Charity Village: Một nền tảng để tìm kiếm các vai trò tình nguyện trong lĩnh vực phi lợi nhuận.</div></div>
+<div class="f">
+<div class="s"> WHERE?</div>
+<div class="t"> Ở ĐÂU?</div></div>
+<div class="f">
+<div class="s"> Local & City-Specific Options:</div>
+<div class="t"> Các lựa chọn địa phương và cụ thể theo thành phố:</div></div>
+<div class="f">
+<div class="s"> - Municipal Websites: Check your local city or town's website for their own volunteer programs and listings, such as the City of Brampton's or Town of Oakville's opportunities.</div>
+<div class="t"> - Trang web của chính quyền địa phương: Kiểm tra trang web của thành phố hoặc thị trấn địa phương của bạn để biết các chương trình và danh sách tình nguyện viên của họ, chẳng hạn như các cơ hội của Thành phố Brampton hoặc Thị trấn Oakville.</div></div>
+<div class="f">
+<div class="s"> - Regional Volunteer Centres: Search for local volunteer centres like Volunteer MBC (Mississauga-Brampton-Caledon) or Volunteer Waterloo Region</div>
+<div class="t"> - Trung tâm tình nguyện khu vực: Tìm kiếm các trung tâm tình nguyện địa phương như Volunteer MBC (Mississauga-Brampton-Caledon) hoặc Volunteer Waterloo Region</div></div>
+<div class="f">
+<div class="s"> WHERE?</div>
+<div class="t"> Ở ĐÂU?</div></div>
+<div class="f">
+<div class="s"> Types of Opportunities</div>
+<div class="t"> Các loại cơ hội</div></div>
+<div class="f">
+<div class="s"> - Community Support: Become a volunteer driver for Meals on Wheels, a friendly visitor, or a helpline caller.</div>
+<div class="t"> - Hỗ trợ cộng đồng: Trở thành tài xế tình nguyện cho chương trình Meals on Wheels, người thăm hỏi thân thiện hoặc người gọi điện đến đường dây trợ giúp.</div></div>
+<div class="f">
+<div class="s"> - Health & Seniors: Support patients in hospitals, long-term care homes, or adult day programs.</div>
+<div class="t"> - Y tế & Người cao tuổi: Hỗ trợ bệnh nhân trong bệnh viện, nhà dưỡng lão hoặc các chương trình ban ngày dành cho người lớn. </div></div>
+<div class="f">
+<div class="s"> - Environmental & Animal Welfare: Get involved with wildlife conservation, recycling, or assisting at animal shelters.</div>
+<div class="t"> - Bảo vệ Môi trường & Động vật: Tham gia bảo tồn động vật hoang dã, tái chế hoặc hỗ trợ tại các trại cứu hộ động vật.</div></div>
+<div class="f">
+<div class="s"> - Arts & Culture: Find roles in community centres, museums, or film festivals.</div>
+<div class="t"> - Nghệ thuật & Văn hóa: Tìm kiếm các vai trò tại các trung tâm cộng đồng, bảo tàng hoặc liên hoan phim.</div></div>
+<div class="f">
+<div class="s"> - Youth & Mentoring: Help mentor young people through organizations like Big Brothers Big Sisters.</div>
+<div class="t"> - Thanh thiếu niên & Hướng dẫn: Giúp đỡ hướng dẫn những người trẻ tuổi thông qua các tổ chức như Big Brothers Big Sisters.</div></div>
+<div class="f">
+<div class="s"> Direct Contact: Approach organizations directly or create your own role</div>
+<div class="t"> Liên hệ trực tiếp: Liên hệ trực tiếp với các tổ chức hoặc tự tạo vai trò của riêng bạn</div></div>
+<div class="f">
+<div class="s"> TIPS FOR VOLUNTEERING SUCCESS</div>
+<div class="t"> MẸO ĐỂ THÀNH CÔNG TRONG HOẠT ĐỘNG TÌNH NGUYỆN</div></div>
+<div class="f">
+<div class="s"> - Be patient and persistent - finding the right opportunity takes time</div>
+<div class="t"> - Hãy kiên nhẫn và kiên trì - tìm được cơ hội phù hợp cần thời gian</div></div>
+<div class="f">
+<div class="s"> - Set clear, realistic goals for your volunteer experience</div>
+<div class="t"> - Đặt ra các mục tiêu rõ ràng, thực tế cho trải nghiệm tình nguyện của bạn</div></div>
+<div class="f">
+<div class="s"> - Do research and preparation — know what you want and need</div>
+<div class="t"> - Nghiên cứu và chuẩn bị — biết bạn muốn và cần gì</div></div>
+<div class="f">
+<div class="s"> - Treat volunteering like a real job — commit fully to your role</div>
+<div class="t"> - Coi hoạt động tình nguyện như một công việc thực sự — cam kết hết mình với vai trò của bạn</div></div>
+<div class="f">
+<div class="s"> - Reflect on your experiences — ensure it meets your career and skill goals</div>
+<div class="t"> - Suy ngẫm về kinh nghiệm của bạn — đảm bảo nó đáp ứng các mục tiêu nghề nghiệp và kỹ năng của bạn</div></div>
+<div class="f">
+<div class="s"> SUMMARY</div>
+<div class="t"> TÓM TẮT</div></div>
+<div class="f">
+<div class="s"> - Volunteering helps you:</div>
+<div class="t"> - Hoạt động tình nguyện giúp bạn:</div></div>
+<div class="f">
+<div class="s"> - Explore careers and discover your skills</div>
+<div class="t"> - Khám phá các nghề nghiệp và phát hiện ra kỹ năng của bạn</div></div>
+<div class="f">
+<div class="s"> - Gain practical experience and develop key competencies</div>
+<div class="t"> - Có được kinh nghiệm thực tế và phát triển các năng lực cốt lõi</div></div>
+<div class="f">
+<div class="s"> - Build professional contacts and networks</div>
+<div class="t"> - Xây dựng các mối quan hệ và mạng lưới chuyên nghiệp</div></div>
+<div class="f">
+<div class="s"> - Give back to your community</div>
+<div class="t"> - Đóng góp cho cộng đồng</div></div>
+<div class="f">
+<div class="s"> - Strengthen your resume and career readiness</div>
+<div class="t"> - Tăng cường sơ yếu lý lịch và sự sẵn sàng cho nghề nghiệp</div></div><script>
+      let translateLang = "en-US"
+      const source = document.querySelectorAll(".s")
+      const translate = document.querySelectorAll(".t")
+      let cnt = 0
+      function speakMinutes_source() {
+         isPause = false;
+         let sourceArr = []
+      	 source.forEach(e => sourceArr.push(e.textContent))
+	 if (sourceArr.length > 0) {
+            let txt = sourceArr[cnt]
+            let utterance = new SpeechSynthesisUtterance(txt);
+            utterance.onstart = () => {
+               source[cnt].style.backgroundColor = "yellow"
+            }
+            // When the current utterance ends, speak the next one
+            utterance.onend = function (event) {
+               source[cnt].style.backgroundColor = "white"
+               cnt++
+               console.log("Speech ended, starting next minute.");
+               isPause ? "" : speakMinutes_source(); // Recursively call the function fo the next item
+            };
+            // Handle potential errors
+            utterance.onerror = function (event) {
+               console.error("Speech synthesis error: " + event.error);
+            };
+            utterance.lang = "en-US"
+            speechSynthesis.speak(utterance);
+         }
+      }
+function speakMinutes_translate() {
+         isPause = false;
+         let translateReadArr = []
+      	 translate.forEach(e => translateReadArr.push(e.textContent))
+	 if (translateReadArr.length > 0) {
+            let txt = translateReadArr[cnt]
+            let utterance = new SpeechSynthesisUtterance(txt);
+            utterance.onstart = () => {
+               translate[cnt].style.backgroundColor = "yellow"
+            }
+            // When the current utterance ends, speak the next one
+            utterance.onend = function (event) {
+               translate[cnt].style.backgroundColor = "white"
+               cnt++
+               console.log("Speech ended, starting next minute.");
+               isPause ? "" : speakMinutes_translate(); // Recursively call the function fo the next item
+            };
+            // Handle potential errors
+            utterance.onerror = function (event) {
+               console.error("Speech synthesis error: " + event.error);
+            };
+
+            utterance.lang = "vi-VN"
+            speechSynthesis.speak(utterance);
+         }
+      }
+
+      const speakBtn = document.querySelector("#speak");
+	const pauseBtn = document.querySelector("#pause");
+      
+      const docBtn = document.querySelector("#doc");
+      const stopBtn = document.querySelector("#stop");
+      let isPause = false
+      speakBtn.addEventListener("click", speakMinutes_source);
+      docBtn.addEventListener("click", speakMinutes_translate);
+      
+
+   </script>
+</body>
+</html>
