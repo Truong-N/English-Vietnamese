@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>studentsSucc 2</title>
+   <style>
+      .f {
+         display: flex;
+         padding: 5px;
+         gap: 15px;
+      }
+
+      .t,
+      .s {
+         width: 45%;
+      }
+
+      .floating {
+         position: fixed;
+         /* Keeps it fixed to the viewport */
+         top: 0px;
+         /* Distance from the top of the viewport */
+         right: 0px;
+         /* Distance from the right of the viewport */
+         z-index: 1000;
+         /* Ensures it stays above other elements */
+         background-color: black;
+         color: white;
+      }
+
+      .floating a {
+         color: white;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="floating">
+      <button id="speak">Speak</button>
+      <button id="doc">Doc</button>
+      <button id="pause">Pause</button>
+      <a href="./studentsSucc1.html">Prev</a>
+      <a href="./studentsSucc3.html">Next</a>
+   </div>
+   <div id="c"></div>
+   <script>
+      let sourceTxt = `PHASE ONE
+Before you Read
+- Step 1: Preview
+- Step 2: Outline
+- Step 3: Question
+PHASE TWO
+While you Read
+- Step 4: Focus
+- Step 5: Flag Answers
+WHEN READING IS TOUGH
+- Read it again
+- Look for essential words
+- Hold a mini-review
+- Read it out loud.
+- Talk to someone
+- Stand up
+- Skip around
+- Find a tutor
+- Use another text
+- Note where you get stuck
+- Stop reading
+GETTING PAST ROADBLOCKS AND TO READING
+- Scheduling time for reading
+- Making choices about what to read
+- Dealing with interruptions
+READING FASTER
+- Get your body ready
+- Set a time limit
+- Relax
+- Move your eye faster
+- Notice and release ineffective habits
+- Skim
+- Stay flexible
+- Explore more resources
+DEVELOPING INFORMATION LITERACY
+- Discover your purpose
+- Consider primary & secondary sources
+- Get to know your library
+- Search for information with key words
+- Turn to people as sources of information
+- Evaluate information
+- Use information
+- Muscle reading for eBooks
+MASTERING ENGLISH LANGUAGE
+- Watch movies in English
+- Immerse yourself in English language news
+- Start a vocabulary book of useful words.
+- Have conversations in English
+- Practice, practice, practice
+- Curiosity doesn't always kill the cat
+- Don't forget to have fun while you learn
+FIVE WAYS TO READ WITH CHILDREN UNDERFOOT
+- attend to your children first
+- Use Pockets of time.
+- Plan special activities with your child while you are studying
+- Find community activities and services
+- When you can't read anything, just read something
+NOTES
+Why?
+- To help you remember information and do better on tests.
+What?
+- Power Process: I Create it All
+- The note-taking process flows
+- Observe
+- Record
+- Review
+- Turn PowerPoints into powerful notes
+- When your instructor talks quickly
+- Taking notes while reading
+- Concept maps
+- Effective notes for online coursework
+How?
+- to experiment with several formats for note taking
+- to create a note-taking format that works for you
+- to take effective notes in special situations.
+What if?
+- you could take notes that remain informative and useful for weeks, months, or years?
+I CREATE IT ALL
+- a victim of circumstances is controlled by outside forces.
+- In contrast, we can take responsibility.
+- "Response-ability": the ability to choose a response to any event
+- The next time you get a good grade, or a poor grade, on an assignment, test, or quiz... ask yourself, "What did I do to create this?"
+- Write a list of answers to this question.
+- Keep it to change behaviors that don't work, and to keep behaviors that do!
+OBSERVE
+Set the Stage
+- Complete outside assignments
+- Bring the right materials
+- Sit front and center
+- Conduct a preclass review
+- Clarify your intention
+Be Here Now
+- Accept wandering mind
+- Notice your writing
+- Be with the instructor
+- Notice your environment
+- Postpone debate
+- Let go of judgments
+- Participate
+- Relate class to your goals
+- Think critically
+Watch for Clues
+- Be alert to repetition
+- Listen for introductory, concluding, and transition words
+- Watch the board or PowerPoint
+- Watch instructor's eyes
+- Highlight obvious clues
+- Notice instructor's interest level
+RECORD
+- Key words
+- Pictures and diagrams
+- Paragraphs
+- Copy from board or PowerPoint
+- Three-ring binder
+- One side of paper only
+- 3x5 cards
+- "I'm lost" signal
+- Label, number and date notes
+- Standard abbreviations
+- Blank space
+- Different colored pens
+- Graphic signals
+- Recording devices
+REVIEW
+- Review within 24 hours
+- Edit notes
+- Cornell key words
+- Recite with key words
+- Short, weekly reviews
+- Consider typing notes
+- Create summaries
+- Evaluate
+TAKING NOTES WHILE READING
+STRATEGIES
+Review Notes
+- Condense into key quotes
+- Condense by paraphrasing
+- Table of Contents
+Research Notes
+- Use index cards
+- Use a computer
+- Include your sources	
+TAKING NOTES FOR ONLINE COURSEWORK
+- Contact students
+- Get feedback
+- Focus
+- Use specialized help tools
+- Manage time and tasks carefully
+- Ask for help
+- Take responsibility
+- Folders and files
+- Take notes
+- Get Active
+- Contingency Plan
+- Trial Run
+WAYS TO IMPOE HANDWRITING
+- Use a nice pen
+- Maintain a nice grip
+- Improve your handwriting with drills
+- Experiment with  paper rotations
+- Practice with a worksheet.
+- Use a template
+- Embrace your personal style
+TEST
+Why?
+- To change how you feel about and perform on tests
+What?
+- Power Process: Detach
+- Disarm Tests
+- Before the Test
+- Predicting Test Questions
+- Cooperative Learning
+- During the Test
+- The Test isn't Over Until
+- The High Costs of Cheating
+- Let Go of Test Anxiety
+- Getting Ready for Math Tests
+- Studying Across the Curriculum
+- Celebrate Mistakes
+How?
+- to predict test questions and use study time more effectively
+- to harness the power of studying with other people
+- to gain strategies for raising scores on tests
+- to separate your self-image from your test scores
+What if
+- you could let go of anxiety about tests-- or anything else?
+DETACH
+- release the powerful, natural learner inside you
+- Attachments are additions
+- When you notice strong motion... it may be time to detach
+- How?
+ 1. Notice your thoughts and physical sensations.
+ 2. Practice relaxation.
+ 3. Practice seeing events in a broader perspective.
+-  CAUSTION: Giving up an attachment doesn't mean giving up on the goal.
+BEFORE THE TEST
+- Familiarize yourself with the test's structure.
+- Don't cram
+- Bring a timer
+- Arrive early
+- Look a test over from top to bottom
+- Read questions carefully
+- Look for key words in essay questions
+- Trust your instincts
+- Manage your time
+- Keep calm
+- Answer all the questions
+PREDICT TEST QUESTIONS
+- Ask about the test
+- Put yourself in instructor's shoes
+- Look for clues in notes and readings
+- Look for clues in class
+- Save all class materials
+- Apply your predictions
+- Watch for "This will be on the test."
+COOPERATIVE LEARNING: STUDYING IN GROUPS
+FORM
+- Choose a focus
+- Look for dedicated students
+- Hold a planning session
+- Do a trial one
+CONDUCT
+- Ask instructor for guidelines
+- Set an agenda for each meeting
+- Assign roles
+- Cycle through learning styles
+- Teach each other
+- Test one another
+- Compare notes
+- Create large mind maps or concept maps
+- Monitor effectiveness
+- Use technology to collaborate
+THE HIGH COSTS OF CHEATING
+- Learn less
+- Risk of failing/getting expelled
+- Lose time and money
+- Fear of getting caught promotes stress
+- Violating values promotes stress
+- Easier to violate integrity again
+- Lowers self concept
+LETTING GO OF TEST ANXIETY
+- Yell "Stop!"
+- Describe thoughts in writing
+- Dispute your thoughts
+- Praise yourself
+- Consider the worst
+- Breathe
+GETTING READY FOR MATH TESTS
+OVERCOME ANXIETY
+- Connect math to life
+- Take a first step
+- Notice your pictures
+- Change your conversation
+- Choose your response to stress
+BOOST STUDY SKILLS
+- Take notes that promote math success
+- Choose teachers with care
+- Take math back to back
+- Participate in class
+- Avoid short courses
+- Form a study group
+- Ask questions fearlessly
+- Make test a top priority
+- Read actively
+- Do homework consistently
+SHOW WHAT YOU KNOW
+- Practice problem solving
+- Practice test taking
+- Ask appropriate questions
+- Write legibly
+- Do your best
+CELEBRATE MISTAKES
+- Valuable feedback
+- Demonstrates that we are taking risks
+- Gets them out in the open
+- Happens only when we're committed to make things work
+THINKING
+WHY?
+- The ability to think creatively and critically helps you succeed in any course
+HOW?
+- To read, write, speak, and listen more effectively
+- to learn strategies to enhance problem solving
+- to apply thinking to practical decisions
+WHAT IF?
+- you could solve problems more creatively and make decisions with more confidence?
+FIND A BIGGER PROBLEM
+- Problems have a purpose
+-- They provide opportunities to participate in life.
+-- They stimulate and pull us forward.
+- Goal: Find problems that are worthy of us.
+- Problems that challenge us to 
+-- Think
+-- Define our goals
+-- Consider our values
+BECOMING A CRITICAL THINKER
+Level 6 Creating
+Level 5 Evaluating
+Level 4 Analyzing
+Level 3 Applying
+Level 2 Understanding
+Level 1 Remembering
+Gaining Critical 
+- Find various points of view
+- Look for assertions
+- Look for at least 3 viewpoints
+- Practice tolerance
+- Look for logical-evidence
+- Consider the source
+- Watch for hot spots
+- Be willing to be uncertain
+- Write about it
+- Notice your changing perspectives
+CRITICAL THINKING ' A SURVIVAL SKILL'
+- Helps to improve decision making
+- Enhance problem-solving ability
+- Refine your research skills
+- Polishes your creativity
+- Stimulates curiosity
+WAYS TO CREATE IDEAS
+- Gather raw materials (specific and general)
+- Brainstorm
+- Incubation
+- Idea creation "The Eureka moment"
+- Final shaping and development
+15 COMMON MISTAKES IN LOGIC
+- Jumping to conclusions
+- Begging the question 
+- Thinking in all-or-nothing terms
+- Sliding a slipper slope
+- Appealing to authority
+- Creating a straw man
+- Distraction from the real issue
+- Basing arguments on emotion
+- Appealing to tradition 
+- Confusing fact and opinion
+- Attacking the person
+- Creating a red herring
+- Pointing to a false cause
+- Using a faulty analogy
+- Appealing to 'the people'
+THINK CRITICALLY ABOUT INFORMATION ON THE INTERNET
+- Distinguish between ideas and information
+- Look for overall quality
+- Look at the source
+- Look for documentation
+- Set an example
+GAINING SKILLS TO DECISION MAKING
+10 Best practices
+- Understanding your goals
+- Evaluating the impact of your decisions
+- Eliminating the downsides
+- Comparing timeframes
+- Keeping an open mind
+- Using data to evaluate opinions
+- Making a decision
+- using decision trees
+- Leveraging Strengths, Weakness, Opportunities, and Threats (SWOT) analysis
+- Using cost-benefit analysis`
+      let translateTxt = `GIAI ĐOẠN MỘT
+Trước khi đọc
+- Bước 1: Xem trước
+- Bước 2: Lập dàn ý
+- Bước 3: Đặt câu hỏi
+GIAI ĐOẠN HAI
+Trong khi đọc
+- Bước 4: Tập trung
+- Bước 5: Đánh dấu câu trả lời
+KHI VIỆC ĐỌC GẶP KHÓ KHĂN
+- Đọc lại
+- Tìm từ khóa quan trọng
+- Ôn tập ngắn gọn
+- Đọc to. 
+- Trò chuyện với ai đó
+- Đứng dậy
+- Nhảy nhót xung quanh
+- Tìm gia sư
+- Sử dụng tài liệu khác
+- Ghi chú lại những chỗ bạn bị mắc kẹt
+- Dừng đọc
+VƯỢT QUA RÀO CẢN VÀ ĐỌC
+- Lên lịch thời gian đọc
+- Lựa chọn những gì bạn muốn đọc
+- Xử lý sự gián đoạn
+ĐỌC NHANH HƠN
+- Chuẩn bị thể chất
+- Đặt giới hạn thời gian
+- Thư giãn
+- Di chuyển mắt nhanh hơn
+- Nhận biết và loại bỏ những thói quen không hiệu quả
+- Đọc lướt
+- Luôn linh hoạt
+- Khám phá thêm nhiều nguồn tài liệu
+PHÁT TRIỂN KỸ NĂNG THÔNG TIN
+- Khám phá mục đích của bạn
+- Xem xét các nguồn sơ cấp và thứ cấp
+- Làm quen với thư viện của bạn
+- Tìm kiếm thông tin bằng từ khóa
+- Tìm đến mọi người như nguồn thông tin
+- Đánh giá thông tin
+- Sử dụng thông tin
+- Đọc thuộc lòng đối với sách điện tử
+LÀM CHỦ TIẾNG ANH
+- Xem phim bằng tiếng Anh
+- Đắm mình trong tin tức tiếng Anh
+- Bắt đầu một cuốn sách từ vựng về những từ hữu ích. 
+- Trò chuyện bằng tiếng Anh
+- Luyện tập, luyện tập, luyện tập
+- Sự tò mò không phải lúc nào cũng giết chết con mèo
+- Đừng quên vui chơi trong khi học
+NĂM CÁCH ĐỌC SÁCH KHI CÓ TRẺ EM BÊN CẠNH
+- Ưu tiên chăm sóc con cái trước
+- Tận dụng những khoảng thời gian rảnh.
+- Lên kế hoạch các hoạt động đặc biệt với con bạn trong khi bạn đang học
+- Tìm kiếm các hoạt động và dịch vụ cộng đồng
+- Khi bạn không thể đọc gì, cứ đọc một cái gì đó
+GHI CHÚ
+Tại sao?
+- Để giúp bạn ghi nhớ thông tin và làm bài kiểm tra tốt hơn.
+Cái gì?
+- Quy trình hiệu quả: Tôi tự tạo ra tất cả
+- Quy trình ghi chú diễn ra trôi chảy
+- Quan sát
+- Ghi chép
+- Ôn tập
+- Biến PowerPoint thành ghi chú hiệu quả
+- Khi giảng viên nói nhanh
+- Ghi chú trong khi đọc
+- Sơ đồ khái niệm
+- Ghi chú hiệu quả cho khóa học trực tuyến
+Làm thế nào?
+- Thử nghiệm với nhiều định dạng ghi chú khác nhau
+- Tạo định dạng ghi chú phù hợp với bạn
+- Ghi chú hiệu quả trong những tình huống đặc biệt.
+Điều gì sẽ xảy ra nếu? 
+- Bạn có thể ghi chép những thông tin hữu ích và có giá trị trong nhiều tuần, nhiều tháng, thậm chí nhiều năm không?
+TÔI TẠO RA TẤT CẢ
+- Nạn nhân của hoàn cảnh bị kiểm soát bởi các thế lực bên ngoài.
+- Ngược lại, chúng ta có thể chịu trách nhiệm.
+- "Khả năng phản ứng": khả năng lựa chọn phản ứng trước bất kỳ sự kiện nào
+- Lần tới khi bạn nhận được điểm tốt hoặc điểm kém trong bài tập, bài kiểm tra hoặc bài trắc nghiệm... hãy tự hỏi bản thân, "Tôi đã làm gì để tạo ra điều này?"
+- Hãy viết ra một danh sách các câu trả lời cho câu hỏi này.
+- Hãy giữ lại danh sách đó để thay đổi những hành vi không hiệu quả và duy trì những hành vi hiệu quả!
+QUAN SÁT
+Chuẩn bị bài học
+- Hoàn thành bài tập về nhà
+- Mang theo đầy đủ tài liệu
+- Ngồi ở vị trí trung tâm
+- Ôn tập trước giờ học
+- Xác định rõ mục tiêu
+- Tập trung vào hiện tại
+- Chấp nhận tâm trí xao nhãng
+- Chú ý đến bài viết của bạn
+- Tập trung vào giảng viên
+- Chú ý đến môi trường xung quanh
+- Hoãn tranh luận
+- Bỏ qua phán xét
+- Tham gia
+- Liên hệ bài học với mục tiêu của bạn
+- Suy nghĩ phản biện
+- Chú ý các manh mối
+- Cẩn thận với sự lặp lại
+- Lắng nghe các từ mở đầu, kết luận và chuyển tiếp
+- Quan sát bảng hoặc bài thuyết trình PowerPoint
+- Quan sát ánh mắt của giảng viên
+- Gạch chân những manh mối rõ ràng
+- Chú ý mức độ quan tâm của giảng viên
+- GHI CHÉP
+- Từ khóa
+- Hình ảnh và sơ đồ
+- Đoạn văn
+- Chép từ bảng hoặc bài thuyết trình PowerPoint
+- Bìa kẹp 3 vòng
+- Chỉ in một mặt giấy
+- Thẻ 3x5
+- Tín hiệu "Tôi không hiểu"
+- Ghi nhãn, đánh số và ghi ngày tháng cho ghi chú
+- Viết tắt thông dụng
+- Khoảng trống
+- Bút màu khác nhau
+- Tín hiệu đồ họa
+- Thiết bị ghi âm
+- ÔN TẬP
+- Ôn tập trong vòng 24 giờ
+- Chỉnh sửa Ghi chú
+- Từ khóa Cornell
+- Đọc lại với từ khóa
+- Ôn tập ngắn gọn hàng tuần
+- Cân nhắc việc đánh máy ghi chú
+- Tạo bản tóm tắt
+- Đánh giá
+CÁCH GHI CHÚ KHI ĐỌC
+CHIẾN LƯỢC
+Ôn tập ghi chú
+- Tóm tắt thành các trích dẫn chính
+- Tóm tắt bằng cách diễn đạt lại
+- Mục lục
+Ghi chú nghiên cứu
+- Sử dụng thẻ ghi chú
+- Sử dụng máy tính
+- Bao gồm nguồn tham khảo
+GHI CHÚ CHO KHÓA HỌC TRỰC TUYẾN
+- Liên hệ với sinh viên
+- Nhận phản hồi
+- Tập trung
+- Sử dụng các công cụ hỗ trợ chuyên dụng
+- Quản lý thời gian và nhiệm vụ cẩn thận
+- Yêu cầu giúp đỡ
+- Chịu trách nhiệm
+- Thư mục và tập tin
+- Ghi chú
+- Vận động tích cực
+- Kế hoạch dự phòng
+- Chạy thử
+CÁCH CẢI THIỆN CHỮ VIẾT TAY
+- Sử dụng bút tốt
+- Giữ tư thế cầm bút tốt
+- Cải thiện chữ viết tay bằng các bài tập
+- Thử nghiệm xoay giấy
+- Luyện tập với phiếu bài tập.
+- Sử dụng mẫu
+- Chấp nhận phong cách cá nhân của bạn
+KIỂM TRA
+Tại sao? 
+- Để thay đổi cảm nhận và kết quả làm bài kiểm tra của bạn
+Cái gì?
+- Quy trình hiệu quả: Tách rời
+- Vô hiệu hóa bài kiểm tra
+- Trước khi làm bài kiểm tra
+- Dự đoán câu hỏi
+- Học tập hợp tác
+- Trong khi làm bài kiểm tra
+- Bài kiểm tra chưa kết thúc cho đến khi
+- Hậu quả nặng nề của việc gian lận
+- Buông bỏ nỗi lo lắng khi làm bài kiểm tra
+- Chuẩn bị cho bài kiểm tra toán
+- Học tập liên môn
+- Chấp nhận sai lầm
+Làm thế nào?
+- để dự đoán câu hỏi và sử dụng thời gian học tập hiệu quả hơn
+- để khai thác sức mạnh của việc học tập cùng người khác
+- để có được các chiến lược nâng cao điểm số trong bài kiểm tra
+- để tách biệt hình ảnh bản thân khỏi điểm số bài kiểm tra
+Điều gì sẽ xảy ra nếu
+- bạn có thể buông bỏ nỗi lo lắng về bài kiểm tra - hoặc bất cứ điều gì khác?
+TÁCH RỜI
+- giải phóng người học mạnh mẽ, tự nhiên bên trong bạn
+- Sự ràng buộc chỉ là sự thêm thắt
+- Khi bạn nhận thấy sự chuyển động mạnh... có thể đã đến lúc buông bỏ
+- Làm thế nào?
+1. Chú ý đến suy nghĩ và cảm giác thể chất của bạn.
+2. Thực hành thư giãn.
+3. Thực hành nhìn nhận sự việc từ một góc nhìn rộng hơn.
+- LƯU Ý: Từ bỏ sự ràng buộc không có nghĩa là từ bỏ mục tiêu.
+TRƯỚC KHI THI
+- Làm quen với cấu trúc bài thi.
+- Đừng nhồi nhét
+- Mang theo đồng hồ bấm giờ
+- Đến sớm
+- Xem lại bài thi từ đầu đến cuối
+- Đọc kỹ câu hỏi
+- Tìm từ khóa trong các câu hỏi luận
+- Tin tưởng vào trực giác của bạn
+- Quản lý thời gian
+- Giữ bình tĩnh
+- Trả lời tất cả các câu hỏi
+DỰ ĐOÁN CÂU HỎI TRONG BÀI THI
+- Hỏi về bài thi
+- Đặt mình vào vị trí của giảng viên
+- Tìm manh mối trong ghi chú và tài liệu đọc
+- Tìm manh mối trong lớp học
+- Lưu giữ tất cả tài liệu học tập
+- Áp dụng dự đoán của bạn
+- Chú ý những câu hỏi có ghi "Điều này sẽ có trong bài thi." 
+HỌC TẬP HỢP TÁC: HỌC NHÓM
+HÌNH THỨC
+- Chọn chủ đề trọng tâm
+- Tìm kiếm những học sinh có động lực
+- Tổ chức buổi lập kế hoạch
+- Làm thử một buổi
+THỰC HIỆN
+- Hỏi giảng viên hướng dẫn
+- Lập chương trình nghị sự cho mỗi buổi họp
+- Phân công vai trò
+- Luân phiên các phong cách học tập
+- Dạy lẫn nhau
+- Kiểm tra lẫn nhau
+- So sánh ghi chú
+- Tạo sơ đồ tư duy hoặc sơ đồ khái niệm lớn
+- Theo dõi hiệu quả
+- Sử dụng công nghệ để cộng tác
+HẬU QUẢ CAO CỦA VIỆC GIAN LẬN
+- Học ít hơn
+- Nguy cơ trượt/bị đuổi học
+- Mất thời gian và tiền bạc
+- Nỗi sợ bị bắt quả tang làm tăng căng thẳng
+- Vi phạm các giá trị làm tăng căng thẳng
+- Dễ dàng vi phạm tính chính trực lần nữa
+- Hạ thấp lòng tự trọng
+VƯỢT QUA NỖI LO KHI THI
+- HÉT LÊN "Dừng lại!" 
+- Mô tả suy nghĩ bằng văn bản
+- Phản biện suy nghĩ của bạn
+- Tự khen ngợi bản thân
+- Xem xét điều tồi tệ nhất
+- Hít thở sâu
+CHUẨN BỊ CHO CÁC BÀI KIỂM TRA TOÁN
+VƯỢT QUA NỖI LO ÂU
+- Kết nối toán học với cuộc sống
+- Bước đầu tiên
+- Chú ý đến hình ảnh của bạn
+- Thay đổi cách trò chuyện
+- Chọn cách phản ứng với căng thẳng
+NÂNG CAO KỸ NĂNG HỌC TẬP
+- Ghi chép những điều giúp bạn học toán tốt
+- Chọn giáo viên cẩn thận
+- Học toán liên tục
+- Tham gia tích cực vào lớp học
+- Tránh các khóa học ngắn hạn
+- Lập nhóm học tập
+- Hỏi câu hỏi một cách không sợ hãi
+- Ưu tiên bài kiểm tra hàng đầu
+- Đọc tích cực
+- Làm bài tập về nhà đều đặn
+THỂ HIỆN KIẾN THỨC CỦA BẠN
+- Luyện tập giải toán
+- Luyện tập làm bài kiểm tra
+- Đặt câu hỏi phù hợp
+- Viết chữ rõ ràng
+- Cố gắng hết sức
+TÔN VINH NHỮNG SAI LẦM
+- Phản hồi có giá trị
+- Cho thấy chúng ta đang chấp nhận rủi ro
+- Đưa chúng ra ánh sáng
+- Chỉ xảy ra khi chúng ta cam kết làm cho mọi thứ hoạt động
+SUY NGHĨ
+TẠI SAO? 
+- Khả năng tư duy sáng tạo và phản biện giúp bạn thành công trong bất kỳ môn học nào.
+BẰNG CÁCH NÀO?
+- Để đọc, viết, nói và nghe hiệu quả hơn
+- để học các chiến lược nhằm nâng cao khả năng giải quyết vấn đề
+- để áp dụng tư duy vào các quyết định thực tế
+SẼ RA SAO NẾU?
+- bạn có thể giải quyết vấn đề một cách sáng tạo hơn và đưa ra quyết định tự tin hơn?
+TÌM MỘT VẤN ĐỀ LỚN HƠN
+- Vấn đề có mục đích
+- Chúng mang lại cơ hội để tham gia vào cuộc sống.
+- Chúng kích thích và thúc đẩy chúng ta tiến lên.
+- Mục tiêu: Tìm những vấn đề xứng đáng với chúng ta. 
+- Những vấn đề thách thức chúng ta
+-- Suy nghĩ
+-- Xác định mục tiêu
+-- Xem xét giá trị của chúng ta
+TRỞ THÀNH NGƯỜI TƯ DUY PHÊ PHÁN
+Cấp độ 6 Sáng tạo
+Cấp độ 5 Đánh giá
+Cấp độ 4 Phân tích
+Cấp độ 3 Áp dụng
+Cấp độ 2 Hiểu biết
+Cấp độ 1 Ghi nhớ
+Đạt được tư duy phê phán
+- Tìm kiếm nhiều quan điểm khác nhau
+- Tìm kiếm các khẳng định
+- Tìm kiếm ít nhất 3 quan điểm
+- Thực hành sự khoan dung
+- Tìm kiếm bằng chứng logic
+- Xem xét nguồn thông tin
+- Chú ý đến các điểm nóng
+- Sẵn sàng chấp nhận sự không chắc chắn
+- Viết về nó
+- Nhận thấy những thay đổi trong quan điểm của bạn
+TƯ DUY PHÊ PHÁN 'KỸ NĂNG SINH TỒN'
+- Giúp cải thiện việc ra quyết định
+- Nâng cao khả năng giải quyết vấn đề
+- Trau dồi kỹ năng nghiên cứu
+- Trau dồi khả năng sáng tạo
+- Kích thích sự tò mò
+CÁCH TẠO RA Ý TƯỞNG
+- Thu thập nguyên liệu thô (cụ thể và tổng quát)
+- Động não
+- Ươm mầm
+- Tạo ý tưởng "Khoảnh khắc Eureka"
+- Định hình và phát triển cuối cùng 
+NHỮNG SAI LẦM THƯỜNG GẶP TRONG LÝ LUẬN
+- Vội vàng kết luận
+- Lập luận vòng vo
+- Suy nghĩ theo kiểu tất cả hoặc không có gì
+- Lập luận trượt dốc
+- Dựa vào uy quyền
+- Tạo ra hình nộm
+- Lảng tránh vấn đề thực sự
+- Dựa vào cảm xúc để tranh luận
+- Dựa vào truyền thống
+- Nhầm lẫn giữa sự thật và ý kiến
+- Tấn công cá nhân
+- Tạo ra thông tin sai lệch
+- Chỉ ra nguyên nhân sai
+- Sử dụng phép so sánh sai lầm
+- Dựa vào 'số đông'
+SUY NGHĨ PHÊ PHÁN VỀ THÔNG TIN TRÊN INTERNET
+- Phân biệt giữa ý tưởng và thông tin
+- Tìm kiếm chất lượng tổng thể
+- Xem xét nguồn
+- Tìm kiếm tài liệu
+- Làm gương
+RÈN LUYỆN KỸ NĂNG RA QUYẾT ĐỊNH
+10 Thực tiễn tốt nhất
+- Hiểu rõ mục tiêu của bạn
+- Đánh giá tác động của các quyết định của bạn
+- Loại bỏ những mặt tiêu cực
+- So sánh khung thời gian
+- Giữ thái độ cởi mở
+- Sử dụng dữ liệu để đánh giá ý kiến
+- Ra quyết định
+- Sử dụng cây quyết định
+- Tận dụng điểm mạnh, Phân tích điểm yếu, cơ hội và thách thức (SWOT)
+- Sử dụng phân tích chi phí-lợi ích`
+      let sourceArr = sourceTxt.split('\n')
+      let translateArr = translateTxt.split('\n')
+      let str = ''
+      for (let i = 0; i < sourceArr.length; i++) {
+         str += '<div class="f"><div class="s">'
+         str += sourceArr[i]
+         str += '</div><div class="t">'
+         str += translateArr[i]
+         str += '</div></div>'
+      }
+      document.getElementById("c").innerHTML = str;
+      let translateLang = "en-US"
+      const source = document.querySelectorAll(".s")
+      const translate = document.querySelectorAll(".t")
+      let cnt = 0
+      function speakMinutes_source() {
+         isPause = false;
+         let sourceArr = []
+         source.forEach(e => sourceArr.push(e.textContent))
+         if (sourceArr.length > 0) {
+            let txt = sourceArr[cnt]
+            let utterance = new SpeechSynthesisUtterance(txt);
+            utterance.onstart = () => {
+               source[cnt].style.backgroundColor = "yellow"
+            }
+            // When the current utterance ends, speak the next one
+            utterance.onend = function (event) {
+               source[cnt].style.backgroundColor = "white"
+               cnt++
+               console.log("Speech ended, starting next minute.");
+               isPause ? "" : speakMinutes_source(); // Recursively call the function fo the next item
+            };
+            // Handle potential errors
+            utterance.onerror = function (event) {
+               console.error("Speech synthesis error: " + event.error);
+            };
+            utterance.lang = "en-US"
+            speechSynthesis.speak(utterance);
+         }
+      }
+      function speakMinutes_translate() {
+         isPause = false;
+         let translateReadArr = []
+         translate.forEach(e => translateReadArr.push(e.textContent))
+         if (translateReadArr.length > 0) {
+            let txt = translateReadArr[cnt]
+            let utterance = new SpeechSynthesisUtterance(txt);
+            utterance.onstart = () => {
+               translate[cnt].style.backgroundColor = "yellow"
+            }
+            // When the current utterance ends, speak the next one
+            utterance.onend = function (event) {
+               translate[cnt].style.backgroundColor = "white"
+               cnt++
+               console.log("Speech ended, starting next minute.");
+               isPause ? "" : speakMinutes_translate(); // Recursively call the function fo the next item
+            };
+            // Handle potential errors
+            utterance.onerror = function (event) {
+               console.error("Speech synthesis error: " + event.error);
+            };
+
+            utterance.lang = "vi-VN"
+            speechSynthesis.speak(utterance);
+         }
+      }
+
+      const speakBtn = document.querySelector("#speak");
+      const pauseBtn = document.querySelector("#pause");
+
+      const docBtn = document.querySelector("#doc");
+      const stopBtn = document.querySelector("#stop");
+      let isPause = false
+      speakBtn.addEventListener("click", speakMinutes_source);
+      docBtn.addEventListener("click", speakMinutes_translate);
+
+
+   </script>
+</body>
+
+</html>

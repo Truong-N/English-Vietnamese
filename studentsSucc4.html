@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>studentsSucc 4</title>
+   <style>
+      .f {
+         display: flex;
+         padding: 5px;
+         gap: 15px;
+      }
+
+      .t,
+      .s {
+         width: 45%;
+      }
+
+      .floating {
+         position: fixed;
+         /* Keeps it fixed to the viewport */
+         top: 0px;
+         /* Distance from the top of the viewport */
+         right: 0px;
+         /* Distance from the right of the viewport */
+         z-index: 1000;
+         /* Ensures it stays above other elements */
+         background-color: black;
+         color: white;
+      }
+
+      .floating a {
+         color: white;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="floating">
+      <button id="speak">Speak</button>
+      <button id="doc">Doc</button>
+      <button id="pause">Pause</button>
+      <a href="./studentsSucc3.html">Prev</a>
+      <a href="./profSkill1.html">Next: Proffesional Skill</a>
+   </div>
+   <div id="c"></div>
+   <script>
+      let sourceTxt = `BUILDING TRUST
+- Group building activities
+- Give wise feedbacks
+- Stereo-type anxiety
+- Respect matters
+RISK BEING A FOOL
+- It is okay to get something wrong, because sometimes that how you learn
+- You need to have courage to take risks
+- Learn that it is OK to look foolish
+- Get into partners
+- Think about a time when you risked being a fool, and you discovered something valuable
+- Share this story with your partner
+Student Strategies module
+Why?
+- Succeeding in higher education calls for emotional well-being
+What?
+- Power Process: Surrender
+- Wake up to health
+- Choose your fuel
+= Choose to exercise
+- Choose emotional health
+- Developing a strong self-image
+- asking for help
+- Suicide is no solution
+- Choose to stay safe
+- Prevent infection
+- Prevent unwanted pregnancy
+- Alcohol, tobacco, drugs: the truth
+- From dependence to recovery
+- Advertising can be dangerous to your health
+How?
+- to maintain your physical and mental energy
+- to enhance your self-esteem
+- to make decisions about alcohol and other drugs in a way that supports your success
+WHAT IF?
+- you could meet the demands of daily life with energy and optimism to spare?
+SURRENDER
+- Sometimes, circumstances become 'too much' and we can't handle them
+- This is OK, normal, and part of life
+- At such times, consider using this Power Process
+- Sometimes when we fight, even when we 'win', we actually lose.
+- Think of a situation in your past where Surrender
+- Share this situation with the class.
+BENEFITS OF WAKING UP EARLY
+- More time to exercise
+- Less time in traffic
+- More time to get things done
+- Better sleep
+- More energy
+- Healthier skin
+- Fewer dark circles
+- More time for breakfast
+- Helps you concentrate
+CHOOSE YOUR FUEL
+- Emphasize fruits, vegetables, whole grains, fat-free/low-fat milk and milk products
+- Choosing whole grain foods
+- Eating proteins which includes lean meats, poultry, fish, beans, eggs, and nuts
+- Limiting highly or ultra-processed foods
+- Choose foods low in saturated fats, trans fats, cholesterol, salt, sugars
+- Eat good fats-nuts, seed, not butter, avocado, cheese or Greek yogurt
+- Include fiber-rich carbs in your diet like sweet potatoes, oats, certain fruits, beans or low carb fiber sources like asparagus, broccoli, cauliflower and berries
+- Making water your drink of choice
+CHOOSE TO EXERCISE
+- Stay active throughout the day
+- Adapt to campus environment
+- Do what you enjoy
+- Vary your routine
+- Get active early
+- Exercise with other people
+- Join a gym without fear
+- look for gradual results
+STAY HEALTHY IN ALMOST NO TIME
+- For a quick, nutritious meal- Choose cereals
+- Make healthier options from vending machines
+- Eat more fruits
+- Switch to whole grain bread
+- Park father away from destination
+- Whenever possible, walk
+- Keep dumbbells by your desk
+- Take the stairs
+- Drink water
+CHOOSE EMOTIONAL HEALTH
+- Take care of your body
+- Solve problems
+- Stay active
+- Focus on one task at a time
+- Don't believe everything you think
+- Emotional pain is not a sickness
+- Share what you are thinking and feeling
+- Meditate
+- Get Help
+DEVELOP A STRONG SELF-IMAGE
+- Set up winning situations
+- Set goals with care
+- Adopt a model
+- Change the conversation about yourself
+- Compare yourself to yourself
+- Surround yourself with support
+SUICIDE - WARNING SIGNS
+- Talking openly about suicide
+- Sleeping pattern changes
+- Feeling trapped
+- Mood changes
+- Social withdrawal
+- Reckless behavior
+- Not finding you
+- Sudden calmness
+- Writing a note
+CHOOSE TO STAY SAFE
+Take general precautions
+- Always lock doors when away from home
+- Avoid walking at night
+- Be prepared
+Prevent Sexual Assault
+- If you feel unsafe, tell someone
+- Learn self-defense and rape prevention
+CHOOSE SEXUAL HEALTH
+Prevent Infection
+- Abstain from unsafe sex
+- Talk to your partner
+- Use condoms
+- Take action soon after sex
+- Get vaccinated
+- Get screened for STIs
+- Recognize the symptoms of STIs
+- Get treated right away
+PREVENT UNWANTED PREGNANCY
+- Abstinence 
+- Natural family planning
+- Contraceptives
+- Permanent methods
+- Where to get birth control
+- Withdrawal does not work
+WHY?
+- To use techniques in this book to set and achieve goals for the rest of your life
+WHAT?
+- Power Process: Be it
+- Define values; align actions
+- Jumpstart yor education with transferable skills
+- Create your career now
+- Sample career plans
+- Transferring to a new school
+- Build and irresistible resume
+- Use job interviews to 'hire' an employer
+- The Discovery Wheel: coming full circle
+- Now that you're done-begin
+- Use the following suggestions to continue
+HOW?
+- to choose the next steps in your education and career
+- to highlight your continuing success on resumes and in interviews
+- to experience the joys of contribution
+- to use a power process that enhances every technique in the text
+WHAT IF?
+- ou could begin creating the life of your dreams - starting today?
+BE IT
+- 3 Basic Choices in Life
+-- What we have
+-- What we do
+-- Who we are
+- Visualize where you want to be in your life
+- Then, be it.
+DEFINE VALUES; ALIGN ACTIONS
+- Identifying your core values
+- Creating a personal mission statement
+- Setting intentional goals
+- Taking action in alignment with your values
+- Overcoming obstacles and staying committed
+CREATE YOUR CAREER NOW
+- You already know a lot 
+- Career is a choice not a discovery
+- You have a world of choices
+- Name names
+- Describe your ideal lifestyle
+- Consider self-employment
+- Test your choice & be willing to change
+- Remember your purpose
+SUCCEED AT CIMT COLLEGE
+- Be willing to begin again
+- Connect to people
+CAREER PLANS
+- Learning about myself
+- Exploring my Options
+- Looking For Opportunities
+- On The Job Success
+BUILD AN IRRESISTIBLE RESUME
+- Your course in Professional Skills will help this
+RESUME WRITING
+- Interview drive
+- Notice me!
+- Truthful!
+- Error free
+- Results-oriented!
+- Variety of resume!
+- Image!
+- Every word counts!
+USE THE FOLLOWING SUGGESTIONS TO CONTINUE..
+- Keep a journal
+- Take a workshop
+- Read, watch, listen
+- Take an unrelated class
+- Travel
+- Get counseling
+- Form a support group
+- Find a mentor - or become one`
+      let translateTxt = `XÂY DỰNG NIỀM TIN
+- Các hoạt động xây dựng nhóm
+- Đưa ra phản hồi khôn ngoan
+- Nỗi lo lắng về định kiến
+- Tôn trọng là điều quan trọng
+- MẠO HIỂM BỊ LỖI
+- Sai lầm là điều bình thường, vì đôi khi đó là cách bạn học hỏi
+- Bạn cần có can đảm để chấp nhận rủi ro
+- Học cách chấp nhận việc trông ngốc nghếch
+- Làm việc theo nhóm
+- Hãy nghĩ về một lần bạn mạo hiểm bị lỗi và bạn đã khám phá ra điều gì đó quý giá
+- Chia sẻ câu chuyện này với bạn cùng nhóm
+Mô-đun Chiến lược dành cho Sinh viên
+Tại sao?
+- Thành công trong giáo dục đại học đòi hỏi sức khỏe tinh thần tốt
+Cái gì?
+- Quy trình sức mạnh: Buông bỏ
+- Thức tỉnh vì sức khỏe
+- Chọn nguồn năng lượng của bạn
+= Chọn tập thể dục
+- Chọn sức khỏe tinh thần
+- Phát triển hình ảnh bản thân mạnh mẽ
+- Tìm kiếm sự giúp đỡ
+- Tự tử không phải là giải pháp
+- Chọn cách giữ an toàn
+- Ngăn ngừa nhiễm trùng
+- Ngăn ngừa mang thai ngoài ý muốn
+- Rượu, thuốc lá, ma túy: sự thật
+- Từ nghiện ngập đến phục hồi
+- Quảng cáo có thể nguy hiểm cho sức khỏe của bạn
+Như thế nào? 
+- Để duy trì năng lượng thể chất và tinh thần của bạn
+- Để nâng cao lòng tự trọng của bạn
+- Để đưa ra quyết định về rượu và các chất gây nghiện khác theo cách hỗ trợ sự thành công của bạn
+NẾU NHƯ?
+- Bạn có thể đáp ứng những yêu cầu của cuộc sống hàng ngày với năng lượng và sự lạc quan dư dả?
+ĐẦU HÀNG
+- Đôi khi, hoàn cảnh trở nên 'quá sức' và chúng ta không thể xử lý được
+- Điều này là bình thường, ổn và là một phần của cuộc sống
+- Vào những lúc như vậy, hãy cân nhắc sử dụng Quy trình Sức mạnh này
+- Đôi khi khi chúng ta chiến đấu, ngay cả khi chúng ta 'thắng', thực ra chúng ta lại thua.
+- Hãy nghĩ về một tình huống trong quá khứ mà bạn đã Đầu hàng
+- Chia sẻ tình huống này với cả lớp. 
+LỢI ÍCH CỦA VIỆC THỨC DẬY SỚM
+- Có nhiều thời gian hơn để tập thể dục
+- Ít thời gian hơn kẹt xe
+- Có nhiều thời gian hơn để hoàn thành công việc
+- Ngủ ngon hơn
+- Nhiều năng lượng hơn
+- Làn da khỏe mạnh hơn
+- Ít quầng thâm hơn
+- Có nhiều thời gian hơn cho bữa sáng
+- Giúp bạn tập trung tốt hơn
+CHỌN NGUỒN NĂNG LƯỢNG CỦA BẠN
+- Chú trọng trái cây, rau củ, ngũ cốc nguyên hạt, sữa và các sản phẩm từ sữa không béo/ít béo
+- Chọn thực phẩm nguyên hạt
+- Ăn protein bao gồm thịt nạc, gia cầm, cá, đậu, trứng và các loại hạt
+- Hạn chế thực phẩm chế biến sẵn hoặc siêu chế biến
+- Chọn thực phẩm ít chất béo bão hòa, chất béo chuyển hóa, cholesterol, muối, đường
+- Ăn chất béo tốt - các loại hạt, hạt giống, không phải bơ, quả bơ, phô mai hoặc sữa chua Hy Lạp
+- Bổ sung carbohydrate giàu chất xơ vào chế độ ăn uống của bạn như khoai lang, yến mạch, một số loại trái cây, đậu hoặc các nguồn chất xơ ít carbohydrate như măng tây, bông cải xanh, súp lơ và các loại quả mọng
+- Chọn nước làm thức uống chính
+CHỌN TẬP THỂ DỤC
+- Duy trì hoạt động suốt cả ngày
+- Thích nghi với môi trường khuôn viên trường
+- Làm những gì bạn thích
+- Đa dạng Thói quen của bạn
+- Vận động sớm
+- Tập thể dục cùng người khác
+- Tham gia phòng tập thể dục mà không cần sợ hãi
+- Tìm kiếm kết quả dần dần
+GIỮ GÌN SỨC KHỎE TRONG THỜI GIAN NGẮN
+- Cho một bữa ăn nhanh chóng và bổ dưỡng: Chọn ngũ cốc
+- Chọn những lựa chọn lành mạnh hơn từ máy bán hàng tự động
+- Ăn nhiều trái cây hơn
+- Chuyển sang bánh mì nguyên cám
+- Đỗ xe xa điểm đến hơn
+- Đi bộ bất cứ khi nào có thể
+- Để tạ tay cạnh bàn làm việc
+- Leo cầu thang
+- Uống nước
+CHỌN SỨC KHỎE TINH THẦN
+- Chăm sóc cơ thể
+- Giải quyết vấn đề
+- Luôn năng động
+- Tập trung vào một việc tại một thời điểm
+- Đừng tin vào mọi điều bạn nghĩ
+- Nỗi đau tinh thần không phải là một căn bệnh
+- Chia sẻ những gì bạn đang nghĩ và cảm thấy
+- Thiền định
+- Tìm kiếm sự giúp đỡ
+PHÁT TRIỂN HÌNH ẢNH BẢN THÂN VỮNG MẠNH
+- Tạo ra những tình huống chiến thắng
+- Đặt mục tiêu một cách cẩn thận
+- Học theo một hình mẫu
+- Thay đổi cách nói chuyện về bản thân
+- So sánh bản thân với chính mình
+- Bao quanh mình bằng sự hỗ trợ
+TỰ TỬ - DẤU HIỆU CẢNH BÁO
+- Nói chuyện cởi mở về tự tử
+- Mẫu giấc ngủ Những thay đổi
+- Cảm giác bị mắc kẹt
+- Tâm trạng thay đổi
+- Thu mình khỏi xã hội
+- Hành vi liều lĩnh
+- Không tìm thấy bạn
+- Đột nhiên bình tĩnh
+- Viết thư tuyệt mệnh
+CHỌN CÁCH GIỮ AN TOÀN
+Thực hiện các biện pháp phòng ngừa chung
+- Luôn khóa cửa khi ra khỏi nhà
+- Tránh đi bộ vào ban đêm
+- Chuẩn bị sẵn sàng
+Ngăn ngừa tấn công tình dục
+- Nếu bạn cảm thấy không an toàn, hãy nói với ai đó
+- Học tự vệ và phòng chống hiếp dâm
+CHỌN SỨC KHỎE TÌNH DỤC
+Ngăn ngừa nhiễm trùng
+- Kiêng quan hệ tình dục không an toàn
+- Nói chuyện với bạn tình
+- Sử dụng bao cao su
+- Hành động ngay sau khi quan hệ tình dục
+- Tiêm phòng
+- Xét nghiệm các bệnh lây truyền qua đường tình dục
+- Nhận biết các triệu chứng của bệnh lây truyền qua đường tình dục
+- Điều trị ngay lập tức
+NGĂN NGỪA MANG THAI NGOÀI Ý MUỐN
+- Kiêng quan hệ tình dục
+- Kế hoạch hóa gia đình tự nhiên
+- Thuốc tránh thai
+- Phương pháp tránh thai vĩnh viễn
+- Nơi để mua thuốc tránh thai
+- Phương pháp xuất tinh ngoài không hiệu quả
+TẠI SAO?
+- Để sử dụng các kỹ thuật trong cuốn sách này để đặt ra và đạt được mục tiêu cho phần đời còn lại của bạn
+CÁI GÌ? 
+- Quy trình sức mạnh: Hãy là chính mình
+- Xác định giá trị; điều chỉnh hành động
+- Khởi động quá trình học tập của bạn với các kỹ năng có thể chuyển giao
+- Tạo dựng sự nghiệp của bạn ngay bây giờ
+- Các mẫu kế hoạch nghề nghiệp
+- Chuyển trường
+- Xây dựng sơ yếu lý lịch ấn tượng
+- Sử dụng phỏng vấn xin việc để 'tuyển dụng' nhà tuyển dụng
+- Vòng tròn khám phá: trở lại điểm xuất phát
+- Bây giờ bạn đã hoàn thành - hãy bắt đầu
+- Sử dụng các gợi ý sau để tiếp tục
+LÀM THẾ NÀO?
+- để chọn các bước tiếp theo trong học tập và sự nghiệp của bạn
+- để làm nổi bật thành công liên tục của bạn trong sơ yếu lý lịch và phỏng vấn
+- để trải nghiệm niềm vui đóng góp
+- để sử dụng một quy trình sức mạnh giúp nâng cao mọi kỹ thuật trong văn bản
+NẾU NHƯ?
+- bạn có thể bắt đầu tạo ra cuộc sống trong mơ của mình - bắt đầu từ hôm nay?
+HÃY LÀ CHÍNH MÌNH
+- 3 Lựa chọn cơ bản trong cuộc sống
+-- Chúng ta có gì
+-- Chúng ta làm gì
+-- Chúng ta là ai
+- Hình dung nơi bạn muốn đến trong cuộc sống
+- Vậy thì, hãy làm đi.
+XÁC ĐỊNH GIÁ TRỊ; ĐIỀU CHỈNH HÀNH ĐỘNG
+- Xác định các giá trị cốt lõi của bạn
+- Tạo ra tuyên ngôn sứ mệnh cá nhân
+- Đặt ra các mục tiêu có chủ đích
+- Hành động phù hợp với các giá trị của bạn
+- Vượt qua trở ngại và giữ vững cam kết
+XÂY DỰNG SỰ NGHIỆP CỦA BẠN NGAY BÂY GIỜ
+- Bạn đã biết rất nhiều điều
+- Sự nghiệp là một sự lựa chọn chứ không phải là một sự khám phá
+- Bạn có vô vàn lựa chọn
+- Kể tên những người đã giúp đỡ
+- Mô tả lối sống lý tưởng của bạn
+- Cân nhắc việc tự kinh doanh
+- Kiểm tra lựa chọn của bạn và sẵn sàng thay đổi
+- Ghi nhớ mục đích của bạn
+THÀNH CÔNG TẠI TRƯỜNG CAO ĐẲNG CIMT
+- Sẵn sàng bắt đầu lại
+- Kết nối với mọi người
+KẾ HOẠCH NGHỀ NGHIỆP
+- Tìm hiểu về bản thân
+- Khám phá các lựa chọn của tôi
+- Tìm kiếm cơ hội
+- Thành công trong công việc
+XÂY DỰNG MỘT BẢN SƠ YẾU LÝ LỊCH ẤN TƯỢNG
+- Khóa học Kỹ năng Chuyên nghiệp của bạn sẽ giúp ích cho việc này
+VIẾT SƠ YẾU LÝ LỊCH
+- Thu hút phỏng vấn
+- Hãy chú ý đến tôi!
+- Trung thực!
+- Không lỗi
+- Định hướng kết quả!
+- Đa dạng sơ yếu lý lịch!
+- Hình ảnh! 
+- Mỗi từ đều quan trọng!
+HÃY SỬ DỤNG NHỮNG GỢI Ý SAU ĐỂ TIẾP TỤC…
+- Viết nhật ký
+- Tham gia một khóa học
+- Đọc, xem, nghe
+- Tham gia một lớp học không liên quan
+- Du lịch
+- Tìm kiếm sự tư vấn
+- Thành lập một nhóm hỗ trợ
+- Tìm một người cố vấn - hoặc trở thành một người cố vấn`
+      let sourceArr = sourceTxt.split('\n')
+      let translateArr = translateTxt.split('\n')
+      let str = ''
+      for (let i = 0; i < sourceArr.length; i++) {
+         str += '<div class="f"><div class="s">'
+         str += sourceArr[i]
+         str += '</div><div class="t">'
+         str += translateArr[i]
+         str += '</div></div>'
+      }
+      document.getElementById("c").innerHTML = str;
+      let translateLang = "en-US"
+      const source = document.querySelectorAll(".s")
+      const translate = document.querySelectorAll(".t")
+      let cnt = 0
+      function speakMinutes_source() {
+         isPause = false;
+         let sourceArr = []
+         source.forEach(e => sourceArr.push(e.textContent))
+         if (sourceArr.length > 0) {
+            let txt = sourceArr[cnt]
+            let utterance = new SpeechSynthesisUtterance(txt);
+            utterance.onstart = () => {
+               source[cnt].style.backgroundColor = "yellow"
+            }
+            // When the current utterance ends, speak the next one
+            utterance.onend = function (event) {
+               source[cnt].style.backgroundColor = "white"
+               cnt++
+               console.log("Speech ended, starting next minute.");
+               isPause ? "" : speakMinutes_source(); // Recursively call the function fo the next item
+            };
+            // Handle potential errors
+            utterance.onerror = function (event) {
+               console.error("Speech synthesis error: " + event.error);
+            };
+            utterance.lang = "en-US"
+            speechSynthesis.speak(utterance);
+         }
+      }
+      function speakMinutes_translate() {
+         isPause = false;
+         let translateReadArr = []
+         translate.forEach(e => translateReadArr.push(e.textContent))
+         if (translateReadArr.length > 0) {
+            let txt = translateReadArr[cnt]
+            let utterance = new SpeechSynthesisUtterance(txt);
+            utterance.onstart = () => {
+               translate[cnt].style.backgroundColor = "yellow"
+            }
+            // When the current utterance ends, speak the next one
+            utterance.onend = function (event) {
+               translate[cnt].style.backgroundColor = "white"
+               cnt++
+               console.log("Speech ended, starting next minute.");
+               isPause ? "" : speakMinutes_translate(); // Recursively call the function fo the next item
+            };
+            // Handle potential errors
+            utterance.onerror = function (event) {
+               console.error("Speech synthesis error: " + event.error);
+            };
+
+            utterance.lang = "vi-VN"
+            speechSynthesis.speak(utterance);
+         }
+      }
+
+      const speakBtn = document.querySelector("#speak");
+      const pauseBtn = document.querySelector("#pause");
+
+      const docBtn = document.querySelector("#doc");
+      const stopBtn = document.querySelector("#stop");
+      let isPause = false
+      speakBtn.addEventListener("click", speakMinutes_source);
+      docBtn.addEventListener("click", speakMinutes_translate);
+
+
+   </script>
+</body>
+
+</html>

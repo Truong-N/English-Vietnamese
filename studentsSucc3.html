@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>studentsSucc 3</title>
+   <style>
+      .f {
+         display: flex;
+         padding: 5px;
+         gap: 15px;
+      }
+
+      .t,
+      .s {
+         width: 45%;
+      }
+
+      .floating {
+         position: fixed;
+         /* Keeps it fixed to the viewport */
+         top: 0px;
+         /* Distance from the top of the viewport */
+         right: 0px;
+         /* Distance from the right of the viewport */
+         z-index: 1000;
+         /* Ensures it stays above other elements */
+         background-color: black;
+         color: white;
+      }
+
+      .floating a {
+         color: white;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="floating">
+      <button id="speak">Speak</button>
+      <button id="doc">Doc</button>
+      <button id="pause">Pause</button>
+      <a href="./studentsSucc2.html">Prev</a>
+      <a href="./studentsSucc4.html">Next</a>
+   </div>
+   <div id="c"></div>
+   <script>
+      let sourceTxt = `4 WAYS TO SOLVE PROBLEMS
+- Why is one solution more workable than another?
+= How would this possible solution work?
+- What is the problem?
+- What if there are several possible solutions?
+IMPROVE YOUR PROBLEM SOLVING SKILLS
+- Define the problem
+- Analyse the problem
+- Develop potential solutions
+- Evaluate the options
+- Select the best options
+- Implement the solution
+- Measure the results
+THINKING ABOUT YOUR MAJOR
+- Discover options
+- Make a trial choice
+- Evaluate trial choice
+- Choose again
+SERVICE-LEARNING: THE ART OF LEARNING BY CONTRIBUTING
+Getting the most from service-learning
+- Follow your interests
+- Choose partners carefully
+- Learn about the organization
+- Handle logistics
+- Include ways to evaluate your project
+- Build long-term impact into your project
+- Build transferable skills
+- Make use of mistakes
+- Connect service-learning to critical thinking
+MUSCLE READING
+- preview/rapid reading
+- detailed reading
+- review
+COMMUNICATING
+Why?
+- Your communication skill are as important to success as your technical skills.
+What?
+- Power Process: Employ your word
+- Communication creates our world
+- Keeping the channels open
+- Choosing to listen
+- Choosing to speak
+- Developing Emotional Intelligence
+- Collaborating for success
+- Managing conflict
+- Five ways to say no, respectfully
+- Tools for deep listening
+- 5 steps to effective complaints
+- Mastering social networks
+- Three phases of effective writing
+- Academic integrity: avoid plagiarism
+- Mastering public speaking
+How?
+- to listen, speak, and write in ways that promote your success
+- to prevent and resolve conflicts with other people
+- to make and keep agreements as a tool to create your future
+What if? 
+- you could consistently create the kind of relationships that you've always wanted?
+DISCOVER WHTAT YOU WANT
+Ladder of powerful speaking
+- Promise
+- Passion
+- Preference
+- Possibility
+- Obligation
+COMMUNICATION CREATES OUR WORLD
+- Resolve and avoid conflicts
+- Helps to connect and share ideas
+- Clarifies information and reduces wasting time
+- Builds relationships, teamwork and trust
+DEVELOPING EMOTIONAL INTELLIGENCE EQ
+- Three Elements of Emotion
+-- Physical sensations
+-- Thoughts
+-- Actions
+- Name your emotions
+- Accept your emotions
+- Express your emotions
+- Respond, don't react
+- Make decisions with emotional intelligence
+COLLABORATING FOR SUCCESS
+SKILLS
+- Build trust
+- Value diversity
+- Manage interactions
+- Contribute to the environment where you can collaborate
+- Achieve a common goal
+- Reflect and improve on teamwork
+MANAGING CONFLICTS
+- Observations
+- Feelings
+- Wants
+- Thoughts
+- Intentions
+TOOLS FOR DEEP LISTENING
+- Be quite
+- Display openness
+- Send acknowledgements
+- Release distractions
+- Suspend judgments
+- Allow emotions
+- Be careful with questions and advice
+- Ask for more
+STEPS TO EFFECTIVE COMPLAINTS
+- Acknowledge
+- Apologize
+- Take action
+- Thank
+- Document
+MASTERING SOCIAL NETWORKS
+- Post only what you want permanent and public
+- Be honest
+- Use privacy features
+- 'Friend' people with care
+- Be cautious about meeting community members in person
+- Report malicious content
+- Remember netiquette
+- Use social networks to learn
+3 PHASES OF EFFECTIVE WRITING
+1. getting ready to write
+- Schedule and list tasks
+- Choose a topic
+- Write a thesis statement
+- Consider your purpose
+- Do initial research
+- Outline
+- Do in-depth research
+2. Writing a first draft
+- Gather notes and outline
+- Ease into it
+- First drafts are not for keeps
+- Speak it
+- Use free writing
+- Make writing a habit
+- Respect your deep mind
+- Get physical
+3. Revising your draft
+- Plan 2-3 revisions
+- Cut
+- Paste
+- Fix
+- Prepare
+- Proof
+ACADEMIC INTEGRITY: AVOID PLAGIARISM
+- Know the perils of paper mills
+- Identify direct quotes
+- Paraphrase carefully
+- Summarize carefully
+- Identify distinctive terms and phrases
+- Note details about each source
+- Cite sources
+- Submit only your own work
+- Allow time to digest research
+MASTERING PUBLIC SPEAKING
+Phase 1: Preparing
+- Start from passion
+- Consider a process speech
+- Analyze audience
+- Organize presentation
+- Write introduction
+- Write main body
+- Write conclusion
+- Create speaking notes
+- Create supporting visuals
+- Overcome fear
+- Practice presentation
+Phase 2: Delivering
+- Dress for the occasion
+- Project your voice
+- Maintain eye contact
+- Notice your nonverbal communication
+- Notice time
+- Pause when appropriate
+- Have fun
+Phase 3: Reflecting
+- Reflect on what worked and what didn't work in your speech so the next one will be even better.
+DIVERSITY
+- Age
+- Education
+- Gender
+- Nationality
+- Race / Ethnicity
+- Religion
+- Sexual orientation
+- Socio-economic status
+CHOOSE YOUR CONVERSATIONS AND YOU COMMUNITY
+- Use conversation to
+-- change habits
+-- connect with people who are different from you
+-- explore new ways of seeing the world
+-- create new options
+- Are you active or passive when it comes to choosing the conversations in your life?
+- Would you like to change that?
+- Write an intention statement
+BUILDING RELATIONSHIPS ACROSS CULTURES
+- Self-discovery
+- Learn about other cultures
+- Differences between individualist and collectivist cultures
+- Reach out
+- Common ground
+- Speak and listen with cultural sensitivity
+- Find a translator, mediator, or model
+- Develop support systems
+- Accept feedback
+- Speak up against discrimination
+- Change the institution
+OVERCOME STEREOTYPES WITH CRITICAL THINKING
+- Look for errors in thinking
+- Create categories in a more flexible way
+- Test generalizations through action
+- See your own stereotypes
+STUDENTS WITH DISABILITIES
+- Learn the laws that apply to you
+- Learn the services at your school
+- Ask for adjustments
+- Use technology
+- speak assertively
+- Plan ahead
+- Use empowering words
+- Ask for appropriate treatment
+- Follow up when necessary
+- Take care of yourself
+DEALING WITH SEXISM AND SEXUAL HARASSMENT
+- Point out sexist language and behavior
+- Observe your language and behavior
+- Encourage support for women
+- Take action
+LEADERSHIP IN A DIVERSE WORLD
+- own you leadership
+- Be willing to be uncomfortable
+- Allow huge mistakes
+- Take on big projects
+- Provide feedback
+- Paint a vision
+- model your values
+- Make lots of requests
+- Follow up
+- Focus on problems, not people
+- Acknowledge others
+- Share credit
+- Delegate
+- Balance styles
+- Listen
+- Communicate assertively
+- Practice
+MONEY
+Why?
+- Money does not have to be a barrier to getting what you want
+What?
+- Power Process: Risk being a fool
+- The end of money worries
+- Make more money
+- Spend less money
+- Managing money during tough times
+- Take charge of your credit
+- Education is worth it
+- Learning styles and money
+- Money and values
+How?
+- to discover the detail of how money flows
+- to experiment with increasing your income and decreasing your expenses
+- to gain strategies for saving, investing, and reducing debt
+- to find ways to pay for your education
+What if?
+- you could adopt habits that would free you from money worries forever?
+MAKE MORE MONEY
+- You need to focus on your education
+- But can you work while you're in school?
+- It might help financially
+IS IT IMPOSSIBLE FOR A STUDENT TO SAVE?
+- Do you have a cell phone?
+- Do you have cable TV?
+SPEND LESS MONEY
+- Look for small-ticket item
+- Ask for student discounts everywhere
+- Do comparison shopping
+- Be aware of quality
+- Stop eating out
+- Make your coffee at home
+- Bring your lunch to work
+- Get rid of your cell phone
+- Or at least lower your phone usage
+- Pay cash to avoid interest
+- Ask for what you need for birthday and Christmas gifts
+MORE WAYS TO SPEND LESS MONEY
+- Postpone purchase until a sale
+- Don't make impulse purchases
+- Notice what you spend on 'fun'
+- Don't compete with friends who are big spenders
+- Save every receipt and tally what you're spending on wasteful items
+- A penny saved is a penny earned
+- Spend less and feel the power
+MANAGING MONEY DURING LEAN TIMES
+- Make a list of strategies that you have tried. Star those that have worked for you.
+- Make another list of new strategies that you are learning today.
+- Take a first step... try anything!
+- Spend less, save more
+- Pay off credit cards with high interest
+- Don't go on a vacation you can't afford
+- Don't spend any money on  credit cards. If you don't have the cash, don't buy it.
+- Think about a part time job (cut grass, shovel snow)
+- Research unemployment benefits
+- Ask for help that you can trust
+- Put your plan in writing 
+- Cope with stress positively
+TAKE CHARGE OF YOUR CREDIT
+- Borrow money only when truly necessary.
+- Make all payment -- on time
+- Did you know your credit rating will be perfect if you make the minimum payment each month?
+Use credit cards with caution
+- Pay off balance each month
+- scrutinize credit card offers
+- Avoid cash advances
+- Check statements against your records
+- Use just one card
+- Get a copy of your credit report
+- Protect your credit score: it lasts 7 years
+WAYS TO IMPROVE CREDIT SCORE
+- Make timely repayments
+- Review your credit report
+- Keep using older credit cards
+- Limit your loan and credit card applications
+- Maintain a credit mix
+- Maintain your credit utilization ratio
+- Consolidate your loans
+- Take what you can pay
+TAKE CHARGE
+Manage student loans
+- You chose CIMT College, and you may have compared tuition--- that was wise!
+- Choose other purchases with costs in mind
+- Avoid debt when possible
+- Shop carefully for best interest rates
+- Repay your loans
+EUDTAION IS WORTH IT AND YOU CAN PAY FOR IT
+- You'll earn a higher income!
+- You have greater likelihood of benefit package with better paying jobs!
+- You'll have lower dependence on income support services
+- You have greater likelihood of new employment!
+- You have less likelihood of losing your job again!
+- You'll have higher job satisfaction at a job you like and are skilled to do!
+BEFORE YOU BUY
+Why
+- Am I considering spending this money?
+What
+- Are there facts I need to know?
+How
+- Would this purchase affect my life?
+What if?
+- I could get the save benefit without spending money?`
+      let translateTxt = `4 CÁCH GIẢI QUYẾT VẤN ĐỀ
+- Tại sao một giải pháp lại khả thi hơn giải pháp khác?
+- Giải pháp khả thi này sẽ hoạt động như thế nào?
+- Vấn đề là gì?
+- Nếu có nhiều giải pháp khả thi thì sao? 
+NÂNG CAO KỸ NĂNG GIẢI QUYẾT VẤN ĐỀ CỦA BẠN
+- Xác định vấn đề
+- Phân tích vấn đề
+- Phát triển các giải pháp tiềm năng
+- Đánh giá các lựa chọn
+- Chọn lựa chọn tốt nhất
+- Thực hiện giải pháp
+- Đo lường kết quả
+SUY NGHĨ VỀ CHUYÊN NGÀNH CỦA BẠN
+- Khám phá các lựa chọn
+- Thử nghiệm lựa chọn
+- Đánh giá lựa chọn thử nghiệm
+- Chọn lại
+HỌC TẬP THÔNG QUA CỘNG ĐỒNG: NGHỆ THUẬT HỌC TẬP BẰNG CÁCH ĐÓNG GÓP
+Tận dụng tối đa học tập thông qua cộng đồng
+- Theo đuổi sở thích của bạn
+- Chọn đối tác cẩn thận
+- Tìm hiểu về tổ chức
+- Xử lý hậu cần
+- Bao gồm các cách để đánh giá dự án của bạn
+- Xây dựng tác động lâu dài vào dự án của bạn
+- Xây dựng các kỹ năng có thể chuyển giao
+- Tận dụng những sai lầm
+- Kết nối học tập thông qua cộng đồng với tư duy phản biện
+- ĐỌC NHANH
+- Xem trước/đọc nhanh
+- Đọc chi tiết
+- Xem lại
+KỸ NĂNG GIAO TIẾP
+Tại sao?
+- Kỹ năng giao tiếp của bạn cũng quan trọng đối với thành công như kỹ năng kỹ thuật của bạn.
+Cái gì? 
+- Quy trình quyền lực: Sử dụng lời nói của bạn
+- Giao tiếp tạo nên thế giới của chúng ta
+- Giữ cho các kênh giao tiếp luôn mở
+- Lựa chọn lắng nghe
+- Lựa chọn lên tiếng
+- Phát triển trí tuệ cảm xúc
+- Hợp tác để thành công
+- Quản lý xung đột
+- Năm cách nói không một cách lịch sự
+- Công cụ để lắng nghe sâu sắc
+- 5 bước để khiếu nại hiệu quả
+- Làm chủ mạng xã hội
+- Ba giai đoạn của việc viết hiệu quả
+- Tính liêm chính trong học thuật: tránh đạo văn
+- Làm chủ kỹ năng nói trước công chúng
+Làm thế nào?
+- để lắng nghe, nói và viết theo cách thúc đẩy sự thành công của bạn
+- để ngăn ngừa và giải quyết xung đột với người khác
+- để tạo lập và giữ vững các thỏa thuận như một công cụ để tạo dựng tương lai của bạn
+Điều gì sẽ xảy ra nếu?
+- bạn có thể liên tục tạo ra những mối quan hệ mà bạn luôn mong muốn? 
+KHÁM PHÁ NHỮNG GÌ BẠN MUỐN
+Thang bậc của kỹ năng giao tiếp hiệu quả
+- Lời hứa
+- Niềm đam mê
+- Sở thích
+- Khả năng
+- Nghĩa vụ
+GIAO TIẾP TẠO NÊN THẾ GIỚI CỦA CHÚNG TA
+- Giải quyết và tránh xung đột
+- Giúp kết nối và chia sẻ ý tưởng
+- Làm rõ thông tin và giảm lãng phí thời gian
+- Xây dựng mối quan hệ, tinh thần đồng đội và lòng tin
+PHÁT TRIỂN TRÍ TUỆ CẢM XÚC (EQ)
+- Ba yếu tố của cảm xúc
+-- Cảm giác thể chất
+-- Suy nghĩ
+-- Hành động
+- Gọi tên cảm xúc của bạn
+- Chấp nhận cảm xúc của bạn
+- Bày tỏ cảm xúc của bạn
+- Phản hồi, đừng phản ứng theo bản năng
+- Đưa ra quyết định với trí tuệ cảm xúc
+HỢP TÁC ĐỂ THÀNH CÔNG
+KỸ NĂNG
+- Xây dựng lòng tin
+- Trân trọng sự đa dạng
+- Quản lý tương tác
+- Góp phần tạo ra môi trường hợp tác
+- Đạt được mục tiêu chung
+- Suy ngẫm và cải thiện tinh thần đồng đội
+QUẢN LÝ XUNG ĐỘT
+- Quan sát
+- Cảm xúc
+- Mong muốn
+- Suy nghĩ
+- Ý định
+CÔNG CỤ LẮNG NGHE SÂU SẮC
+- Hãy là chính mình khá
+- Thể hiện sự cởi mở
+- Gửi lời cảm ơn
+- Loại bỏ những thứ gây xao nhãng
+- Tạm gác lại phán xét
+- Cho phép cảm xúc được bộc lộ
+- Cẩn thận với câu hỏi và lời khuyên
+- Yêu cầu thêm thông tin
+CÁC BƯỚC ĐỂ KHIẾU NAI HIỆU QUẢ
+- Thừa nhận
+- Xin lỗi
+- Hành động
+- Cảm ơn
+- Ghi chép
+LÀM CHỦ MẠNG XÃ HỘI
+- Chỉ đăng những gì bạn muốn giữ bí mật và công khai
+- Trung thực
+- Sử dụng các tính năng bảo mật
+- Kết bạn với mọi người một cách cẩn thận
+- Thận trọng khi gặp gỡ các thành viên cộng đồng trực tiếp
+- Báo cáo nội dung độc hại
+- Nhớ quy tắc ứng xử trên mạng
+- Sử dụng mạng xã hội để học hỏi
+3 GIAI ĐOẠN CỦA VIẾT HIỆU QUẢ
+1. Chuẩn bị viết
+- Lên lịch và liệt kê các nhiệm vụ
+- Chọn chủ đề
+- Viết luận điểm
+- Xem xét mục đích của bạn
+- Nghiên cứu ban đầu
+- Lập dàn ý
+- Nghiên cứu chuyên sâu
+2. Viết bản nháp đầu tiên
+- Thu thập ghi chú và lập dàn ý
+- Bắt đầu từ từ
+- Bản nháp đầu tiên không phải để giữ lại
+- Nói ra
+- Sử dụng lối viết tự do
+- Biến việc viết thành thói quen
+- Tôn trọng chiều sâu tư duy của bạn 1. Tư duy
+- Vận động thể chất
+3. Chỉnh sửa bản nháp
+- Lên kế hoạch 2-3 lần chỉnh sửa
+- Cắt
+- Dán
+- Sửa chữa
+- Chuẩn bị
+- Kiểm tra lỗi chính tả
+TÍNH TOÀN VẸN TRONG HỌC THUẬT: TRÁNH ĐẠO VĂN
+- Biết những nguy hiểm của các dịch vụ viết thuê
+- Xác định các trích dẫn trực tiếp
+- Diễn giải lại cẩn thận
+- Tóm tắt cẩn thận
+- Xác định các thuật ngữ và cụm từ đặc trưng
+- Ghi chú chi tiết về từng nguồn
+- Trích dẫn nguồn
+- Chỉ nộp bài của chính bạn
+- Dành thời gian để nghiên cứu kỹ lưỡng
+LÀM CHỦ KỸ NĂNG THUYẾT TRÌNH TRƯỚC CÔNG CHÚNG
+Giai đoạn 1: Chuẩn bị
+- Bắt đầu từ niềm đam mê
+- Xem xét bài thuyết trình theo quy trình
+- Phân tích khán giả
+- Tổ chức bài thuyết trình
+- Viết phần mở đầu
+- Viết phần thân bài
+- Viết phần kết luận
+- Tạo ghi chú bài thuyết trình
+- Tạo hình ảnh minh họa hỗ trợ
+- Vượt qua nỗi sợ hãi
+- Luyện tập bài thuyết trình
+Giai đoạn 2: Trình bày
+- Ăn mặc phù hợp với dịp
+- Phát âm rõ ràng
+- Duy trì giao tiếp bằng mắt
+- Chú ý đến giao tiếp phi ngôn ngữ của bạn
+- Chú ý đến thời gian
+- Tạm dừng khi thích hợp
+- Hãy tận hưởng
+Giai đoạn 3: Suy ngẫm
+- Suy ngẫm về những gì đã hiệu quả và những gì chưa hiệu quả Hãy luyện tập bài phát biểu của bạn để bài phát biểu tiếp theo sẽ tốt hơn nữa.
+ĐA DẠNG
+- Tuổi tác
+- Trình độ học vấn
+- Giới tính
+- Quốc tịch
+- Chủng tộc / Dân tộc
+- Tôn giáo
+- Xu hướng tình dục
+- Tình trạng kinh tế xã hội
+CHỌN LỰA CÁC CUỘC TRÒ CHUYỆN VÀ CỘNG ĐỒNG CỦA BẠN
+- Sử dụng cuộc trò chuyện để
+-- thay đổi thói quen
+-- kết nối với những người khác biệt với bạn
+-- khám phá những cách nhìn mới về thế giới
+-- tạo ra những lựa chọn mới
+- Bạn chủ động hay thụ động khi lựa chọn các cuộc trò chuyện trong cuộc sống của mình?
+- Bạn có muốn thay đổi điều đó không?
+- Viết một tuyên bố về mục tiêu
+XÂY DỰNG MỐI QUAN HỆ GIỮA CÁC NỀN VĂN HÓA
+- Khám phá bản thân
+- Tìm hiểu về các nền văn hóa khác
+- Sự khác biệt giữa văn hóa cá nhân chủ nghĩa và văn hóa tập thể
+- Mở lòng
+- Tìm điểm chung
+- Nói và lắng nghe với sự nhạy cảm về văn hóa
+- Tìm người phiên dịch, người hòa giải hoặc hình mẫu
+- Phát triển hệ thống hỗ trợ
+- Chấp nhận phản hồi
+- Lên tiếng chống lại sự phân biệt đối xử
+- Thay đổi thể chế
+VƯỢT QUA ĐỊNH KIẾN BẰNG TƯ DUY PHÊ PHÁN
+- Tìm lỗi trong tư duy
+- Tạo ra các danh mục một cách linh hoạt hơn
+- Kiểm tra các khái quát thông qua hành động
+- Nhận ra định kiến ​​của chính mình
+SINH VIÊN KHUYẾT TẬT
+- Tìm hiểu các luật áp dụng cho bạn
+- Tìm hiểu các dịch vụ tại trường học của bạn
+- Yêu cầu điều chỉnh
+- Sử dụng công nghệ
+- Nói chuyện một cách quyết đoán
+- Lập kế hoạch trước
+- Sử dụng những từ ngữ tích cực
+- Yêu cầu được đối xử phù hợp
+- Theo dõi khi cần thiết
+- Chăm sóc bản thân
+ĐỐI PHÓ VỚI PHÂN BIỆT GIỚI TÍNH VÀ QUẤY RỐI TÌNH DỤC
+- Chỉ ra ngôn ngữ và hành vi phân biệt giới tính
+- Quan sát ngôn ngữ và hành vi của bạn
+- Khuyến khích sự hỗ trợ cho phụ nữ 
+Hãy hành động
+LÃNH ĐẠO TRONG MỘT THẾ GIỚI ĐA DẠNG
+- Làm chủ khả năng lãnh đạo của bạn
+- Sẵn sàng chấp nhận sự khó chịu
+- Cho phép bản thân mắc những sai lầm lớn
+- Nhận những dự án lớn
+- Cung cấp phản hồi
+- Vẽ ra tầm nhìn
+- Làm gương theo giá trị của bạn
+- Đưa ra nhiều yêu cầu
+- Theo dõi
+- Tập trung vào vấn đề, không phải con người
+- Ghi nhận người khác
+- Chia sẻ công lao
+- Ủy thác
+- Cân bằng các phong cách
+- Lắng nghe
+- Giao tiếp quyết đoán
+- Thực hành
+TIỀN BẠC
+Tại sao?
+- Tiền bạc không nhất thiết phải là rào cản để đạt được điều bạn muốn
+Cái gì?
+- Quy trình quyền lực: Mạo hiểm trở thành kẻ ngốc
+- Chấm dứt nỗi lo tiền bạc
+- Kiếm nhiều tiền hơn
+- Chi tiêu ít tiền hơn
+- Quản lý tiền bạc trong thời kỳ khó khăn
+- Làm chủ tín dụng của bạn
+- Giáo dục rất đáng giá
+- Phong cách học tập và tiền bạc
+- Tiền bạc và giá trị
+Làm thế nào?
+- Khám phá chi tiết về cách tiền bạc lưu chuyển
+- Thử nghiệm tăng thu nhập và giảm chi phí
+- Có được các chiến lược tiết kiệm, đầu tư và giảm nợ
+- Tìm cách chi trả cho việc học của bạn
+Điều gì sẽ xảy ra nếu? 
+- Bạn có thể hình thành những thói quen giúp bạn không còn lo lắng về tiền bạc nữa không?
+KIẾM THÊM TIỀN
+- Bạn cần tập trung vào việc học
+- Nhưng bạn có thể vừa đi học vừa đi làm không?
+- Việc đó có thể giúp ích về mặt tài chính
+SINH VIÊN CÓ KHẢ NĂNG TIẾT KIỆM KHÔNG?
+- Bạn có điện thoại di động không?
+- Bạn có truyền hình cáp không?
+TIẾT KIỆM TIỀN
+- Tìm mua những món đồ giá rẻ
+- Hỏi về giảm giá dành cho sinh viên ở mọi nơi
+- So sánh giá cả
+- Chú ý đến chất lượng
+- Hạn chế ăn ngoài
+- Pha cà phê ở nhà
+- Mang cơm trưa đi làm
+- Bỏ điện thoại di động
+- Hoặc ít nhất là giảm thời gian sử dụng điện thoại
+- Trả tiền mặt để tránh lãi suất
+- Yêu cầu những món quà sinh nhật và Giáng sinh bạn cần
+NHỮNG CÁCH KHÁC ĐỂ TIẾT KIỆM TIỀN
+- Hoãn mua hàng cho đến khi có giảm giá
+- Đừng mua sắm bốc đồng
+- Chú ý những gì bạn chi tiêu cho những thứ 'vui chơi'
+- Đừng cạnh tranh với bạn bè là những người tiêu xài hoang phí
+- Giữ lại mọi hóa đơn và tính toán số tiền bạn chi tiêu cho những món đồ lãng phí
+- Tiết kiệm được một xu là kiếm được một xu
+- Chi tiêu ít hơn và cảm nhận sức mạnh
+QUẢN LÝ TIỀN BẠC TRONG THỜI KỲ KHÓ KHĂN
+- Lập danh sách các chiến lược bạn đã thử. Đánh dấu sao những chiến lược hiệu quả.
+- Lập một danh sách khác về các chiến lược mới mà bạn đang học được hôm nay.
+- Hãy bước bước đầu tiên... hãy thử bất cứ điều gì! 
+- Chi tiêu ít hơn, tiết kiệm nhiều hơn
+- Trả hết nợ thẻ tín dụng có lãi suất cao
+- Đừng đi du lịch vượt quá khả năng chi trả
+- Đừng tiêu tiền bằng thẻ tín dụng. Nếu không có tiền mặt, đừng mua.
+- Nghĩ đến việc làm thêm (cắt cỏ, xúc tuyết)
+- Tìm hiểu về trợ cấp thất nghiệp
+- Nhờ giúp đỡ từ những người bạn tin tưởng
+- Lập kế hoạch bằng văn bản
+- Đối phó với căng thẳng một cách tích cực
+HÃY LÀM CHỦ TÍN DỤNG CỦA BẠN
+- Chỉ vay tiền khi thực sự cần thiết.
+- Thanh toán đầy đủ và đúng hạn
+- Bạn có biết điểm tín dụng của bạn sẽ hoàn hảo nếu bạn thanh toán khoản tối thiểu mỗi tháng không? 
+Sử dụng thẻ tín dụng một cách thận trọng
+- Thanh toán hết dư nợ mỗi tháng
+- Xem xét kỹ các ưu đãi thẻ tín dụng
+- Tránh rút tiền mặt
+- Kiểm tra sao kê so với hồ sơ của bạn
+- Chỉ sử dụng một thẻ
+- Lấy bản sao báo cáo tín dụng của bạn
+- Bảo vệ điểm tín dụng của bạn: nó tồn tại trong 7 năm
+CÁCH CẢI THIỆN ĐIỂM TÍN DỤNG
+- Thanh toán đúng hạn
+- Xem lại báo cáo tín dụng của bạn
+- Tiếp tục sử dụng các thẻ tín dụng cũ
+- Hạn chế số lượng đơn xin vay và thẻ tín dụng
+- Duy trì sự đa dạng các khoản tín dụng
+- Duy trì tỷ lệ sử dụng tín dụng của bạn
+- Hợp nhất các khoản vay của bạn
+- Chỉ vay những gì bạn có thể trả
+HÃY CHỦ ĐỘNG
+Quản lý các khoản vay sinh viên
+- Bạn đã chọn trường Cao đẳng CIMT, và bạn có thể đã so sánh học phí --- đó là một quyết định sáng suốt!
+- Chọn các khoản mua sắm khác dựa trên chi phí
+- Tránh nợ nần khi có thể
+- Tìm kiếm cẩn thận mức lãi suất tốt nhất
+- Trả hết các khoản vay của bạn
+ĐẠI HỌC XỨNG ĐÁNG VÀ BẠN CÓ THỂ TRẢ ĐƯỢC CHO NÓ
+- Bạn sẽ kiếm được thu nhập cao hơn!
+- Bạn có nhiều khả năng nhận được gói phúc lợi hơn với những công việc có mức lương cao hơn! 
+- Bạn sẽ ít phụ thuộc hơn vào các dịch vụ hỗ trợ thu nhập
+- Bạn có nhiều khả năng tìm được việc làm mới hơn!
+- Bạn ít có khả năng bị mất việc lần nữa!
+- Bạn sẽ hài lòng hơn với công việc mình yêu thích và có kỹ năng!
+TRƯỚC KHI MUA
+Tại sao
+- Tôi lại cân nhắc chi số tiền này?
+Cái gì
+- Có những thông tin nào tôi cần biết?
+Như thế nào
+- Việc mua này sẽ ảnh hưởng đến cuộc sống của tôi như thế nào?
+Nếu như?
+- Tôi có thể nhận được lợi ích tương tự mà không cần chi tiền`
+      let sourceArr = sourceTxt.split('\n')
+      let translateArr = translateTxt.split('\n')
+      let str = ''
+      for (let i = 0; i < sourceArr.length; i++) {
+         str += '<div class="f"><div class="s">'
+         str += sourceArr[i]
+         str += '</div><div class="t">'
+         str += translateArr[i]
+         str += '</div></div>'
+      }
+      document.getElementById("c").innerHTML = str;
+      let translateLang = "en-US"
+      const source = document.querySelectorAll(".s")
+      const translate = document.querySelectorAll(".t")
+      let cnt = 0
+      function speakMinutes_source() {
+         isPause = false;
+         let sourceArr = []
+         source.forEach(e => sourceArr.push(e.textContent))
+         if (sourceArr.length > 0) {
+            let txt = sourceArr[cnt]
+            let utterance = new SpeechSynthesisUtterance(txt);
+            utterance.onstart = () => {
+               source[cnt].style.backgroundColor = "yellow"
+            }
+            // When the current utterance ends, speak the next one
+            utterance.onend = function (event) {
+               source[cnt].style.backgroundColor = "white"
+               cnt++
+               console.log("Speech ended, starting next minute.");
+               isPause ? "" : speakMinutes_source(); // Recursively call the function fo the next item
+            };
+            // Handle potential errors
+            utterance.onerror = function (event) {
+               console.error("Speech synthesis error: " + event.error);
+            };
+            utterance.lang = "en-US"
+            speechSynthesis.speak(utterance);
+         }
+      }
+      function speakMinutes_translate() {
+         isPause = false;
+         let translateReadArr = []
+         translate.forEach(e => translateReadArr.push(e.textContent))
+         if (translateReadArr.length > 0) {
+            let txt = translateReadArr[cnt]
+            let utterance = new SpeechSynthesisUtterance(txt);
+            utterance.onstart = () => {
+               translate[cnt].style.backgroundColor = "yellow"
+            }
+            // When the current utterance ends, speak the next one
+            utterance.onend = function (event) {
+               translate[cnt].style.backgroundColor = "white"
+               cnt++
+               console.log("Speech ended, starting next minute.");
+               isPause ? "" : speakMinutes_translate(); // Recursively call the function fo the next item
+            };
+            // Handle potential errors
+            utterance.onerror = function (event) {
+               console.error("Speech synthesis error: " + event.error);
+            };
+
+            utterance.lang = "vi-VN"
+            speechSynthesis.speak(utterance);
+         }
+      }
+
+      const speakBtn = document.querySelector("#speak");
+      const pauseBtn = document.querySelector("#pause");
+
+      const docBtn = document.querySelector("#doc");
+      const stopBtn = document.querySelector("#stop");
+      let isPause = false
+      speakBtn.addEventListener("click", speakMinutes_source);
+      docBtn.addEventListener("click", speakMinutes_translate);
+
+
+   </script>
+</body>
+
+</html>
