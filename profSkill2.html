@@ -5,9 +5,28 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Document</title>
+<style>
+      .floating {
+         position: fixed;
+         /* Keeps it fixed to the viewport */
+         top: 0px;
+         /* Distance from the top of the viewport */
+         right: 0px;
+         /* Distance from the right of the viewport */
+         z-index: 1000;
+         /* Ensures it stays above other elements */
+         background-color: black;
+      }
+      a { color: white;}
+   </style>
 </head>
 
 <body>
+   <div class="floating">
+   <a href="./profSkill1.html">Prev Page</a>
+      <a href="./profSkill3.html">Next Page</a>
+   </div>
+
    <pre>
       WHAT IS A RESUME?
 - A résumé is a summary of your academic background (formal education), paid and
