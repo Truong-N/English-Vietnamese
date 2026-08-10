@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>PSW 1</title>
+   <style>
+      a {
+         border: 1px solid black;
+      }
+      .container {
+         display: flex;
+  justify-content: space-between;
+  align-items: center; /* Vertically aligns buttons if they are different heights */
+  width: 100%;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="container">
+   <a href="./profSkill20.html">< Prev</a>
+   <a href="./psw2.html">Next ></a>
+      </div>
+   <div class="word"></div>
+   <div class="sentence"></div>
+   Type the answer or press Enter<br>
+   <input type="text" class="input_word_mean" style="width: 90%" />
+
+   <div class="suggest_sentence"></div>
+   <div class="wrong_ans"></div>
+   <!-- <input type="text" class="input_again" style="width: 90%" /> -->
+
+   <script>
+      function playNextWord() {
+         speechSynthesis.cancel();
+         input_word_mean.value = ''
+         word_test.innerHTML = ''
+         sentence_ex.innerHTML = ""
+         if (arr.length > 0) {
+            random_number = Math.floor(Math.random() * arr.length)
+            console.log("random: ", random_number)
+            arr_word = arr[random_number].split('~')
+            word_test.innerHTML = arr_word[0]
+            msg.text = arr_word[0]
+            speechSynthesis.speak(msg);
+            input_word_mean.focus()
+
+            // input_word_mean.focus()
+         }
+      }
+
+      let arr = ["ADLs stands for~activities of daily living"
+         , "__: Self-care activities people perform daily to remain independent and to function in society.~ADLs"
+         , "___ means to speak or act on behalf of another person or group of people.~advocate"
+         , "Concern for clients’ and their families’ dignity, independence, preferences, privacy, and safety at all times is called~caring"
+         , "What requires honesty, sensitivity, comforting, discretion, and respect while showing this concern.~True caring"
+         , "A general term for any person receiving care or support services in a community setting: hospital patients, facility residents, and clients in the community.~client"
+         , "Care that demonstrates concern for the dignity, independence, individualized care, preferences, privacy, and safety (DIPPS) of clients and their families at all times. Also known as compassionate care or person-centred care.~client-centred care"
+         , "___ same as client-centred care.~compassionate care"
+         , "___ same as compassionate care."
+         , "___ means Respecting, guarding, and using discretion in regard to personal and private information about another person.~confidentiality"
+         , "___ means The ability to think clearly and logically, using reflection and reason, based on knowledge obtained from experience, observation, or education.~critical thinking"
+         , "___ means The state of feeling worthy, valued, and respected.~dignity"
+         , "An acronym for the six principles of client-centred care (also known as compassionate care or person-centred care): dignity, independence, individualized care, preferences, privacy, and safety.~DIPPS"
+         , "___ means The use of responsible judgement to avoid causing distress or embarrassment to a person.~discretion"
+         , "___ means The ability to recognize, perceive, and have an understanding of another person's emotions by seeing things from his or her viewpoint.~empathy"
+         , "IADLs stands for~instrumental activities of daily living"
+         , "The complex skills needed to successfully live independently is called~instrumental activities of daily living"
+         , "LPN stands for~licensed practical nurse"
+         , "___ ___: A health care provider licensed and regulated by the province or territory to carry out nursing techniques and provide client care.~licensed practical nurse"
+         , "Licensed practical nurse is also known as a ~registered practical nurse"
+         , "RPN stands for~registered practical nurse"
+         , "___ means A facility that provides living accommodations and services; includes assisted-living facilities, long-term care facilities, group homes, and retirement residences.~live-in facility"
+         , "___ means A person receiving care in a hospital setting. Also known as a client.~patient"
+         , "___ means A primary care nurse is responsible for the ongoing management of the health of a client.Duties include liaising (liên lạc) with other health care team members, the client, and her or his family.~primary care nurse"
+         , "___ means An approach to work that demonstrates respect for others, commitment, competence, and appropriate behaviour.~professionalism"
+         , "___ means A review and self-evaluation of care provided with the goal of identifying ways to improve clinical performance and caregiving.~reflective practice review"
+         , "RN stands for~registered nurse"
+         , "A health care provider who is licensed and regulated by the province or territory to maintain overall responsibility for the planning and provision of client care is called~registered nurse"
+         , "RPN stands for~registered practical nurse"
+         , "registered practical nurse known as~licensed practical nurse"
+         , "RPN stands for~registered psychiatric nurse"
+         , "___ means A nurse who is educated and registered in his or her own province to provide care specifically to individuals whose primary needs relate to mental, emotional, and developmental health.~registered psychiatric nurse"
+         , "___ means The process of restoring a person to the highest possible level of functioning through the use of therapy, exercise, or other methods.~rehabilitation"
+         , "A person living in live-in facility (often called a long-term care facility) is called a~resident"
+         , "___ means the limit and extent of a health care worker's role as determined by your province's educational standards and your employer's policies in order to protect clients from harm.~Scope of practice"
+         , "___ in a health care field varies from province to province and employer to employer.~scope of practice"
+         , "__ is also known as social support.~social reintegration"
+         , "__ means equipping a person with the skills and knowledge necessary to successfully live independently outside an institution. Also known as social reintegration.~social support"
+         , "A health care worker who provides services to people, both in facilities and in the community, who need help with their daily activities si called~support worker"
+         , "UCPs stands for~unregulated care providers"
+         , "A broad term applied to staff members who assist nurses and other health care providers in giving care is called.~unregulated care providers"
+         , "___ support worker: Assists Indigenous clients; provides education on diabetes prevention and management; provides guidance on self-care management; facilitates discharges from and admissions to health care facilities; organizes services~Aboriginal "
+         , "Aboriginal support worker is Regulated or Unregulated or regulated in some provinces~Unregulated"
+         , "A person who assesses, plans, and implements recreational activities based on clients' needs is called~Activities director"
+         , "Activities director is Regulated or Unregulated or Unregulated or regulated in some provinces~unregulated"
+         , "A person who assesses and plans for nutritional needs, and teaches clients about nutrition, food selection, and preparation, is called a~dietitian"
+         , "Dietitian Regulated or Unregulated or regulated in some provinces~Regulated"
+         , "___ ___: Provides hands-on manipulation of the soft tissues of the body for the purposes of decreasing pain and stiffness, improving circulation to affected areas, and optimizing overall health~Massage therapist"
+         , "Massage therapist is regulated or unregulated or regulated in some provinces~Regulated in some provinces"
+         , "___ Diagnoses; treats clients with simple injuries and illnesses; is a registered nurse with advanced education and additional responsibilities for management of client care~Nurse practitioner"
+         , "Nurse practitioner is regulated or unregulated or regulated in some provinces~Regulated"
+         , "___ focuses on rehabilitation; teaches clients skills needed to perform ADLs; designs adaptive equipment for ADLs~Occupational therapist"
+         , "Occupational therapist is regulated or unregulated~Regulated"
+         , "EMT stands for~Emergency medical technician"
+         , "Emergency medical technician also known as~Paramedic"
+         , "Paramedic/Emergency medical technician also known as~Advanced care paramedic"
+         , "Health care provider trained to provide prehospital assessment, and physical care in emergency situations such as for medical or psychiatric concerns, traumatic injuries, and at accident scenes is also called~Emergency medical technician"
+         , "Emergency medical technician is regulated or unregulated or regulated in some provinces~Regulated in some provinces"
+         , "__ fills medication orders written by physicians; monitors and evaluates drug interactions; consults with physicians and nurses about drug actions and interactions~Pharmacist"
+         , "Pharmacist is regulated or unregulated or regulated in some provinces~Regulated"
+         , "___ Diagnoses and treats clients with illnesses and injuries~Physician"
+         , "Physician is regulated or unregulated or regulated in some provinces~Regulated"
+         , "Physiotherapist also is:~Physical therapist"
+         , "___ focuses on rehabilitation; assists clients with musculoskeletal impairments; focuses on restoring function and preventing disability from illness or injury~Physiotherapist"
+         , "Physiotherapist is regulated or unregulated or regulated in some provinces~Regulated"
+         , "__ __ focuses on improving quality of the client's life through leisure and recreation-related activities such as arts and crafts, drama, music, dance, sports, games, and field trips~Recreational therapist"
+         , "Recreational therapist is regulated or unregulated or regulated in some provinces~Unregulated"
+         , "RN stands for~Registered nurse"
+         , "__ __ assesses; makes nursing diagnoses; plans, implements, and evaluates nursing care; tends to clients with unstable health conditions; provides direct client care; administers medications; supervises support workers~Registered nurse"
+         , "Registered nurse is regulated or unregulated~Regulated"
+         , "RPN stands for~Registered practical nurse"
+         , "LPN stands for~Licensed practical nurse"
+         , "Registered practical nurse known as~Licensed practical nurse"
+         , "__ __ assesses; makes nursing diagnoses; plans, implements, and evaluates nursing care; tends to clients with stable health conditions; provides direct client care; administers medications; supervises support workers~Registered practical nurse"
+         , "Registered practical nurse is regulated or unregulated~Regulated"
+
+         , "__ __ provides care to individuals whose primary needs relate to mental, emotional, and developmental health; works independently or in cooperation with other health care providers (e.g., psychiatrists, physicians, psychologists, social workers, recreational therapists, and occupational therapists) to develop or implement therapeutic programs~Registered psychiatric nurse"
+         , "Registered psychiatric nurse is regulated or unregulated~Regulated"
+         , "___ focuses on rehabilitation; assists in treatment of lung and heart disorders; gives respiratory treatments and therapies~Respiratory therapist"
+         , "Respiratory therapist is regulated or unregulated~Regulated"
+
+         , "__ __ helps clients and families deal with social and emotional issues related to illness and recovery~Social worker"
+         , "Social worker is regulated or unregulated~Varies according to province or territory"
+         , "___ focuses on rehabilitation; evaluates speech and language; treats people with speech, voice, hearing, communication, and swallowing disorders~Speech-language pathologist"
+         , "Speech-language pathologist is regulated or unregulated~Regulated"
+         , "__ __ assists clients and families with spiritual needs~Spiritual advisor"
+         , "Spiritual advisor is regulated or unregulated~Determined by religious order"
+         , "___ ___: Assists clients with personal care, family responsibilities, social and recreational activities, and housekeeping or home management; provides personal care and assistance with ADLs~Support worker/Community support worker~Support worker/Community support worker"
+         , "Support worker/Community support worker is regulated or unregulated~Unregulated"
+
+         , "Activities of daily living (ADLs) are: __  activities that people perform daily to remain independent and to function in society~Self-care"
+
+         , "Support workers assist nurses or other health care team members by Report changes in the client's ___~behaviour or health"
+
+         , "Resident is a term used to describe a person who is receiving care at: A ___  care facility~long-term"
+
+         , "The main focus of the health care team is to: Provide ___  for the client~quality care"
+
+         , "Support workers are: ___ care providers~Unregulated"
+
+         , "Scope of practice means: The ___ of your role to prevent client harm~limits"
+
+         , "Professionalism is: An approach to work that demonstrates ___ for others, ___, ___, and appropriate ___~respect, commitment, competence, behaviour"
+
+         , " You must follow your employer's ___ ___ policies.~dress code"
+
+         , "In a long-term care facility, the client's information should be shared among:<br>A. Health care team ___ involved in the client's care~members"
+
+         , "Critical thinking means: The ability to think clearly and logically, using ___ and reason~reflection"
+
+         , "The acronym DIPPS stands for:~Dignity, independence, individualized care, preferences, privacy, safety"
+
+         , "This statement is false? Not ___ the client to prevent causing more problems~involve"
+
+      ]
+
+      const msg = new SpeechSynthesisUtterance();
+
+      const word_test = document.querySelector(".word")
+      const sentence_ex = document.querySelector(".sentence")
+      const input_word_mean = document.querySelector(".input_word_mean")
+      const wrong_ans = document.querySelector(".wrong_ans")
+      const suggest_sentence = document.querySelector(".suggest_sentence")
+
+      const input_again = document.querySelector(".input_again")
+      const voc = document.getElementsByName("voc")
+      s = 0
+      wrong_ans.innerHTML = '&nbsp;'
+      // by default load vocabularies group 1
+
+      // console.log(arr)
+      // let random_number = Math.floor(Math.random() * arr.length)
+      // let arr_word = arr[random_number].split(':_')
+
+      // word_test.innerHTML = arr_word[0]
+      // sentence_ex.innerHTML = arr_word[2]
+      // input_word_mean.focus()
+      playNextWord()
+
+
+
+      input_word_mean.addEventListener('keydown', function (event) {
+         if (event.key === 'Enter') {
+            let ans = input_word_mean.value
+            let corr_ans = `${arr_word[1]}`
+            if (ans.toLowerCase() != corr_ans.toLowerCase()) {
+               alert(`Correct answer: ${arr_word[1]}`)
+               // alert(arr[random_number])
+               // console.log(corr_ans)
+               // suggest_sentence.innerHTML = arr_word[0]
+               // wrong_ans.innerHTML = corr_ans
+               // input_again.focus()
+            } else {
+               // remove word answered corrected
+               arr.splice(random_number, 1)
+               playNextWord()
+            }
+
+
+         }
+      });
+      // input_again.addEventListener('keydown', function (event) {
+      //    if (event.key === 'Enter') {
+      //       if (input_again.value.toLowerCase() === wrong_ans.innerHTML.toLowerCase()) {
+      //          suggest_sentence.innerHTML = '&nbsp;'
+      //          wrong_ans.innerHTML = '&nbsp;'
+      //          input_again.value = ''
+      //          playNextWord()
+      //       }
+      //    }
+      // })
+   </script>
+</body>
+
+</html>
