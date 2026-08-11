@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>PSW 2</title>
+   <style>
+      a {
+         border: 1px solid black;
+      }
+      .container {
+         display: flex;
+  justify-content: space-between;
+  align-items: center; /* Vertically aligns buttons if they are different heights */
+  width: 100%;
+      }
+   </style>
+</head>
+
+<body><div class="container">
+   <a href="./psw1.html">Prev</a>
+   <a href="./psw3.html">Next</a>
+</div>
+   <div class="word"></div>
+   <div class="sentence"></div>
+   <input type="text" class="input_word_mean" style="width: 90%" />
+
+   <script>
+      function playNextWord() {
+         speechSynthesis.cancel();
+         input_word_mean.value = ''
+         word_test.innerHTML = ''
+         // sentence_ex.innerHTML = ""
+         if (arr.length > 0) {
+            random_number = Math.floor(Math.random() * arr.length)
+            console.log("random: ", random_number)
+            arr_word = arr[random_number].split('~')
+            word_test.innerHTML = arr_word[0]
+            msg.text = arr_word[0]
+            speechSynthesis.speak(msg);
+            input_word_mean.focus()
+
+            // input_word_mean.focus()
+         }
+      }
+
+      let arr = ["__: A principle of a Canadian Health Act that state that people must have reasonable access to insured health care services.~accessibility"
+
+,"__: Types of assistance that are provided through available insurance premiums. An example of a benefit is a dental procedure without any additional cost to the consumer.~benefits"
+
+,"__: Federal legislation that clarifies the types of health care services that are insured; it outlines five principles (comprehensiveness, universality, portability, accessibility, and public administration) that must be met by provinces and territories to qualify for federal health care funding.~Canada Health Act"
+
+,"__: A principle of the Canada Health Act that states that all necessary health services, including hospitalization and access to physicians and surgical dentists, must be insured.~comprehensiveness"
+
+,"__: Strategies that prevent the occurrence of disease or injury.~disease prevention"
+
+,"__: A strategy for improving the population's health by providing the necessary information and tools for individuals, groups, and communities to make informed decisions that promote health and wellness.~health promotion"
+
+,"__: Health care and support services provided to people in their places of residence.~homecare"
+
+,"__: Canada's national health care insurance system, which publicly funds the whole cost of medically necessary health services for permanent residents.~medicare"
+
+,"__: A principle of the Canada Health Act that states that residents continue to be entitled to coverage from their home province even when they live in a different province or territory or outside the country.~portability"
+
+,"__: The first point of contact people have with the health care system. It could be through a doctor, a nurse, or another health care provider or perhaps through phone- or computer-based services.~primary health care delivery"
+
+,"__: A principle of the Canada Health Act that states that provincial health insurance must be administered by a public authority on a nonprofit basis.~public administration"
+
+,"__: An intermediate level of health care that includes diagnosis and treatment. It is performed in a hospital that has specialized equipment and laboratory facilities.~secondary health care delivery"
+
+,"__: Medical telephone call centres through which nurses give advice to callers about health concerns.~telehealth"
+
+,"__: The specialized, highly technical level of health care that takes place in large research and teaching hospitals.~tertiary health care delivery"
+
+,"__: Health practices, approaches, knowledge, and beliefs that incorporate Indigenous healing and wellness while using ceremonies; plant, animal or mineral-based medicines; energetic therapies; or physical/hands-on techniques.~traditional healing"
+
+,"__: A principle of the Canada Health Act that states that all residents are entitled to the same basic level of health care services across the country.~universality"
+
+,"Canada's health care system is: Publicly __ through provincial or territorial and federal taxes ~funded"
+
+,"Provincial and territorial governments are responsible for: __, __, and _ their own health care insurance plans ~Planning, financing, delivering"
+
+,"Which law ensures that every citizen has access to health care?~The Canada Health Act"
+
+,"Canadians who travel to other parts of the country still maintain their provincial or territorial health care coverage. Which principle of medicare does this exemplify?~Portability"
+
+,"The most pressing cause of health care reform has been: __ __ of providing technology, drugs, and services ~Rising costs"
+
+,"A recent trend in health care is to focus on: Public policy that __ health and __ disease ~promotes, prevents"
+
+,"Immunization programs are an example of a: __ prevention program ~Disease" 
+
+,"One major focus of home care is to: Enable clients to __ in their own homes ~remain"
+
+,"Home care services provided by support workers might include: ~Vacuuming and dusting"
+
+,"Which statement about Canadian home care programs is correct? Provincial government funding is shifting to ~home care"
+
+,"In Canada, support services are governed by: The __ government ~provincial or territorial"
+      ]
+
+      const msg = new SpeechSynthesisUtterance();
+
+      const word_test = document.querySelector(".word")
+      // const sentence_ex = document.querySelector(".sentence")
+      const input_word_mean = document.querySelector(".input_word_mean")
+      // const wrong_ans = document.querySelector(".wrong_ans")
+      // const suggest_sentence = document.querySelector(".suggest_sentence")
+
+      // const input_again = document.querySelector(".input_again")
+      // const voc = document.getElementsByName("voc")
+      // s = 0
+      // wrong_ans.innerHTML = '&nbsp;'
+      
+      playNextWord()
+
+      input_word_mean.addEventListener('keydown', function (event) {
+         if (event.key === 'Enter') {
+            let ans = input_word_mean.value
+            let corr_ans = `${arr_word[1]}`
+            if (ans.toLowerCase() != corr_ans.toLowerCase()) {
+               alert(`Correct answer: ${arr_word[1]}`)
+            } else {
+               // remove word answered corrected
+               arr.splice(random_number, 1)
+               playNextWord()
+            }
+         }
+      });
+   </script>
+</body>
+
+</html>
